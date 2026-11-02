@@ -37,6 +37,11 @@ def _parser() -> argparse.ArgumentParser:
         prog="mpo", description="Local tokenizer-aware prompt optimization"
     )
     sub = parser.add_subparsers(dest="command", required=True)
+    validate = sub.add_parser("validate", help="Check a response against a configured task oracle")
+    validate.add_argument("--case", type=Path, required=True)
+    validate.add_argument("--id", help="Case ID when --case contains an items array")
+    validate.add_argument("--answer", type=Path, required=True)
+    validate.add_argument("--output", type=Path)
     for name in ["optimize", "benchmark", "auto"]:
         cmd = sub.add_parser(name)
         cmd.add_argument("--input", type=Path, required=True, help="UTF-8 request or corpus JSON")
@@ -69,6 +74,18 @@ def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     try:
+        if args.command == "validate":
+            from .validation import validate_answer
+
+            case = _read(args.case)
+            if isinstance(case, dict) and "items" in case:
+                matches = [c for c in case["items"] if c.get("id") == args.id]
+                if len(matches) != 1:
+                    raise ValueError("provide --id selecting exactly one task case")
+                case = matches[0]
+            check = validate_answer(case, _read(args.answer))
+            _write({"passed": check.passed, "reason": check.reason}, args.output)
+            return 0 if check.passed else 1
         counter = _counter(args)
         modes = ("lite", "translate", "aggressive") if args.aggressive else ("lite", "translate")
         raw = _read(args.input)

@@ -14,6 +14,39 @@ reformulations using a local Ollama model, then runs a separate semantic judging
 pass. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
+## v0.4: validate actual task answers
+
+The new task gate checks configured extraction, filtering, arithmetic and small
+Python-function answers. If a compressed answer fails, it tries the original prompt
+with a real extra inference call. If both fail, it returns no validated answer.
+It requires a configured oracle; it does not certify arbitrary sentences.
+
+![v0.4 measured task checks, token usage and timing](results/figures/v040-overview.png)
+
+In the 20-fixture × 3-repeat development run, original prompts passed 33/60 checks,
+mixed prompts 27/60, and checked mixed 33/60. The gate recovered the losses but
+used 22.8% more attempted prompt-content tokens than original. It withheld answers
+on 27/60 requests. These are small configured-oracle results, not general accuracy.
+See [the task-quality study and graphs](docs/task-quality-study.md).
+
+Check an existing answer without model calls:
+
+```bash
+mpo validate --case data/task-quality-development.json --id E01 --answer examples/task-answer-valid.json
+```
+
+Run a real checked example after the Ollama setup below:
+
+```bash
+python research/run_checked_case.py --id F03 --output results/local/checked-demo.json
+```
+
+Applications can use `execute_checked(original_prompt, candidate_prompt, execute,
+validate)` with an execution callback and an `AnswerCheck` validator. The built-in
+`validate_answer(case, response)` uses the supplied task configuration. A passing
+reviewer opinion alone is not a passing task check. The existing `auto` command
+still performs instruction review; use the checked API for configured answer gating.
+
 ## Quick start
 
 Requires Python 3.11 or newer. From the extracted project folder:
@@ -200,6 +233,9 @@ ruff check .
 python -m unittest discover -s tests -v
 python -m build
 ```
+
+The current local engineering suite has 61 tests. These test implementation behavior,
+not a guarantee of model task accuracy. Install `.[plots]` to regenerate the charts.
 
 GitHub Actions runs checks on Windows/Linux and Python 3.11/3.12. Check the
 [Actions page](https://github.com/Ksiuhl/multilingual-prompt-optimizer/actions)

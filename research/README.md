@@ -1,5 +1,20 @@
 # Reproduce the development studies
 
+For the later answer-validation experiment and graphs:
+
+```bash
+python -m pip install -e ".[dev,plots]"
+python research/evaluate_task_quality.py --output results/local/task-quality.json
+python research/plot_task_quality.py --input results/local/task-quality.json --output-dir results/local/figures
+python research/run_checked_case.py --id F03 --output results/local/checked-demo.json
+```
+
+Use local Ollama with both Qwen3 models installed. The task fixture file fixes three
+target repeats. Preparation is shared across repeats, fallback makes real extra
+calls, and no invalid answer is released by the checked policy under its configured
+oracle. Unsupported code syntax fails validation; model code is never executed.
+The task-quality study documents the observed failures and limits.
+
 From the repository root, install the package and pull both local models:
 
 ```bash

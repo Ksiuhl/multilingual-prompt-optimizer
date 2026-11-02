@@ -1,5 +1,15 @@
 # Checked-in local results
 
+## Task-answer validation (0.4.0)
+
+`task-quality-v040.json` records 20 fixtures × 3 repeats. Original passed 33/60,
+English-only 31/60, mixed 27/60, and checked mixed 33/60 configured task checks.
+Checked mixed used 21 extra original fallback calls and returned no validated answer on 27 requests;
+it attempted 22.8% more content tokens than original. Baseline arithmetic and a code
+service error are retained as failures. See `docs/task-quality-study.md` and
+`results/figures/` for measured PNG/SVG/PDF charts and provenance. No net-cost or
+general-accuracy advantage is demonstrated.
+
 ## Reviewer and automatic-search study (0.3.0)
 
 The 20-pair synthetic reviewer comparison is in `reviewer-comparison.json`. Qwen3

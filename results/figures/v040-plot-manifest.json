@@ -1,0 +1,173 @@
+{
+  "source_sha256": "4fc001b4549daab5e24040b6f387188b5670b5639a44cbec78840365d1041e66",
+  "source_canonical_sha256": "00300ca37b921dc9a7c8035aaff4f907fa314db708867fc2ff1352ac20ebd87f",
+  "matplotlib_version": "3.11.2",
+  "plot_script_sha256": "d5441f22a7c55de939020bf9126f849479d8c84e0abc36df7b2b15abfa76c540",
+  "artifacts": [
+    "v040-overview.png",
+    "v040-overview.svg",
+    "v040-overview.pdf",
+    "v040-by-category.png",
+    "v040-by-category.svg",
+    "v040-by-category.pdf"
+  ],
+  "trials_per_arm": 60,
+  "data": {
+    "original": {
+      "passed": 33,
+      "trials": 60,
+      "pass_rate": 0.55,
+      "fallbacks": 0,
+      "content_tokens_attempted": 4359,
+      "target_usage": {
+        "calls": 60,
+        "input_tokens": 8214,
+        "output_tokens": 1437,
+        "elapsed_ms": 13935.485701775178
+      },
+      "preparation_usage_once_per_fixture": {
+        "calls": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "elapsed_ms": 0
+      },
+      "standalone_ms_per_request": 232.33030332873264,
+      "reuse_amortized_ms_per_request": 232.33030332873264,
+      "by_kind": {
+        "extraction": {
+          "passed": 15,
+          "trials": 15
+        },
+        "filtering": {
+          "passed": 6,
+          "trials": 15
+        },
+        "arithmetic": {
+          "passed": 0,
+          "trials": 15
+        },
+        "code": {
+          "passed": 12,
+          "trials": 15
+        }
+      }
+    },
+    "english": {
+      "passed": 31,
+      "trials": 60,
+      "pass_rate": 0.5166666666666667,
+      "fallbacks": 0,
+      "content_tokens_attempted": 4035,
+      "target_usage": {
+        "calls": 60,
+        "input_tokens": 7860,
+        "output_tokens": 1588,
+        "elapsed_ms": 14858.671700116247
+      },
+      "preparation_usage_once_per_fixture": {
+        "calls": 36,
+        "input_tokens": 7895,
+        "output_tokens": 3983,
+        "elapsed_ms": 31527.50870026648
+      },
+      "standalone_ms_per_request": 1826.175541690706,
+      "reuse_amortized_ms_per_request": 773.8696983433329,
+      "by_kind": {
+        "extraction": {
+          "passed": 15,
+          "trials": 15
+        },
+        "filtering": {
+          "passed": 6,
+          "trials": 15
+        },
+        "arithmetic": {
+          "passed": 0,
+          "trials": 15
+        },
+        "code": {
+          "passed": 10,
+          "trials": 15
+        }
+      }
+    },
+    "mixed": {
+      "passed": 27,
+      "trials": 60,
+      "pass_rate": 0.45,
+      "fallbacks": 0,
+      "content_tokens_attempted": 4032,
+      "target_usage": {
+        "calls": 60,
+        "input_tokens": 7851,
+        "output_tokens": 1661,
+        "elapsed_ms": 14961.64509980008
+      },
+      "preparation_usage_once_per_fixture": {
+        "calls": 46,
+        "input_tokens": 10163,
+        "output_tokens": 4215,
+        "elapsed_ms": 28534.156000008807
+      },
+      "standalone_ms_per_request": 1679.6560767184321,
+      "reuse_amortized_ms_per_request": 726.1768833578875,
+      "by_kind": {
+        "extraction": {
+          "passed": 15,
+          "trials": 15
+        },
+        "filtering": {
+          "passed": 3,
+          "trials": 15
+        },
+        "arithmetic": {
+          "passed": 0,
+          "trials": 15
+        },
+        "code": {
+          "passed": 9,
+          "trials": 15
+        }
+      }
+    },
+    "guarded_mixed": {
+      "passed": 33,
+      "trials": 60,
+      "pass_rate": 0.55,
+      "fallbacks": 21,
+      "content_tokens_attempted": 5352,
+      "target_usage": {
+        "calls": 81,
+        "input_tokens": 10287,
+        "output_tokens": 1991,
+        "elapsed_ms": 20479.64969999157
+      },
+      "preparation_usage_once_per_fixture": {
+        "calls": 46,
+        "input_tokens": 10163,
+        "output_tokens": 4215,
+        "elapsed_ms": 28534.156000008807
+      },
+      "standalone_ms_per_request": 1771.6802517223794,
+      "reuse_amortized_ms_per_request": 818.2010583618345,
+      "by_kind": {
+        "extraction": {
+          "passed": 15,
+          "trials": 15
+        },
+        "filtering": {
+          "passed": 6,
+          "trials": 15
+        },
+        "arithmetic": {
+          "passed": 0,
+          "trials": 15
+        },
+        "code": {
+          "passed": 12,
+          "trials": 15
+        }
+      }
+    }
+  }
+}

@@ -17,6 +17,10 @@
 
 ## Research validation
 
+Version 0.4 implements configured task-output checks and records a repeated
+development experiment. Checked fallback recovered mixed-prompt losses but did not
+outperform original prompts, and increased prompt usage and processing time.
+
 - Add task-specific quality checks and repeated paired trials. The reviewer-approved
   65-token summary demo omitted a required date, so reviewer approval is insufficient.
 - Independent semantic checks and hidden evaluation examples.

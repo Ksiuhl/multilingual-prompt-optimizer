@@ -7,6 +7,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from io import BytesIO, StringIO
 from pathlib import Path
 from unittest.mock import patch
+from urllib.error import HTTPError
 
 from multilingual_prompt_optimizer import OllamaModel, Request, auto_optimize
 from multilingual_prompt_optimizer.cli import main
@@ -40,6 +41,14 @@ OPTIONS = {"clauses": [{"en": "Summarize.", "zh": "总结。"}]}
 
 
 class AutomaticTests(unittest.TestCase):
+    def test_http_server_error_is_distinguished_from_missing_service(self):
+        model = OllamaModel("local")
+        error = HTTPError("http://127.0.0.1:11434/api/generate", 500, "model error", None, None)
+        with patch.object(model._http, "open", side_effect=error):
+            with self.assertRaisesRegex(RuntimeError, "HTTP 500"):
+                model.generate("system", {}, {})
+        self.assertEqual(model.calls[-1]["http_status"], 500)
+
     def test_output_limit_rejected_even_when_partial_json_is_valid(self):
         model = OllamaModel("local")
         raw = {

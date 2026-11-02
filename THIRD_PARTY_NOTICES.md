@@ -30,6 +30,11 @@ to its publisher's license.
 
 ## Research references
 
+Matplotlib is an optional plotting dependency, installed through `.[plots]`. Its
+source is not vendored; its licenses are available in the
+[upstream license directory](https://github.com/matplotlib/matplotlib/tree/main/LICENSE).
+The checked-in figures are this project's measured-data exports.
+
 The bibliography in [docs/research.md](docs/research.md) identifies related work.
 No source code from Sigo or Cross-Lingual Token Arbitrage is included in this
 repository, and their model stages have not been reproduced by this package.

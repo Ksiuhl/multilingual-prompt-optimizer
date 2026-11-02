@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — task-answer validation and graphs
+
+- Added source-derived extraction/filtering/arithmetic validators and bounded Python-AST behavior checks.
+- Added validated execution with a real original-prompt fallback and no answer when both attempts fail.
+- Added `mpo validate`, a checked live demo, and 20 synthetic task fixtures with three repeated trials.
+- Recorded task checks, actual fallback calls, attempted prompt usage and preparation/inference overhead.
+- Exported measured overview and category graphs as PNG, SVG and PDF.
+- Retained baseline, arithmetic and service failures; no accuracy/cost advantage is claimed.
+- Added validator/fallback and HTTP-error regressions (61 engineering tests total).
+
 ## 0.3.0 — reviewer development study and automatic benchmark
 
 - Added 20 synthetic labeled review pairs and a reproducible two-model comparison.

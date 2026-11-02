@@ -91,6 +91,11 @@ class OllamaModel:
             return parsed
         except (HTTPError, URLError, OSError) as exc:
             record["error_type"] = type(exc).__name__
+            if isinstance(exc, HTTPError):
+                record["http_status"] = exc.code
+                raise RuntimeError(
+                    f"Local model server returned HTTP {exc.code}; the original prompt has been retained."
+                ) from exc
             raise RuntimeError(
                 "Local model request failed. Start Ollama and pull the chosen model; "
                 "the original prompt has been retained."

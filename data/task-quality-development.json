@@ -1,0 +1,519 @@
+{
+  "version": "1.0",
+  "description": "20 synthetic task-quality development fixtures (5 per category). Several fixtures share task templates. Not a held-out accuracy benchmark.",
+  "provenance": "Assistant-authored synthetic inputs and configured deterministic oracles, MIT licensed. Oracles and code tests are withheld from model prompts.",
+  "protocol": {
+    "repeats": 3,
+    "target_temperature": 0,
+    "generator": "qwen3:4b",
+    "reviewer": "qwen3:8b",
+    "target": "qwen3:4b",
+    "max_review_calls_per_arm": 8,
+    "selection": "Generate once per fixture; reuse the frozen candidate prompts for all target repeats. Compare original, English-only and mixed search. Guarded mixed uses the same mixed attempt, then a real fresh original fallback call if it fails validation.",
+    "quality_scope": "Configured source-derived oracles and bounded Python-subset behavior tests. No general semantic or deployment accuracy claim."
+  },
+  "items": [
+    {
+      "id": "E01",
+      "kind": "extraction",
+      "request": {
+        "instruction": "Please extract the current customer name, order ID, and order total. Return only a JSON object with keys name, order_id, amount. Use null for missing values; do not use previous-order details.",
+        "payload": "{\"customer\": {\"name\": \"王芳\"}, \"order\": {\"id\": \"ZX-301\", \"total\": 142.75}}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "fields": {
+          "name": [
+            "customer",
+            "name"
+          ],
+          "order_id": [
+            "order",
+            "id"
+          ],
+          "amount": [
+            "order",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "E02",
+      "kind": "extraction",
+      "request": {
+        "instruction": "Please extract the current customer name, order ID, and order total. Return only a JSON object with keys name, order_id, amount. Use null for missing values; do not use previous-order details.",
+        "payload": "{\"customer\": {\"name\": \"Leo Park\"}, \"order\": {\"id\": \"B-009\", \"total\": 0}}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "fields": {
+          "name": [
+            "customer",
+            "name"
+          ],
+          "order_id": [
+            "order",
+            "id"
+          ],
+          "amount": [
+            "order",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "E03",
+      "kind": "extraction",
+      "request": {
+        "instruction": "Please extract the current customer name, order ID, and order total. Return only a JSON object with keys name, order_id, amount. Use null for missing values; do not use previous-order details.",
+        "payload": "{\"customer\": {\"name\": \"Maya Chen\"}, \"order\": {\"id\": \"Q-004\"}}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "fields": {
+          "name": [
+            "customer",
+            "name"
+          ],
+          "order_id": [
+            "order",
+            "id"
+          ],
+          "amount": [
+            "order",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "E04",
+      "kind": "extraction",
+      "request": {
+        "instruction": "Please extract the current customer name, order ID, and order total. Return only a JSON object with keys name, order_id, amount. Use null for missing values; do not use previous-order details.",
+        "payload": "{\"customer\": {\"name\": \"Ana María\"}, \"order\": {\"id\": \"R-018\", \"total\": -12.5}}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "fields": {
+          "name": [
+            "customer",
+            "name"
+          ],
+          "order_id": [
+            "order",
+            "id"
+          ],
+          "amount": [
+            "order",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "E05",
+      "kind": "extraction",
+      "request": {
+        "instruction": "Please extract the current customer name, order ID, and order total. Return only a JSON object with keys name, order_id, amount. Use null for missing values; do not use previous-order details.",
+        "payload": "{\"customer\": {\"name\": \"Alex\"}, \"order\": {\"id\": \"001-A\", \"total\": 120}, \"previous_order\": {\"id\": \"OLD-8\", \"total\": 999}}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "fields": {
+          "name": [
+            "customer",
+            "name"
+          ],
+          "order_id": [
+            "order",
+            "id"
+          ],
+          "amount": [
+            "order",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "F01",
+      "kind": "filtering",
+      "request": {
+        "instruction": "Return only a JSON array of IDs for non-cancelled orders with amount >= 100, sorted ascending.",
+        "payload": "[{\"id\": \"B02\", \"amount\": 100, \"status\": \"active\"}, {\"id\": \"A01\", \"amount\": 99.99, \"status\": \"active\"}, {\"id\": \"C03\", \"amount\": 150, \"status\": \"cancelled\"}, {\"id\": \"D04\", \"amount\": 101, \"status\": \"active\"}]",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "conditions": [
+          {
+            "field": "amount",
+            "op": "ge",
+            "value": 100
+          },
+          {
+            "field": "status",
+            "op": "ne",
+            "value": "cancelled"
+          }
+        ],
+        "output_field": "id",
+        "order": "ascending"
+      }
+    },
+    {
+      "id": "F02",
+      "kind": "filtering",
+      "request": {
+        "instruction": "Return only a JSON array of IDs for orders with amount strictly greater than 100, in source order.",
+        "payload": "[{\"id\": \"B02\", \"amount\": 100, \"status\": \"active\"}, {\"id\": \"A01\", \"amount\": 99.99, \"status\": \"active\"}, {\"id\": \"C03\", \"amount\": 150, \"status\": \"cancelled\"}, {\"id\": \"D04\", \"amount\": 101, \"status\": \"active\"}]",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "conditions": [
+          {
+            "field": "amount",
+            "op": "gt",
+            "value": 100
+          }
+        ],
+        "output_field": "id",
+        "order": "source"
+      }
+    },
+    {
+      "id": "F03",
+      "kind": "filtering",
+      "request": {
+        "instruction": "Return only a JSON array of task IDs where priority is high AND owner is missing or null. Preserve source order.",
+        "payload": "[{\"id\": \"T03\", \"priority\": \"high\", \"owner\": null}, {\"id\": \"T01\", \"priority\": \"low\", \"owner\": null}, {\"id\": \"T04\", \"priority\": \"high\", \"owner\": \"Maya\"}, {\"id\": \"T02\", \"priority\": \"high\"}]",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "conditions": [
+          {
+            "field": "priority",
+            "op": "eq",
+            "value": "high"
+          },
+          {
+            "field": "owner",
+            "op": "missing"
+          }
+        ],
+        "output_field": "id",
+        "order": "source"
+      }
+    },
+    {
+      "id": "F04",
+      "kind": "filtering",
+      "request": {
+        "instruction": "Return only a JSON array of task IDs where priority is high OR owner is missing or null. Sort IDs descending.",
+        "payload": "[{\"id\": \"T03\", \"priority\": \"high\", \"owner\": null}, {\"id\": \"T01\", \"priority\": \"low\", \"owner\": null}, {\"id\": \"T04\", \"priority\": \"high\", \"owner\": \"Maya\"}, {\"id\": \"T02\", \"priority\": \"high\"}]",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "conditions": [
+          {
+            "field": "priority",
+            "op": "eq",
+            "value": "high"
+          },
+          {
+            "field": "owner",
+            "op": "missing"
+          }
+        ],
+        "combine": "any",
+        "output_field": "id",
+        "order": "descending"
+      }
+    },
+    {
+      "id": "F05",
+      "kind": "filtering",
+      "request": {
+        "instruction": "Return only a JSON array of order IDs with amount >= 1000. Return an empty array if none qualify.",
+        "payload": "[{\"id\": \"B02\", \"amount\": 100, \"status\": \"active\"}, {\"id\": \"A01\", \"amount\": 99.99, \"status\": \"active\"}, {\"id\": \"C03\", \"amount\": 150, \"status\": \"cancelled\"}, {\"id\": \"D04\", \"amount\": 101, \"status\": \"active\"}]",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "conditions": [
+          {
+            "field": "amount",
+            "op": "ge",
+            "value": 1000
+          }
+        ],
+        "output_field": "id",
+        "order": "source"
+      }
+    },
+    {
+      "id": "A01",
+      "kind": "arithmetic",
+      "request": {
+        "instruction": "Calculate the invoice total: quantity times unit_price for each line, minus discount, plus shipping. Return only the numeric total, rounded to 2 decimal places, with halves rounded up.",
+        "payload": "{\"lines\": [{\"quantity\": 3, \"unit_price\": \"19.95\"}, {\"quantity\": 2, \"unit_price\": \"4.50\"}], \"discount\": \"5.00\", \"shipping\": \"3.25\"}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "operation": "invoice"
+      }
+    },
+    {
+      "id": "A02",
+      "kind": "arithmetic",
+      "request": {
+        "instruction": "Calculate the final price after the given percentage discount. Return only a number rounded to 2 decimal places, with halves rounded up.",
+        "payload": "{\"price\": \"128.50\", \"percent\": \"12.5\"}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "operation": "discount"
+      }
+    },
+    {
+      "id": "A03",
+      "kind": "arithmetic",
+      "request": {
+        "instruction": "Calculate the arithmetic mean of all values. Return only a number rounded to 2 decimal places, with halves rounded up.",
+        "payload": "{\"values\": [12, 0, -3, 8, 4]}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "operation": "mean"
+      }
+    },
+    {
+      "id": "A04",
+      "kind": "arithmetic",
+      "request": {
+        "instruction": "Calculate the weighted mean: sum(value * weight) divided by sum(weight). Return only a number rounded to 2 decimal places, with halves rounded up.",
+        "payload": "{\"values\": [{\"value\": 80, \"weight\": 2}, {\"value\": 60, \"weight\": 1}, {\"value\": 95, \"weight\": 3}]}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "operation": "weighted_mean"
+      }
+    },
+    {
+      "id": "A05",
+      "kind": "arithmetic",
+      "request": {
+        "instruction": "Calculate percentage change from old to new: (new - old) / old * 100. Keep the sign. Return only a number rounded to 2 decimal places, with halves rounded up.",
+        "payload": "{\"old\": 80, \"new\": 68}",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "operation": "percent_change"
+      }
+    },
+    {
+      "id": "C01",
+      "kind": "code",
+      "request": {
+        "instruction": "Fix average(xs): return None for empty input, otherwise return the arithmetic mean. Return only the Python function. Do not import anything or use loops.",
+        "payload": "def average(xs):\n    return sum(xs) / len(xs)\n",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "function": "average",
+        "parameters": [
+          "xs"
+        ],
+        "tests": [
+          {
+            "args": [
+              []
+            ],
+            "expected": null
+          },
+          {
+            "args": [
+              [
+                2,
+                4,
+                6
+              ]
+            ],
+            "expected": 4
+          },
+          {
+            "args": [
+              [
+                -2,
+                2
+              ]
+            ],
+            "expected": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "C02",
+      "kind": "code",
+      "request": {
+        "instruction": "Fix clamp(x, lower, upper) so it returns lower below the interval, upper above it, and x within it. Return only the Python function. Do not import anything or use loops.",
+        "payload": "def clamp(x, lower, upper):\n    return max(x, upper)\n",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "function": "clamp",
+        "parameters": [
+          "x",
+          "lower",
+          "upper"
+        ],
+        "tests": [
+          {
+            "args": [
+              -3,
+              0,
+              10
+            ],
+            "expected": 0
+          },
+          {
+            "args": [
+              20,
+              0,
+              10
+            ],
+            "expected": 10
+          },
+          {
+            "args": [
+              5,
+              0,
+              10
+            ],
+            "expected": 5
+          },
+          {
+            "args": [
+              0,
+              0,
+              10
+            ],
+            "expected": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "C03",
+      "kind": "code",
+      "request": {
+        "instruction": "Fix is_even(n) to return the Boolean True exactly when the integer n is even. Return only the Python function. Do not import anything or use loops.",
+        "payload": "def is_even(n):\n    return n % 2 == 1\n",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "function": "is_even",
+        "parameters": [
+          "n"
+        ],
+        "tests": [
+          {
+            "args": [
+              0
+            ],
+            "expected": true
+          },
+          {
+            "args": [
+              -4
+            ],
+            "expected": true
+          },
+          {
+            "args": [
+              3
+            ],
+            "expected": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "C04",
+      "kind": "code",
+      "request": {
+        "instruction": "Fix first_or_none(xs): return None for an empty list, otherwise return its first element. Return only the Python function. Do not import anything or use loops.",
+        "payload": "def first_or_none(xs):\n    return xs[0]\n",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "function": "first_or_none",
+        "parameters": [
+          "xs"
+        ],
+        "tests": [
+          {
+            "args": [
+              []
+            ],
+            "expected": null
+          },
+          {
+            "args": [
+              [
+                0,
+                7
+              ]
+            ],
+            "expected": 0
+          },
+          {
+            "args": [
+              [
+                9
+              ]
+            ],
+            "expected": 9
+          }
+        ]
+      }
+    },
+    {
+      "id": "C05",
+      "kind": "code",
+      "request": {
+        "instruction": "Fix absolute(x) to return the nonnegative absolute value of x. Return only the Python function. Do not import anything or use loops.",
+        "payload": "def absolute(x):\n    return -x\n",
+        "output_instruction": "Respond in English."
+      },
+      "oracle": {
+        "function": "absolute",
+        "parameters": [
+          "x"
+        ],
+        "tests": [
+          {
+            "args": [
+              -3
+            ],
+            "expected": 3
+          },
+          {
+            "args": [
+              7
+            ],
+            "expected": 7
+          },
+          {
+            "args": [
+              0
+            ],
+            "expected": 0
+          }
+        ]
+      }
+    }
+  ]
+}

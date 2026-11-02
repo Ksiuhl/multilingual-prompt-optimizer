@@ -29,3 +29,10 @@ data under MIT, not independently reviewed bilingual ground truth. Positive and
 negative members share task templates, so the 20 records are not 20 independent
 tasks. Reviewers see no expected labels. The set was used to choose a review model;
 future validation must use fresh examples.
+
+`task-quality-development.json` adds 20 synthetic fixtures: five per extraction,
+filtering, arithmetic and code category. Several share templates. Their configured
+oracles are derived from the source JSON or finite code test vectors, and are not
+sent to the models. They are assistant-authored MIT development data, not held-out
+or independently audited ground truth. Three repeated outputs per fixture do not
+make 60 independent tasks. See `docs/task-quality-study.md` for the scored protocol.
