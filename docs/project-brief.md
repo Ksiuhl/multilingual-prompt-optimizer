@@ -26,8 +26,10 @@ automatic rule-based candidates and accepts authored translations or reformulati
 It searches bounded combinations and keeps the shortest structurally acceptable
 complete prompt. It preserves a separate source payload exactly.
 
-Automatic multilingual generation, independent semantic validation, model-response
-evaluation, latency measurement across services and API billing are future work.
+Version 0.2 adds automatic multilingual generation and a fallible model-based
+semantic judging pass using Ollama. Real-model quality evaluation, independent
+semantic validation, target-model response evaluation, latency measurement across
+services and API billing remain future work.
 Morse code is excluded from the current scope.
 
 ## Architecture

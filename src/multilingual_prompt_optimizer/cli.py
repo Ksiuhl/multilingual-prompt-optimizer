@@ -37,7 +37,7 @@ def _parser() -> argparse.ArgumentParser:
         prog="mpo", description="Local tokenizer-aware prompt optimization"
     )
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ["optimize", "benchmark"]:
+    for name in ["optimize", "benchmark", "auto"]:
         cmd = sub.add_parser(name)
         cmd.add_argument("--input", type=Path, required=True, help="UTF-8 request or corpus JSON")
         cmd.add_argument("--output", type=Path)
@@ -48,6 +48,13 @@ def _parser() -> argparse.ArgumentParser:
         cmd.add_argument(
             "--aggressive", action="store_true", help="Also generate aggressive rule candidates"
         )
+        if name == "auto":
+            cmd.add_argument("--model", required=True, help="Installed local Ollama model")
+            cmd.add_argument("--verifier-model", help="Optional separate local judge model")
+            cmd.add_argument("--ollama-url", default="http://localhost:11434")
+            cmd.add_argument("--languages", default="en,zh,ja")
+            cmd.add_argument("--verification-budget", type=int, default=8)
+            cmd.add_argument("--timeout", type=float, default=120)
         if name == "optimize":
             cmd.add_argument(
                 "--no-rules", action="store_true", help="Use supplied alternatives only"
@@ -65,7 +72,29 @@ def main(argv: list[str] | None = None) -> int:
         counter = _counter(args)
         modes = ("lite", "translate", "aggressive") if args.aggressive else ("lite", "translate")
         raw = _read(args.input)
-        if args.command == "optimize":
+        if args.command == "auto":
+            from .automatic import OllamaModel, auto_optimize
+
+            generator = OllamaModel(args.model, args.ollama_url, args.timeout)
+            verifier = (
+                OllamaModel(args.verifier_model, args.ollama_url, args.timeout)
+                if args.verifier_model
+                else generator
+            )
+            result = auto_optimize(
+                Request.from_dict(raw),
+                generator=generator,
+                verifier=verifier,
+                counter=counter,
+                languages=tuple(s.strip() for s in args.languages.split(",")),
+                verification_budget=args.verification_budget,
+                max_combinations=args.max_combinations,
+            )
+            _write(result.to_dict(), args.output)
+            if result.automation["status"] == "error_original_retained":
+                print("mpo: " + result.automation["error"], file=sys.stderr)
+                return 2
+        elif args.command == "optimize":
             result = optimize(
                 Request.from_dict(raw),
                 counter=counter,

@@ -134,6 +134,7 @@ class OptimizationResult:
     elapsed_ms: float
     library_versions: dict[str, str] = field(default_factory=_library_versions)
     semantic_equivalence_verified: bool = False
+    automation: dict | None = None
     counting_scope: str = (
         "Complete composed user-message content; excludes provider billing wrappers"
     )

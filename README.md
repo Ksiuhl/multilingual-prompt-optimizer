@@ -8,9 +8,11 @@ protected numeric/literal strings, and keeps the original as a fallback. It buil
 on [PromptMin](https://github.com/DelvyG/promptmin) for automatic English/Spanish rule
 rewriting and supports user-supplied multilingual phrase alternatives.
 
-**Status:** working research prototype. Structural checks do not prove semantic
-equivalence, answer accuracy, or lower total API cost. It makes no model calls and
-does not generate translations with an LLM yet.
+**Status:** working research prototype. The `optimize` command selects supplied/rule
+alternatives without inference. The new `auto` command generates translations and
+reformulations using a local Ollama model, then runs a separate semantic judging
+pass. Neither structural checks nor model judgments prove equivalent meaning,
+answer accuracy, or lower total cost.
 
 ## Quick start
 
@@ -46,6 +48,7 @@ service calls involved in these commands.
 
 ## What works
 
+- Automatic multilingual candidate generation and semantic judging through local Ollama.
 - Automatic rule candidates from the pinned PromptMin 0.3.0 dependency.
 - Bounded search over supplied phrase alternatives, including monolingual choices.
 - Full-message token counting with `tiktoken`.
@@ -95,6 +98,37 @@ You can also provide complete alternatives:
 Supplying equivalent alternatives is the caller's responsibility. A shorter candidate
 that passes structural checks may still change meaning. Review candidates before
 using them in consequential tasks.
+
+## Automatic mode for new sentences
+
+Install [Ollama](https://ollama.com/download), start it, then download a local
+multilingual model once (the example model is approximately 2.5 GB):
+
+```bash
+ollama pull qwen3:4b
+mpo auto --input examples/automatic.json --model qwen3:4b --output results/local/auto.json
+```
+
+Edit the example's `instruction` and `payload` to try your own text. No prewritten
+`phrase_options` are required. Default languages are English, Chinese and Japanese.
+The tool generates aligned clauses, searches up to 256 combinations, then asks a
+model to judge the shortest structurally acceptable complete instructions. It
+selects the first approved candidate, or keeps the original if none is approved.
+
+By default the same model generates and judges in separate calls. Set
+`--verifier-model NAME` to experiment with a different installed local model.
+Different model names do not establish independent validation or task accuracy.
+
+Source payloads stay outside the model-generation and judging requests. The
+instruction and unchanged output constraint go to the configured loopback Ollama
+endpoint. No cloud model names or remote endpoints are accepted. Inference uses
+local compute and can cost more time/resources than the input tokens saved.
+
+If generation or judging fails, JSON output retains the original, records the error,
+and the CLI exits with code 2. Look at `automation.status`, `judgments`, `model_calls`,
+and `generated_phrase_options` for the audit trail. Model approval is recorded as
+`judge_approved`; `semantic_equivalence_verified` remains false because it is not a
+proof. See [automatic-mode details and limits](docs/automatic-mode.md).
 
 ## Python API
 
@@ -157,8 +191,9 @@ python -m unittest discover -s tests -v
 python -m build
 ```
 
-GitHub Actions is configured to run checks on Windows/Linux and Python 3.11/3.12.
-The hosted workflow has not run until the repository is uploaded.
+GitHub Actions runs checks on Windows/Linux and Python 3.11/3.12. Check the
+[Actions page](https://github.com/Ksiuhl/multilingual-prompt-optimizer/actions)
+for the result of each uploaded revision.
 
 ## Research and attribution
 
@@ -166,8 +201,8 @@ This project combines existing ideas and does **not** claim to invent multilingu
 compression. PromptMin is an upstream dependency, not code presented as our own work.
 See [third-party notices](THIRD_PARTY_NOTICES.md) and [related work](docs/research.md).
 
-The next research step is automatic local-model candidate generation, followed by
-independent semantic checks and comparisons on unseen tasks. LLM-to-LLM compression
+The next research step is real-model evaluation and independent semantic checks on
+unseen tasks. LLM-to-LLM compression
 is planned future work; see the [project brief and architecture](docs/project-brief.md)
 and [roadmap](docs/roadmap.md).
 

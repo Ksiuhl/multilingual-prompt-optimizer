@@ -9,7 +9,8 @@
 
 ## Next development stage
 
-- Add an optional free local-model adapter to generate equivalent candidates.
+- Version 0.2 adds a local-model adapter and model-based semantic judging.
+- Evaluate generation and judging with real models on unseen examples.
 - Cache generated alternatives by input, model revision, and constraints.
 - Meter candidate generation, verification, and search separately.
 - Compare automatic generation methods under matched budgets.
