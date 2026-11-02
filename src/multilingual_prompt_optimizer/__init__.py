@@ -5,7 +5,7 @@ from .core import optimize
 from .models import Candidate, OptimizationResult, Request
 from .tokenizers import Counter, JsonTokenizerCounter, TiktokenCounter
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 __all__ = [
     "Candidate",
     "Counter",

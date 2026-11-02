@@ -1,5 +1,21 @@
 # Checked-in local results
 
+## Live local-model development check (0.2.1)
+
+`live-summary-ollama.json` records automatic Qwen3 4B generation and review using
+Ollama 0.40.13. All shorter candidates were rejected, so the original was retained:
+69 to 69 `o200k_base` content tokens (zero savings). The warm run took about 2.85
+seconds, with seven generation/review calls totaling 1,549 local-model input tokens
+and 427 output tokens. This overhead saved no target-input tokens in this example.
+
+`live-summary-task-check.json` contains paired target-model responses and six
+specific format/fact checks, all passing. Because the selected prompt was unchanged,
+these results do not show that compression preserves accuracy. The example and
+review prompts were used during development, not held out. See
+`docs/automatic-mode.md` for the response-limit fix and model-review limitations.
+
+## Earlier selector benchmark (0.1.0)
+
 Generated from the installed version 0.1.0 package on 3 November 2026 using
 `o200k_base` and the commands in the main README.
 

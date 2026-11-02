@@ -67,12 +67,25 @@ The model is not used to execute the user's target task here.
 
 ## Validation of this release
 
-The 39-test suite includes deterministic model doubles and a real loopback HTTP
+The 41-test suite includes deterministic model doubles and a real loopback HTTP
 test server. It checks response format, usage recording, ranking, preservation,
 judge rejection, malformed outputs, offline behavior and bounded validation.
-These tests do not evaluate actual model translations. No live Ollama model was
-available in the development environment, and no model weights were downloaded.
-Real-model quality and end-to-end savings are unmeasured.
+Those automated tests do not evaluate actual model translations. A separate live
+development check was then run with Ollama 0.40.13 and Qwen3 4B Q4_K_M on an NVIDIA
+RTX 5070 Ti. The first attempt reached the review response limit; version 0.2.1
+bounds review explanations and rejects truncated responses explicitly.
+
+The final summary example generated multilingual clauses but the model reviewer
+rejected all shorter candidates, including some on superficial wording/language
+grounds. The original was retained: 69 original and 69 selected `o200k_base`
+content tokens. Task checks for three bullets and the supplied dates/counts passed,
+but the selected prompt was unchanged. This gives no evidence of accuracy under
+compression or total-cost savings. See the checked-in live development records in
+`results/live-summary-ollama.json` and `results/live-summary-task-check.json`.
+
+The generator/reviewer instructions were adjusted during this development check,
+so it is not a held-out evaluation. The model judge remains overly conservative
+in this example. Broader real-model quality and end-to-end savings are unmeasured.
 
 Generation and review can require up to nine inference calls by default. Local
 model elapsed time and available token counts are recorded per call, with overall

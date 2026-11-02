@@ -4,7 +4,7 @@ import threading
 import unittest
 from contextlib import redirect_stderr
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from io import StringIO
+from io import BytesIO, StringIO
 from pathlib import Path
 from unittest.mock import patch
 
@@ -40,6 +40,28 @@ OPTIONS = {"clauses": [{"en": "Summarize.", "zh": "总结。"}]}
 
 
 class AutomaticTests(unittest.TestCase):
+    def test_output_limit_rejected_even_when_partial_json_is_valid(self):
+        model = OllamaModel("local")
+        raw = {
+            "done": True,
+            "done_reason": "length",
+            "eval_count": 2048,
+            "response": json.dumps(OPTIONS),
+        }
+        with patch.object(model._http, "open", return_value=BytesIO(json.dumps(raw).encode())):
+            with self.assertRaisesRegex(RuntimeError, "output-limited"):
+                model.generate("system", {}, {})
+        self.assertEqual(model.calls[-1]["status"], "error")
+        self.assertEqual(model.calls[-1]["done_reason"], "length")
+
+    def test_malformed_response_has_response_error_not_connection_advice(self):
+        model = OllamaModel("local")
+        raw = {"done": True, "response": '{"unfinished":'}
+        with patch.object(model._http, "open", return_value=BytesIO(json.dumps(raw).encode())):
+            with self.assertRaisesRegex(RuntimeError, "invalid, incomplete"):
+                model.generate("system", {}, {})
+        self.assertEqual(model.calls[-1]["error_type"], "JSONDecodeError")
+
     def run_auto(self, model, request=None, **kwargs):
         return auto_optimize(
             request or Request("Please summarize the supplied text."),

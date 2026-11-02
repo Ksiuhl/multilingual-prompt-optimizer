@@ -51,7 +51,7 @@ def _parser() -> argparse.ArgumentParser:
         if name == "auto":
             cmd.add_argument("--model", required=True, help="Installed local Ollama model")
             cmd.add_argument("--verifier-model", help="Optional separate local judge model")
-            cmd.add_argument("--ollama-url", default="http://localhost:11434")
+            cmd.add_argument("--ollama-url", default="http://127.0.0.1:11434")
             cmd.add_argument("--languages", default="en,zh,ja")
             cmd.add_argument("--verification-budget", type=int, default=8)
             cmd.add_argument("--timeout", type=float, default=120)
