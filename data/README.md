@@ -22,3 +22,10 @@ candidate provenance in its report. Each item consists of an ID and the same
 request fields accepted by the Python API.
 
 No model responses or actual API billing measurements are included in these files.
+
+`reviewer-development.json` adds ten equivalent rewrites and ten deliberate meaning
+changes across ten task templates. It is synthetic, assistant-authored development
+data under MIT, not independently reviewed bilingual ground truth. Positive and
+negative members share task templates, so the 20 records are not 20 independent
+tasks. Reviewers see no expected labels. The set was used to choose a review model;
+future validation must use fresh examples.

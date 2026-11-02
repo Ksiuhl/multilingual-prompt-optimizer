@@ -1,0 +1,732 @@
+{
+  "complete": true,
+  "dataset_sha256": "7f5986a8b49fda8de3c2fb05648308428150761b63c334664bcb3bf3186a068a",
+  "review_protocol_sha256": "c76ef16970ca3130a1f17af92a97cc54268c691b804b88baffaf2216c34417cc",
+  "scope": "Synthetic development comparison, one trial per pair/model, assistant-authored labels.",
+  "selection_rule": "Among models with zero false accepts and zero errors, maximize true accepts; ties favor the first model. Otherwise retain the first model with a warning.",
+  "models": [
+    {
+      "model": "qwen3:4b",
+      "metrics": {
+        "true_accepts": 0,
+        "false_accepts": 0,
+        "true_rejects": 10,
+        "false_rejects": 10,
+        "errors": 0,
+        "positives": 10,
+        "negatives": 10,
+        "accuracy": 0.5,
+        "elapsed_ms": 5479.054700117558,
+        "input_tokens": 4266,
+        "output_tokens": 868
+      },
+      "records": [
+        {
+          "id": "R07N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate adds 'Include hashtags.' which violates '不要使用话题标签' (do not use hashtags).",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 36,
+            "total_duration": 228729100,
+            "done_reason": "stop",
+            "elapsed_ms": 238.35010011680424
+          }
+        },
+        {
+          "id": "R06N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate has 4 instead of 5 unique names, differing in quantity.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 211,
+            "eval_count": 30,
+            "total_duration": 192598800,
+            "done_reason": "stop",
+            "elapsed_ms": 213.13789999112487
+          }
+        },
+        {
+          "id": "R09P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original requires English output, candidate is Chinese. Language switching not allowed per instructions.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 206,
+            "eval_count": 31,
+            "total_duration": 198920900,
+            "done_reason": "stop",
+            "elapsed_ms": 201.21329999528825
+          }
+        },
+        {
+          "id": "R07P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original specifies Chinese instruction with English output, candidate uses English instruction with English output. Original requires Chinese output but candidate uses English. Original has '请用' (please use) which is polite request, but in ",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 61,
+            "total_duration": 414256500,
+            "done_reason": "stop",
+            "elapsed_ms": 416.48239991627634
+          }
+        },
+        {
+          "id": "R08N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies 'None' for empty input, candidate says '0'. Different return values for empty input.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 212,
+            "eval_count": 36,
+            "total_duration": 228324700,
+            "done_reason": "stop",
+            "elapsed_ms": 244.0513998735696
+          }
+        },
+        {
+          "id": "R02N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original requires grammar correction without changing meaning, return only corrected text. Candidate adds explanation and uses different phrasing. Unchanged output instruction specifies English, but candidate's output is not the corrected文本",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 206,
+            "eval_count": 54,
+            "total_duration": 323750500,
+            "done_reason": "stop",
+            "elapsed_ms": 342.6836000289768
+          }
+        },
+        {
+          "id": "R04N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate changes amount threshold from 100 to 200, altering the query's condition.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 36,
+            "total_duration": 213842500,
+            "done_reason": "stop",
+            "elapsed_ms": 215.81530012190342
+          }
+        },
+        {
+          "id": "R01N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies 3 bullets, candidate says 4. Quantities differ.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 30,
+            "total_duration": 191576900,
+            "done_reason": "stop",
+            "elapsed_ms": 208.01780000329018
+          }
+        },
+        {
+          "id": "R06P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original specifies 'exactly 5 unique names', candidate says '5 distinct names' (same meaning), but original requires 'names' while candidate uses 'names' (same), however, the key difference is 'exactly' vs 'distinct' - 'exactly' implies a 5",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 208,
+            "eval_count": 76,
+            "total_duration": 441270700,
+            "done_reason": "stop",
+            "elapsed_ms": 467.3079999629408
+          }
+        },
+        {
+          "id": "R10P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original specifies '没有负责人' (no owner) but candidate says 'owner is missing' which is a different concept. Also, original uses Chinese for 'priority' while candidate uses English.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 53,
+            "total_duration": 296783900,
+            "done_reason": "stop",
+            "elapsed_ms": 300.25009997189045
+          }
+        },
+        {
+          "id": "R05P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Candidate uses Chinese characters and structure, but original specifies English output. Language switching is not allowed per instructions.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 36,
+            "total_duration": 211793600,
+            "done_reason": "stop",
+            "elapsed_ms": 230.69420014508069
+          }
+        },
+        {
+          "id": "R01P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Candidate uses Chinese for the instruction, but original is in English. Candidate also has a semicolon after 'numbers' which is inconsistent with original's punctuation style.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 49,
+            "total_duration": 299364300,
+            "done_reason": "stop",
+            "elapsed_ms": 319.09769983030856
+          }
+        },
+        {
+          "id": "R10N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies 'high priority AND no owner', candidate uses 'OR' and 'owner is missing' (which is ambiguous). Also, original requires Chinese output but candidate is English.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 51,
+            "total_duration": 290010700,
+            "done_reason": "stop",
+            "elapsed_ms": 293.40680013410747
+          }
+        },
+        {
+          "id": "R08P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original specifies English output, candidate is Chinese. Language switching not allowed per instructions.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 212,
+            "eval_count": 31,
+            "total_duration": 188278500,
+            "done_reason": "stop",
+            "elapsed_ms": 191.58659991808236
+          }
+        },
+        {
+          "id": "R05N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies null for missing due dates, candidate uses empty strings.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 28,
+            "total_duration": 173682500,
+            "done_reason": "stop",
+            "elapsed_ms": 185.9114000108093
+          }
+        },
+        {
+          "id": "R04P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original specifies 'sorted ascending' but candidate uses Chinese punctuation and structure; candidate lacks explicit 'ascending' in translation, and output format differs (English vs Chinese).",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 219,
+            "eval_count": 48,
+            "total_duration": 277983600,
+            "done_reason": "stop",
+            "elapsed_ms": 281.4713001716882
+          }
+        },
+        {
+          "id": "R09N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies \"READY\" in uppercase, candidate uses \"Ready\" with capital 'R' and lowercase 'e', 'a', 'd', 'y'.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 205,
+            "eval_count": 48,
+            "total_duration": 267977200,
+            "done_reason": "stop",
+            "elapsed_ms": 271.90040005370975
+          }
+        },
+        {
+          "id": "R03N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies English translation; candidate specifies Spanish translation. Language mismatch in target language.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 211,
+            "eval_count": 33,
+            "total_duration": 221401700,
+            "done_reason": "stop",
+            "elapsed_ms": 238.51360008120537
+          }
+        },
+        {
+          "id": "R03P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Candidate is in Chinese, original is in English. Candidate does not translate into English as required. Candidate uses Chinese characters instead of English translation.",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 211,
+            "eval_count": 43,
+            "total_duration": 251474400,
+            "done_reason": "stop",
+            "elapsed_ms": 274.96219985187054
+          }
+        },
+        {
+          "id": "R02P",
+          "expected": true,
+          "equivalent": false,
+          "reason": "Original requires correcting grammar without changing meaning and returning only corrected text. Candidate omits 'without changing meaning' and adds 'preserve meaning' which is redundant, and changes the structure to a command instead of a ",
+          "correct": false,
+          "call": {
+            "model": "qwen3:4b",
+            "status": "success",
+            "prompt_eval_count": 207,
+            "eval_count": 58,
+            "total_duration": 340253000,
+            "done_reason": "stop",
+            "elapsed_ms": 343.4808999300003
+          }
+        }
+      ]
+    },
+    {
+      "model": "qwen3:8b",
+      "metrics": {
+        "true_accepts": 10,
+        "false_accepts": 0,
+        "true_rejects": 10,
+        "false_rejects": 0,
+        "errors": 0,
+        "positives": 10,
+        "negatives": 10,
+        "accuracy": 1.0,
+        "elapsed_ms": 14564.5463000983,
+        "input_tokens": 4386,
+        "output_tokens": 592
+      },
+      "records": [
+        {
+          "id": "R07N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate added 'Include hashtags' which contradicts original's '不要使用话题标签' (do not use hashtags).",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 223,
+            "eval_count": 35,
+            "total_duration": 9846624900,
+            "done_reason": "stop",
+            "elapsed_ms": 9866.933500161394
+          }
+        },
+        {
+          "id": "R06N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original requests 5 names, candidate requests 4.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 21,
+            "total_duration": 172710800,
+            "done_reason": "stop",
+            "elapsed_ms": 174.7610999736935
+          }
+        },
+        {
+          "id": "R09P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions require returning the exact string \"READY\" without additional text. The language switch is allowed.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 212,
+            "eval_count": 30,
+            "total_duration": 236446700,
+            "done_reason": "stop",
+            "elapsed_ms": 257.5624999590218
+          }
+        },
+        {
+          "id": "R07P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions request a friendly announcement in English, limit to 50 words, and prohibit hashtags. No additions, omissions, or ambiguities.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 224,
+            "eval_count": 42,
+            "total_duration": 336681300,
+            "done_reason": "stop",
+            "elapsed_ms": 365.1744998060167
+          }
+        },
+        {
+          "id": "R08N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original requires returning None for empty input, candidate returns 0.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 25,
+            "total_duration": 205857400,
+            "done_reason": "stop",
+            "elapsed_ms": 224.1611999925226
+          }
+        },
+        {
+          "id": "R02N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate adds explanation requirement not in original",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 212,
+            "eval_count": 17,
+            "total_duration": 140837200,
+            "done_reason": "stop",
+            "elapsed_ms": 142.90140010416508
+          }
+        },
+        {
+          "id": "R04N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies amount >= 100, candidate specifies amount >= 200.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 223,
+            "eval_count": 28,
+            "total_duration": 229919400,
+            "done_reason": "stop",
+            "elapsed_ms": 255.1128000486642
+          }
+        },
+        {
+          "id": "R01N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Candidate changes bullet count from 3 to 4, altering the original instruction.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 224,
+            "eval_count": 26,
+            "total_duration": 216678900,
+            "done_reason": "stop",
+            "elapsed_ms": 233.7968999054283
+          }
+        },
+        {
+          "id": "R06P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both requests ask for 5 unique names, each a single English word, with no additional requirements.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 214,
+            "eval_count": 32,
+            "total_duration": 263175400,
+            "done_reason": "stop",
+            "elapsed_ms": 266.4179001003504
+          }
+        },
+        {
+          "id": "R10P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions request returning IDs of high-priority tasks without an owner, in original order. Language and structure differences are acceptable.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 224,
+            "eval_count": 35,
+            "total_duration": 281148900,
+            "done_reason": "stop",
+            "elapsed_ms": 295.0583000201732
+          }
+        },
+        {
+          "id": "R05P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions require a JSON array with owner and due keys, with missing due dates as null. Language differences are allowed.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 223,
+            "eval_count": 34,
+            "total_duration": 270894400,
+            "done_reason": "stop",
+            "elapsed_ms": 274.17550003156066
+          }
+        },
+        {
+          "id": "R01P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions request a 3-bullet summary with preserved dates/numbers and no added facts. Language switch allowed.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 223,
+            "eval_count": 33,
+            "total_duration": 260150400,
+            "done_reason": "stop",
+            "elapsed_ms": 262.12369999848306
+          }
+        },
+        {
+          "id": "R10N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies 'priority is high AND owner is missing', candidate uses 'OR'.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 224,
+            "eval_count": 27,
+            "total_duration": 215161300,
+            "done_reason": "stop",
+            "elapsed_ms": 217.11919992230833
+          }
+        },
+        {
+          "id": "R08P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions require fixing average(xs) to return None for empty input and output only Python code.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 218,
+            "eval_count": 31,
+            "total_duration": 246452800,
+            "done_reason": "stop",
+            "elapsed_ms": 267.225599847734
+          }
+        },
+        {
+          "id": "R05N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies null for missing due dates; candidate uses empty strings.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 224,
+            "eval_count": 23,
+            "total_duration": 185396700,
+            "done_reason": "stop",
+            "elapsed_ms": 200.27839997783303
+          }
+        },
+        {
+          "id": "R04P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both original and candidate correctly specify filtering non-cancelled orders with amount >=100 and sorting ascending, with unchanged output instruction.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 225,
+            "eval_count": 36,
+            "total_duration": 281160900,
+            "done_reason": "stop",
+            "elapsed_ms": 296.50659998878837
+          }
+        },
+        {
+          "id": "R09N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original specifies \"READY\" in uppercase; candidate uses \"Ready\" with lowercase 'R' and uppercase 'Y'.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 211,
+            "eval_count": 34,
+            "total_duration": 269541800,
+            "done_reason": "stop",
+            "elapsed_ms": 284.4465000089258
+          }
+        },
+        {
+          "id": "R03N",
+          "expected": false,
+          "equivalent": false,
+          "reason": "Original requests translation into English; candidate requests translation into Spanish.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 24,
+            "total_duration": 191127200,
+            "done_reason": "stop",
+            "elapsed_ms": 193.65060003474355
+          }
+        },
+        {
+          "id": "R03P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions require translation into English, retention of names and dates, and returning only the translation.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 217,
+            "eval_count": 31,
+            "total_duration": 241051200,
+            "done_reason": "stop",
+            "elapsed_ms": 243.13529999926686
+          }
+        },
+        {
+          "id": "R02P",
+          "expected": true,
+          "equivalent": true,
+          "reason": "Both instructions require grammar correction without altering meaning and specify returning only the corrected text.",
+          "correct": true,
+          "call": {
+            "model": "qwen3:8b",
+            "status": "success",
+            "prompt_eval_count": 213,
+            "eval_count": 28,
+            "total_duration": 219514100,
+            "done_reason": "stop",
+            "elapsed_ms": 243.3059001341462
+          }
+        }
+      ]
+    }
+  ],
+  "selected_model": "qwen3:8b",
+  "selection_warning": null,
+  "runtime": {
+    "recorded_at_utc": "2026-11-02T20:13:06.147166+00:00",
+    "optimizer_version": "0.3.0",
+    "python_version": "3.12.14",
+    "ollama_version": "0.40.13",
+    "models": [
+      {
+        "name": "qwen3:8b",
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "size": 5225388164,
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 4096,
+          "runner": "ggml"
+        }
+      },
+      {
+        "name": "qwen3:4b",
+        "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+        "size": 2497293931,
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 2560,
+          "runner": "ggml"
+        }
+      }
+    ]
+  },
+  "metadata_captured_after_run": true
+}

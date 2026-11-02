@@ -1,5 +1,9 @@
 # Research scope and evidence
 
+The later reviewer and automatic-generation development experiments are documented
+in [the reviewer study](reviewer-study.md). They extend the earlier manual and
+rule-based work below; they do not replace independent semantic/task evaluation.
+
 ## Question
 
 Can selecting semantically equivalent wording across languages reduce the target

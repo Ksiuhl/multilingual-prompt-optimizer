@@ -1,0 +1,67 @@
+{
+  "original": {
+    "response": {
+      "bullets": [
+        "The pilot launched on 2 November 2026 with 120 users.",
+        "Of those, 96 completed onboarding.",
+        "Two payment bugs remain open. The next review is on 9 November 2026."
+      ]
+    },
+    "model_usage": {
+      "model": "qwen3:4b",
+      "status": "success",
+      "prompt_eval_count": 117,
+      "eval_count": 66,
+      "total_duration": 374293100,
+      "done_reason": "stop",
+      "elapsed_ms": 382.8356999438256
+    },
+    "checks": {
+      "three_bullets": true,
+      "user_count_120": true,
+      "onboarded_96": true,
+      "launch_date": true,
+      "review_date": true,
+      "two_payment_bugs": true
+    }
+  },
+  "optimized": {
+    "response": {
+      "bullets": [
+        "The pilot launched on 2 November 2026 with 120 users.",
+        "Of those, 96 completed onboarding.",
+        "Two payment bugs remain open."
+      ]
+    },
+    "model_usage": {
+      "model": "qwen3:4b",
+      "status": "success",
+      "prompt_eval_count": 112,
+      "eval_count": 52,
+      "total_duration": 301128300,
+      "done_reason": "stop",
+      "elapsed_ms": 303.1363000627607
+    },
+    "checks": {
+      "three_bullets": true,
+      "user_count_120": true,
+      "onboarded_96": true,
+      "launch_date": true,
+      "review_date": false,
+      "two_payment_bugs": true
+    }
+  },
+  "limitations": [
+    "One synthetic task, one run per condition, same model as generator and judge.",
+    "Specific fact/format checks are not independent or comprehensive semantic accuracy evaluation.",
+    "Matched structured-output wrapping was used for both task calls; no target API billing was measured."
+  ],
+  "live_run": {
+    "optimizer_version": "0.3.0",
+    "development_only": true,
+    "generator_model": "qwen3:4b",
+    "reviewer_model": "qwen3:8b",
+    "target_model": "qwen3:4b",
+    "task": "summary example after reviewer selection"
+  }
+}

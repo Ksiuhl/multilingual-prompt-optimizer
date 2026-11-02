@@ -102,11 +102,12 @@ using them in consequential tasks.
 ## Automatic mode for new sentences
 
 Install [Ollama](https://ollama.com/download), start it, then download a local
-multilingual model once (the example model is approximately 2.5 GB):
+multilingual generator and reviewer once (approximately 2.5 GB and 5.2 GB):
 
 ```bash
 ollama pull qwen3:4b
-mpo auto --input examples/automatic.json --model qwen3:4b --output results/local/auto.json
+ollama pull qwen3:8b
+mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
 ```
 
 Edit the example's `instruction` and `payload` to try your own text. No prewritten
@@ -115,9 +116,18 @@ The tool generates aligned clauses, searches up to 256 combinations, then asks a
 model to judge the shortest structurally acceptable complete instructions. It
 selects the first approved candidate, or keeps the original if none is approved.
 
-By default the same model generates and judges in separate calls. Set
-`--verifier-model NAME` to experiment with a different installed local model.
-Different model names do not establish independent validation or task accuracy.
+The example uses Qwen3 4B to generate and Qwen3 8B to review. The 8B reviewer got
+20/20 labels right on our small synthetic reviewer development set; 4B got 10/20,
+rejecting all valid rewrites. This supports the example configuration on these
+cases, not general semantic reliability. If `--verifier-model` is omitted, the same
+model generates and judges. Different model names do not establish independent
+validation or task accuracy. See [the study](docs/reviewer-study.md).
+
+**Observed limitation:** the reviewer-approved demo reduced 69 to 65 content tokens,
+but its target-model summary omitted a required review date. The original response
+kept it. This one-run development check is a failure observation, not proof of
+causality or a general accuracy rate. Check target-task outputs before relying on
+compression; the current prototype does not provide automatic task-quality gating.
 
 Source payloads stay outside the model-generation and judging requests. The
 instruction and unchanged output constraint go to the configured loopback Ollama

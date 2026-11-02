@@ -1,0 +1,167 @@
+{
+  "description": "20 synthetic development review pairs: 10 equivalent and 10 changed. Not held out.",
+  "label_provenance": "Assistant-authored task-constraint labels; no independent human bilingual review.",
+  "license": "MIT",
+  "items": [
+    {
+      "id": "R07N",
+      "original": "请用不超过50个英文单词写一段友好的公告。不要使用话题标签。",
+      "candidate": "Write a friendly announcement in at most 50 English words. Include hashtags.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "negation"
+    },
+    {
+      "id": "R06N",
+      "original": "Suggest exactly 5 unique names, each consisting of one English word.",
+      "candidate": "Suggest exactly 4 unique names, each consisting of one English word.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "count"
+    },
+    {
+      "id": "R09P",
+      "original": "Return exactly the string \"READY\" with no additional text.",
+      "candidate": "只返回精确字符串\"READY\"，不要其他文字。",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "literal case"
+    },
+    {
+      "id": "R07P",
+      "original": "请用不超过50个英文单词写一段友好的公告。不要使用话题标签。",
+      "candidate": "Write a friendly announcement in at most 50 English words. Use no hashtags.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "negation"
+    },
+    {
+      "id": "R08N",
+      "original": "Fix average(xs) so empty input returns None. Return only Python code.",
+      "candidate": "Fix average(xs) so empty input returns 0. Return only Python code.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "empty-input behavior"
+    },
+    {
+      "id": "R02N",
+      "original": "Please correct the grammar without changing meaning. Return only the corrected text.",
+      "candidate": "Correct grammar, preserve meaning, and explain each edit.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "output-only requirement"
+    },
+    {
+      "id": "R04N",
+      "original": "Return IDs of non-cancelled orders with amount >= 100, sorted ascending.",
+      "candidate": "Return IDs of non-cancelled orders with amount >= 200, sorted ascending.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "threshold"
+    },
+    {
+      "id": "R01N",
+      "original": "Please summarize the text in exactly 3 bullets. Preserve dates and numbers; add no facts.",
+      "candidate": "Summarize in exactly 4 bullets. Preserve dates and numbers; add no facts.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "bullet quantity"
+    },
+    {
+      "id": "R06P",
+      "original": "Suggest exactly 5 unique names, each consisting of one English word.",
+      "candidate": "Give 5 distinct names, each a single English word.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "count"
+    },
+    {
+      "id": "R10P",
+      "original": "只返回优先级为high且没有负责人任务的ID，按原顺序排列。",
+      "candidate": "Return only IDs of tasks whose priority is high AND owner is missing, in original order.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "AND versus OR"
+    },
+    {
+      "id": "R05P",
+      "original": "Return only a JSON array with owner and due keys. Missing due dates must be null.",
+      "candidate": "仅返回含owner和due键的JSON数组；缺失截止日期用null。",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "null versus empty"
+    },
+    {
+      "id": "R01P",
+      "original": "Please summarize the text in exactly 3 bullets. Preserve dates and numbers; add no facts.",
+      "candidate": "用恰好3个要点总结文本。 Preserve dates and numbers; add no facts.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "bullet quantity"
+    },
+    {
+      "id": "R10N",
+      "original": "只返回优先级为high且没有负责人任务的ID，按原顺序排列。",
+      "candidate": "Return only IDs of tasks whose priority is high OR owner is missing, in original order.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "AND versus OR"
+    },
+    {
+      "id": "R08P",
+      "original": "Fix average(xs) so empty input returns None. Return only Python code.",
+      "candidate": "修复average(xs)：空输入返回None。仅输出Python代码。",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "empty-input behavior"
+    },
+    {
+      "id": "R05N",
+      "original": "Return only a JSON array with owner and due keys. Missing due dates must be null.",
+      "candidate": "Return only a JSON array with owner and due keys. Missing due dates must be empty strings.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "null versus empty"
+    },
+    {
+      "id": "R04P",
+      "original": "Return IDs of non-cancelled orders with amount >= 100, sorted ascending.",
+      "candidate": "筛选金额>=100且未取消的订单；按升序仅返回ID。",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "threshold"
+    },
+    {
+      "id": "R09N",
+      "original": "Return exactly the string \"READY\" with no additional text.",
+      "candidate": "Return exactly the string \"Ready\" with no additional text.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "literal case"
+    },
+    {
+      "id": "R03N",
+      "original": "Translate into English. Keep names and dates unchanged. Return only the translation.",
+      "candidate": "Translate into Spanish. Keep names and dates unchanged. Return only the translation.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": false,
+      "category": "target language"
+    },
+    {
+      "id": "R03P",
+      "original": "Translate into English. Keep names and dates unchanged. Return only the translation.",
+      "candidate": "译成英语；保留姓名和日期；只返回译文。",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "target language"
+    },
+    {
+      "id": "R02P",
+      "original": "Please correct the grammar without changing meaning. Return only the corrected text.",
+      "candidate": "Correct grammar, preserve meaning, and return only corrected text.",
+      "output_instruction": "Respond in English.",
+      "expected_equivalent": true,
+      "category": "output-only requirement"
+    }
+  ]
+}

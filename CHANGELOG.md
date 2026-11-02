@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — reviewer development study and automatic benchmark
+
+- Added 20 synthetic labeled review pairs and a reproducible two-model comparison.
+- Selected Qwen3 8B for the documented review configuration using a fixed development rule.
+- Added a 30-task shared-generation comparison of English, single-language and mixed search.
+- Recorded per-call local-model usage, timing, candidate decisions and protocol fingerprints.
+- Shared generation and judging functions between production and research scripts.
+- Added three review validation tests (44 tests total).
+
 ## 0.2.1 — first live-model check
 
 - Bounded semantic-review explanations to avoid overlong structured output.

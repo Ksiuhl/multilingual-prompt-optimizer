@@ -1,4 +1,4 @@
-# Automatic multilingual mode (0.2)
+# Automatic multilingual mode
 
 The new module `automatic.py` provides `OllamaModel` and `auto_optimize`. It adds
 candidate generation and judging to the existing tokenizer search. It requires a
@@ -11,7 +11,8 @@ After the normal Python installation and Ollama setup:
 
 ```bash
 ollama pull qwen3:4b
-mpo auto --input examples/automatic.json --model qwen3:4b --output results/local/auto.json
+ollama pull qwen3:8b
+mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
 ```
 
 The model example is from the official [Ollama model library](https://ollama.com/library/qwen3:4b).
@@ -38,6 +39,11 @@ tokenizer or a target provider's billed tokens.
 5. Select the first approved candidate; otherwise return the original. Reject
    candidates not reviewed within budget. On connection/schema/judging errors,
    return the original with an error report.
+
+The documented configuration uses 4B generation and 8B review, selected on the
+20-pair development study in `docs/reviewer-study.md`. If no `--verifier-model` is
+supplied, the library/CLI still uses the generating model for review; no extra model
+is silently downloaded or required.
 
 The default languages are `en,zh,ja`; supported codes also include `es,fr,de,ko`.
 Use `--languages en,zh,es`, `--verification-budget 4`, `--timeout 120`, or
@@ -67,7 +73,7 @@ The model is not used to execute the user's target task here.
 
 ## Validation of this release
 
-The 41-test suite includes deterministic model doubles and a real loopback HTTP
+The 44-test suite includes deterministic model doubles and a real loopback HTTP
 test server. It checks response format, usage recording, ranking, preservation,
 judge rejection, malformed outputs, offline behavior and bounded validation.
 Those automated tests do not evaluate actual model translations. A separate live
@@ -86,6 +92,11 @@ compression or total-cost savings. See the checked-in live development records i
 The generator/reviewer instructions were adjusted during this development check,
 so it is not a held-out evaluation. The model judge remains overly conservative
 in this example. Broader real-model quality and end-to-end savings are unmeasured.
+
+The later 0.3 study froze the review protocol and compared 4B and 8B reviewers.
+It selected 8B on synthetic development labels, then ran the 30-task automatic
+comparison. See `docs/reviewer-study.md`; these later checks are also development
+work and do not establish target-task accuracy or total-cost savings.
 
 Generation and review can require up to nine inference calls by default. Local
 model elapsed time and available token counts are recorded per call, with overall

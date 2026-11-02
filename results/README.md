@@ -1,5 +1,22 @@
 # Checked-in local results
 
+## Reviewer and automatic-search study (0.3.0)
+
+The 20-pair synthetic reviewer comparison is in `reviewer-comparison.json`. Qwen3
+8B matched all 20 development labels; 4B matched 10, rejecting all equivalent cases.
+This is a small model-selection set, not independent validation.
+
+Two 30-task runs are retained in `automatic-benchmark-first-run.json` and
+`automatic-benchmark.json`. They ignore authored alternatives and use local-model
+generation. Mixed search saved 19–24 content tokens beyond English-only and 17
+beyond single-language search, with additional review overhead. No task accuracy
+or monetary advantage was demonstrated. See `docs/reviewer-study.md` for full
+methodology, timing, usage and limitations, and `research/README.md` to reproduce.
+
+The separate `live-summary-8b-review.json` / `live-summary-8b-task-check.json` pair
+records 69 to 65 content tokens but a missing review date in the compressed task
+output. It is a retained quality failure, not a successful accuracy benchmark.
+
 ## Live local-model development check (0.2.1)
 
 `live-summary-ollama.json` records automatic Qwen3 4B generation and review using

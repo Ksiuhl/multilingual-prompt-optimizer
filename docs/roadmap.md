@@ -17,6 +17,8 @@
 
 ## Research validation
 
+- Add task-specific quality checks and repeated paired trials. The reviewer-approved
+  65-token summary demo omitted a required date, so reviewer approval is insufficient.
 - Independent semantic checks and hidden evaluation examples.
 - Broader languages and prompt lengths, without tuning on the evaluation set.
 - Target-model response checks and complete usage/cost accounting.
