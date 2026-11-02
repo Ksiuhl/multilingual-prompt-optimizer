@@ -1,5 +1,15 @@
 # Checked-in local results
 
+## Template reuse (0.5.0)
+
+`template-reuse-v050.json` records four longer templates with two calibration and
+ten fresh test inputs each. No shortened template was admitted, so all 40 test
+prompts per policy were originals and all policies attempted 12,242 content tokens.
+The 1/10-use endpoints are measured; 100/1,000-use endpoints are conditional
+projections without accuracy forecasts. See `docs/template-reuse-study.md` and the
+`v050-*` PNG/SVG/PDF figures. No cache-induced quality, token or time advantage is
+claimed from identical-prompt answer/timing variation.
+
 ## Task-answer validation (0.4.0)
 
 `task-quality-v040.json` records 20 fixtures × 3 repeats. Original passed 33/60,

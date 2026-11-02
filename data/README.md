@@ -1,5 +1,12 @@
 # Dataset provenance
 
+`template-reuse-development.json` contains four longer assistant-authored development
+templates, each with two calibration inputs and ten fresh test inputs. Calibration
+and test membership was fixed before generation; test inputs were excluded from
+cache admission. They are new synthetic values in familiar task/oracle families,
+not independently curated external evaluation. Project-authored data is MIT licensed.
+The 100/1,000-use points are conditional projections, not additional data or model runs.
+
 `development.json` contains 30 original synthetic task examples: 15 English-source
 and 15 Chinese-source prompts. The broad categories were informed by
 [OpenAI's usage research](https://openai.com/index/how-people-are-using-chatgpt/).

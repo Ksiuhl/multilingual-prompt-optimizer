@@ -25,7 +25,15 @@ class JsonModel(Protocol):
 class OllamaModel:
     """Use only a loopback Ollama endpoint; never download models automatically."""
 
-    def __init__(self, model: str, base_url: str = "http://127.0.0.1:11434", timeout=120):
+    def __init__(
+        self,
+        model: str,
+        base_url: str = "http://127.0.0.1:11434",
+        timeout=120,
+        *,
+        num_predict: int = 2048,
+        context_length: int = 4096,
+    ):
         parsed = urlsplit(base_url)
         if (
             parsed.scheme != "http"
@@ -41,13 +49,18 @@ class OllamaModel:
             raise ValueError("choose an installed local model, not an Ollama cloud model")
         if not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
             raise ValueError("timeout must be positive and finite")
+        if type(num_predict) is not int or not 64 <= num_predict <= 8192:
+            raise ValueError("num_predict must be an integer from 64 to 8192")
+        if type(context_length) is not int or not 4096 <= context_length <= 32768:
+            raise ValueError("context_length must be an integer from 4096 to 32768")
         self.model, self.base_url, self.timeout = model, base_url.rstrip("/"), timeout
+        self.options = {"temperature": 0, "num_predict": num_predict, "num_ctx": context_length}
         self.calls = []
         self._http = build_opener(ProxyHandler({}))
 
     def generate(self, system: str, data: dict, schema: dict) -> dict:
         start = time.perf_counter()
-        record = {"model": self.model, "status": "error"}
+        record = {"model": self.model, "status": "error", "options": dict(self.options)}
         self.calls.append(record)
         request = HttpRequest(
             self.base_url + "/api/generate",
@@ -59,7 +72,7 @@ class OllamaModel:
                     "format": schema,
                     "stream": False,
                     "think": False,
-                    "options": {"temperature": 0, "num_predict": 2048},
+                    "options": dict(self.options),
                 }
             ).encode("utf-8"),
             headers={"Content-Type": "application/json"},

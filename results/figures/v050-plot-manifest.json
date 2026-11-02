@@ -1,0 +1,65 @@
+{
+  "source_canonical_sha256": "51e9d127d86284ba5c33bc6c20ef43c6ead6a68f1a83165e108566bae410d3df",
+  "plot_script_sha256": "72b2564912716ac7d340ecf665b6ef87ff9ebb13528be8e9b46d176b7f5a1026",
+  "matplotlib_version": "3.11.2",
+  "artifacts": [
+    "v050-reuse-overview.png",
+    "v050-reuse-overview.svg",
+    "v050-reuse-overview.pdf",
+    "v050-cache-admission.png",
+    "v050-cache-admission.svg",
+    "v050-cache-admission.pdf"
+  ],
+  "summary": {
+    "original": {
+      "passed": 22,
+      "inputs": 40,
+      "candidate_passed": 22,
+      "fallbacks": 0,
+      "content_tokens_attempted": 12242,
+      "preparation_ms": 0,
+      "mean_execution_ms_per_request": 223.39856249745935,
+      "target_usage": {
+        "calls": 40,
+        "input_tokens": 15308,
+        "output_tokens": 1238,
+        "elapsed_ms": 8932.325099594891
+      },
+      "distinct_prompt_inputs": 0
+    },
+    "english": {
+      "passed": 23,
+      "inputs": 40,
+      "candidate_passed": 23,
+      "fallbacks": 0,
+      "content_tokens_attempted": 12242,
+      "preparation_ms": 19702.533199917525,
+      "mean_execution_ms_per_request": 222.61454252293333,
+      "target_usage": {
+        "calls": 40,
+        "input_tokens": 15308,
+        "output_tokens": 1231,
+        "elapsed_ms": 8787.778300233185
+      },
+      "projected_time_break_even_uses_per_template": null,
+      "distinct_prompt_inputs": 0
+    },
+    "mixed": {
+      "passed": 23,
+      "inputs": 40,
+      "candidate_passed": 23,
+      "fallbacks": 0,
+      "content_tokens_attempted": 12242,
+      "preparation_ms": 27517.127299681306,
+      "mean_execution_ms_per_request": 221.6990224958863,
+      "target_usage": {
+        "calls": 40,
+        "input_tokens": 15308,
+        "output_tokens": 1231,
+        "elapsed_ms": 8747.181199723855
+      },
+      "projected_time_break_even_uses_per_template": null,
+      "distinct_prompt_inputs": 0
+    }
+  }
+}

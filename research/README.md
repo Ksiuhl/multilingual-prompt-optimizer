@@ -1,5 +1,19 @@
 # Reproduce the development studies
 
+For the longer-template reuse study:
+
+```bash
+python research/evaluate_template_reuse.py --output results/local/template-reuse.json --cache-dir results/local/template-cache --refresh
+python research/plot_template_reuse.py --input results/local/template-reuse.json --output-dir results/local/figures
+python research/run_cached_template.py --study results/local/template-reuse.json --cache-dir results/local/template-cache --template code
+```
+
+Install `.[dev,plots]` and both local models first. Cache admission sees only the two
+calibration inputs per template, never the ten test inputs. Fresh execution still
+uses full-prompt recounting and task checks. Existing caches require `--refresh` for
+a new measured preparation run. The graphs distinguish measured 1/10-use endpoints
+from conditional 100/1,000-use projections; no higher-use accuracy is inferred.
+
 For the later answer-validation experiment and graphs:
 
 ```bash

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — reusable template cache and reuse projections
+
+- Added atomic instruction-only caching with identity checks, corruption detection and original fallback.
+- Added calibration admission, per-new-input full-prompt recounting and a no-preparation-call cache demo.
+- Added four longer development templates, two calibration inputs and ten fresh test inputs each.
+- Measured 1/10-use endpoints and labeled 100/1,000-use projections with no projected accuracy claims.
+- Retained the negative result: no shorter template admitted, no prompt-token saving demonstrated.
+- Suppressed spurious identical-prompt timing-jitter crossover claims; added PNG/SVG/PDF graphs.
+- Added bounded generator context/output settings for longer instructions (73 engineering tests total).
+
 ## 0.4.0 — task-answer validation and graphs
 
 - Added source-derived extraction/filtering/arithmetic validators and bounded Python-AST behavior checks.

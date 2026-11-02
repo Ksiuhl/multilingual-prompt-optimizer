@@ -14,6 +14,30 @@ reformulations using a local Ollama model, then runs a separate semantic judging
 pass. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
+## v0.5: reusable instruction cache
+
+`TemplateCache` stores calibrated instructions and identity metadata, not source
+payloads or answers. It recounts the full prompt for each new input, invalidates on
+context/fingerprint changes, and keeps the original if reuse would increase tokens.
+Applications must still validate each task answer. The key must include current
+model revisions/options and task/protocol/validator identity; the study includes
+the target model profile in the protocol fingerprint.
+
+![v0.5 measured endpoints and conditional reuse projections](results/figures/v050-reuse-overview.png)
+
+Four longer templates used two calibration inputs each, followed by 40 fresh inputs.
+**No shortened template survived preparation**, so all policies used original
+instructions and attempted the same 12,242 content tokens. A cache hit avoided
+repeating preparation but did not create token savings. The 100/1,000-use points
+are projections, not executed workloads; no monetary or meaningful time break-even
+was demonstrated. See [the reuse study](docs/template-reuse-study.md).
+
+```bash
+python research/evaluate_template_reuse.py --output results/local/template-reuse.json --cache-dir results/local/template-cache --refresh
+python research/plot_template_reuse.py --input results/local/template-reuse.json --output-dir results/local/figures
+python research/run_cached_template.py --study results/local/template-reuse.json --cache-dir results/local/template-cache --template code
+```
+
 ## v0.4: validate actual task answers
 
 The new task gate checks configured extraction, filtering, arithmetic and small
@@ -234,7 +258,7 @@ python -m unittest discover -s tests -v
 python -m build
 ```
 
-The current local engineering suite has 61 tests. These test implementation behavior,
+The current local engineering suite has 73 tests. These test implementation behavior,
 not a guarantee of model task accuracy. Install `.[plots]` to regenerate the charts.
 
 GitHub Actions runs checks on Windows/Linux and Python 3.11/3.12. Check the
