@@ -1,0 +1,30 @@
+name: Test and package
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    env:
+      TIKTOKEN_CACHE_DIR: ${{ github.workspace }}/.cache/tiktoken
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install ".[dev,hf]"
+      - run: ruff check .
+      - run: python -m unittest discover -s tests -v
+      - run: python -m build
+      - run: mpo optimize --input examples/summary.json --output results/local/example.json
+      - run: mpo benchmark --input data/development.json --output results/local/development.json

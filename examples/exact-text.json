@@ -1,0 +1,8 @@
+{
+  "instruction": "Return the following text exactly. Do not translate or edit it.",
+  "payload": "Please keep this message unchanged.",
+  "output_instruction": "",
+  "protected_literals": [
+    "Please keep this message unchanged."
+  ]
+}

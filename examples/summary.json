@@ -1,0 +1,23 @@
+{
+  "instruction": "Please summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.",
+  "payload": "The pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.",
+  "output_instruction": "Respond in English.",
+  "protected_literals": [],
+  "phrase_options": [
+    {
+      "en": "Summarize the update.",
+      "zh": "总结以下更新。",
+      "ja": "次の更新を要約。"
+    },
+    {
+      "en": "Use exactly 3 bullets.",
+      "zh": "恰好3个要点。",
+      "ja": "箇条書きはちょうど3点。"
+    },
+    {
+      "en": "Preserve dates and numbers; add no facts.",
+      "zh": "保留日期和数字，不添加事实。",
+      "ja": "日付と数値を保持し、事実を追加しない。"
+    }
+  ]
+}

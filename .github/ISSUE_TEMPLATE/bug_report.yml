@@ -1,0 +1,24 @@
+name: Bug report
+description: Report an incorrect selection, preservation failure, or installation problem
+body:
+  - type: textarea
+    id: example
+    attributes:
+      label: Minimal example
+      description: Use a synthetic example without private prompt data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: tokenizer
+    attributes:
+      label: Tokenizer name or file fingerprint
+  - type: input
+    id: environment
+    attributes:
+      label: Python version and operating system

@@ -1,0 +1,466 @@
+{
+  "tokenizer": "o200k_base",
+  "original_tokens": 69,
+  "selected_tokens": 64,
+  "saved_tokens": 5,
+  "reduction": 0.07246376811594203,
+  "selected_label": "phrases:zh/en/en",
+  "prompt": "总结以下更新。 Use exactly 3 bullets. Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+  "candidates": [
+    {
+      "label": "original",
+      "source": "original",
+      "instruction": "Please summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.",
+      "prompt": "Please summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 69,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": []
+    },
+    {
+      "label": "promptmin:lite",
+      "source": "promptmin",
+      "instruction": "summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.",
+      "prompt": "summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 70,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": []
+    },
+    {
+      "label": "promptmin:translate",
+      "source": "promptmin",
+      "instruction": "summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.",
+      "prompt": "summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 70,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": []
+    },
+    {
+      "label": "phrases:en/en/en",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. Use exactly 3 bullets. Preserve dates and numbers; add no facts.",
+      "prompt": "Summarize the update. Use exactly 3 bullets. Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 66,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "en",
+        "en",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:en/en/zh",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. Use exactly 3 bullets. 保留日期和数字，不添加事实。",
+      "prompt": "Summarize the update. Use exactly 3 bullets. 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 66,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "en",
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:en/en/ja",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。",
+      "prompt": "Summarize the update. Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 73,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "en",
+        "en",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:en/zh/en",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 恰好3个要点。 Preserve dates and numbers; add no facts.",
+      "prompt": "Summarize the update. 恰好3个要点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 68,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "en",
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:en/zh/zh",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 恰好3个要点。 保留日期和数字，不添加事实。",
+      "prompt": "Summarize the update. 恰好3个要点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 68,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "en",
+        "zh",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:en/zh/ja",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 恰好3个要点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "Summarize the update. 恰好3个要点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 75,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "en",
+        "zh",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:en/ja/en",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.",
+      "prompt": "Summarize the update. 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 72,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "en",
+        "ja",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:en/ja/zh",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 箇条書きはちょうど3点。 保留日期和数字，不添加事实。",
+      "prompt": "Summarize the update. 箇条書きはちょうど3点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 72,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "en",
+        "ja",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:en/ja/ja",
+      "source": "phrase_search",
+      "instruction": "Summarize the update. 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "Summarize the update. 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 79,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "en",
+        "ja",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:zh/en/en",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 Use exactly 3 bullets. Preserve dates and numbers; add no facts.",
+      "prompt": "总结以下更新。 Use exactly 3 bullets. Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 64,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "zh",
+        "en",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:zh/en/zh",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 Use exactly 3 bullets. 保留日期和数字，不添加事实。",
+      "prompt": "总结以下更新。 Use exactly 3 bullets. 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 64,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "zh",
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:zh/en/ja",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。",
+      "prompt": "总结以下更新。 Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 71,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "zh",
+        "en",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:zh/zh/en",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 恰好3个要点。 Preserve dates and numbers; add no facts.",
+      "prompt": "总结以下更新。 恰好3个要点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 66,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "zh",
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:zh/zh/zh",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 恰好3个要点。 保留日期和数字，不添加事实。",
+      "prompt": "总结以下更新。 恰好3个要点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 66,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "zh",
+        "zh",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:zh/zh/ja",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 恰好3个要点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "总结以下更新。 恰好3个要点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 73,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "zh",
+        "zh",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:zh/ja/en",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.",
+      "prompt": "总结以下更新。 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 70,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "zh",
+        "ja",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:zh/ja/zh",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 箇条書きはちょうど3点。 保留日期和数字，不添加事实。",
+      "prompt": "总结以下更新。 箇条書きはちょうど3点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 70,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "zh",
+        "ja",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:zh/ja/ja",
+      "source": "phrase_search",
+      "instruction": "总结以下更新。 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "总结以下更新。 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 77,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "zh",
+        "ja",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:ja/en/en",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 Use exactly 3 bullets. Preserve dates and numbers; add no facts.",
+      "prompt": "次の更新を要約。 Use exactly 3 bullets. Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 67,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "ja",
+        "en",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:ja/en/zh",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 Use exactly 3 bullets. 保留日期和数字，不添加事实。",
+      "prompt": "次の更新を要約。 Use exactly 3 bullets. 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 67,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "ja",
+        "en",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:ja/en/ja",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。",
+      "prompt": "次の更新を要約。 Use exactly 3 bullets. 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 74,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "ja",
+        "en",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:ja/zh/en",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 恰好3个要点。 Preserve dates and numbers; add no facts.",
+      "prompt": "次の更新を要約。 恰好3个要点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 69,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "ja",
+        "zh",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:ja/zh/zh",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 恰好3个要点。 保留日期和数字，不添加事实。",
+      "prompt": "次の更新を要約。 恰好3个要点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 69,
+      "accepted": true,
+      "rejection_reasons": [],
+      "languages": [
+        "ja",
+        "zh",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:ja/zh/ja",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 恰好3个要点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "次の更新を要約。 恰好3个要点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 76,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "ja",
+        "zh",
+        "ja"
+      ]
+    },
+    {
+      "label": "phrases:ja/ja/en",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.",
+      "prompt": "次の更新を要約。 箇条書きはちょうど3点。 Preserve dates and numbers; add no facts.\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 73,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "ja",
+        "ja",
+        "en"
+      ]
+    },
+    {
+      "label": "phrases:ja/ja/zh",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 箇条書きはちょうど3点。 保留日期和数字，不添加事实。",
+      "prompt": "次の更新を要約。 箇条書きはちょうど3点。 保留日期和数字，不添加事实。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 73,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "ja",
+        "ja",
+        "zh"
+      ]
+    },
+    {
+      "label": "phrases:ja/ja/ja",
+      "source": "phrase_search",
+      "instruction": "次の更新を要約。 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。",
+      "prompt": "次の更新を要約。 箇条書きはちょうど3点。 日付と数値を保持し、事実を追加しない。\n\nThe pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.\n\nRespond in English.",
+      "tokens": 80,
+      "accepted": false,
+      "rejection_reasons": [
+        "full_prompt_token_increase"
+      ],
+      "languages": [
+        "ja",
+        "ja",
+        "ja"
+      ]
+    }
+  ],
+  "elapsed_ms": 216.9485001359135,
+  "library_versions": {
+    "tiktoken": "0.14.0",
+    "promptminify": "0.3.0",
+    "tokenizers": "0.23.3"
+  },
+  "semantic_equivalence_verified": false,
+  "counting_scope": "Complete composed user-message content; excludes provider billing wrappers",
+  "notes": [
+    "Source payload and output instruction are preserved exactly.",
+    "Numeric and literal checks are structural guards, not semantic verification.",
+    "Token savings are not measured API cost savings."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "version": "1.0",
+  "description": "Six newly authored Spanish technical prompts deliberately exercising PromptMin supported language/domain. Separate coverage diagnostic, not independent validation.",
+  "candidate_provenance": "Concise and multilingual alternatives authored by the assistant. Their generation cost is unmetered. PromptMin alternatives are generated automatically from the released package.",
+  "items": [
+    {
+      "id": "ES01",
+      "instruction": "Por favor, desarrolla una función en Python que consulte la base de datos de usuarios y retorne un JSON con los activos. Usa solamente el esquema indicado y no modifiques la base de datos.",
+      "payload": "users(id INTEGER, name TEXT, active BOOLEAN)",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [
+        "Python",
+        "JSON"
+      ],
+      "phrase_options": [
+        {
+          "en": "Write a Python function that queries active users and returns JSON.",
+          "es": "Escribe una función Python que consulte usuarios activos y devuelva JSON.",
+          "zh": "编写Python函数，查询活跃用户并返回JSON。"
+        },
+        {
+          "en": "Use only the supplied schema.",
+          "es": "Usa solo el esquema indicado.",
+          "zh": "仅用所给表结构。"
+        },
+        {
+          "en": "Do not modify the database.",
+          "es": "No modifiques la base de datos.",
+          "zh": "不要修改数据库。"
+        }
+      ]
+    },
+    {
+      "id": "ES02",
+      "instruction": "Me gustaría que implementes un middleware para la autenticación con JSON web token. Por favor, rechaza los tokens expirados y no registres los valores de los tokens. Utiliza Python.",
+      "payload": "",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [
+        "Python"
+      ],
+      "phrase_options": [
+        {
+          "en": "Implement JWT authentication middleware in Python.",
+          "es": "Implementa middleware de autenticación JWT en Python.",
+          "zh": "用Python实现JWT认证中间件。"
+        },
+        {
+          "en": "Reject expired tokens.",
+          "es": "Rechaza los tokens expirados.",
+          "zh": "拒绝过期令牌。"
+        },
+        {
+          "en": "Never log token values.",
+          "es": "Nunca registres los valores de los tokens.",
+          "zh": "不得记录令牌值。"
+        }
+      ]
+    },
+    {
+      "id": "ES03",
+      "instruction": "Por favor, arregla esta función en Python para que devuelva None si la lista está vacía. No cambies el resultado para las listas no vacías. Devuelve únicamente la función corregida.",
+      "payload": "def average(xs):\n    return sum(xs) / len(xs)",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [
+        "Python",
+        "None"
+      ],
+      "phrase_options": [
+        {
+          "en": "Fix this Python function.",
+          "es": "Corrige esta función Python.",
+          "zh": "修复此Python函数。"
+        },
+        {
+          "en": "Return None for an empty list; preserve nonempty behavior.",
+          "es": "Devuelve None para una lista vacía; conserva el comportamiento no vacío.",
+          "zh": "空列表返回None，非空行为不变。"
+        },
+        {
+          "en": "Return only the corrected function.",
+          "es": "Devuelve solo la función corregida.",
+          "zh": "仅返回修正后的函数。"
+        }
+      ]
+    },
+    {
+      "id": "ES04",
+      "instruction": "Por favor, escribe una documentación para esta interfaz de programación de aplicaciones. Incluye el método, la ruta y el límite de peticiones. No inventes campos adicionales.",
+      "payload": "GET /users; 60 requests per minute",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Document the supplied API.",
+          "es": "Documenta la API indicada.",
+          "zh": "为所给API编写文档。"
+        },
+        {
+          "en": "Include method, path, and request limit.",
+          "es": "Incluye método, ruta y límite de peticiones.",
+          "zh": "包含方法、路径和请求限制。"
+        },
+        {
+          "en": "Invent no additional fields.",
+          "es": "No inventes campos adicionales.",
+          "zh": "不虚构额外字段。"
+        }
+      ]
+    },
+    {
+      "id": "ES05",
+      "instruction": "Por favor, explica cómo funciona el código de abajo para una persona principiante. Utiliza un ejemplo con una lista vacía. No cambies el código.",
+      "payload": "def active_ids(users):\n    return [u[\"id\"] for u in users if u[\"active\"]]",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Explain this code to a beginner.",
+          "es": "Explica este código a un principiante.",
+          "zh": "向初学者解释此代码。"
+        },
+        {
+          "en": "Include an example with an empty list.",
+          "es": "Incluye un ejemplo con una lista vacía.",
+          "zh": "包含空列表示例。"
+        },
+        {
+          "en": "Do not change the code.",
+          "es": "No cambies el código.",
+          "zh": "不要修改代码。"
+        }
+      ]
+    },
+    {
+      "id": "ES06",
+      "instruction": "Necesito que escribas una consulta para la base de datos indicada. Retorna los identificadores de clientes con una suma mayor que 100, sin incluir pedidos cancelados. Devuelve únicamente la consulta.",
+      "payload": "orders(customer_id INTEGER, amount DECIMAL, status TEXT); cancelled status = \"cancelled\"",
+      "output_instruction": "Responde en español.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Write SQL for the supplied schema.",
+          "es": "Escribe SQL para el esquema indicado.",
+          "zh": "根据所给表结构写SQL。"
+        },
+        {
+          "en": "Return customer_id with SUM(amount)>100, excluding cancelled orders.",
+          "es": "Devuelve customer_id con SUM(amount)>100, excluyendo pedidos cancelled.",
+          "zh": "返回SUM(amount)>100的customer_id，排除cancelled订单。"
+        },
+        {
+          "en": "Return only the query.",
+          "es": "Devuelve solo la consulta.",
+          "zh": "仅返回查询语句。"
+        }
+      ]
+    }
+  ]
+}

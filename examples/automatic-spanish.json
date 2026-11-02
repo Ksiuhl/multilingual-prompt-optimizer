@@ -1,0 +1,9 @@
+{
+  "instruction": "Por favor, desarrolla una función en Python que consulte la base de datos de usuarios y retorne un JSON con los activos. Usa solamente el esquema indicado y no modifiques la base de datos.",
+  "payload": "users(id INTEGER, name TEXT, active BOOLEAN)",
+  "output_instruction": "Responde en español.",
+  "protected_literals": [
+    "Python",
+    "JSON"
+  ]
+}

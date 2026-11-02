@@ -1,0 +1,23 @@
+{
+  "instruction": "Fix the Python function below so it returns None for an empty list. Preserve its behavior for nonempty lists. Return only the corrected function.",
+  "payload": "def average(xs):\n    return sum(xs) / len(xs)",
+  "output_instruction": "Respond in English.",
+  "protected_literals": [],
+  "phrase_options": [
+    {
+      "en": "Fix this Python function.",
+      "zh": "修复此Python函数。",
+      "ja": "このPython関数を修正。"
+    },
+    {
+      "en": "Return None for an empty list; preserve nonempty-list behavior.",
+      "zh": "空列表返回None，非空列表行为不变。",
+      "ja": "空リストはNoneを返し、空でない場合の動作は保持。"
+    },
+    {
+      "en": "Return only the corrected function.",
+      "zh": "仅返回修正后的函数。",
+      "ja": "修正した関数のみ返す。"
+    }
+  ]
+}

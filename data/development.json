@@ -1,0 +1,727 @@
+{
+  "version": "1.0",
+  "description": "Previously authored 15 EN/15 ZH tasks. Development set, not held out.",
+  "candidate_provenance": "Concise and multilingual alternatives authored by the assistant. Their generation cost is unmetered. PromptMin alternatives are generated automatically from the released package.",
+  "items": [
+    {
+      "id": "P01",
+      "instruction": "Please summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information.",
+      "payload": "The pilot launched on 2 November 2026 with 120 users. Of those, 96 completed onboarding. Two payment bugs remain open. The next review is on 9 November 2026.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Summarize the update.",
+          "zh": "总结以下更新。",
+          "ja": "次の更新を要約。"
+        },
+        {
+          "en": "Use exactly 3 bullets.",
+          "zh": "恰好3个要点。",
+          "ja": "箇条書きはちょうど3点。"
+        },
+        {
+          "en": "Preserve dates and numbers; add no facts.",
+          "zh": "保留日期和数字，不添加事实。",
+          "ja": "日付と数値を保持し、事実を追加しない。"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "instruction": "Please correct the grammar in the text below while keeping its meaning unchanged. Return only the corrected text.",
+      "payload": "The team have finished the report yesterday, but two chart still needs updating.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Correct grammar.",
+          "zh": "修正语法。",
+          "ja": "文法を修正。"
+        },
+        {
+          "en": "Preserve meaning.",
+          "zh": "保持原意。",
+          "ja": "意味を保持。"
+        },
+        {
+          "en": "Return only corrected text.",
+          "zh": "仅返回修正后的文本。",
+          "ja": "修正文のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "instruction": "Write a polite email using the details below. Keep it under 100 words and do not make promises beyond the supplied details.",
+      "payload": "Recipient: Maya. Ask to move our Thursday meeting from 10:00 to 14:00 because of a supplier call. Ask whether the new time works for her.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Write a polite email from these details.",
+          "zh": "根据以下信息写一封礼貌的邮件。",
+          "ja": "次の情報から丁寧なメールを作成。"
+        },
+        {
+          "en": "Use fewer than 100 words.",
+          "zh": "少于100个英文单词。",
+          "ja": "英単語100語未満。"
+        },
+        {
+          "en": "Make no additional promises.",
+          "zh": "不作额外承诺。",
+          "ja": "追加の約束をしない。"
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "instruction": "Translate the message below into natural English. Keep the names, dates, and numbers unchanged. Return only the translation.",
+      "payload": "Maya，请在2026-11-09之前确认120台设备的交付时间。",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Translate into natural English.",
+          "zh": "翻译成自然的英语。",
+          "ja": "自然な英語に翻訳。"
+        },
+        {
+          "en": "Keep names, dates, and numbers unchanged.",
+          "zh": "姓名、日期和数字保持不变。",
+          "ja": "名前、日付、数値を変更しない。"
+        },
+        {
+          "en": "Return only the translation.",
+          "zh": "仅返回译文。",
+          "ja": "訳文のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "instruction": "Extract the action items from the notes below. Return only a JSON array with the keys owner, task, and due. Use null for any missing due date.",
+      "payload": "Maya will send the invoice by 2026-11-05. Leo will check the login bug; no deadline was agreed.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Extract action items.",
+          "zh": "提取行动项。",
+          "ja": "対応事項を抽出。"
+        },
+        {
+          "en": "Return only a JSON array with keys owner, task, due.",
+          "zh": "仅返回JSON数组，键为owner、task、due。",
+          "ja": "キーowner、task、dueのJSON配列のみ返す。"
+        },
+        {
+          "en": "Use null for missing due dates.",
+          "zh": "缺失截止日期用null。",
+          "ja": "期限がなければnull。"
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "instruction": "Rewrite the resume bullet below using an action verb. Keep every metric unchanged, do not invent achievements, and return only one bullet.",
+      "payload": "Was responsible for weekly reports for 6 teams and reduced preparation time from 5 hours to 2 hours.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Rewrite the resume bullet with an action verb.",
+          "zh": "用动作动词改写简历要点。",
+          "ja": "動作動詞を使って職務経歴の項目を書き直す。"
+        },
+        {
+          "en": "Preserve all metrics; invent no achievements.",
+          "zh": "保留所有指标，不虚构成果。",
+          "ja": "全指標を保持し、実績を創作しない。"
+        },
+        {
+          "en": "Return exactly 1 bullet.",
+          "zh": "恰好返回1个要点。",
+          "ja": "箇条書き1点のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "instruction": "Write a friendly social media announcement based on the details below. Use no more than 50 words, include the date, and do not use hashtags.",
+      "payload": "Our free community book swap is on 2026-11-14 at River Hall. Visitors may bring up to 3 books.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Write a friendly social announcement.",
+          "zh": "写一则友好的社交媒体公告。",
+          "ja": "親しみやすいSNS告知を作成。"
+        },
+        {
+          "en": "Use at most 50 words and include the date.",
+          "zh": "不超过50个英文单词，包含日期。",
+          "ja": "英単語50語以内で日付を含める。"
+        },
+        {
+          "en": "Use no hashtags.",
+          "zh": "不使用话题标签。",
+          "ja": "ハッシュタグを使わない。"
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "instruction": "Create an outline for a beginner article about remote teamwork. Give exactly five section headings and one sentence explaining each section. Do not write the full article.",
+      "payload": "",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Outline a beginner article on remote teamwork.",
+          "zh": "为远程团队协作入门文章列提纲。",
+          "ja": "リモートチームワークの初心者向け記事を構成。"
+        },
+        {
+          "en": "Give exactly 5 headings, each with 1 explanatory sentence.",
+          "zh": "恰好5个标题，每个附1句说明。",
+          "ja": "見出しはちょうど5個、各1文の説明付き。"
+        },
+        {
+          "en": "Do not write the full article.",
+          "zh": "不要写全文。",
+          "ja": "本文は書かない。"
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "instruction": "Explain what a database index is to a beginner. Use one everyday analogy and give one disadvantage. Keep the explanation under 150 words.",
+      "payload": "",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Explain database indexes to a beginner.",
+          "zh": "向初学者解释数据库索引。",
+          "ja": "初心者にデータベースのインデックスを説明。"
+        },
+        {
+          "en": "Include 1 everyday analogy and 1 disadvantage.",
+          "zh": "包含1个日常类比和1个缺点。",
+          "ja": "日常の例え1つと欠点1つを含める。"
+        },
+        {
+          "en": "Use fewer than 150 words.",
+          "zh": "少于150个英文单词。",
+          "ja": "英単語150語未満。"
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "instruction": "Compare the two plans below in a table. Use only the supplied information and identify which costs less per month. Do not recommend a plan based on missing features.",
+      "payload": "Plan A: $12 per month, 10 projects, email support. Plan B: $18 per month, 25 projects, chat support.",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Compare the plans in a table.",
+          "zh": "用表格比较套餐。",
+          "ja": "プランを表で比較。"
+        },
+        {
+          "en": "Use only supplied information.",
+          "zh": "仅使用所给信息。",
+          "ja": "与えられた情報のみ使用。"
+        },
+        {
+          "en": "Identify lower monthly cost; do not infer missing features.",
+          "zh": "指出月费更低者，不推断缺失功能。",
+          "ja": "月額が安い方を示し、不明な機能を推測しない。"
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "instruction": "Make a seven-day beginner Python study plan. Allow exactly 30 minutes each day and include one practice exercise per day. Assume no prior programming experience.",
+      "payload": "",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Make a 7-day Python study plan for a complete beginner.",
+          "zh": "为零基础初学者制定7天Python学习计划。",
+          "ja": "プログラミング未経験者向けPython学習計画を7日分作成。"
+        },
+        {
+          "en": "Allocate exactly 30 minutes daily.",
+          "zh": "每天恰好30分钟。",
+          "ja": "毎日ちょうど30分。"
+        },
+        {
+          "en": "Include 1 practice exercise per day.",
+          "zh": "每天包含1道练习。",
+          "ja": "毎日練習を1つ含める。"
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "instruction": "Explain how to organize a small desk using only items already available at home. Give exactly five ordered steps and do not suggest buying anything.",
+      "payload": "",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Explain how to organize a small desk.",
+          "zh": "说明如何整理小书桌。",
+          "ja": "小さな机の整理方法を説明。"
+        },
+        {
+          "en": "Give exactly 5 ordered steps.",
+          "zh": "恰好5个有序步骤。",
+          "ja": "順序付きでちょうど5手順。"
+        },
+        {
+          "en": "Use existing household items only; suggest no purchases.",
+          "zh": "仅用家中现有物品，不建议购物。",
+          "ja": "家にある物だけ使い、購入を勧めない。"
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "instruction": "Suggest five beginner programming project ideas that can each be completed in one weekend. Use only free tools and give one sentence describing each idea.",
+      "payload": "",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Suggest 5 beginner programming projects.",
+          "zh": "提出5个编程入门项目。",
+          "ja": "初心者向けプログラミング課題を5つ提案。"
+        },
+        {
+          "en": "Each must fit into 1 weekend and use only free tools.",
+          "zh": "每个可在1个周末完成，仅用免费工具。",
+          "ja": "各1週末で完成でき、無料ツールのみ使用。"
+        },
+        {
+          "en": "Describe each in 1 sentence.",
+          "zh": "每个用1句话描述。",
+          "ja": "各1文で説明。"
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "instruction": "Fix the Python function below so it returns None for an empty list. Preserve its behavior for nonempty lists. Return only the corrected function.",
+      "payload": "def average(xs):\n    return sum(xs) / len(xs)",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Fix this Python function.",
+          "zh": "修复此Python函数。",
+          "ja": "このPython関数を修正。"
+        },
+        {
+          "en": "Return None for an empty list; preserve nonempty-list behavior.",
+          "zh": "空列表返回None，非空列表行为不变。",
+          "ja": "空リストはNoneを返し、空でない場合の動作は保持。"
+        },
+        {
+          "en": "Return only the corrected function.",
+          "zh": "仅返回修正后的函数。",
+          "ja": "修正した関数のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "instruction": "Write a SQL query for the schema below. Return each customer_id whose total order amount is greater than 100, excluding cancelled orders. Return only the query.",
+      "payload": "orders(customer_id INTEGER, amount DECIMAL, status TEXT)",
+      "output_instruction": "Respond in English.",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Write SQL for this schema.",
+          "zh": "根据此表结构写SQL。",
+          "ja": "このスキーマのSQLを作成。"
+        },
+        {
+          "en": "Return customer_id where total amount > 100, excluding cancelled orders.",
+          "zh": "返回总amount>100的customer_id，排除cancelled订单。",
+          "ja": "cancelled注文を除き、amount合計>100のcustomer_idを返す。"
+        },
+        {
+          "en": "Return only the query.",
+          "zh": "仅返回查询语句。",
+          "ja": "クエリのみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P16",
+      "instruction": "请将下面的工作进展总结为恰好三个要点。保留所有数字和截止日期，不要添加原文没有的信息。",
+      "payload": "本周完成了8个页面中的6个。还有2个页面等待设计确认。测试将在2026-11-10开始，负责人是林敏。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Summarize the progress.",
+          "zh": "总结工作进展。",
+          "ja": "進捗を要約。"
+        },
+        {
+          "en": "Use exactly 3 bullets.",
+          "zh": "恰好3个要点。",
+          "ja": "箇条書きはちょうど3点。"
+        },
+        {
+          "en": "Preserve all numbers and deadlines; add no facts.",
+          "zh": "保留所有数字和截止日期，不添加事实。",
+          "ja": "全数値と期限を保持し、事実を追加しない。"
+        }
+      ]
+    },
+    {
+      "id": "P17",
+      "instruction": "请修改下面句子的语病，让表达自然通顺，同时保持原意。只返回修改后的句子，不要解释。",
+      "payload": "通过这次培训，使我们对数据分析有了更深入的了解。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Correct awkward grammar naturally.",
+          "zh": "修正语病，使表达自然。",
+          "ja": "不自然な文法を自然に修正。"
+        },
+        {
+          "en": "Preserve the meaning.",
+          "zh": "保持原意。",
+          "ja": "意味を保持。"
+        },
+        {
+          "en": "Return only the revised sentence.",
+          "zh": "仅返回修改后的句子。",
+          "ja": "修正文のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P18",
+      "instruction": "请根据下面的信息给客户写一封礼貌的邮件。清楚说明延期原因和新日期，不要承诺补偿。",
+      "payload": "客户：陈女士。因供应商交货延迟，安装日期由2026-11-12改为2026-11-15。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Write a polite customer email.",
+          "zh": "给客户写礼貌的邮件。",
+          "ja": "顧客向けの丁寧なメールを作成。"
+        },
+        {
+          "en": "State the delay reason and new date clearly.",
+          "zh": "清楚说明延期原因和新日期。",
+          "ja": "遅延理由と新しい日付を明記。"
+        },
+        {
+          "en": "Promise no compensation.",
+          "zh": "不承诺补偿。",
+          "ja": "補償を約束しない。"
+        }
+      ]
+    },
+    {
+      "id": "P19",
+      "instruction": "请把下面的英文通知翻译成自然的简体中文。姓名、日期和产品型号保持不变，只返回译文。",
+      "payload": "Maya will demonstrate the AX-20 on 2026-11-18. Please arrive 10 minutes early.",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Translate into natural Simplified Chinese.",
+          "zh": "翻译成自然的简体中文。",
+          "ja": "自然な簡体字中国語に翻訳。"
+        },
+        {
+          "en": "Keep names, dates and model identifiers unchanged.",
+          "zh": "姓名、日期和产品型号不变。",
+          "ja": "名前、日付、製品型番は変更しない。"
+        },
+        {
+          "en": "Return only the translation.",
+          "zh": "仅返回译文。",
+          "ja": "訳文のみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P20",
+      "instruction": "请从下面的文本中提取姓名、订单号和金额。只返回一个JSON对象，键名必须是name、order_id和amount，金额使用数字。",
+      "payload": "客户王芳的订单号是AB-204，总金额为128.50元。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Extract name, order ID, and amount.",
+          "zh": "提取姓名、订单号和金额。",
+          "ja": "氏名、注文番号、金額を抽出。"
+        },
+        {
+          "en": "Return only a JSON object with keys name, order_id, amount.",
+          "zh": "仅返回JSON对象，键为name、order_id、amount。",
+          "ja": "キーname、order_id、amountのJSONオブジェクトのみ返す。"
+        },
+        {
+          "en": "Represent amount as a number.",
+          "zh": "金额用数字。",
+          "ja": "金額は数値。"
+        }
+      ]
+    },
+    {
+      "id": "P21",
+      "instruction": "请将下面的消息改写为正式但友好的工作表达。保留请求和截止时间，只返回改写后的消息。",
+      "payload": "你把那个销售表弄好，今天下午5点前发我。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Rewrite in a formal but friendly work tone.",
+          "zh": "改为正式但友好的工作语气。",
+          "ja": "正式かつ親しみやすい業務表現に書き直す。"
+        },
+        {
+          "en": "Preserve the request and deadline.",
+          "zh": "保留请求和截止时间。",
+          "ja": "依頼と期限を保持。"
+        },
+        {
+          "en": "Return only the rewritten message.",
+          "zh": "仅返回改写后的消息。",
+          "ja": "書き直したメッセージのみ返す。"
+        }
+      ]
+    },
+    {
+      "id": "P22",
+      "instruction": "请根据下面的信息写一段客户投诉回复。先表达理解，再说明下一步。不要承诺退款，也不要编造处理期限。",
+      "payload": "客户说收到的杯子有裂纹。下一步是请客户提供照片和订单号，以便核查。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Draft a customer complaint response.",
+          "zh": "撰写客户投诉回复。",
+          "ja": "顧客の苦情への返答を作成。"
+        },
+        {
+          "en": "Express understanding, then state the next step.",
+          "zh": "先表示理解，再说明下一步。",
+          "ja": "理解を示した後、次の対応を説明。"
+        },
+        {
+          "en": "Promise no refund; invent no processing deadline.",
+          "zh": "不承诺退款，不编造处理期限。",
+          "ja": "返金を約束せず、処理期限を創作しない。"
+        }
+      ]
+    },
+    {
+      "id": "P23",
+      "instruction": "请把下面的会议笔记整理为决定和待办两部分。保留每项待办的负责人和日期，不要添加新任务。",
+      "payload": "决定使用蓝色包装。李明在2026-11-06前确认样品；周悦在2026-11-08前更新报价。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Organize meeting notes into decisions and action items.",
+          "zh": "将会议笔记分为决定和待办。",
+          "ja": "議事メモを決定事項と対応事項に整理。"
+        },
+        {
+          "en": "Preserve each action owner and date.",
+          "zh": "保留各待办负责人和日期。",
+          "ja": "各対応事項の担当者と日付を保持。"
+        },
+        {
+          "en": "Add no tasks.",
+          "zh": "不添加任务。",
+          "ja": "作業を追加しない。"
+        }
+      ]
+    },
+    {
+      "id": "P24",
+      "instruction": "请向小学高年级学生解释为什么会下雨。使用一个生活中的类比，避免专业术语，总共不超过四句话。",
+      "payload": "",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Explain why rain occurs to an upper-primary student.",
+          "zh": "向小学高年级学生解释下雨原因。",
+          "ja": "小学校高学年の児童に雨の仕組みを説明。"
+        },
+        {
+          "en": "Use 1 everyday analogy and avoid jargon.",
+          "zh": "用1个生活类比，避免术语。",
+          "ja": "日常の例え1つを使い、専門用語を避ける。"
+        },
+        {
+          "en": "Use at most 4 sentences.",
+          "zh": "最多4句话。",
+          "ja": "4文以内。"
+        }
+      ]
+    },
+    {
+      "id": "P25",
+      "instruction": "请比较自学和小组学习。用表格分别列出每种方式的两个优点和一个缺点，不要假设其中一种适合所有人。",
+      "payload": "",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Compare self-study and group study in a table.",
+          "zh": "用表格比较自学和小组学习。",
+          "ja": "独学とグループ学習を表で比較。"
+        },
+        {
+          "en": "Give 2 advantages and 1 disadvantage for each.",
+          "zh": "各列2个优点和1个缺点。",
+          "ja": "各2つの長所と1つの短所を示す。"
+        },
+        {
+          "en": "Assume neither suits everyone.",
+          "zh": "不假定任一方式适合所有人。",
+          "ja": "どちらも万人向けと決めつけない。"
+        }
+      ]
+    },
+    {
+      "id": "P26",
+      "instruction": "请为我制定三天的英语单词复习计划。每天最多20分钟，每天都要包含旧词复习和一次小测验。",
+      "payload": "",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Plan 3 days of English vocabulary review.",
+          "zh": "制定3天英语单词复习计划。",
+          "ja": "英単語復習計画を3日分作成。"
+        },
+        {
+          "en": "Use at most 20 minutes daily.",
+          "zh": "每天最多20分钟。",
+          "ja": "毎日20分以内。"
+        },
+        {
+          "en": "Include old-word review and 1 quiz each day.",
+          "zh": "每天包含旧词复习和1次小测验。",
+          "ja": "毎日既習語の復習と小テスト1回を含める。"
+        }
+      ]
+    },
+    {
+      "id": "P27",
+      "instruction": "请只用下面列出的食材设计一道素食菜。给出配料用量和有序步骤，不要建议购买额外食材。",
+      "payload": "食材：鸡蛋2个、番茄2个、食用油、盐、水。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Design 1 vegetarian dish using only listed ingredients.",
+          "zh": "仅用所列食材设计1道素食菜。",
+          "ja": "記載の食材だけでベジタリアン料理を1品考える。"
+        },
+        {
+          "en": "Give ingredient quantities and ordered steps.",
+          "zh": "给出配料用量和有序步骤。",
+          "ja": "材料の分量と順序付き手順を示す。"
+        },
+        {
+          "en": "Suggest no extra ingredients or purchases.",
+          "zh": "不建议额外食材或购物。",
+          "ja": "追加の食材や購入を提案しない。"
+        }
+      ]
+    },
+    {
+      "id": "P28",
+      "instruction": "请为一个人搬到同城的新住所制定清单。按搬家前、当天、搬家后三个阶段组织，每个阶段列三个事项。",
+      "payload": "",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Make a checklist for one person moving within the same city.",
+          "zh": "为独自同城搬家制定清单。",
+          "ja": "1人の同じ市内での引越しチェックリストを作成。"
+        },
+        {
+          "en": "Organize into before, moving day, and after.",
+          "zh": "分为搬家前、当天、搬家后。",
+          "ja": "引越し前、当日、引越し後に分類。"
+        },
+        {
+          "en": "List exactly 3 items per stage.",
+          "zh": "每阶段恰好3项。",
+          "ja": "各段階ちょうど3項目。"
+        }
+      ]
+    },
+    {
+      "id": "P29",
+      "instruction": "请只根据下面的材料生成三道选择题，每题三个选项且只有一个正确答案。最后单独列出答案，不要在题目中标记答案。",
+      "payload": "水在标准大气压下的沸点是100摄氏度。植物通过光合作用利用光能。地球绕太阳公转。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Create 3 multiple-choice questions from the material only.",
+          "zh": "仅根据材料生成3道选择题。",
+          "ja": "資料だけから選択問題を3問作成。"
+        },
+        {
+          "en": "Give 3 options per question with exactly 1 correct answer.",
+          "zh": "每题3个选项，恰好1个正确答案。",
+          "ja": "各問3択で正解はちょうど1つ。"
+        },
+        {
+          "en": "List answers separately at the end; do not mark them in questions.",
+          "zh": "答案单独列在最后，不在题目中标记。",
+          "ja": "解答は末尾に別記し、問題内で示さない。"
+        }
+      ]
+    },
+    {
+      "id": "P30",
+      "instruction": "请根据下面的数据计算订单总额。先计算商品小计，再应用折扣，最后加运费。只返回保留两位小数的数字。",
+      "payload": "单价80元，数量3，商品小计打九折，运费12元。",
+      "output_instruction": "请用简体中文回答。",
+      "protected_literals": [],
+      "phrase_options": [
+        {
+          "en": "Calculate the order total from these data.",
+          "zh": "根据数据计算订单总额。",
+          "ja": "次のデータから注文総額を計算。"
+        },
+        {
+          "en": "Subtotal items, apply discount, then add shipping.",
+          "zh": "先算商品小计，再打折，最后加运费。",
+          "ja": "商品小計、割引適用、送料加算の順。"
+        },
+        {
+          "en": "Return only a number with 2 decimal places.",
+          "zh": "仅返回保留2位小数的数字。",
+          "ja": "小数点以下2桁の数値のみ返す。"
+        }
+      ]
+    }
+  ]
+}
