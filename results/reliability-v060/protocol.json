@@ -1,0 +1,43 @@
+{
+  "type": "Targeted reliability follow-up selected on prior content errors; not an independent benchmark.",
+  "freeze_utc": "2026-11-03T16:07:07.252565+00:00",
+  "model_label": "gpt-6.1-sol",
+  "selected_case_ids": [
+    "new-latest-03",
+    "new-latest-04",
+    "new-stock-02",
+    "new-stock-05"
+  ],
+  "selection": "Distinct cases with incorrect completed GPT-labelled answers in the frozen new-input study. Excludes the interrupted UTC request.",
+  "arms": [
+    "original",
+    "concise_english"
+  ],
+  "repetitions": 5,
+  "requests": 40,
+  "shuffle_seed": 20261104,
+  "ordering": "Each repetition contains all four cases in both arms; shuffle eight requests within each repetition.",
+  "prompt_policy": "Exact original frozen strings. No new candidate generation, instruction edits, output repair, or grader changes.",
+  "concurrency_per_model": 2,
+  "max_attempts_per_request": 2,
+  "timeout_ms": 60000,
+  "max_output_tokens": 4096,
+  "stream": true,
+  "temperature": "provider default",
+  "prior_summary_sha256": "b1ef763c26b55fdf4a0b8d07e949bce0edd289d052e6fd8b2e1065e51858bb6f",
+  "source_pr_commit": "a63384073f971fe9e179b77a47644f47c21f7efa",
+  "files": {
+    "dataset.json": "a1c46a00cb4d037c1f565989ecf6f5e4ca1ebf00b61af1db644982dd5c5cbf45",
+    "requests.json": "327dbbb2e7ba7524de8460e2d14d24b326b181b3f47e06d36c018e46285590cb",
+    "grader-source.py": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592",
+    "runner.mjs": "210bb5b15bc76c87e48a4a211043139486b1c505c29dc489dd3601a7882c43f0"
+  },
+  "billing_plan": "Read key-specific used-quota counter before and after this execution; inspect only read-only billing metadata/logs. Publish study deltas or matching per-request charges, not names, keys, balances or unrelated account history. Account for shared-key activity and settlement uncertainty.",
+  "limitations": [
+    "Four selected known failure cases, not twenty independent tasks per arm.",
+    "Five stochastic repetitions do not establish general reliability or causal semantic equivalence.",
+    "Model identity and gateway accounting are unverified.",
+    "Prior benchmark and follow-up scores remain separate and unchanged.",
+    "Interval billing counters may include external activity on the same key; exact attribution requires matching request IDs."
+  ]
+}

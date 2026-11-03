@@ -7,4 +7,8 @@ data/output-contract-v060* -text
 results/output-contract-v060* -text
 results/figures/v060-output-contract-* -text
 results/heldout-v060/** -text
+results/heldout-v060-summary.json -text
 results/figures/v060-heldout-* -text
+results/reliability-v060* -text
+results/reliability-v060/** -text
+results/figures/v060-reliability-* -text

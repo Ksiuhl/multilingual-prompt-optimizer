@@ -1,5 +1,21 @@
 # Checked-in local results
 
+## Selected-failure reliability follow-up (0.6.0a2)
+
+`reliability-v060/` freezes four known content-failure cases, exact original and
+English prompts, five repetitions per arm, the unchanged grader, and all 40 raw
+responses. It also retains sanitized request-matched charge logs and a usage
+counter delta. No account balances, lifetime totals, names or unrelated logs are
+included. All 40 responses completed with no retries.
+
+The follow-up passed 15/20 original versus 11/20 English checks. Six unchanged
+prompt groups varied in correctness. English's matched gateway credit charge
+was 0.88% lower; the combined debit was $0.01904. This is selected-case diagnosis,
+not a new independent accuracy benchmark. Keep the default-policy proposal
+unmerged. See [the report](../docs/reliability-followup.md),
+`reliability-v060-summary.json` and `figures/v060-reliability-comparison.*`.
+Earlier study scores remain unchanged.
+
 ## Frozen new-input candidate-search check (0.6.0a2)
 
 `heldout-v060/` contains the exact frozen inputs, candidate search receipts,

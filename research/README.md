@@ -1,5 +1,18 @@
 # Reproduce the development studies
 
+## Selected-failure reliability and charge audit (offline)
+
+```bash
+python research/analyze_reliability_v060.py results/reliability-v060 --out results/local/reliability-v060
+```
+
+This regrades 40 responses from five repeats of both arms on four selected known
+failure cases. It checks identity with the earlier frozen prompts and cases,
+then matches sanitized consumption-log records to response request IDs and
+reconciles their sum with the key's interval quota debit. Neither credentials
+nor network calls are needed. The earlier `results/heldout-v060/` bundle must
+remain present. [Results and release decision](../docs/reliability-followup.md).
+
 ## Frozen new-input check (offline)
 
 ```bash

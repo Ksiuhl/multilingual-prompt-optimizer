@@ -1,0 +1,320 @@
+{
+  "execution_complete": true,
+  "all_responses_complete": true,
+  "model_label": "gpt-6.1-sol",
+  "unique_selected_inputs": 4,
+  "repetitions": 5,
+  "planned_trials": 40,
+  "http_attempts": 40,
+  "scope": "Targeted reliability follow-up selected on prior content errors; not an independent benchmark.",
+  "limitations": [
+    "Four selected known failure cases, not twenty independent tasks per arm.",
+    "Five stochastic repetitions do not establish general reliability or causal semantic equivalence.",
+    "Model identity and gateway accounting are unverified.",
+    "Prior benchmark and follow-up scores remain separate and unchanged.",
+    "Interval billing counters may include external activity on the same key; exact attribution requires matching request IDs."
+  ],
+  "arms": {
+    "original": {
+      "correct": 15,
+      "planned": 20,
+      "completed": 20,
+      "transport_failures": 0,
+      "median_request_ms": 2443.115899999859,
+      "provider_usage": {
+        "prompt_tokens": 93930,
+        "completion_tokens": 571,
+        "total_tokens": 94501
+      }
+    },
+    "concise_english": {
+      "correct": 11,
+      "planned": 20,
+      "completed": 20,
+      "transport_failures": 0,
+      "median_request_ms": 5596.968349999981,
+      "provider_usage": {
+        "prompt_tokens": 93390,
+        "completion_tokens": 581,
+        "total_tokens": 93971
+      }
+    }
+  },
+  "cases": {
+    "new-stock-02": {
+      "original": {
+        "correct": 5,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "concise_english": {
+        "correct": 4,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ]
+      }
+    },
+    "new-latest-03": {
+      "original": {
+        "correct": 1,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "concise_english": {
+        "correct": 4,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    "new-latest-04": {
+      "original": {
+        "correct": 5,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "concise_english": {
+        "correct": 1,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    "new-stock-05": {
+      "original": {
+        "correct": 4,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          false,
+          true,
+          true,
+          true
+        ]
+      },
+      "concise_english": {
+        "correct": 2,
+        "completed": 5,
+        "planned": 5,
+        "pass_by_repetition": [
+          true,
+          false,
+          true,
+          false,
+          false
+        ]
+      }
+    }
+  },
+  "failures": [
+    {
+      "case_id": "new-latest-04",
+      "arm": "concise_english",
+      "repetition": 1,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "concise_english",
+      "repetition": 2,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "concise_english",
+      "repetition": 2,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "original",
+      "repetition": 2,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "original",
+      "repetition": 2,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-04",
+      "arm": "concise_english",
+      "repetition": 3,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-04",
+      "arm": "concise_english",
+      "repetition": 4,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "original",
+      "repetition": 3,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "original",
+      "repetition": 4,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "concise_english",
+      "repetition": 4,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "original",
+      "repetition": 5,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-stock-02",
+      "arm": "concise_english",
+      "repetition": 5,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-latest-04",
+      "arm": "concise_english",
+      "repetition": 5,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "concise_english",
+      "repetition": 5,
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    }
+  ],
+  "unstable_prompt_groups": [
+    {
+      "case_id": "new-stock-02",
+      "arm": "concise_english"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "original"
+    },
+    {
+      "case_id": "new-latest-03",
+      "arm": "concise_english"
+    },
+    {
+      "case_id": "new-latest-04",
+      "arm": "concise_english"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "original"
+    },
+    {
+      "case_id": "new-stock-05",
+      "arm": "concise_english"
+    }
+  ],
+  "paired_repetitions": {
+    "both_correct": 8,
+    "both_wrong": 2,
+    "original_only": 7,
+    "english_only": 3,
+    "incomplete_pair": 0
+  },
+  "billing": {
+    "source": "Gateway-reported matching consumption-log quota; USD conversion from gateway's public quota_per_unit. Not an invoice.",
+    "interval": {
+      "endpoint": "https://gpt-api.cc/api/usage/token/",
+      "before_http_status": 200,
+      "after_http_status": 200,
+      "start_utc": "2026-11-03T16:07:30.534Z",
+      "end_utc": "2026-11-03T16:10:11.147Z",
+      "used_quota_delta": 9520,
+      "quota_per_unit": 500000,
+      "display_unit": "USD",
+      "displayed_usd_delta": 0.01904,
+      "attribution": "Key-specific interval counter; may include other clients using the same key. Not an invoice. Per-request matching is checked separately.",
+      "post_run_check": {
+        "observed_at_utc": "2026-11-03T16:10:34.191Z",
+        "http_status": 200,
+        "used_quota_delta": 9520,
+        "stable_since_initial_after_read": true
+      }
+    },
+    "attempts_with_request_id": 40,
+    "matched_consumption_records": 40,
+    "ambiguous_request_ids": [],
+    "charged_quota_by_arm": {
+      "original": 4781,
+      "concise_english": 4739
+    },
+    "charged_quota_total": 9520,
+    "displayed_usd_by_arm": {
+      "original": 0.009562,
+      "concise_english": 0.009478
+    },
+    "displayed_usd_total": 0.01904,
+    "matches_interval_counter": true,
+    "all_completed_attempts_have_consumption_record": true,
+    "english_charge_reduction": 0.008784773060029227,
+    "attribution_limit": "Shared-key external activity, late settlement, refunds and deployment reporting errors remain possible; log/counter reconciliation is reported rather than assumed. Reused preparation incurred no new translation API calls; authoring labor and earlier preparation are excluded."
+  }
+}

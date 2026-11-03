@@ -2,6 +2,8 @@
 
 ## 0.6.0a2 — immutable output-contract regression fix
 
+- Added five exact-prompt repeats on four known content-failure cases: 15/20 original versus 11/20 concise English. Keep the default-policy proposal unmerged.
+- Matched all 40 gateway consumption records to response request IDs and reconciled 9,520 charged quota units with a stable key-counter delta ($0.01904 in gateway-displayed credits). English's charge reduction was 0.88%; no account balances or unrelated history are published.
 - Added a prospectively frozen 50-new-input structured-task check: 299 responses from 300 planned trials; interrupted requests and five completed-answer content failures retained separately.
 - Recorded unchanged English/mixed prompt pairs, local and reported full-prompt usage, retry-inclusive latency, public-price scenarios, and reproducible PNG/SVG/PDF graphs. Actual billing and accuracy-preservation criteria remain unresolved.
 - Added `json_object_contract(fields)` for explicit answer-wrapped JSON guidance in immutable `Request.output_instruction`.

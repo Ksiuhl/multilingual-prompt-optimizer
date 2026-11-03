@@ -17,6 +17,14 @@ answer accuracy, or lower total cost.
 
 ## v0.6 preview: English first, multilingual experimental
 
+**Release hold:** a separate five-repeat follow-up on four known content-failure
+cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
+charges reconciled with the gateway counter: English cost **0.88% less** in
+gateway-displayed credits. That result does not support the proposed default
+change. Keep this preview unmerged; use originals unless a rewrite has
+task-specific validation. [Results, charge audit and graph](docs/reliability-followup.md).
+These selected-case follow-up scores are separate from the earlier studies.
+
 The default `optimize` rule set now uses English-only rewriting. `auto` requests
 English alternatives only. Keep multilingual search explicit:
 
