@@ -13,7 +13,13 @@ from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from pathlib import Path
 
-from multilingual_prompt_optimizer import Candidate, Request, json_object_contract, optimize
+from multilingual_prompt_optimizer import (
+    Candidate,
+    Request,
+    __version__,
+    json_object_contract,
+    optimize,
+)
 from multilingual_prompt_optimizer.tokenizers import TiktokenCounter
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -525,11 +531,12 @@ def prepare(out):
             candidates=(Candidate("concise_en", en_text),),
         )
         original = Request(**common)
-        en = optimize(original, counter=counter, rule_modes=("lite",))
+        en = optimize(original, counter=counter, rule_modes=("lite",), allow_compression=True)
         mixed = optimize(
             Request(**common, phrase_options=tuple(t["clauses"])),
             counter=counter,
             rule_modes=("lite",),
+            allow_compression=True,
         )
         prompts = {
             "original": original.compose(t["original"]),
@@ -578,7 +585,8 @@ def prepare(out):
         "contract": "Same field-specific json_object_contract in all arms; counted inside complete prompt. No native schema enforcement or answer repair.",
         "grading": "Exact nested JSON values/keys/order in lists; JSON numbers compared numerically, booleans distinct. Reject duplicate keys, Markdown, extra fields, and changed Unicode/whitespace within strings.",
         "freeze_utc": datetime.now(timezone.utc).isoformat(),
-        "source_pr_commit": "8a2d7f1fed6f2db94fc150376cb07f1d80af7841",
+        "source_pr_commit": None,
+        "source_version": __version__,
         "files": {
             name: digest((out / name).read_bytes())
             for name in ["dataset.json", "preparation.json", "requests.json"]

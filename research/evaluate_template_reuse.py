@@ -134,14 +134,17 @@ def main():
         for arm in ("english", "mixed"):
             rs = len(reviewer.calls)
             start = time.perf_counter()
-            chosen = optimize(request, counter=counter, rule_modes=())
+            chosen = optimize(request, counter=counter, rule_modes=(), allow_compression=True)
             error = gen_error
             judgments = []
             if options:
                 try:
                     subset = options if arm == "mixed" else tuple({"en": o["en"]} for o in options)
                     pool = optimize(
-                        replace(request, phrase_options=subset), counter=counter, rule_modes=()
+                        replace(request, phrase_options=subset),
+                        counter=counter,
+                        rule_modes=(),
+                        allow_compression=True,
                     )
                     chosen, judgments = _review_candidates(request, pool, reviewer, 8)
                 except (RuntimeError, ValueError) as exc:
@@ -176,6 +179,7 @@ def main():
                     ),
                     counter=counter,
                     rule_modes=(),
+                    allow_compression=True,
                 )
                 candidate_applied = (
                     proposal.selected_label != "original"
@@ -246,7 +250,9 @@ def main():
                     continue
                 call_start = len(target.calls)
                 start = time.perf_counter()
-                application = cache.apply(contexts[arm], req.payload, counter)
+                application = cache.apply(
+                    contexts[arm], req.payload, counter, allow_compression=True
+                )
                 attempts = []
 
                 def execute(prompt):

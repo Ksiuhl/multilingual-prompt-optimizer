@@ -51,6 +51,11 @@ def _parser() -> argparse.ArgumentParser:
         enc.add_argument("--tokenizer-json", type=Path, help="Local Hugging Face tokenizer.json")
         cmd.add_argument("--max-combinations", type=int, default=256)
         cmd.add_argument(
+            "--enable-compression",
+            action="store_true",
+            help="Opt into experimental candidate search; shorter prompts are not task-validated",
+        )
+        cmd.add_argument(
             "--aggressive", action="store_true", help="Also generate aggressive rule candidates"
         )
         cmd.add_argument(
@@ -59,7 +64,9 @@ def _parser() -> argparse.ArgumentParser:
             help="Opt into experimental translation rules and multilingual auto generation",
         )
         if name == "auto":
-            cmd.add_argument("--model", required=True, help="Installed local Ollama model")
+            cmd.add_argument(
+                "--model", help="Installed local Ollama model; required with --enable-compression"
+            )
             cmd.add_argument("--verifier-model", help="Optional separate local judge model")
             cmd.add_argument("--ollama-url", default="http://127.0.0.1:11434")
             cmd.add_argument(
@@ -94,6 +101,13 @@ def main(argv: list[str] | None = None) -> int:
             _write({"passed": check.passed, "reason": check.reason}, args.output)
             return 0 if check.passed else 1
         counter = _counter(args)
+        if not args.enable_compression and (
+            args.experimental_multilingual
+            or args.aggressive
+            or getattr(args, "languages", None)
+            or getattr(args, "no_rules", False)
+        ):
+            raise ValueError("rewrite options require --enable-compression")
         modes = ("lite",)
         if args.experimental_multilingual:
             modes += ("translate",)
@@ -103,15 +117,22 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "auto":
             from .automatic import OllamaModel, auto_optimize
 
-            generator = OllamaModel(args.model, args.ollama_url, args.timeout)
+            if args.enable_compression and not args.model:
+                raise ValueError("--model is required with --enable-compression for auto")
+            generator = (
+                OllamaModel(args.model, args.ollama_url, args.timeout)
+                if args.enable_compression
+                else None
+            )
             verifier = (
                 OllamaModel(args.verifier_model, args.ollama_url, args.timeout)
-                if args.verifier_model
+                if args.verifier_model and args.enable_compression
                 else generator
             )
             result = auto_optimize(
                 Request.from_dict(raw),
                 generator=generator,
+                allow_compression=args.enable_compression,
                 verifier=verifier,
                 counter=counter,
                 languages=tuple(
@@ -133,6 +154,7 @@ def main(argv: list[str] | None = None) -> int:
                 counter=counter,
                 rule_modes=() if args.no_rules else modes,
                 max_combinations=args.max_combinations,
+                allow_compression=args.enable_compression,
             )
             _write(result.prompt if args.text else result.to_dict(), args.output, plain=args.text)
         else:
@@ -160,12 +182,21 @@ def main(argv: list[str] | None = None) -> int:
                     replace(req, candidates=(), phrase_options=()),
                     counter=counter,
                     rule_modes=modes,
+                    allow_compression=args.enable_compression,
                 )
                 supplied = optimize(
-                    req, counter=counter, rule_modes=(), max_combinations=args.max_combinations
+                    req,
+                    counter=counter,
+                    rule_modes=(),
+                    max_combinations=args.max_combinations,
+                    allow_compression=args.enable_compression,
                 )
                 hybrid = optimize(
-                    req, counter=counter, rule_modes=modes, max_combinations=args.max_combinations
+                    req,
+                    counter=counter,
+                    rule_modes=modes,
+                    max_combinations=args.max_combinations,
+                    allow_compression=args.enable_compression,
                 )
                 records.append(
                     {

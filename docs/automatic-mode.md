@@ -1,9 +1,13 @@
 # Automatic English rewriting and experimental multilingual mode
 
 The new module `automatic.py` provides `OllamaModel` and `auto_optimize`. It adds
-candidate generation and judging to the existing tokenizer search. It requires a
+candidate generation and judging to the existing tokenizer search. When explicitly enabled it requires a
 running Ollama service and an installed local multilingual model. The program does
 not install Ollama or download model weights itself.
+
+The default retains the original without constructing or calling a model.
+`--enable-compression` / `allow_compression=True` opts into the pipeline below;
+model approval is not task validation. See [the policy](original-policy.md).
 
 ## Run
 
@@ -12,7 +16,7 @@ After the normal Python installation and Ollama setup:
 ```bash
 ollama pull qwen3:4b
 ollama pull qwen3:8b
-mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
 ```
 
 The model example is from the official [Ollama model library](https://ollama.com/library/qwen3:4b).
@@ -45,7 +49,7 @@ The documented configuration uses 4B generation and 8B review, selected on the
 supplied, the library/CLI still uses the generating model for review; no extra model
 is silently downloaded or required.
 
-The v0.6 default is `en` only. Use `--experimental-multilingual` for `en,zh,ja`,
+Once compression is enabled, the initial language is `en` only. Use `--experimental-multilingual` for `en,zh,ja`,
 or pass `--languages` explicitly. Supported codes also include `es,fr,de,ko`.
 Use `--languages en,zh,es`, `--verification-budget 4`, `--timeout 120`, or
 `--ollama-url http://127.0.0.1:11434` to adjust configuration. At most four languages,
@@ -105,7 +109,7 @@ It selected 8B on synthetic development labels, then ran the 30-task automatic
 comparison. See `docs/reviewer-study.md`; these later checks are also development
 work and do not establish target-task accuracy or total-cost savings.
 
-Generation and review can require up to nine inference calls by default. Local
+Enabled generation and review can require up to nine inference calls with the initial budget. Local
 model elapsed time and available token counts are recorded per call, with overall
 optimization elapsed time. There is no monetary cost estimate, target-task latency
 or hidden accuracy score. The existing authored development benchmarks remain

@@ -108,7 +108,9 @@ class TemplateCache:
         except (OSError, ValueError, KeyError, TypeError):
             return None
 
-    def apply(self, context, payload, counter):
+    def apply(self, context, payload, counter, *, allow_compression=False):
+        if type(allow_compression) is not bool:
+            raise ValueError("allow_compression must be a Boolean")
         if counter.name != context["tokenizer"]:
             raise ValueError("tokenizer does not match cache context")
         request = Request(
@@ -117,7 +119,7 @@ class TemplateCache:
             output_instruction=context["output_instruction"],
             protected_literals=tuple(context["protected_literals"]),
         )
-        item = self.load(context)
+        item = self.load(context) if allow_compression else None
         candidates = (
             (Candidate("cached", item["instruction"]),) if item and item["admitted"] else ()
         )
@@ -131,9 +133,12 @@ class TemplateCache:
             ),
             counter=counter,
             rule_modes=(),
+            allow_compression=allow_compression,
         )
         reason = (
-            "cache_miss"
+            "compression_disabled"
+            if not allow_compression
+            else "cache_miss"
             if not item
             else "calibration_rejected"
             if not item["admitted"]
@@ -151,4 +156,5 @@ class TemplateCache:
             "selected_tokens": result.selected_tokens,
             "saved_tokens": result.saved_tokens,
             "selected_label": result.selected_label,
+            "compression_enabled": allow_compression,
         }

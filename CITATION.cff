@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this research prototype, cite it and credit the upstream work listed in THIRD_PARTY_NOTICES.md."
 title: "Multilingual Prompt Optimizer"
 type: software
-version: 0.6.0a2
+version: 0.6.0a3
 license: MIT
 authors:
   - name: "Multilingual Prompt Optimizer contributors"

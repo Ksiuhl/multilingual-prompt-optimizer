@@ -1,5 +1,11 @@
 # Reproduce the development studies
 
+The a3 application preserves originals by default. Research benchmark harnesses
+explicitly enable compression for their experiments. Add `--enable-compression`
+to `run_checked_case.py` or `run_cached_template.py` when testing rewrites. Offline
+analyses below use frozen answers and graders, so the new policy does not alter
+their scores. [Policy and migration](../docs/original-policy.md).
+
 ## Selected-failure reliability and charge audit (offline)
 
 ```bash

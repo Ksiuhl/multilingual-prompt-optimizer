@@ -16,6 +16,7 @@ from multilingual_prompt_optimizer.validation import answer_schema
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--enable-compression", action="store_true")
     parser.add_argument("--input", type=Path, default=Path("data/task-quality-development.json"))
     parser.add_argument("--id", default="F03")
     parser.add_argument("--output", type=Path, default=Path("results/local/checked-demo.json"))
@@ -27,7 +28,10 @@ def main():
     case = matches[0]
     request = Request.from_dict(case["request"])
     optimized = auto_optimize(
-        request, generator=OllamaModel("qwen3:4b"), verifier=OllamaModel("qwen3:8b")
+        request,
+        generator=OllamaModel("qwen3:4b") if args.enable_compression else None,
+        verifier=OllamaModel("qwen3:8b") if args.enable_compression else None,
+        allow_compression=args.enable_compression,
     )
     target = OllamaModel("qwen3:4b")
 

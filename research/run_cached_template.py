@@ -32,6 +32,7 @@ def digest(value):
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--enable-compression", action="store_true")
     parser.add_argument("--input", type=Path, default=Path("data/template-reuse-development.json"))
     parser.add_argument("--study", type=Path, default=Path("results/template-reuse-v050.json"))
     parser.add_argument("--cache-dir", type=Path, default=Path("results/local/v050-template-cache"))
@@ -80,7 +81,9 @@ def main():
         validator=validator,
         mode=args.mode,
     )
-    applied = TemplateCache(args.cache_dir).apply(context, request.payload, counter)
+    applied = TemplateCache(args.cache_dir).apply(
+        context, request.payload, counter, allow_compression=args.enable_compression
+    )
     target = OllamaModel(recorded["protocol"]["target"]["name"])
     if target.options != recorded["protocol"]["target"]["options"]:
         raise ValueError("Target options changed; recalibrate before using this cache")

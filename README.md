@@ -1,42 +1,60 @@
 # Multilingual Prompt Optimizer
 
-A local Python research tool for concise-English prompt optimization, with
-multilingual mixing available as an explicit experiment. Source text and code
+A local Python research tool that preserves original prompts by default.
+Concise-English compression and multilingual mixing are explicit experiments. Source text and code
 stay separate from editable instructions.
 
-It counts every **complete candidate prompt**, rejects candidates that grow or lose
+When compression is enabled it counts every **complete candidate prompt**, rejects candidates that grow or lose
 protected numeric/literal strings, and keeps the original as a fallback. It builds
 on [PromptMin](https://github.com/DelvyG/promptmin) for automatic English/Spanish rule
 rewriting and supports user-supplied multilingual phrase alternatives.
 
-**Status:** working research prototype. The `optimize` command selects supplied/rule
-alternatives without inference. The new `auto` command generates translations and
-reformulations using a local Ollama model, then runs a separate semantic judging
-pass. Neither structural checks nor model judgments prove equivalent meaning,
+**Status:** working research prototype. Without an explicit opt-in, `optimize`,
+`auto`, benchmarks and cached templates retain the original composed prompt.
+`auto` makes no generation or judging calls in this mode. With opt-in, `optimize`
+searches supplied/rule alternatives and `auto` uses local Ollama generation and
+judging. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
-## v0.6 preview: English first, multilingual experimental
+## v0.6.0a3 preview: original first, compression opt-in
 
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
 charges reconciled with the gateway counter: English cost **0.88% less** in
-gateway-displayed credits. That result does not support the proposed default
-change. Keep this preview unmerged; use originals unless a rewrite has
+gateway-displayed credits. That result rejected the earlier a2 proposal to enable
+English rewriting by default. The a3 implementation now preserves originals;
+this preview remains unmerged pending review. Enable rewrites only with
 task-specific validation. [Results, charge audit and graph](docs/reliability-followup.md).
 These selected-case follow-up scores are separate from the earlier studies.
 
-The default `optimize` rule set now uses English-only rewriting. `auto` requests
-English alternatives only. Keep multilingual search explicit:
+The new policy preserves the original even when shorter supplied alternatives,
+phrase options or calibrated cached rewrites exist. The ordinary default performs
+counting only:
 
 ```bash
-mpo optimize --input examples/summary.json --experimental-multilingual
-mpo auto --input examples/automatic.json --model qwen3:4b --languages en,zh,ja
+mpo optimize --input examples/summary.json
+mpo auto --input examples/automatic.json
 ```
 
-Caller-supplied candidates and phrase alternatives are still searched as supplied.
-The `aggressive` rule mode now also keeps translation disabled; add the explicit
-`translate` rule mode or the CLI experimental flag when translation is intended.
-Changing defaults does not prove concise rewrites preserve all requirements.
+Explicit experiments require `--enable-compression`. English is the initial
+language; multilingual generation additionally needs a language list or flag:
+
+```bash
+mpo optimize --enable-compression --input examples/summary.json
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b --languages en,zh,ja
+```
+
+Python callers must pass `allow_compression=True` to `optimize`, `auto_optimize`
+or `TemplateCache.apply`. Rule/language options, a model name, supplied candidates,
+and previous cache admission do not implicitly enable compression. The result
+reports `compression_enabled`; the disabled automatic status is
+`compression_disabled`. Opting in does not certify task accuracy. See
+[the migration and validation policy](docs/original-policy.md).
+
+All studies below tested earlier experimental policies; their scores are not
+claims about the a3 original-only default. The a3 change has local regression
+coverage and makes no new inference-accuracy claim.
 
 ### New 50-input structured-task check
 
@@ -117,7 +135,7 @@ Its text is retained and counted in every complete candidate prompt. It does not
 enforce a native provider schema or repair returned answers. CLI example:
 
 ```bash
-mpo optimize --input examples/summary-contract.json
+mpo optimize --enable-compression --input examples/summary-contract.json
 ```
 
 A separate targeted regression on the six known problematic summaries retested
@@ -128,7 +146,7 @@ unchanged. The contract adds input overhead (about 124 tokens/request on the
 Gemini-labelled regression); no net-cost saving is claimed.
 See [the regression protocol and graph](docs/output-contract-regression.md).
 
-This preview is version `0.6.0a2`; version 0.5 remains the published baseline while
+This preview is version `0.6.0a3`; version 0.5 remains the published baseline while
 the development change is reviewed. Package and repository names are retained for
 continuity with the original multilingual research question.
 
@@ -213,8 +231,8 @@ Install and run:
 
 ```bash
 python -m pip install -e .
-mpo optimize --input examples/summary.json --output results/local/summary.json
-mpo optimize --input examples/summary.json --text
+mpo optimize --enable-compression --input examples/summary.json --output results/local/summary.json
+mpo optimize --enable-compression --input examples/summary.json --text
 ```
 
 The first use of a `tiktoken` encoding may download its public vocabulary. Prompt
@@ -282,11 +300,11 @@ multilingual generator and reviewer once (approximately 2.5 GB and 5.2 GB):
 ```bash
 ollama pull qwen3:4b
 ollama pull qwen3:8b
-mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
 ```
 
 Edit the example's `instruction` and `payload` to try your own text. No prewritten
-`phrase_options` are required. The default generation language is English.
+`phrase_options` are required. When enabled, the initial generation language is English.
 Use `--languages en,zh,ja` or `--experimental-multilingual` for multilingual trials.
 The tool generates aligned clauses, searches up to 256 combinations, then asks a
 model to judge the shortest structurally acceptable complete instructions. It
@@ -326,7 +344,8 @@ result = optimize(
         instruction="Please list exactly 3 risks from the text.",
         payload="Supplier delay; incomplete testing; budget overrun.",
         candidates=(Candidate("concise", "List exactly 3 risks from the text."),),
-    )
+    ),
+    allow_compression=True,  # Explicit experimental search; validate task outputs.
 )
 
 print(result.prompt)
@@ -334,7 +353,7 @@ print(result.saved_tokens)
 print(result.to_dict())
 ```
 
-Equal-token alternatives keep the original. Results include every candidate, its
+Equal-token alternatives keep the original. With compression enabled, results include every searched candidate, its
 count, acceptance decision, rejection reasons, and selection label.
 
 ## Other tokenizers
@@ -344,7 +363,7 @@ publisher:
 
 ```bash
 python -m pip install -e ".[hf]"
-mpo optimize --input examples/summary.json --tokenizer-json path/to/tokenizer.json
+mpo optimize --enable-compression --input examples/summary.json --tokenizer-json path/to/tokenizer.json
 ```
 
 This reads the local tokenizer file and records its SHA256 fingerprint. It does not
@@ -354,8 +373,8 @@ provider's chat template, hidden system prompts, reasoning tokens, or billable u
 ## Reproduce the local benchmark
 
 ```bash
-mpo benchmark --input data/development.json --output results/local/development.json
-mpo benchmark --input data/spanish-coverage.json --output results/local/spanish.json
+mpo benchmark --enable-compression --input data/development.json --output results/local/development.json
+mpo benchmark --enable-compression --input data/spanish-coverage.json --output results/local/spanish.json
 ```
 
 The runner compares automatic rules, supplied alternatives, and their combined pool,

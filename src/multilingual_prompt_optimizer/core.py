@@ -27,15 +27,18 @@ def optimize(
     request: Request | Mapping[str, Any],
     *,
     counter: Counter | None = None,
+    allow_compression: bool = False,
     rule_modes: tuple[str, ...] = ("lite",),
     max_combinations: int = 256,
 ) -> OptimizationResult:
-    """Choose the smallest candidate passing structural checks, including original.
+    """Retain the original unless allow_compression=True enables candidate search.
 
     Translations are supplied as candidates/phrase options. This function does
     not claim that shorter candidates preserve meaning or improve task accuracy.
     """
     start = time.perf_counter()
+    if type(allow_compression) is not bool:
+        raise ValueError("allow_compression must be a Boolean")
     req = request if isinstance(request, Request) else Request.from_dict(request)
     if (
         isinstance(max_combinations, bool)
@@ -48,7 +51,7 @@ def optimize(
     combinations = (
         math.prod(len(options) for options in req.phrase_options) if req.phrase_options else 0
     )
-    if combinations > max_combinations:
+    if allow_compression and combinations > max_combinations:
         raise ValueError(
             f"phrase search needs {combinations} combinations; limit is {max_combinations}"
         )
@@ -58,11 +61,15 @@ def optimize(
     specs: list[tuple[Candidate, str, tuple[str, ...]]] = [
         (Candidate("original", req.instruction), "original", ()),
     ]
-    specs.extend((c, "promptmin", ()) for c in rules.generate(req.instruction, active, rule_modes))
-    specs.extend(
-        (Candidate("supplied:" + c.label, c.instruction), "supplied", ()) for c in req.candidates
-    )
-    if req.phrase_options:
+    if allow_compression:
+        specs.extend(
+            (c, "promptmin", ()) for c in rules.generate(req.instruction, active, rule_modes)
+        )
+        specs.extend(
+            (Candidate("supplied:" + c.label, c.instruction), "supplied", ())
+            for c in req.candidates
+        )
+    if allow_compression and req.phrase_options:
         for choices in itertools.product(
             *(tuple(options.items()) for options in req.phrase_options)
         ):
@@ -109,4 +116,5 @@ def optimize(
         prompt=selected.prompt,
         candidates=tuple(evaluated),
         elapsed_ms=(time.perf_counter() - start) * 1000,
+        compression_enabled=allow_compression,
     )

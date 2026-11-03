@@ -83,7 +83,7 @@ def main():
         request = Request.from_dict(
             {k: v for k, v in item.items() if k not in {"id", "candidates", "phrase_options"}}
         )
-        baseline = optimize(request, counter=counter, rule_modes=())
+        baseline = optimize(request, counter=counter, rule_modes=(), allow_compression=True)
         gs = len(generator.calls)
         generation_error = None
         try:
@@ -121,7 +121,13 @@ def main():
                 else:
                     req = replace(request, phrase_options=options)
                 try:
-                    pool = optimize(req, counter=counter, rule_modes=(), max_combinations=256)
+                    pool = optimize(
+                        req,
+                        counter=counter,
+                        rule_modes=(),
+                        max_combinations=256,
+                        allow_compression=True,
+                    )
                     result, judgments = _review_candidates(request, pool, verifier, 8)
                 except (RuntimeError, ValueError) as exc:
                     error = str(exc)

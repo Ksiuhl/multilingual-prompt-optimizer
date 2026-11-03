@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0a3 — original first, compression opt-in
+
+- `optimize`, `auto_optimize`, and cached template application now retain the original unless `allow_compression=True` is supplied.
+- CLI optimization, automatic mode and benchmarks require `--enable-compression` to search shorter alternatives. Rewrite modifiers cannot implicitly enable it.
+- Disabled automatic mode needs no model/service and makes no generation or judging calls; disabled cache use does not load rewrites.
+- Results expose `compression_enabled`. Added default-path regression tests and retained existing search tests as explicit opt-in experiments.
+- Research harnesses and documentation now state their opt-in behavior. Earlier frozen evidence and scores are unchanged; no new accuracy benefit is claimed.
+
 ## 0.6.0a2 — immutable output-contract regression fix
 
 - Added five exact-prompt repeats on four known content-failure cases: 15/20 original versus 11/20 concise English. Keep the default-policy proposal unmerged.

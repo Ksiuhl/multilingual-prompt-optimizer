@@ -38,6 +38,7 @@ class EnglishPolicyTests(unittest.TestCase):
             generator=model,
             counter=Characters(),
             max_combinations=1,
+            allow_compression=True,
         )
         self.assertEqual(model.inputs[0]["languages"], ["en"])
         self.assertNotEqual(result.automation["status"], "error_original_retained")
@@ -48,6 +49,7 @@ class EnglishPolicyTests(unittest.TestCase):
             Request("Please summarize the supplied document.", payload="KEEP: 王芳\n"),
             generator=generator,
             counter=Characters(),
+            allow_compression=True,
         )
         self.assertEqual(generator.inputs[0]["languages"], ["en"])
         self.assertEqual(result.automation["policy"], "concise_english")
@@ -61,14 +63,17 @@ class EnglishPolicyTests(unittest.TestCase):
             generator=Generator(),
             counter=Characters(),
             languages=("en", "zh"),
+            allow_compression=True,
         )
         self.assertEqual(result.automation["policy"], "experimental_multilingual")
         self.assertEqual(result.automation["languages"], ["en", "zh"])
 
     def test_default_rules_omit_translation_and_explicit_mode_restores_it(self):
         request = Request("Please explain the artificial intelligence algorithm.")
-        default = optimize(request, counter=Characters())
-        experimental = optimize(request, counter=Characters(), rule_modes=("lite", "translate"))
+        default = optimize(request, counter=Characters(), allow_compression=True)
+        experimental = optimize(
+            request, counter=Characters(), rule_modes=("lite", "translate"), allow_compression=True
+        )
         self.assertFalse(any(c.label == "promptmin:translate" for c in default.candidates))
         self.assertTrue(any(c.label == "promptmin:translate" for c in experimental.candidates))
 
@@ -82,7 +87,15 @@ class EnglishPolicyTests(unittest.TestCase):
                 output = Path(folder) / ("experimental.json" if expected else "default.json")
                 with patch("multilingual_prompt_optimizer.cli._counter", return_value=Characters()):
                     status = main(
-                        ["optimize", "--input", str(source), "--output", str(output), *flags]
+                        [
+                            "optimize",
+                            "--enable-compression",
+                            "--input",
+                            str(source),
+                            "--output",
+                            str(output),
+                            *flags,
+                        ]
                     )
                 self.assertEqual(status, 0)
                 result = json.loads(output.read_text(encoding="utf-8"))
@@ -111,6 +124,7 @@ class EnglishPolicyTests(unittest.TestCase):
                     status = main(
                         [
                             "auto",
+                            "--enable-compression",
                             "--input",
                             str(source),
                             "--output",

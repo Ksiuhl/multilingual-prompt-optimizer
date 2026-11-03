@@ -21,7 +21,7 @@ class OutputContractTests(unittest.TestCase):
             output_instruction=contract,
             candidates=(Candidate("short", "Summarize the project note."),),
         )
-        result = optimize(request, counter=Characters(), rule_modes=())
+        result = optimize(request, counter=Characters(), rule_modes=(), allow_compression=True)
         for candidate in result.candidates:
             self.assertTrue(candidate.prompt.endswith(contract))
             self.assertIn("KEEP SOURCE: 王芳\n", candidate.prompt)
