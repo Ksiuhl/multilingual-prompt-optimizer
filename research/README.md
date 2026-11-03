@@ -1,5 +1,18 @@
 # Reproduce the development studies
 
+## Strict frozen-English second stage (offline)
+
+```bash
+python research/analyze_strict_two_stage.py results/strict-two-stage-v060 --out results/local/strict-two-stage-v060
+```
+
+Audits chronological English/review/target freezes, English-only translation
+inputs, candidate provenance, source immutability, exact answers and all
+preparation/target charge records. Distinguishes actual experiment debit from
+minimal and conservative reusable-policy accounting. Cached tokenizer data and
+earlier bundles are needed for fully offline recount/disjointness checks.
+No model or billing calls. [Methods, result and earlier extraction sensitivity](../docs/strict-two-stage-pilot.md).
+
 ## Genuine mixing pilot (offline)
 
 ```bash

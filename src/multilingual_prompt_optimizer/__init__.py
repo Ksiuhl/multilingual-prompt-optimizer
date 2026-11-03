@@ -6,10 +6,11 @@ from .models import Candidate, OptimizationResult, Request
 from .output_contracts import json_object_contract
 from .template_cache import TemplateCache, cache_context
 from .tokenizers import Counter, JsonTokenizerCounter, TiktokenCounter
+from .two_stage import FrozenEnglish, freeze_english, rank_translations, translation_job
 from .validated_templates import JsonExtractionTemplate
 from .validation import AnswerCheck, execute_checked, validate_answer
 
-__version__ = "0.6.0a4"
+__version__ = "0.6.0a5"
 __all__ = [
     "Candidate",
     "Counter",
@@ -27,4 +28,8 @@ __all__ = [
     "cache_context",
     "json_object_contract",
     "JsonExtractionTemplate",
+    "FrozenEnglish",
+    "freeze_english",
+    "translation_job",
+    "rank_translations",
 ]

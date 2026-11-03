@@ -1,0 +1,34 @@
+{
+  "type": "Strict English-freeze then translation-only incremental pilot",
+  "frozen_at_utc": "2026-11-03T19:53:14.957565+00:00",
+  "cases": 20,
+  "families": 10,
+  "repetitions": 3,
+  "translation_calls_planned": 10,
+  "semantic_reviews_maximum": 20,
+  "target_calls_maximum": 120,
+  "model_label": "gpt-6.1-sol",
+  "concurrency_per_model": 1,
+  "max_attempts": 2,
+  "timeout_ms": 60000,
+  "max_output_tokens": 4096,
+  "soft_quota_stop": 75000,
+  "metadata_check": "Before prep; after each prep phase and each 30 target requests. Whole-experiment delta; not a guaranteed ceiling.",
+  "candidate_policy": "Only English clauses and hash go to translator. Never original instruction, task payload or answers. Translator cannot supply English replacements. Whole-prompt min genuine candidate receives a separate fallible equivalence review against frozen English. English is retained unless approved mixing is strictly shorter.",
+  "diagnostic_policy": "Baseline English and approved shortest-genuine diagnostic each repeat three times. Unsupported translation/review failures retain English and skip genuine calls, with missing coverage explicit. No answer-based editing or reruns. Policy outcomes reuse the matching observed English or genuine response; not an independent third arm.",
+  "cost_policy": "All prep/review/target attempts count in the experiment. Production-style incremental accounting includes translation+review once and selected target charges; diagnostic-only targets reported separately. Not an independently executed production bill. Display gateway quota/percentages only.",
+  "limitations": [
+    "One unverified gateway label, ten known task families, twenty synthetic fresh payloads, three repeated trials; no general claim.",
+    "Same model label translates, reviews and answers; model review is fallible/correlated, not independent bilingual certification.",
+    "Manual English baseline and task/oracle authorship are not state-of-the-art English-compressor or external-benchmark comparisons.",
+    "Cache, server load and default sampling are observed, not controlled. Local tokenizer proxy is not authenticated upstream.",
+    "No monolingual translated control. No default-policy/admission change."
+  ],
+  "files": {
+    "stage-one.json": "5a599c3b1d4c0fd9655166f2d95021149ca1f8980aaf8a028033ca016a7e9428",
+    "dataset.json": "9e90636738bad8257a260decac322e7b2e2717439d0d9e22a6e11ce54cfceca2",
+    "translation-requests.json": "1b3ef31168107fd79b43dc5620ad167e8551e4e037d60dbf6035c6edb0876e6e",
+    "runner.mjs": "210bb5b15bc76c87e48a4a211043139486b1c505c29dc489dd3601a7882c43f0",
+    "grader-source.py": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592"
+  }
+}

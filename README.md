@@ -20,6 +20,26 @@ searches supplied/rule alternatives and `auto` uses local Ollama generation and
 judging. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
+## v0.6.0a5 preview: strict English freeze before translation
+
+`freeze_english`, `translation_job` and `rank_translations` separate a caller-chosen
+concise-English baseline from translation-only search. The translator receives
+only exact English segments, their hash and target language names. It cannot
+rewrite English or see source data. Full-prompt ranking preserves the English
+fallback; ranking/model opinions are not semantic guarantees or task admission.
+This preview exposes the strict stage through the separate API and study workflow;
+the existing `mpo auto` command keeps its previous opt-in behavior.
+
+The [strict two-stage pilot](docs/strict-two-stage-pilot.md) fixed English before
+ten real translation calls and ten diagnostic reviews, then tested twenty fresh
+payloads three times. Exact passes were **55/60 English and
+57/60 genuine diagnostic**. Actual policy selected mixed
+for **0/20 cases**, retaining English otherwise.
+Minimal prep-inclusive policy quota was 31.81% higher than frozen English.
+Policy outcomes reuse the observed chosen representation; they are not an
+independent third arm. All preparation/diagnostic charges and accounting scenarios
+are preserved. Original-only defaults and earlier results remain unchanged.
+
 ## v0.6.0a4 preview: original first, compression opt-in
 
 **New scoped mode:** `JsonExtractionTemplate` requires paired, disjoint

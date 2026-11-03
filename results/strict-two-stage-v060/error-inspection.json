@@ -1,0 +1,311 @@
+{
+  "scope": "Post-grading inspection; no data, expected answer, translation or score changes.",
+  "errors": [
+    {
+      "case": "strict-overlap-2",
+      "arm": "concise_english",
+      "rep": 1,
+      "payload": {
+        "query": {
+          "start": 74,
+          "end": 80
+        },
+        "events": [
+          {
+            "id": "TS32-X",
+            "start": 69,
+            "end": 74
+          },
+          {
+            "id": "TS32-W",
+            "start": 72,
+            "end": 76
+          },
+          {
+            "id": "TS32-R",
+            "start": 80,
+            "end": 84
+          },
+          {
+            "id": "TS32-K",
+            "start": 75,
+            "end": 82
+          }
+        ]
+      },
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS32-W",
+            "TS32-K"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS32-X\",\"TS32-W\",\"TS32-K\"]}}",
+      "instruction": "Find events overlapping query; intervals include start and exclude end. Endpoint touching is not overlap. Return matching event id values in input order in ids."
+    },
+    {
+      "case": "strict-stock-1",
+      "arm": "genuine_diagnostic",
+      "rep": 1,
+      "payload": [
+        {
+          "id": "TS31-C",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 4,
+          "reorder_limit": 16
+        },
+        {
+          "id": "TS31-A",
+          "active": true,
+          "on_hand": 2,
+          "reserved": 5,
+          "reorder_limit": 1
+        },
+        {
+          "id": "TS31-B",
+          "active": true,
+          "on_hand": 10,
+          "reserved": 1,
+          "reorder_limit": 8
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS31-A"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS31-A\",\"TS31-B\"]}}",
+      "instruction": "可用库存 = on_hand 减去 reserved。 Put ids with active true and available stock < reorder_limit in ids, in input order."
+    },
+    {
+      "case": "strict-latest-2",
+      "arm": "concise_english",
+      "rep": 2,
+      "payload": [
+        {
+          "device": "TS32-B",
+          "ts": "2029-08-09T12:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "TS32-A",
+          "ts": "2029-08-09T14:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "TS32-B",
+          "ts": "2029-08-09T12:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "TS32-A",
+          "ts": "2029-08-09T13:00:00Z",
+          "state": "online"
+        }
+      ],
+      "expected": {
+        "answer": {
+          "devices": [
+            "TS32-B"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"devices\":[]}}",
+      "instruction": "Per device, use greatest UTC ts; ties use the later input record. Return device names whose latest state is online, sorted ascending in devices."
+    },
+    {
+      "case": "strict-overlap-2",
+      "arm": "concise_english",
+      "rep": 2,
+      "payload": {
+        "query": {
+          "start": 74,
+          "end": 80
+        },
+        "events": [
+          {
+            "id": "TS32-X",
+            "start": 69,
+            "end": 74
+          },
+          {
+            "id": "TS32-W",
+            "start": 72,
+            "end": 76
+          },
+          {
+            "id": "TS32-R",
+            "start": 80,
+            "end": 84
+          },
+          {
+            "id": "TS32-K",
+            "start": 75,
+            "end": 82
+          }
+        ]
+      },
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS32-W",
+            "TS32-K"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS32-W\"]}}",
+      "instruction": "Find events overlapping query; intervals include start and exclude end. Endpoint touching is not overlap. Return matching event id values in input order in ids."
+    },
+    {
+      "case": "strict-stock-1",
+      "arm": "genuine_diagnostic",
+      "rep": 2,
+      "payload": [
+        {
+          "id": "TS31-C",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 4,
+          "reorder_limit": 16
+        },
+        {
+          "id": "TS31-A",
+          "active": true,
+          "on_hand": 2,
+          "reserved": 5,
+          "reorder_limit": 1
+        },
+        {
+          "id": "TS31-B",
+          "active": true,
+          "on_hand": 10,
+          "reserved": 1,
+          "reorder_limit": 8
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS31-A"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS31-C\",\"TS31-A\",\"TS31-B\"]}}",
+      "instruction": "可用库存 = on_hand 减去 reserved。 Put ids with active true and available stock < reorder_limit in ids, in input order."
+    },
+    {
+      "case": "strict-latest-2",
+      "arm": "concise_english",
+      "rep": 3,
+      "payload": [
+        {
+          "device": "TS32-B",
+          "ts": "2029-08-09T12:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "TS32-A",
+          "ts": "2029-08-09T14:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "TS32-B",
+          "ts": "2029-08-09T12:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "TS32-A",
+          "ts": "2029-08-09T13:00:00Z",
+          "state": "online"
+        }
+      ],
+      "expected": {
+        "answer": {
+          "devices": [
+            "TS32-B"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"devices\":[]}}",
+      "instruction": "Per device, use greatest UTC ts; ties use the later input record. Return device names whose latest state is online, sorted ascending in devices."
+    },
+    {
+      "case": "strict-stock-1",
+      "arm": "genuine_diagnostic",
+      "rep": 3,
+      "payload": [
+        {
+          "id": "TS31-C",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 4,
+          "reorder_limit": 16
+        },
+        {
+          "id": "TS31-A",
+          "active": true,
+          "on_hand": 2,
+          "reserved": 5,
+          "reorder_limit": 1
+        },
+        {
+          "id": "TS31-B",
+          "active": true,
+          "on_hand": 10,
+          "reserved": 1,
+          "reorder_limit": 8
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS31-A"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS31-A\",\"TS31-B\"]}}",
+      "instruction": "可用库存 = on_hand 减去 reserved。 Put ids with active true and available stock < reorder_limit in ids, in input order."
+    },
+    {
+      "case": "strict-stock-2",
+      "arm": "concise_english",
+      "rep": 3,
+      "payload": [
+        {
+          "id": "TS32-C",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 5,
+          "reorder_limit": 16
+        },
+        {
+          "id": "TS32-A",
+          "active": false,
+          "on_hand": 2,
+          "reserved": 5,
+          "reorder_limit": 1
+        },
+        {
+          "id": "TS32-B",
+          "active": true,
+          "on_hand": 10,
+          "reserved": 1,
+          "reorder_limit": 9
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": [
+            "TS32-C"
+          ]
+        }
+      },
+      "actual": "{\"answer\":{\"ids\":[\"TS32-C\",\"TS32-B\"]}}",
+      "instruction": "Available stock = on_hand minus reserved. Put ids with active true and available stock < reorder_limit in ids, in input order."
+    }
+  ]
+}

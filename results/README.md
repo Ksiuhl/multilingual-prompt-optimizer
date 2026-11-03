@@ -5,6 +5,20 @@ not money or official-provider prices. Frozen machine records retain their
 original gateway-supplied currency labels and legacy conversion fields solely
 for reproducibility; those fields are not used as financial results.
 
+## Strict frozen-English second stage
+
+`strict-two-stage-v060/` preserves ten frozen English templates, twenty fresh
+boundary fixtures, translation-only jobs, real translation/review outputs,
+chronological freezes and all repeated answer calls. The actual token policy
+selected genuine mixing for 0/20 cases. English scored
+55/60; forced genuine diagnostics scored 57/60.
+Minimal prep-inclusive policy quota was 31.81% higher than frozen English.
+The policy outcome is derived from the matching measured arm, not a third
+independent execution. All calls remain in whole-experiment accounting; diagnostic
+reviews/targets are separated from necessary deployment overhead. Earlier
+extraction sensitivity is a post-hoc saved-data check, not new inference.
+See [the report](../docs/strict-two-stage-pilot.md) and `figures/v060-strict-two-stage-*`.
+
 ## Genuine mixing pilot
 
 `genuine-mix-v060/` freezes 20 canonically distinct new payloads, ten known task

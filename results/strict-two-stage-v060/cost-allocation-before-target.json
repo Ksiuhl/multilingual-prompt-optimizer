@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-03T19:56:50.121925+00:00",
+  "scope": "Declared after translation/ranking and before inspecting semantic-review or any target outputs. Frozen original protocol retained.",
+  "required_review_ids": {
+    "review-1": false,
+    "review-10": false,
+    "review-2": false,
+    "review-3": false,
+    "review-4": false,
+    "review-5": false,
+    "review-6": false,
+    "review-7": false,
+    "review-8": false,
+    "review-9": false
+  },
+  "minimal_policy_cost": "All translation calls plus only reviews of strictly shorter candidates; selected target charges. Longer-diagnostic reviews and unused diagnostic target calls are research overhead.",
+  "conservative_all_prep_cost": "Also report all translation and all review charges plus selected targets, matching the conservative original accounting description.",
+  "actual_experiment_cost": "All translation, review and target attempts reconcile with the whole-experiment meter."
+}

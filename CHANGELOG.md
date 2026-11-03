@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0a5 — strict frozen-English second stage
+
+- Added a byte-checked English freeze and a translation-only job that excludes source data and the earlier original instruction.
+- Recombine immutable English segments with translated segments, count full prompts, preserve numeric/literal guards and retain English on ties or growth. Ranking does not certify semantic equivalence or release task answers.
+- Added boundary/provenance tests and a staged experiment that separates actual token-policy choices, forced diagnostics, translation/review overhead and target-answer accuracy. Original-only defaults and earlier evidence remain unchanged.
+
 ## 0.6.0a4 — scoped extraction admission experiment
 
 - Added `JsonExtractionTemplate` and `validated-extract`: original fallback unless paired development/holdout accuracy, distinct coverage, target/tokenizer identity and matched cost gates pass.

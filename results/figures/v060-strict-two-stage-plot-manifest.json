@@ -1,0 +1,26 @@
+{
+  "protocol.json": "000599d1504cd31e739d2758b8e16d73638d683f74bbffea2188b9c6ba395245",
+  "stage-one.json": "5a599c3b1d4c0fd9655166f2d95021149ca1f8980aaf8a028033ca016a7e9428",
+  "review-freeze.json": "7dc1f7863dc8ef03ca13f522736ab25646cd6db303e0dc634a23a5e8499b2c62",
+  "target-freeze.json": "b04e4d18a43a1449b44e09a45c9e57f7f59bc190521a4418b437ae284d769afd",
+  "cost-allocation-before-target.json": "41f33fea9bb786f16b0f31722606c63ea4bc530fcf11aec2ecd02192d2e34513",
+  "translation-results.json": "64af7360b75177f468b6342e5e25f0d5d3921ff33469eb3ddac5ae33e6aec3d7",
+  "review-results.json": "9eb0a705b3646b5767ae6ec41cfa3c1bf27e68c7d0e0a98237f912a954c5571b",
+  "target-results.json": "73122cc9c3f382e37ffae6d40d5f31ddbb9b1b59348547c892f40713f857d245",
+  "billing-matched.json": "839626022906ef3519c25846718954ddb3a762cf403c0ceeeccf97f83888af40",
+  "quota-interval.json": "ed67bb925d8d091fae48c9355e79faa73a7e139d1a34db246b317284ec87c443",
+  "generator_sha256": "2cde5fe6f7fd26e3a30ac52d10806a26ee5f43e556bd562e9476e332d3b10a26",
+  "implementation-manifest.json": "422f1f5a66074be3bc9c10e63d6a93a8d9c4255fd3a16fac3860071e854fcd78",
+  "execution.json": "d836975efc7ae5042a0d9bcfd62f22023c55bf31cd1a243062bdd7e3751d1fa9",
+  "quota-checkpoints.json": "36c2de066257b3e61c34b16bb60f8857fbf3faf1bcc97552965b403dd7627179",
+  "prior-extraction-audit.json": "0cf4d071000c4af08a151dc81d79e217a90224c910a61f56991bfecd6079cb13",
+  "error-inspection.json": "5739e33681626d269c1691d6d1131b506aadd9798247924f4814ebd41ef0243a",
+  "outputs": {
+    "attempts.json": "c1e272a16f24fa92491be58205d2dcf7258e10f053ff673cacfccbc3059bf26c",
+    "comparison.pdf": "c7987d0614ad6824e986985a7fd53593035a2c37d8566b09f3d0f0b58945294e",
+    "comparison.png": "843686c76eaa5e1c748be9a3e7b364e416fc2d4bc313884a842685cd93f1bde1",
+    "comparison.svg": "3cca827accaddfae7ad2819b8a84d76e9693a0f10b9b8f4b858cd898559a0ce8",
+    "summary.json": "3e8f0f46ff255425db88cbd8b54c0baa00fce8fb0d31d570c02d7e3f6076d2ae",
+    "trials.json": "463ff6b66245244aa70f75b14d5144f036b00c041d0965c62fe923f0eefade56"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "started_at_utc": "2026-11-03T19:54:00.650Z",
+  "ended_at_utc": "2026-11-03T20:18:01.511Z",
+  "counter_delta_quota": 38250,
+  "unit": "gateway quota units",
+  "scope": "All translation, review and target attempts in the strict pilot.",
+  "stable_later_read": true,
+  "later_counter_delta_quota": 38250,
+  "later_read_at_utc": "2026-11-03T20:19:31.282Z"
+}
