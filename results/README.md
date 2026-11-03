@@ -1,5 +1,15 @@
 # Checked-in local results
 
+## Offline extraction cost audit
+
+`extraction-cost-audit-{summary,attempts,billing-fit}.json` retains the descriptive
+audit of all 69 saved attempts. The exact observed cost gap decomposes to
+-629 units on the other 31 successful pairs, +1,185 on the exceptional pair, and
++395 on five timeouts. No observations are removed from the primary result and
+the template remains rejected. The cache explanation is inferred, not verified
+upstream cache state. See [the report](../docs/extraction-cost-audit.md) and
+`figures/v060-extraction-cost-audit-*` graphs and provenance.
+
 ## Scoped extraction admission (0.6.0a4)
 
 `validated-extraction-v060/` retains the frozen 60-trial primary corpus and a

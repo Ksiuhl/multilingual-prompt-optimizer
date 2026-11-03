@@ -29,6 +29,12 @@ payloads, including an audited four-call uniqueness supplement. It was still
 were about 12% higher. No profitable template is claimed. This projection is also
 computable without an LLM. [Mode, evidence, audit and graph](docs/validated-extraction.md).
 
+The [offline cost audit](docs/extraction-cost-audit.md) locates the 951-unit
+increase: -629 across the other 31 successful pairs, +1,185 from one successful
+pair lacking cache metadata, and +395 from five charged timeouts. A fitted
+cache-discount scenario explains the charges; actual cache state is unconfirmed.
+The full result and admission rejection remain unchanged.
+
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
 charges reconciled with the gateway counter: English cost **0.88% less** in

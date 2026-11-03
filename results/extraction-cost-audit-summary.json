@@ -1,0 +1,245 @@
+{
+  "scope": "Post-hoc offline descriptive audit of existing records; no new model or billing calls. Primary evidence and rejected admission unchanged.",
+  "totals": {
+    "original": {
+      "trials": 32,
+      "http_attempts": 32,
+      "charged_quota": 7918,
+      "final_attempt_quota": 7918,
+      "nonfinal_attempt_quota": 0,
+      "local_content_tokens": 10180,
+      "reported_final_input_tokens": 150532,
+      "reported_final_output_tokens": 975,
+      "known_cached_tokens": 135808,
+      "missing_cache_breakdowns": 0
+    },
+    "compressed": {
+      "trials": 32,
+      "http_attempts": 37,
+      "charged_quota": 8869,
+      "final_attempt_quota": 8474,
+      "nonfinal_attempt_quota": 395,
+      "local_content_tokens": 8132,
+      "reported_final_input_tokens": 148484,
+      "reported_final_output_tokens": 1003,
+      "known_cached_tokens": 131840,
+      "missing_cache_breakdowns": 1
+    }
+  },
+  "splits": {
+    "development": {
+      "original": {
+        "trials": 10,
+        "http_attempts": 10,
+        "charged_quota": 2504,
+        "final_attempt_quota": 2504,
+        "nonfinal_attempt_quota": 0,
+        "local_content_tokens": 3196,
+        "reported_final_input_tokens": 47056,
+        "reported_final_output_tokens": 284,
+        "known_cached_tokens": 42240,
+        "missing_cache_breakdowns": 0
+      },
+      "compressed": {
+        "trials": 10,
+        "http_attempts": 11,
+        "charged_quota": 3505,
+        "final_attempt_quota": 3425,
+        "nonfinal_attempt_quota": 80,
+        "local_content_tokens": 2556,
+        "reported_final_input_tokens": 46416,
+        "reported_final_output_tokens": 296,
+        "known_cached_tokens": 38400,
+        "missing_cache_breakdowns": 1
+      }
+    },
+    "holdout": {
+      "original": {
+        "trials": 22,
+        "http_attempts": 22,
+        "charged_quota": 5414,
+        "final_attempt_quota": 5414,
+        "nonfinal_attempt_quota": 0,
+        "local_content_tokens": 6984,
+        "reported_final_input_tokens": 103476,
+        "reported_final_output_tokens": 691,
+        "known_cached_tokens": 93568,
+        "missing_cache_breakdowns": 0
+      },
+      "compressed": {
+        "trials": 22,
+        "http_attempts": 26,
+        "charged_quota": 5364,
+        "final_attempt_quota": 5049,
+        "nonfinal_attempt_quota": 315,
+        "local_content_tokens": 5576,
+        "reported_final_input_tokens": 102068,
+        "reported_final_output_tokens": 707,
+        "known_cached_tokens": 93440,
+        "missing_cache_breakdowns": 0
+      }
+    }
+  },
+  "local_input_reduction": 0.20117878192534377,
+  "reported_input_reduction": 0.013605080647304257,
+  "reported_minus_local_per_success": [
+    4386
+  ],
+  "output_token_increase": 28,
+  "same_reported_cache_pairs": 24,
+  "exceptional_pair": {
+    "compressed": {
+      "case_id": "development-108",
+      "split": "development",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031633127817922348268d9d6bvUFBXp8",
+      "complete": true,
+      "http_status": 200,
+      "error_type": null,
+      "elapsed_ms": 4784.3917000000365,
+      "quota": 1429,
+      "ledger_input_tokens": 4642,
+      "ledger_output_tokens": 24,
+      "client_usage_present": true,
+      "reported_cached_tokens": null,
+      "is_final_attempt": true,
+      "local_content_tokens": 256,
+      "reported_minus_local_tokens": 4386
+    },
+    "original": {
+      "case_id": "development-108",
+      "split": "development",
+      "arm": "original",
+      "attempt": 1,
+      "request_id": "202611031633437068184568268d9d6NYXmZI7S",
+      "complete": true,
+      "http_status": 200,
+      "error_type": null,
+      "elapsed_ms": 2056.399799999781,
+      "quota": 244,
+      "ledger_input_tokens": 4706,
+      "ledger_output_tokens": 24,
+      "client_usage_present": true,
+      "reported_cached_tokens": 4224,
+      "is_final_attempt": true,
+      "local_content_tokens": 320,
+      "reported_minus_local_tokens": 4386
+    }
+  },
+  "observed_gap_decomposition": {
+    "other_31_successful_pairs": -629,
+    "exceptional_successful_pair": 1185,
+    "timed_out_attempts": 395,
+    "total": 951
+  },
+  "failed_attempts": [
+    {
+      "case_id": "development-109",
+      "split": "development",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031633457681204478268d9d6yUOWinKW",
+      "complete": false,
+      "http_status": 200,
+      "error_type": "TimeoutError",
+      "elapsed_ms": 60019.209000000264,
+      "quota": 80,
+      "ledger_input_tokens": 268,
+      "ledger_output_tokens": 0,
+      "client_usage_present": false,
+      "reported_cached_tokens": null,
+      "is_final_attempt": false
+    },
+    {
+      "case_id": "holdout-912",
+      "split": "holdout",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031635072428798318268d9d6Yx7bssqC",
+      "complete": false,
+      "http_status": 200,
+      "error_type": "TimeoutError",
+      "elapsed_ms": 60005.182299999986,
+      "quota": 79,
+      "ledger_input_tokens": 264,
+      "ledger_output_tokens": 0,
+      "client_usage_present": false,
+      "reported_cached_tokens": null,
+      "is_final_attempt": false
+    },
+    {
+      "case_id": "holdout-917",
+      "split": "holdout",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031636305394552888268d9d6e2WDGSU7",
+      "complete": false,
+      "http_status": 200,
+      "error_type": "TimeoutError",
+      "elapsed_ms": 60019.08350000018,
+      "quota": 79,
+      "ledger_input_tokens": 264,
+      "ledger_output_tokens": 0,
+      "client_usage_present": false,
+      "reported_cached_tokens": null,
+      "is_final_attempt": false
+    },
+    {
+      "case_id": "holdout-918",
+      "split": "holdout",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031638188638302388268d9d6EOI5gBh5",
+      "complete": false,
+      "http_status": 200,
+      "error_type": "TimeoutError",
+      "elapsed_ms": 60016.60719999997,
+      "quota": 80,
+      "ledger_input_tokens": 266,
+      "ledger_output_tokens": 0,
+      "client_usage_present": false,
+      "reported_cached_tokens": null,
+      "is_final_attempt": false
+    },
+    {
+      "case_id": "holdout-903",
+      "split": "holdout",
+      "arm": "compressed",
+      "attempt": 1,
+      "request_id": "202611031638466443919968268d9d6j6YjyBNP",
+      "complete": false,
+      "http_status": 200,
+      "error_type": "TimeoutError",
+      "elapsed_ms": 60010.8853000002,
+      "quota": 77,
+      "ledger_input_tokens": 258,
+      "ledger_output_tokens": 0,
+      "client_usage_present": false,
+      "reported_cached_tokens": null,
+      "is_final_attempt": false
+    }
+  ],
+  "recorded_pricing_reference": {
+    "path": "pricing.json",
+    "observed_at_utc": "2026-11-03T15:49:51.377Z",
+    "expression": "len <= 272000 ? tier(\"0_272k\", p * 2 + cr * 0.1 + cc * 2.5 + c * 10) : tier(\"272k_plus\", p * 4 + cr * 0.2 + cc * 5 + c * 15)"
+  },
+  "billing_fit_diagnostic": {
+    "known_cache_rows_for_fit": 63,
+    "median_effective_multiplier": 0.3000491883915396,
+    "rounded_scenario_multiplier": 0.3,
+    "rows_matching_nearest_integer_quota": 69,
+    "attempts": 69,
+    "max_absolute_residual_units": 0.46000000000000796,
+    "hypothetical_outlier_quota_with_original_cache_count": 225,
+    "assumptions": "Saved short-context rates; zero unreported cache writes; absent cache metadata treated as zero only in this diagnostic; inferred effective multiplier 0.3. Not proof of actual cache state or account group."
+  },
+  "interpretation": [
+    "Actual total compressed debit remains 951 units higher; the admission rejection is unchanged.",
+    "The 31-pair remainder is a post-hoc diagnostic, not a replacement savings result or admission sample.",
+    "The high-charge response lacks cache metadata and matches a no-cache-discount billing scenario. A cache miss cannot be proven from these records.",
+    "The constant reported-minus-local difference may reflect added context, a tokenizer difference or gateway accounting; hidden prompt text is unavailable.",
+    "Charged timeouts and caching/accounting differences dominated this run; the small output increase did not explain the main gap."
+  ]
+}

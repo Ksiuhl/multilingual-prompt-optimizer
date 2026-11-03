@@ -1,5 +1,16 @@
 # Reproduce the development studies
 
+## Extraction cost audit (offline)
+
+```bash
+python research/audit_extraction_costs.py results/validated-extraction-v060 --out results/local/extraction-cost-audit
+```
+
+This audits all saved attempts, matched charges, cache metadata and local token
+counts. It makes no inference or billing calls. The cached tiktoken encoding is
+needed for a fully offline run. The 951-unit cost increase is unchanged; subset
+and billing-fit calculations are descriptive diagnostics. [Findings](../docs/extraction-cost-audit.md).
+
 ## Scoped extraction admission (offline)
 
 ```bash

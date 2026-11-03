@@ -15,3 +15,5 @@ results/figures/v060-reliability-* -text
 results/validated-extraction-v060/** -text
 results/validated-extraction-v060-summary.json -text
 results/figures/v060-validated-extraction-* -text
+results/extraction-cost-audit* -text
+results/figures/v060-extraction-cost-audit-* -text

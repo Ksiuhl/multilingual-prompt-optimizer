@@ -1,0 +1,416 @@
+[
+  {
+    "request_id": "202611031633031020410228268d9d6Xh5PHsJ8",
+    "observed_quota": 260,
+    "modeled_quota_before_rounding": 260.46,
+    "residual": -0.45999999999997954
+  },
+  {
+    "request_id": "202611031633035897581888268d9d6JVcaHbzR",
+    "observed_quota": 272,
+    "modeled_quota_before_rounding": 272.16,
+    "residual": -0.160000000000025
+  },
+  {
+    "request_id": "202611031633127817922348268d9d6bvUFBXp8",
+    "observed_quota": 1429,
+    "modeled_quota_before_rounding": 1428.6,
+    "residual": 0.40000000000009095
+  },
+  {
+    "request_id": "202611031633175688244638268d9d6rVOA5LkK",
+    "observed_quota": 197,
+    "modeled_quota_before_rounding": 197.28,
+    "residual": -0.28000000000000114
+  },
+  {
+    "request_id": "202611031633213191567918268d9d6azlEc9mY",
+    "observed_quota": 253,
+    "modeled_quota_before_rounding": 252.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031633236612482988268d9d6je0IHRf0",
+    "observed_quota": 249,
+    "modeled_quota_before_rounding": 249.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031633259529498908268d9d6uOrIv6BF",
+    "observed_quota": 258,
+    "modeled_quota_before_rounding": 257.76,
+    "residual": 0.2400000000000091
+  },
+  {
+    "request_id": "202611031633127526174908268d9d6D5AFPKwf",
+    "observed_quota": 271,
+    "modeled_quota_before_rounding": 270.66,
+    "residual": 0.339999999999975
+  },
+  {
+    "request_id": "202611031633344177274728268d9d67ymFoUWg",
+    "observed_quota": 225,
+    "modeled_quota_before_rounding": 224.76000000000002,
+    "residual": 0.23999999999998067
+  },
+  {
+    "request_id": "202611031633369880887748268d9d6N5IMDiPc",
+    "observed_quota": 242,
+    "modeled_quota_before_rounding": 241.86,
+    "residual": 0.13999999999998636
+  },
+  {
+    "request_id": "202611031633360301139198268d9d6x31SNesJ",
+    "observed_quota": 223,
+    "modeled_quota_before_rounding": 222.66,
+    "residual": 0.3400000000000034
+  },
+  {
+    "request_id": "202611031633437068184568268d9d6NYXmZI7S",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031633394691218438268d9d608zAuEMr",
+    "observed_quota": 251,
+    "modeled_quota_before_rounding": 251.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031633475692480388268d9d6vtAXqbLR",
+    "observed_quota": 224,
+    "modeled_quota_before_rounding": 224.46,
+    "residual": -0.46000000000000796
+  },
+  {
+    "request_id": "202611031633494841341908268d9d6LLEfn2L4",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031634280707674748268d9d6akEykxYB",
+    "observed_quota": 230,
+    "modeled_quota_before_rounding": 230.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031634298782017488268d9d6LGO9GCei",
+    "observed_quota": 220,
+    "modeled_quota_before_rounding": 219.66,
+    "residual": 0.3400000000000034
+  },
+  {
+    "request_id": "202611031634372227466048268d9d6Cdh0EFjQ",
+    "observed_quota": 239,
+    "modeled_quota_before_rounding": 238.86,
+    "residual": 0.13999999999998636
+  },
+  {
+    "request_id": "202611031634417719950398268d9d6lwz1oppD",
+    "observed_quota": 239,
+    "modeled_quota_before_rounding": 239.46,
+    "residual": -0.46000000000000796
+  },
+  {
+    "request_id": "202611031634450057452688268d9d68f43d4fb",
+    "observed_quota": 226,
+    "modeled_quota_before_rounding": 226.26000000000002,
+    "residual": -0.2600000000000193
+  },
+  {
+    "request_id": "202611031634474178501408268d9d6jJ7GIKXI",
+    "observed_quota": 239,
+    "modeled_quota_before_rounding": 239.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031634498519811818268d9d6LNdbZkL4",
+    "observed_quota": 279,
+    "modeled_quota_before_rounding": 279.06,
+    "residual": -0.060000000000002274
+  },
+  {
+    "request_id": "202611031634597679643088268d9d6zp7gjt8G",
+    "observed_quota": 232,
+    "modeled_quota_before_rounding": 231.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031635019023521888268d9d6XpTWLBBi",
+    "observed_quota": 228,
+    "modeled_quota_before_rounding": 228.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031635041235765808268d9d6toB5Aqdv",
+    "observed_quota": 220,
+    "modeled_quota_before_rounding": 219.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031633457681204478268d9d6yUOWinKW",
+    "observed_quota": 80,
+    "modeled_quota_before_rounding": 80.39999999999999,
+    "residual": -0.3999999999999915
+  },
+  {
+    "request_id": "202611031634480079534858268d9d68fww6ao1",
+    "observed_quota": 159,
+    "modeled_quota_before_rounding": 159.0,
+    "residual": 0.0
+  },
+  {
+    "request_id": "202611031635097495464868268d9d63c3lJBpq",
+    "observed_quota": 261,
+    "modeled_quota_before_rounding": 261.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031635199314912568268d9d6gFWqc8UW",
+    "observed_quota": 226,
+    "modeled_quota_before_rounding": 226.26000000000002,
+    "residual": -0.2600000000000193
+  },
+  {
+    "request_id": "202611031635231201417428268d9d6b06PIDrO",
+    "observed_quota": 232,
+    "modeled_quota_before_rounding": 231.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031635252688184078268d9d6vCeTs6m2",
+    "observed_quota": 248,
+    "modeled_quota_before_rounding": 247.56,
+    "residual": 0.4399999999999977
+  },
+  {
+    "request_id": "202611031635287297972778268d9d6DZHNhG9B",
+    "observed_quota": 290,
+    "modeled_quota_before_rounding": 289.56,
+    "residual": 0.4399999999999977
+  },
+  {
+    "request_id": "202611031635322176515708268d9d6IXy6y624",
+    "observed_quota": 245,
+    "modeled_quota_before_rounding": 245.46,
+    "residual": -0.46000000000000796
+  },
+  {
+    "request_id": "202611031635350192828218268d9d6syr1AlFS",
+    "observed_quota": 215,
+    "modeled_quota_before_rounding": 214.68,
+    "residual": 0.3199999999999932
+  },
+  {
+    "request_id": "202611031635374338120318268d9d6e1Lh69tE",
+    "observed_quota": 245,
+    "modeled_quota_before_rounding": 245.46,
+    "residual": -0.46000000000000796
+  },
+  {
+    "request_id": "202611031635395533776538268d9d6qxh7j6rL",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031635072428798318268d9d6Yx7bssqC",
+    "observed_quota": 79,
+    "modeled_quota_before_rounding": 79.2,
+    "residual": -0.20000000000000284
+  },
+  {
+    "request_id": "202611031636093483397038268d9d6mE92iS7p",
+    "observed_quota": 255,
+    "modeled_quota_before_rounding": 254.76,
+    "residual": 0.2400000000000091
+  },
+  {
+    "request_id": "202611031636176114519308268d9d6pAJIqMhH",
+    "observed_quota": 256,
+    "modeled_quota_before_rounding": 255.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031635478022133038268d9d6WhywmJAe",
+    "observed_quota": 266,
+    "modeled_quota_before_rounding": 265.86,
+    "residual": 0.13999999999998636
+  },
+  {
+    "request_id": "202611031636260957537298268d9d6dKVYB25i",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031636285788785088268d9d6k9sQhvhJ",
+    "observed_quota": 238,
+    "modeled_quota_before_rounding": 237.66,
+    "residual": 0.3400000000000034
+  },
+  {
+    "request_id": "202611031636264505589968268d9d6t3Ve7dIf",
+    "observed_quota": 247,
+    "modeled_quota_before_rounding": 246.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031636324415590568268d9d625HFEdhn",
+    "observed_quota": 182,
+    "modeled_quota_before_rounding": 181.79999999999998,
+    "residual": 0.20000000000001705
+  },
+  {
+    "request_id": "202611031637033321748418268d9d6z975uoOP",
+    "observed_quota": 239,
+    "modeled_quota_before_rounding": 239.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031637054163182328268d9d6oBjnvv4J",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031637105320236728268d9d6VduqHp7C",
+    "observed_quota": 228,
+    "modeled_quota_before_rounding": 228.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031637124590002048268d9d69IqTXVcI",
+    "observed_quota": 251,
+    "modeled_quota_before_rounding": 251.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031637144275185648268d9d6Bu5v8Slh",
+    "observed_quota": 228,
+    "modeled_quota_before_rounding": 228.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031637167773523368268d9d6qkwIAaFR",
+    "observed_quota": 280,
+    "modeled_quota_before_rounding": 279.96,
+    "residual": 0.040000000000020464
+  },
+  {
+    "request_id": "202611031636305394552888268d9d6e2WDGSU7",
+    "observed_quota": 79,
+    "modeled_quota_before_rounding": 79.2,
+    "residual": -0.20000000000000284
+  },
+  {
+    "request_id": "202611031637331925206868268d9d6TfaHLUci",
+    "observed_quota": 152,
+    "modeled_quota_before_rounding": 151.8,
+    "residual": 0.19999999999998863
+  },
+  {
+    "request_id": "202611031637406939095528268d9d67Qu8XOyy",
+    "observed_quota": 238,
+    "modeled_quota_before_rounding": 237.66,
+    "residual": 0.3400000000000034
+  },
+  {
+    "request_id": "202611031637430177365718268d9d6RRKYY6al",
+    "observed_quota": 220,
+    "modeled_quota_before_rounding": 219.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031637256730673078268d9d6dwgp0H5o",
+    "observed_quota": 248,
+    "modeled_quota_before_rounding": 247.56,
+    "residual": 0.4399999999999977
+  },
+  {
+    "request_id": "202611031637516877950728268d9d6okuoQpOY",
+    "observed_quota": 178,
+    "modeled_quota_before_rounding": 178.2,
+    "residual": -0.19999999999998863
+  },
+  {
+    "request_id": "202611031638137469287748268d9d6mcT6Qc6H",
+    "observed_quota": 248,
+    "modeled_quota_before_rounding": 247.56,
+    "residual": 0.4399999999999977
+  },
+  {
+    "request_id": "202611031638167727313668268d9d6w1TLDtl2",
+    "observed_quota": 232,
+    "modeled_quota_before_rounding": 231.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031637451214805948268d9d6GeJwsSbi",
+    "observed_quota": 273,
+    "modeled_quota_before_rounding": 272.7,
+    "residual": 0.30000000000001137
+  },
+  {
+    "request_id": "202611031638438824014648268d9d6yMxNTr5y",
+    "observed_quota": 248,
+    "modeled_quota_before_rounding": 247.56,
+    "residual": 0.4399999999999977
+  },
+  {
+    "request_id": "202611031638188638302388268d9d6EOI5gBh5",
+    "observed_quota": 80,
+    "modeled_quota_before_rounding": 79.8,
+    "residual": 0.20000000000000284
+  },
+  {
+    "request_id": "202611031639210123745558268d9d64vNagKmJ",
+    "observed_quota": 228,
+    "modeled_quota_before_rounding": 228.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031638466443919968268d9d6j6YjyBNP",
+    "observed_quota": 77,
+    "modeled_quota_before_rounding": 77.39999999999999,
+    "residual": -0.3999999999999915
+  },
+  {
+    "request_id": "202611031639495246771798268d9d6g6G9D2NF",
+    "observed_quota": 244,
+    "modeled_quota_before_rounding": 243.96,
+    "residual": 0.03999999999999204
+  },
+  {
+    "request_id": "202611031639511916211938268d9d6RwKdearc",
+    "observed_quota": 250,
+    "modeled_quota_before_rounding": 250.26,
+    "residual": -0.2599999999999909
+  },
+  {
+    "request_id": "202611031640196940607598268d9d6efbbVWj2",
+    "observed_quota": 224,
+    "modeled_quota_before_rounding": 224.16,
+    "residual": -0.1599999999999966
+  },
+  {
+    "request_id": "202611031640196958821778268d9d6K4xsNkVq",
+    "observed_quota": 243,
+    "modeled_quota_before_rounding": 243.36,
+    "residual": -0.36000000000001364
+  },
+  {
+    "request_id": "202611031640218077797918268d9d6XfJGwUWK",
+    "observed_quota": 234,
+    "modeled_quota_before_rounding": 234.06,
+    "residual": -0.060000000000002274
+  },
+  {
+    "request_id": "202611031640244587701268268d9d66qZRVobr",
+    "observed_quota": 215,
+    "modeled_quota_before_rounding": 214.86,
+    "residual": 0.13999999999998636
+  }
+]

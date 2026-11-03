@@ -89,6 +89,10 @@ semantic equivalence. All earlier studies remain unchanged.
 
 ## Use and reproduce
 
+The later [offline cost audit](extraction-cost-audit.md) decomposes the increase
+into an exceptional cache-accounting pair, timeout charges, and the remaining
+pairs. It does not alter these scores, remove observations, or admit the template.
+
 ```python
 import json
 from pathlib import Path
