@@ -1,5 +1,18 @@
 # Reproduce the development studies
 
+## Fresh-input paid follow-up (offline)
+
+```bash
+python research/analyze_fresh_cache.py results/fresh-cache-v060 --out results/local/fresh-cache-v060
+```
+
+This verifies the frozen 120-request plan and its observed 32-request prefix,
+20 distinct planned inputs (16 observed), disjointness from earlier corpora,
+all exact answers, known charges and missing ledger coverage. No model or billing
+calls are made. Read the [partial-result report](../docs/fresh-cache-followup.md)
+before interpreting the graph. Unsent requests are not graded; unmatched charges
+are not zero, and no net saving is claimed.
+
 ## Small cache/retry follow-up (offline)
 
 ```bash

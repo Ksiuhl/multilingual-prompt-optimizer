@@ -20,3 +20,6 @@ results/figures/v060-extraction-cost-audit-* -text
 results/cache-followup-v060* -text
 results/cache-followup-v060/** -text
 results/figures/v060-cache-followup-* -text
+results/fresh-cache-v060* -text
+results/fresh-cache-v060/** -text
+results/figures/v060-fresh-cache-* -text
