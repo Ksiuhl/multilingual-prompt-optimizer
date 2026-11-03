@@ -240,7 +240,8 @@ def analyze(directory, out):
             {
                 "arms": summary["arms"],
                 "unstable_groups": len(summary["unstable_prompt_groups"]),
-                "billing": summary["billing"],
+                "charged_quota_by_arm": summary["billing"]["charged_quota_by_arm"],
+                "counter_reconciles": summary["billing"]["matches_interval_counter"],
             }
         )
     )
@@ -273,9 +274,9 @@ def plot(summary, out):
         ylim=(0, 6.1),
     )
     axs[0].legend(loc="upper right", fontsize=9)
-    usd = summary["billing"]["displayed_usd_by_arm"]
-    if usd:
-        values = [usd[a] for a in ["original", "concise_english"]]
+    quota = summary["billing"]["charged_quota_by_arm"]
+    if quota:
+        values = [quota[a] for a in ["original", "concise_english"]]
         bars = axs[1].bar(
             ["Original (20 trials)", "Concise EN (20 trials)"], values, color=["#8e9eae", "#3b8872"]
         )
@@ -283,19 +284,17 @@ def plot(summary, out):
             axs[1].text(
                 bar.get_x() + bar.get_width() / 2,
                 value + max(values) * 0.04,
-                f"${value:.6f}",
+                f"{value:,} units",
                 ha="center",
                 fontsize=10,
             )
         axs[1].set(
             title="Matched gateway usage-log charges",
-            ylabel="Gateway-displayed USD (not an invoice)",
+            ylabel="Gateway quota units",
             ylim=(0, max(max(values) * 1.3, 0.001)),
         )
     else:
-        axs[1].text(
-            0.5, 0.5, "Verified USD conversion unavailable", ha="center", transform=axs[1].transAxes
-        )
+        axs[1].text(0.5, 0.5, "Gateway quota unavailable", ha="center", transform=axs[1].transAxes)
     for ax in axs:
         ax.spines[["top", "right"]].set_visible(False)
         ax.grid(axis="y", alpha=0.15)

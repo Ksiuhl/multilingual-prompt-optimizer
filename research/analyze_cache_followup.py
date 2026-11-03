@@ -261,10 +261,12 @@ def analyze(directory, out):
         json.dumps(
             {
                 "complete": summary["execution_complete"],
-                "arms": arms,
+                "arms": {
+                    a: {k: v for k, v in r.items() if k != "displayed_usd"} for a, r in arms.items()
+                },
                 "repetitions": repetitions,
                 "counter_reconciles": reconciles,
-                "total_usd": summary["total_displayed_usd"],
+                "total_quota": summary["total_quota"],
             }
         )
     )
@@ -287,10 +289,7 @@ def plot(summary, out):
             linewidth=3.5 if arm == "original" else 1.5,
             markersize=7 if arm == "original" else 4,
         )
-        values = [
-            summary["repetitions"][str(rep)][arm]["charged_quota"] / summary["quota_per_unit"]
-            for rep in range(1, 4)
-        ]
+        values = [summary["repetitions"][str(rep)][arm]["charged_quota"] for rep in range(1, 4)]
         bars = axes[1].bar(
             [rep + offset for rep in range(1, 4)], values, width=0.34, label=label, color=color
         )
@@ -298,7 +297,7 @@ def plot(summary, out):
             axes[1].text(
                 bar.get_x() + bar.get_width() / 2,
                 v + max(values) * 0.04,
-                f"${v:.6f}",
+                f"{v:,} units",
                 ha="center",
                 fontsize=8,
             )
@@ -321,7 +320,7 @@ def plot(summary, out):
     axes[1].set(
         title="All charges, including first use and retries",
         xlabel="Repetition (not a controlled cache treatment)",
-        ylabel="Gateway-displayed USD credits; not invoice",
+        ylabel="Gateway quota units",
         xticks=[1, 2, 3],
     )
     axes[1].margins(y=0.25)

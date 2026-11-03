@@ -1,7 +1,7 @@
 # Small paid cache/retry follow-up
 
 **Result:** all 24 responses were correct. Compressed prompts incurred **6.06%
-less gateway credit charge** in this run. Every response reported 4,224 cached
+less gateway quota consumption** in this run. Every response reported 4,224 cached
 input tokens, and there were no retries. This is encouraging diagnostic evidence,
 not a new holdout benchmark or permission to enable the rejected template.
 
@@ -31,23 +31,22 @@ and reported positive cache counts are observational metadata rather than a
 controlled warm-cache treatment. Every first repetition and any retry would
 count in the result.
 
-A soft $0.05 displayed-credit stop was checked between paired blocks; this was
+A soft 25,000-quota-unit stop was checked between paired blocks; this was
 not a guaranteed spending ceiling. The actual debit stayed below it. No new
 candidate generation or translation calls were made.
 
 ## Accuracy and matched charges
 
-| Arm | Exact passes | HTTP attempts | Matched charged quota | Gateway-displayed USD credits |
-|---|---:|---:|---:|---:|
-| Original | 12/12 | 12 | 2,989 | $0.005978 |
-| Compressed | 12/12 | 12 | 2,808 | $0.005616 |
-| **Total** | **24/24** | **24** | **5,797** | **$0.011594** |
+| Arm | Exact passes | HTTP attempts | Matched charged quota |
+|---|---:|---:|---:|
+| Original | 12/12 | 12 | 2,989 |
+| Compressed | 12/12 | 12 | 2,808 |
+| **Total** | **24/24** | **24** | **5,797** |
 
-The 181-unit reduction is **$0.000362, or 6.06%**. All response request IDs
+The reduction is **181 gateway quota units (6.06%)**. All response request IDs
 matched consumption records. Their sum exactly matched the key-specific quota
-increase, which was unchanged in a later read. The gateway advertised 500,000
-quota units per USD display unit. These are reported usage-credit debits, not
-payment invoices or independently audited upstream charges. Only matching study
+increase, which was unchanged in a later read. The comparison uses gateway quota units, not official-provider prices
+or independently audited upstream charges. Only matching study
 records, public units and counter deltas are retained publicly.
 
 | Repetition | Original exact passes | Compressed exact passes | Original quota | Compressed quota |

@@ -1,12 +1,17 @@
 # Checked-in local results
 
+Current reports and graphs display gateway quota units and percentage changes,
+not money or official-provider prices. Frozen machine records retain their
+original gateway-supplied currency labels and legacy conversion fields solely
+for reproducibility; those fields are not used as financial results.
+
 ## Small cache/retry follow-up
 
 `cache-followup-v060/` freezes four known cases, three repeats per arm, balanced
 serial request order, all receipts, paired spend checks and matching charges.
 All 24 responses passed; every response reported 4,224 cached input tokens, with
 no retries. Compressed charges were 6.06% lower. Total matched debit was 5,797
-quota units ($0.011594 displayed gateway credits). This selected-case diagnostic
+quota units. This selected-case diagnostic
 does not replace the prior cost failure or admit a template. See
 [the report](../docs/cache-followup.md), `cache-followup-v060-summary.json` and
 `figures/v060-cache-followup-*`.
@@ -28,7 +33,7 @@ separately frozen four-trial supplement correcting distinct holdout coverage.
 All original observations remain included: 10 distinct development payloads and
 20 distinct holdout payloads across 64 trials. Every completed answer passed.
 The candidate was rejected because development costs rose. Matching charged
-quota reconciled to 16,787 units ($0.033574 displayed gateway credits).
+quota reconciled to 16,787 units.
 The evidence artifact remains rejected; no template was enabled by these results.
 See [the audit and graph](../docs/validated-extraction.md).
 
@@ -41,8 +46,8 @@ counter delta. No account balances, lifetime totals, names or unrelated logs are
 included. All 40 responses completed with no retries.
 
 The follow-up passed 15/20 original versus 11/20 English checks. Six unchanged
-prompt groups varied in correctness. English's matched gateway credit charge
-was 0.88% lower; the combined debit was $0.01904. This is selected-case diagnosis,
+prompt groups varied in correctness. English's matched gateway quota consumption
+was 0.88% lower; the combined debit was 9,520 quota units. This is selected-case diagnosis,
 not a new independent accuracy benchmark. Keep the default-policy proposal
 unmerged. See [the report](../docs/reliability-followup.md),
 `reliability-v060-summary.json` and `figures/v060-reliability-comparison.*`.

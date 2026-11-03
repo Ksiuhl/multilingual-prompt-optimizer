@@ -1,5 +1,9 @@
 # Multilingual Prompt Optimizer
 
+Cost displays use **gateway quota units and percentage changes**. They are not
+official-provider prices or actual-money estimates. Frozen receipts retain the
+gateway's original metadata for reproducibility.
+
 A local Python research tool that preserves original prompts by default.
 Concise-English compression and multilingual mixing are explicit experiments. Source text and code
 stay separate from editable instructions.
@@ -38,14 +42,14 @@ The full result and admission rejection remain unchanged.
 The separate [small cache/retry follow-up](docs/cache-followup.md) repeated four
 known prompt pairs three times in balanced serial order: 24/24 correct answers,
 equal positive cache counts, no retries, and 6.06% lower compressed gateway
-credit charges. It cost $0.011594 in displayed credits. This is diagnostic
+credit charges. It used 5,797 gateway quota units. This is diagnostic
 evidence on reused inputs; it does not replace the failed experiment, satisfy
 fresh holdout admission, or change the original-only default.
 
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
 charges reconciled with the gateway counter: English cost **0.88% less** in
-gateway-displayed credits. That result rejected the earlier a2 proposal to enable
+gateway quota units. That result rejected the earlier a2 proposal to enable
 English rewriting by default. The a3 implementation now preserves originals;
 this preview remains unmerged pending review. Enable rewrites only with
 task-specific validation. [Results, charge audit and graph](docs/reliability-followup.md).

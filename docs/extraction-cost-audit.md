@@ -6,17 +6,16 @@ rejected by cost. No observations or charges were removed from the primary resul
 
 ## Exact decomposition of the observed increase
 
-| Compressed minus original | Charged quota difference | Displayed USD credit difference |
-|---|---:|---:|
-| Other 31 successful pairs | -629 | -$0.001258 |
-| One exceptional successful pair | +1,185 | +$0.002370 |
-| Five timed-out attempts | +395 | +$0.000790 |
-| **Full experiment** | **+951** | **+$0.001902** |
+| Compressed minus original | Charged quota difference |
+|---|---:|
+| Other 31 successful pairs | -629 |
+| One exceptional successful pair | +1,185 |
+| Five timed-out attempts | +395 |
+| **Full experiment** | **+951** |
 
-Original charges were 7,918 units ($0.015836); compressed charges were 8,869
-($0.017738), **12.01% higher**. The components sum exactly to the increase and
-reconcile to the saved gateway counter at its recorded 500,000 units per USD
-display unit. These are gateway-reported credits, not an invoice.
+Original charges were 7,918 units; compressed charges were 8,869, **12.01% higher**. The components sum exactly to the increase and
+reconcile to the saved gateway quota counter. These are gateway measurements,
+not official-provider prices.
 
 The 31-pair subset is a post-hoc diagnostic, **not a replacement savings result**
 or a new admission sample. The real gate still includes the exception and all

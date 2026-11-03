@@ -70,9 +70,8 @@ that does not override the development cost failure. Overall charged quota rose
 from 7,918 original to 8,869 compressed, about 12% higher. No candidate revision
 or selective rerun followed these results.
 
-Matching request-level consumption records summed to 16,787 quota units,
-exactly a stable key-counter debit. At the gateway's public 500,000 quota units
-per USD display unit, total usage was **$0.033574 in displayed credits**. Charged
+Matching request-level consumption records summed to **16,787 gateway quota
+units**, exactly a stable key-counter debit. Charged
 retries are allocated to their trial; the comparison includes all original and
 supplemental calls. These are gateway-reported credits, not an invoice or
 independently audited provider settlement. Cache, output and routing variation

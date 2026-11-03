@@ -52,18 +52,13 @@ Candidate generation made **zero API calls** and used **zero translation API tok
 
 Actual API cost is **unknown**: the active key group, negotiated discounts, balance delta and invoice are unavailable. Failed/interrupted attempts without usage may have incurred charges. Reported usage and gateway model labels are unverified. Cost reductions cannot be inferred directly from input-token counts; outputs, reasoning, caching, rates and retries can change the total.
 
-## Public-price scenario, not actual charges
+## Gateway measurement scope
 
-During execution we retrieved the gateway's public `/api/pricing` response and saved its exact bytes and hash. Its expressions use base prices of $2 per million uncached input tokens, $0.10 per million cached read tokens, and $10 per million output tokens for these short-context text requests. [Upstream New API documents the expression units and cache exclusions](https://github.com/QuantumNous/new-api/blob/main/pkg/billingexpr/expr.md); deployment behavior remains unverified. The frozen protocol records that pricing was unknown at preparation time; this later lookup does not change the frozen inputs or grading.
-
-The following **scenario** assumes multiplier 1, no discounts/surcharges, zero unreported cache writes, and reported cached tokens (or zero when absent). It uses the same common completed inputs per model in every arm. Missing-usage attempts are omitted; human labor is excluded. This is not an invoice or demonstrated net savings.
-
-| Gateway label | Common inputs | Original scenario USD | Concise EN scenario USD | Mixed scenario USD | EN reduction | Mixed reduction |
-|---|---:|---:|---:|---:|---:|---:|
-| gpt-6.1-sol | 49 | 0.082342 | 0.080497 | 0.083556 | 2.24% | -1.47% |
-| gemini-4-argon | 50 | 0.154352 | 0.136712 | 0.126982 | 11.43% | 17.73% |
-
-Differences between the English and mixed-policy price scenarios reflect response, caching or gateway-usage variability on identical prompts; they are not evidence of a language-mixing benefit.
+Reports use token counts, gateway quota units and percentage changes rather
+than currency estimates. The service is a third-party gateway; these are not
+official-provider prices. Historical pricing payloads and machine-readable
+scenario fields remain archived for provenance, without presenting them as
+actual money or provider billing.
 
 ## Failures and identical-prompt diagnostics
 

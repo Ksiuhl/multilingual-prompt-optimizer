@@ -183,7 +183,7 @@ def analyze(directory, out):
                 ha="center",
                 fontsize=9,
             )
-        values = [cost[s][arm] / interval["quota_per_unit"] for s in scores]
+        values = [cost[s][arm] for s in scores]
         bars = axes[1].bar(
             [i + offset for i in range(2)], values, width=0.34, label=label, color=color
         )
@@ -191,7 +191,7 @@ def analyze(directory, out):
             axes[1].text(
                 bar.get_x() + bar.get_width() / 2,
                 v + max(values) * 0.03,
-                f"${v:.6f}",
+                f"{v:,} units",
                 ha="center",
                 fontsize=8,
             )
@@ -202,9 +202,7 @@ def analyze(directory, out):
         ax.set_axisbelow(True)
     axes[0].set(title="Strict extraction checks", ylim=(0, 118), ylabel="Correct / planned (%)")
     axes[0].legend(loc="lower right")
-    axes[1].set(
-        title="Matching gateway charges", ylabel="Gateway-displayed USD credits (not invoice)"
-    )
+    axes[1].set(title="Matching gateway charges", ylabel="Gateway quota units")
     axes[1].margins(y=0.2)
     fig.suptitle(
         "One fixed extraction template: admission "
@@ -234,7 +232,17 @@ def analyze(directory, out):
     manifest["evidence_sha256"] = hashlib.sha256((out / "evidence.json").read_bytes()).hexdigest()
     manifest["analyzer_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (out / "plot-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf8")
-    print(json.dumps(summary))
+    print(
+        json.dumps(
+            {
+                "scores": scores,
+                "admission": admission,
+                "quota_by_split_arm": cost,
+                "matched_ledger_quota": ledger_total,
+                "counter_reconciles": summary["counter_reconciles"],
+            }
+        )
+    )
 
 
 if __name__ == "__main__":

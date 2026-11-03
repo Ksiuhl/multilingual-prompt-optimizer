@@ -2,7 +2,7 @@
 
 **Decision: keep the v0.6 default-policy change unmerged.** In this targeted
 follow-up, concise English passed 11/20 checks versus 15/20 for original prompts.
-Its gateway credit charge was only 0.88% lower. That observed tradeoff does not
+Its gateway quota consumption was only 0.88% lower. That observed tradeoff does not
 support enabling compression by default.
 
 This follow-up ran on 4 November 2026 in Asia/Hong_Kong. It is separate from the
@@ -56,7 +56,7 @@ Median client request time was 2.44 seconds for originals and 5.60 seconds for
 English under concurrent gateway load. These timings are descriptive and do not
 establish an intrinsic model-latency effect.
 
-## Matched gateway credit charges
+## Matched gateway quota usage
 
 For this execution we measured charges from gateway consumption logs rather than
 only applying public rate formulas. We captured a private key-specific
@@ -65,16 +65,15 @@ read-only `/api/log/token` records. Each of the 40 responses supplied a request 
 that matched exactly one consumption record. Unrelated history was discarded.
 
 The matched records summed to **9,520 quota units**, exactly the key-specific
-counter increase. A later counter read was unchanged. The gateway's public
-`/api/status` advertised **500,000 quota units per USD display unit**.
+counter increase. A later counter read was unchanged. The report uses gateway quota units rather than currency conversions.
 
-| Arm | Trials | Matched charged quota | Gateway-displayed USD credits |
-|---|---:|---:|---:|
-| Original | 20 | 4,781 | $0.009562 |
-| Concise English | 20 | 4,739 | $0.009478 |
-| **Total** | **40** | **9,520** | **$0.019040** |
+| Arm | Trials | Matched charged quota |
+|---|---:|---:|
+| Original | 20 | 4,781 |
+| Concise English | 20 | 4,739 |
+| **Total** | **40** | **9,520** |
 
-English's reduction was **42 quota units = $0.000084 = 0.88%** in this sample.
+English's reduction was **42 quota units (0.88%)** in this sample.
 Reported input usage fell from 93,930 to 93,390 tokens, while reported output
 usage rose from 571 to 581 tokens. These include the full source and output
 contract plus opaque gateway overhead. Earlier preparation was reused with no
