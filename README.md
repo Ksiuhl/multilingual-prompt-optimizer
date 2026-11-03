@@ -16,7 +16,18 @@ searches supplied/rule alternatives and `auto` uses local Ollama generation and
 judging. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
-## v0.6.0a3 preview: original first, compression opt-in
+## v0.6.0a4 preview: original first, compression opt-in
+
+**New scoped mode:** `JsonExtractionTemplate` requires paired, disjoint
+development/holdout evidence, exact answers and lower reconciled charges before
+selecting a shorter prompt. Runtime answer checking and original fallback remain
+mandatory through its `execute` method. General defaults remain original-only.
+
+The first template passed every extraction check in 64 trials on 30 distinct
+payloads, including an audited four-call uniqueness supplement. It was still
+**rejected by the cost gate**: development charges increased, and total charges
+were about 12% higher. No profitable template is claimed. This projection is also
+computable without an LLM. [Mode, evidence, audit and graph](docs/validated-extraction.md).
 
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
@@ -146,7 +157,7 @@ unchanged. The contract adds input overhead (about 124 tokens/request on the
 Gemini-labelled regression); no net-cost saving is claimed.
 See [the regression protocol and graph](docs/output-contract-regression.md).
 
-This preview is version `0.6.0a3`; version 0.5 remains the published baseline while
+This preview is version `0.6.0a4`; version 0.5 remains the published baseline while
 the development change is reviewed. Package and repository names are retained for
 continuity with the original multilingual research question.
 

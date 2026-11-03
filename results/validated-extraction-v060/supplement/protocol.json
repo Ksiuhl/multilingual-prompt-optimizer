@@ -1,0 +1,12 @@
+{
+  "reason": "Pre-analysis uniqueness audit found holdout-903/913 and holdout-905/915 duplicate payloads. Original 60-trial data remain unchanged. Two new cases provide 20 distinct holdout payloads across 22 paired fixtures. No target answers were graded or used to select these replacements. All original and added calls count toward costs.",
+  "candidate_changed": false,
+  "grader_changed": false,
+  "files": {
+    "dataset.json": "4b08653d006764038b5de9056fb9bc6755959113e9bc508b160702b3c962fe56",
+    "requests.json": "786f7ee3191d594d9f56aac62899d6147a17af00bffdd052fd646ef3c66c40ba",
+    "implementation-at-audit.py": "2ebb60db29a18de6e289f6d8a8f2d134f5684db7f1369041e7bca4bf027c127e"
+  },
+  "freeze_utc": "2026-11-03T16:36:38.373Z",
+  "admission_revision": "Before any answer grading, count canonical distinct payloads rather than case labels. Same-split duplicate observations remain in accuracy and cost totals; they do not inflate minimum coverage. Cross-split payload reuse is rejected. Candidate and frozen answer grader unchanged."
+}

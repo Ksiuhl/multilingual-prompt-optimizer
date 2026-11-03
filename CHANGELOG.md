@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0a4 — scoped extraction admission experiment
+
+- Added `JsonExtractionTemplate` and `validated-extract`: original fallback unless paired development/holdout accuracy, distinct coverage, target/tokenizer identity and matched cost gates pass.
+- Added exact runtime answer checking, original retry, and no release after failed validation. Opt-in and original-only defaults remain unchanged.
+- Recorded 64 correct responses, the prospectively audited uniqueness supplement, and reconciled gateway credit charges. Admission was rejected by development cost; no profitable template is claimed.
+- This deterministic projection is a controlled admission example and can be computed locally without an LLM. Earlier studies remain unchanged.
+
 ## 0.6.0a3 — original first, compression opt-in
 
 - `optimize`, `auto_optimize`, and cached template application now retain the original unless `allow_compression=True` is supplied.

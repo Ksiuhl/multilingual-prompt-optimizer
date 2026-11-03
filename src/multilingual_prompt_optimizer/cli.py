@@ -37,6 +37,21 @@ def _parser() -> argparse.ArgumentParser:
         prog="mpo", description="Local tokenizer-aware prompt optimization"
     )
     sub = parser.add_subparsers(dest="command", required=True)
+    validated = sub.add_parser(
+        "validated-extract",
+        help="Select a scoped JSON extraction template using paired evidence; no model calls",
+    )
+    validated.add_argument("--template", type=Path, required=True)
+    validated.add_argument("--input", type=Path, required=True, help="Source JSON object file")
+    validated.add_argument("--evidence", type=Path)
+    validated.add_argument(
+        "--target", required=True, help="Exact caller-declared model/config identity"
+    )
+    validated.add_argument("--enable-compression", action="store_true")
+    validated.add_argument("--output", type=Path)
+    enc = validated.add_mutually_exclusive_group()
+    enc.add_argument("--encoding", default="o200k_base")
+    enc.add_argument("--tokenizer-json", type=Path)
     validate = sub.add_parser("validate", help="Check a response against a configured task oracle")
     validate.add_argument("--case", type=Path, required=True)
     validate.add_argument("--id", help="Case ID when --case contains an items array")
@@ -88,6 +103,19 @@ def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     try:
+        if args.command == "validated-extract":
+            from .validated_templates import JsonExtractionTemplate
+
+            template = JsonExtractionTemplate.from_dict(_read(args.template))
+            selection = template.select(
+                args.input.read_text(encoding="utf-8"),
+                counter=_counter(args),
+                target=args.target,
+                evidence=_read(args.evidence) if args.evidence else None,
+                allow_compression=args.enable_compression,
+            )
+            _write(selection, args.output)
+            return 0
         if args.command == "validate":
             from .validation import validate_answer
 

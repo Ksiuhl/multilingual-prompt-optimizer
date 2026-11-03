@@ -6,9 +6,10 @@ from .models import Candidate, OptimizationResult, Request
 from .output_contracts import json_object_contract
 from .template_cache import TemplateCache, cache_context
 from .tokenizers import Counter, JsonTokenizerCounter, TiktokenCounter
+from .validated_templates import JsonExtractionTemplate
 from .validation import AnswerCheck, execute_checked, validate_answer
 
-__version__ = "0.6.0a3"
+__version__ = "0.6.0a4"
 __all__ = [
     "Candidate",
     "Counter",
@@ -25,4 +26,5 @@ __all__ = [
     "TemplateCache",
     "cache_context",
     "json_object_contract",
+    "JsonExtractionTemplate",
 ]

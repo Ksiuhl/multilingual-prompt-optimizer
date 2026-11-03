@@ -1,0 +1,11 @@
+{
+  "customer": {
+    "name": "林雨"
+  },
+  "order": {
+    "id": "NEW-42"
+  },
+  "payment": {
+    "amount": 128.5
+  }
+}

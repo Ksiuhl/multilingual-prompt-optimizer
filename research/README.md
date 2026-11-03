@@ -1,5 +1,16 @@
 # Reproduce the development studies
 
+## Scoped extraction admission (offline)
+
+```bash
+python research/analyze_validated_extraction.py results/validated-extraction-v060 --out results/local/validated-extraction-v060
+```
+
+This independently regrades the frozen primary run and separately frozen
+uniqueness supplement, audits matching charges, counts distinct coverage, and
+regenerates the admission evidence and graph. It makes no API calls. All answers
+passed; the candidate was cost-rejected. [Methods and limits](../docs/validated-extraction.md).
+
 The a3 application preserves originals by default. Research benchmark harnesses
 explicitly enable compression for their experiments. Add `--enable-compression`
 to `run_checked_case.py` or `run_cached_template.py` when testing rewrites. Offline

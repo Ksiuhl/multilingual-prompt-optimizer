@@ -1,5 +1,16 @@
 # Checked-in local results
 
+## Scoped extraction admission (0.6.0a4)
+
+`validated-extraction-v060/` retains the frozen 60-trial primary corpus and a
+separately frozen four-trial supplement correcting distinct holdout coverage.
+All original observations remain included: 10 distinct development payloads and
+20 distinct holdout payloads across 64 trials. Every completed answer passed.
+The candidate was rejected because development costs rose. Matching charged
+quota reconciled to 16,787 units ($0.033574 displayed gateway credits).
+The evidence artifact remains rejected; no template was enabled by these results.
+See [the audit and graph](../docs/validated-extraction.md).
+
 ## Selected-failure reliability follow-up (0.6.0a2)
 
 `reliability-v060/` freezes four known content-failure cases, exact original and
