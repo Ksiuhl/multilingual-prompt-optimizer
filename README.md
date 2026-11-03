@@ -46,11 +46,15 @@ credit charges. It used 5,797 gateway quota units. This is diagnostic
 evidence on reused inputs; it does not replace the failed experiment, satisfy
 fresh holdout admission, or change the original-only default.
 
-The [fresh-input paid follow-up](docs/fresh-cache-followup.md) stopped at **32/120
-planned requests** when the gateway quota-metadata endpoint remained rate-limited.
-Both arms passed 16/16 checks on 16 new inputs; reported input usage fell 1.35%.
-Only 23/32 consumption records were saved, and the final counter was unavailable,
-so **net charged savings remain unresolved**. The remaining 88 requests were unsent.
+The [fresh-input paid follow-up](docs/fresh-cache-followup.md) completed **120/120
+planned requests** on 20 new inputs, three repetitions per arm, after resuming
+the stopped 32-request prefix. Exact passes were **60/60 original and 60/60 compressed**;
+reported input usage fell 1.35%.
+Compressed charges were 5.90% lower,
+with all attempts reconciled to 29,819 gateway quota units.
+The continuation retained every earlier response and changed only meter polling
+frequency. The long pause can affect cache/load; this is a single-schema
+observational study and does not change admission or original-only defaults.
 
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request

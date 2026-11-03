@@ -261,7 +261,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 243
   },
   {
     "case_id": "fresh-7103",
@@ -272,7 +272,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 265
   },
   {
     "case_id": "fresh-7103",
@@ -283,7 +283,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 295
   },
   {
     "case_id": "fresh-7108",
@@ -294,7 +294,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 242
   },
   {
     "case_id": "fresh-7108",
@@ -305,7 +305,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 261
   },
   {
     "case_id": "fresh-7114",
@@ -316,7 +316,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 180
   },
   {
     "case_id": "fresh-7114",
@@ -327,7 +327,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 237
   },
   {
     "case_id": "fresh-7113",
@@ -338,7 +338,7 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 278
   },
   {
     "case_id": "fresh-7113",
@@ -349,6 +349,974 @@
     "http_status": 200,
     "error_type": null,
     "complete": true,
-    "charged_quota": null
+    "charged_quota": 250
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "original",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031848515674963158268d9d6hGiAqjtK",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "compressed",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031848542386412188268d9d6vwTgzYHS",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 240
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "original",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031848575917633198268d9d6XlHRCbKO",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 303
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "compressed",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031849062734812708268d9d6VU5PV8OC",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 208
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "original",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031849206359237668268d9d6WkEnSLDq",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 252
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "compressed",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031849229142166748268d9d6CDUaMliO",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 279
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "compressed",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031849323631467428268d9d6SSveGv5n",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 279
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "original",
+    "repetition": 1,
+    "attempt": 1,
+    "request_id": "202611031849422345334338268d9d61tTBSO3j",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 251
+  },
+  {
+    "case_id": "fresh-7110",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849447883202498268d9d6b9uvDajX",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 240
+  },
+  {
+    "case_id": "fresh-7110",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849473556519518268d9d6KtHL31lv",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7109",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849493464174168268d9d6kHCQuspk",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7109",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849514696726978268d9d6GWJCGhvT",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 258
+  },
+  {
+    "case_id": "fresh-7108",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849538157260768268d9d6hFa5je7r",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 261
+  },
+  {
+    "case_id": "fresh-7108",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849558044452498268d9d657Z8SUMW",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 242
+  },
+  {
+    "case_id": "fresh-7114",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031849584491452308268d9d6tPNblirJ",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 270
+  },
+  {
+    "case_id": "fresh-7114",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031850066180296578268d9d6bk3HiBtU",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 184
+  },
+  {
+    "case_id": "fresh-7116",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031850322361491528268d9d6wbsnbcdq",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 258
+  },
+  {
+    "case_id": "fresh-7116",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031850341367467458268d9d6FycO9cH1",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031850361521591568268d9d6YAiAWGhf",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 251
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031850407489913388268d9d6ghYrleZ3",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 200
+  },
+  {
+    "case_id": "fresh-7102",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851328271760438268d9d6DJyARrma",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 254
+  },
+  {
+    "case_id": "fresh-7102",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851369422675288268d9d6DizPXOPT",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 234
+  },
+  {
+    "case_id": "fresh-7107",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851388480607148268d9d6zRZo3hOq",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 216
+  },
+  {
+    "case_id": "fresh-7107",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851413275249808268d9d6cj8tiRy5",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 234
+  },
+  {
+    "case_id": "fresh-7113",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851436738913668268d9d6TugPrEb7",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 250
+  },
+  {
+    "case_id": "fresh-7113",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851457036034708268d9d6tv6T9t3o",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 263
+  },
+  {
+    "case_id": "fresh-7103",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851482323255258268d9d6cioWXzl3",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 286
+  },
+  {
+    "case_id": "fresh-7103",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851572645782948268d9d6u8LGdtes",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 229
+  },
+  {
+    "case_id": "fresh-7119",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031851594474407708268d9d6hMxCGw0x",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 237
+  },
+  {
+    "case_id": "fresh-7119",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852013082177578268d9d6X65HQjT9",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 257
+  },
+  {
+    "case_id": "fresh-7118",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852041402538438268d9d6uJhUqMvh",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 258
+  },
+  {
+    "case_id": "fresh-7118",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852060314986778268d9d6QXBgwaDL",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852149783745058268d9d68S6qj1ZR",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 240
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852191755452488268d9d6HaQSz3ui",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7117",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852214117754268268d9d6dKA9wqTc",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 241
+  },
+  {
+    "case_id": "fresh-7117",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852234671948588268d9d672PK3vND",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7106",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852255836530978268d9d6MamAOe5R",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 256
+  },
+  {
+    "case_id": "fresh-7106",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852409205905838268d9d6q70V3Qwr",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 255
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031852493068428188268d9d6TP9ulrJf",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 212
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853035429806178268d9d6FdlNbIdY",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 252
+  },
+  {
+    "case_id": "fresh-7105",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853065236052568268d9d6C2Yobz0B",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 279
+  },
+  {
+    "case_id": "fresh-7105",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853292748992738268d9d60rKXFdPH",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 224
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853310441311478268d9d62osvTfKS",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 278
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853462272599988268d9d6RB0rrKZt",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 294
+  },
+  {
+    "case_id": "fresh-7112",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853554058248508268d9d6J23UIEcN",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 233
+  },
+  {
+    "case_id": "fresh-7112",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031853576597938618268d9d6fiuJzCs4",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 294
+  },
+  {
+    "case_id": "fresh-7104",
+    "arm": "compressed",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031854068195654788268d9d6xMpARGEK",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 231
+  },
+  {
+    "case_id": "fresh-7104",
+    "arm": "original",
+    "repetition": 2,
+    "attempt": 1,
+    "request_id": "202611031854089756591168268d9d6eJdtgixZ",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 251
+  },
+  {
+    "case_id": "fresh-7117",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031854113496266948268d9d6E8qykTxx",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 241
+  },
+  {
+    "case_id": "fresh-7117",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031854149134747188268d9d6nYqeQ3rp",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 150
+  },
+  {
+    "case_id": "fresh-7106",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031854171870101628268d9d68CIsBbWD",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 298
+  },
+  {
+    "case_id": "fresh-7106",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031854342900927928268d9d605ZVE8MA",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 270
+  },
+  {
+    "case_id": "fresh-7109",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031854572437250028268d9d61Q60bl0o",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 258
+  },
+  {
+    "case_id": "fresh-7109",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855000420237708268d9d6sr98mgBG",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7107",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855033666261978268d9d6aQCdpzMr",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 144
+  },
+  {
+    "case_id": "fresh-7107",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855057366937358268d9d6VLYFghDJ",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 234
+  },
+  {
+    "case_id": "fresh-7112",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855081812851808268d9d6SscrC0QF",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 218
+  },
+  {
+    "case_id": "fresh-7112",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855170391983168268d9d6kTvdEnQK",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 233
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855196134062718268d9d601vTO8Nt",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 285
+  },
+  {
+    "case_id": "fresh-7101",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855288293517218268d9d6JGVZzaWF",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 282
+  },
+  {
+    "case_id": "fresh-7103",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855325515860258268d9d6xYVRm1Xw",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 286
+  },
+  {
+    "case_id": "fresh-7103",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855412449834998268d9d6dOS8vyoL",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 229
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855441392857958268d9d6BmGTJkTC",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 293
+  },
+  {
+    "case_id": "fresh-7115",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031855523826857898268d9d6uG5QErR9",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 214
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031856151360816358268d9d6wkvonK8V",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 240
+  },
+  {
+    "case_id": "fresh-7100",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031856174180160328268d9d6qPUebXmb",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7105",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031856202880438098268d9d6A6NoGT0U",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 255
+  },
+  {
+    "case_id": "fresh-7105",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031856222487894908268d9d6QBitjV4y",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 202
+  },
+  {
+    "case_id": "fresh-7118",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031856496269267418268d9d6dTlxY7cy",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 288
+  },
+  {
+    "case_id": "fresh-7118",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857083808177928268d9d6znRsXBYd",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857107361584318268d9d6dPnl6BAn",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 270
+  },
+  {
+    "case_id": "fresh-7111",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857156630739558268d9d6qxG69LUF",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 200
+  },
+  {
+    "case_id": "fresh-7108",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857382472058218268d9d6T80gDPiC",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 242
+  },
+  {
+    "case_id": "fresh-7108",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857407701896678268d9d6tdWk2jc6",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 261
+  },
+  {
+    "case_id": "fresh-7110",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857428666989978268d9d6CAAzFH4n",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 240
+  },
+  {
+    "case_id": "fresh-7110",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857449575102838268d9d6AgyJxVXC",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 260
+  },
+  {
+    "case_id": "fresh-7102",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857468673324198268d9d6lIU3gRoD",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 254
+  },
+  {
+    "case_id": "fresh-7102",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857498663743958268d9d6wdzuw4Qy",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 234
+  },
+  {
+    "case_id": "fresh-7116",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857520823252068268d9d6mN0wROcZ",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 239
+  },
+  {
+    "case_id": "fresh-7116",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857539871637288268d9d6hzUF8bYX",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 258
+  },
+  {
+    "case_id": "fresh-7104",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857565550625608268d9d6g6fO4Ukk",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 231
+  },
+  {
+    "case_id": "fresh-7104",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031857586912034198268d9d62X3t6d76",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 251
+  },
+  {
+    "case_id": "fresh-7114",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858012662821808268d9d6WPSeiqJw",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 270
+  },
+  {
+    "case_id": "fresh-7114",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858104437216808268d9d64o2ed2Ip",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 289
+  },
+  {
+    "case_id": "fresh-7119",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858199078393628268d9d6LGiEOUUP",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 257
+  },
+  {
+    "case_id": "fresh-7119",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858230764187578268d9d6QSWfKepX",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 237
+  },
+  {
+    "case_id": "fresh-7113",
+    "arm": "compressed",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858254055826058268d9d6Mms7Apuf",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 230
+  },
+  {
+    "case_id": "fresh-7113",
+    "arm": "original",
+    "repetition": 3,
+    "attempt": 1,
+    "request_id": "202611031858282018445478268d9d6w9tjAVgK",
+    "http_status": 200,
+    "error_type": null,
+    "complete": true,
+    "charged_quota": 289
   }
 ]

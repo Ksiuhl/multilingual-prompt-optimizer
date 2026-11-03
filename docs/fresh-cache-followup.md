@@ -1,101 +1,123 @@
-# Fresh-input paid quota/cache study
+# Fresh-input paid quota/cache study: completed after resumption
 
-**Partial result:** 32 of 120 planned requests were sent, covering 16 new inputs
-once in each arm. Both arms passed **16/16 exact checks**, with 32 HTTP attempts
-and no retries. The quota-metadata endpoint persistently returned HTTP 429, so
-inference stopped. The remaining 88 requests were **not sent or graded**.
+**All 120 planned requests are now recorded.** The remaining 88 were sent in the
+original frozen order after the user requested completion of the stopped run.
+The first 32 results were retained unchanged and are verified against a saved,
+hashed prefix. There are **20 distinct new payloads**, each tested three times
+with both existing prompt versions. This is one JSON projection schema, not
+60 independent questions or a general multilingual benchmark.
 
-This is not a completed three-repetition study. The observed prefix contains
-seven original-first and nine compressed-first pairs; only the full planned
-sequence has balanced order.
+| Arm | Exact passes / 60 planned | Completed responses | HTTP attempts | Reported input tokens | Reported output tokens |
+|---|---:|---:|---:|---:|---:|
+| Original | 60/60 | 60 | 60 | 283,473 | 2,131 |
+| Compressed | 60/60 | 60 | 60 | 279,633 | 2,108 |
 
-| Observed arm | Exact passes / attempted | Reported input tokens | Reported output tokens |
+Reported input usage was **1.35% lower** with compression.
+All first repetitions and retries are included. There were 0
+incomplete HTTP attempts; answer-quality errors among completed responses were
+0 original and 0 compressed. Unsent requests: **0**.
+
+All saved attempt charges reconcile with the whole-study key-counter increase: **29,819 gateway quota units**. Compressed charges were **5.90% lower** (15,363 original versus 14,456 compressed). These are observed gateway quota units, not independently audited upstream prices.
+
+For transparency about the pause, the recovered ledger separates the initial
+16 pairs from the resumed 44 pairs:
+
+| Segment | Pairs | Original known quota | Compressed known quota |
 |---|---:|---:|---:|
-| Original | 16/16 | 75,614 | 540 |
-| Compressed | 16/16 | 74,590 | 501 |
+| Initial | 16 | 4,090 | 3,868 |
+| Resumed | 44 | 11,273 | 10,588 |
 
-Reported input usage decreased by **1,024 tokens (1.35%)** on the completed
-pairs. This is a token observation, not a verified reduction in total charged
-quota. All 32 responses reported positive cache counts; 14 of 16 pairs had equal
-counts. Reported cached-token values were 4,224, 4,352 and 4,608.
+These are descriptive ledger groupings, not independent experiments or controlled
+cache treatments. Coverage status is recorded for each segment in the summary.
 
-Only **23/32** request IDs currently have saved consumption records (11 originals,
-12 compressed). Their matched charges total 5,707 quota units, but missing
-records are **unknown, not free**. The final key-counter read was rate-limited;
-the last verified counter increase was 7,430 units after 30 responses, before
-the final pair. Consequently, the full charge total and net saving remain
-unresolved. Comparing the unequal-coverage arm subtotals would be invalid.
+Median client request time, including retry waits, was
+2.82 seconds original and
+2.60 seconds compressed. Timing
+excludes pauses between request pairs and is descriptive only.
 
-Median client request time was 4.82 seconds for originals and 3.77 seconds for
-compressed prompts. This excludes pauses between pairs and is descriptive only.
-There were no observed answer errors or model-request failures; gateway metadata
-availability prevented completion.
+| Repetition | Original exact passes / 20 planned | Compressed exact passes / 20 planned |
+|---|---:|---:|
+| 1 | 20/20 | 20/20 |
+| 2 | 20/20 | 20/20 |
+| 3 | 20/20 | 20/20 |
 
-![Partial run: cache observations, incomplete ledger and exact answers](../results/figures/v060-fresh-cache-comparison.png)
+## Cache, ordering and repeat observations
 
-This study compares the existing original and compressed extraction instructions
-on 20 new JSON payloads, with three repetitions planned for each arm: 120
-requests in 60 serial paired blocks. The fixed task copies `customer.name`,
-`order.id` and `payment.amount` into an exact JSON answer. It is one projection
-schema, not 60 independent tasks or a general multilingual benchmark.
+Full planned order was preserved: ten original-first and ten compressed-first
+pairs per repetition (30 each overall). Repetition two reverses each case's
+first arm from repetition one. There were 47/60 pairs
+with equal known reported cache counts. Cache categories are:
 
-## Frozen design
+| Arm | Positive reported cache | Reported zero | Unknown |
+|---|---:|---:|---:|
+| Original | 60 | 0 | 0 |
+| Compressed | 60 | 0 | 0 |
 
-Before inference, `protocol.json` froze the dataset, all full prompt strings,
-expected answers, grader, template and runner by SHA-256. Payloads and expected
-answers are individually distinct. Canonical payloads are disjoint from the
-earlier extraction study, its uniqueness supplement and the four-input cache
-follow-up. The instructions and immutable output contract were reused exactly;
-there was no new candidate-generation, translation or judging call.
+There were 0 case/arm groups with
+varying correctness across their three repetitions. Pair differences and
+first-arm groupings in the summary are descriptive observations, not causal
+evidence about cache, request order or latency. Unknown cache fields are not
+treated as zero.
 
-Inputs cover multilingual names, significant whitespace and escapes, missing
-paths, nulls, empty strings, booleans, numeric strings and ordinary numbers.
-Archived values and instruction-like notes are distractors in source data.
-Expected answers were assembled independently and cross-checked against the
-deterministic projection before any inference.
+![Observed cache counts, all matched charges and exact answers](../results/figures/v060-fresh-cache-comparison.png)
 
-Each repetition randomizes the 20 cases and balances ten original-first and ten
-compressed-first pairs. Repetition two reverses each case's first arm from
-repetition one. The full same prompt strings are reused across repetitions.
+## Frozen design and declared resumption amendment
 
-The unverified `gpt-6.1-sol` gateway label is called serially with provider-default
-sampling/reasoning, streaming, a 4096-token output cap, a 60-second deadline and
-at most two attempts for transient failures. No keys are published. There is no
-cache reset, cache busting or free warm-up: first repetitions and every retry
-count. Prior traffic may affect every repetition, including the first.
+Before the initial inference, `protocol.json` froze the dataset, all 120 full
+prompt strings, expected answers, grader, template and runner by SHA-256.
+Canonical payloads are distinct and disjoint from the earlier extraction study,
+its uniqueness supplement and the four-input cache follow-up. Expected answers
+were independently assembled and cross-checked against deterministic projection.
+Inputs cover multilingual names, whitespace and escapes, missing paths, nulls,
+empty strings, booleans, numeric strings and numbers, with archived values and
+instruction-like source notes as distractors.
 
-A 75,000-quota-unit soft stop is checked between paired blocks. This is not a
-guaranteed ceiling. Inference pauses when quota metadata cannot be read, and
-authentication or quota failures stop the route. No alternate key is used to
-work around limits. Metadata interruptions and elapsed gaps are retained.
+The instructions and immutable output contract were reused exactly. There was
+no new candidate generation, translation, tuning, answer repair or judging call.
+Only the preplanned target requests and their bounded retries were sent. The
+unverified `gpt-6.1-sol` gateway label used default sampling/reasoning, streaming,
+a 4096-token output cap, serial concurrency, a 60-second deadline and at most
+two attempts for transient failures.
 
-## Analysis and interpretation
+The original execution stopped at 32 responses when quota metadata persistently
+returned HTTP 429. The partial answer checks had already been graded and
+published before the user requested resumption. `resume-amendment.json` records
+that fact and was written before request 33. This continuation is not a newly
+blinded or independent study. Candidate wording, expected answers, grader,
+request order and model configuration did not change.
 
-The offline analyzer verifies all frozen hashes, full composed prompts, unique
-case/arm/repetition identities, serial request order, exact answers and complete
-attempt accounting. It matches request IDs to consumption records, retains only
-study-matching billing fields, and compares their sum with a key-counter delta.
-Unknown cache counts and charges remain unknown. Missing answers fail; completed
-quality failures and incomplete requests are reported separately.
+**Operational amendment:** the original plan checked the quota meter after every
+pair; the resumed segment checked after each ten pairs (20 requests), a final
+shorter batch, and before resumption. The same whole-study 75,000-unit soft stop
+remained, using the original baseline. This was not a guaranteed ceiling, and
+more calls could occur between checks. Metadata retries did not rerun inference.
+No alternate key was used to work around limits.
 
-The descriptive analysis plan was written after inference began, before answer
-grading. There is no significance test or confidence interval. Per-repetition
-charges, cache counts, first-arm groupings and repeat instability describe this
-run; they do not identify a causal cache, order or latency effect. Client request
-times include retry waits and exclude study pauses between paired blocks.
+The pause after request 32 lasted approximately 14.3 minutes and can alter cache state, server load and timing, including
+the rest of repetition one. There was no cache reset, cache busting or free
+warm-up; the first repetition is not called cold. `partial-*.json` preserves the
+stopped-run snapshots, and `resume-prefix-results.json.gz` preserves all original
+32 response/attempt records. The analyzer verifies prefix identity and amendment
+hashes. The [original partial report](https://github.com/Ksiuhl/multilingual-prompt-optimizer/blob/d87c0275f4a705497bafd2f26b76a1d64fb19c0e/docs/fresh-cache-followup.md)
+remains in Git history.
 
-This is controlled compression/accounting research. The projection itself is
-deterministic without an LLM. Model identity and gateway accounting are not
-independently authenticated. Results do not establish a multilingual advantage,
-replace earlier negative studies, admit the previously rejected template, or
-change the original-only application default.
+## Interpretation and reproduction
 
-## Reproduce offline
+This is controlled compression/accounting research; the projection itself can
+be computed locally without an LLM. Gateway model identity, cache metadata and
+accounting are not independently authenticated. No significance test or
+confidence interval is claimed. The descriptive analysis plan was written after
+initial inference began, before the first grading, and extended to verify the
+declared continuation. Results do not establish a multilingual advantage,
+replace prior negative studies, admit the rejected template, or change
+original-only defaults. Manual authoring time and deployment overhead were not
+measured, so API quota reduction is not an end-to-end production-profitability claim.
 
 ```bash
 python -m pip install -e ".[dev,plots]"
 python research/analyze_fresh_cache.py results/fresh-cache-v060 --out results/local/fresh-cache-v060
 ```
 
-This command makes no inference or billing calls. It requires the earlier frozen
-extraction and cache-follow-up bundles for identity and disjointness checks.
+This makes no inference or billing calls. The earlier frozen extraction and
+cache-follow-up bundles are required for identity/disjointness checks. All raw
+attempts, first repetitions, failures and attributable charges are retained.

@@ -103,5 +103,53 @@
     "observed_at_utc": "2026-11-03T18:34:01.697Z",
     "http_status": 200,
     "counter_delta_quota": 7430
+  },
+  {
+    "after_planned_pair": 16,
+    "recorded_trials": 32,
+    "observed_at_utc": "2026-11-03T18:48:32.319Z",
+    "http_status": 200,
+    "counter_delta_quota": 7958,
+    "phase": "resume_precheck"
+  },
+  {
+    "after_planned_pair": 26,
+    "recorded_trials": 52,
+    "observed_at_utc": "2026-11-03T18:51:33.229Z",
+    "http_status": 200,
+    "counter_delta_quota": 12932,
+    "phase": "resumed_run"
+  },
+  {
+    "after_planned_pair": 36,
+    "recorded_trials": 72,
+    "observed_at_utc": "2026-11-03T18:53:06.965Z",
+    "http_status": 200,
+    "counter_delta_quota": 17865,
+    "phase": "resumed_run"
+  },
+  {
+    "after_planned_pair": 46,
+    "recorded_trials": 92,
+    "observed_at_utc": "2026-11-03T18:55:33.015Z",
+    "http_status": 200,
+    "counter_delta_quota": 22801,
+    "phase": "resumed_run"
+  },
+  {
+    "after_planned_pair": 56,
+    "recorded_trials": 112,
+    "observed_at_utc": "2026-11-03T18:57:57.054Z",
+    "http_status": 200,
+    "counter_delta_quota": 27765,
+    "phase": "resumed_run"
+  },
+  {
+    "after_planned_pair": 60,
+    "recorded_trials": 120,
+    "observed_at_utc": "2026-11-03T18:58:32.033Z",
+    "http_status": 200,
+    "counter_delta_quota": 29819,
+    "phase": "resumed_run"
   }
 ]

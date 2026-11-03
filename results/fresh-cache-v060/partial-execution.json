@@ -1,0 +1,160 @@
+{
+  "running": false,
+  "checks": [
+    {
+      "after_planned_pair": 1,
+      "recorded_trials": 2,
+      "observed_at_utc": "2026-11-03T18:29:20.725Z",
+      "http_status": 200,
+      "counter_delta_quota": 497
+    },
+    {
+      "after_planned_pair": 2,
+      "recorded_trials": 4,
+      "observed_at_utc": "2026-11-03T18:29:25.658Z",
+      "http_status": 200,
+      "counter_delta_quota": 985
+    },
+    {
+      "after_planned_pair": 3,
+      "recorded_trials": 6,
+      "observed_at_utc": "2026-11-03T18:29:30.290Z",
+      "http_status": 200,
+      "counter_delta_quota": 1479
+    },
+    {
+      "after_planned_pair": 4,
+      "recorded_trials": 8,
+      "observed_at_utc": "2026-11-03T18:29:35.391Z",
+      "http_status": 200,
+      "counter_delta_quota": 1979
+    },
+    {
+      "after_planned_pair": 5,
+      "recorded_trials": 10,
+      "observed_at_utc": "2026-11-03T18:29:59.896Z",
+      "http_status": 200,
+      "counter_delta_quota": 2508
+    },
+    {
+      "after_planned_pair": 6,
+      "recorded_trials": 12,
+      "observed_at_utc": "2026-11-03T18:30:14.431Z",
+      "http_status": 200,
+      "counter_delta_quota": 3032
+    },
+    {
+      "after_planned_pair": 7,
+      "recorded_trials": 14,
+      "observed_at_utc": "2026-11-03T18:30:19.292Z",
+      "http_status": 200,
+      "counter_delta_quota": 3514
+    },
+    {
+      "after_planned_pair": 8,
+      "recorded_trials": 16,
+      "observed_at_utc": "2026-11-03T18:30:26.606Z",
+      "http_status": 200,
+      "counter_delta_quota": 4015
+    },
+    {
+      "after_planned_pair": 9,
+      "recorded_trials": 18,
+      "observed_at_utc": "2026-11-03T18:30:31.859Z",
+      "http_status": 200,
+      "counter_delta_quota": 4512
+    },
+    {
+      "after_planned_pair": 10,
+      "recorded_trials": 20,
+      "observed_at_utc": "2026-11-03T18:31:34.113Z",
+      "http_status": 200,
+      "counter_delta_quota": 4962
+    },
+    {
+      "after_planned_pair": 11,
+      "recorded_trials": 22,
+      "observed_at_utc": "2026-11-03T18:31:51.185Z",
+      "http_status": 200,
+      "counter_delta_quota": 5483
+    },
+    {
+      "after_planned_pair": 12,
+      "recorded_trials": 24,
+      "observed_at_utc": "2026-11-03T18:32:21.526Z",
+      "http_status": 200,
+      "counter_delta_quota": 5950
+    },
+    {
+      "after_planned_pair": 13,
+      "recorded_trials": 26,
+      "observed_at_utc": "2026-11-03T18:32:54.941Z",
+      "http_status": 200,
+      "counter_delta_quota": 6510
+    },
+    {
+      "after_planned_pair": 14,
+      "recorded_trials": 28,
+      "observed_at_utc": "2026-11-03T18:33:20.543Z",
+      "http_status": 200,
+      "counter_delta_quota": 7013
+    },
+    {
+      "after_planned_pair": 15,
+      "recorded_trials": 30,
+      "observed_at_utc": "2026-11-03T18:34:01.697Z",
+      "http_status": 200,
+      "counter_delta_quota": 7430
+    }
+  ],
+  "billing_polls": [
+    {
+      "observed_at_utc": "2026-11-03T18:32:16.265Z",
+      "http_status": 200,
+      "matched_records": 23
+    }
+  ],
+  "error": "Unexpected end of JSON input",
+  "interruptions": [
+    {
+      "after_trials": 20,
+      "type": "quota_metadata_json_parse_failure",
+      "resumed_at_utc": "2026-11-03T18:31:33.359Z",
+      "verified_quota_delta": 4962
+    }
+  ],
+  "metadata_errors": [
+    {
+      "at": "2026-11-03T18:34:33.611Z",
+      "endpoint": "quota",
+      "error_type": "SyntaxError"
+    },
+    {
+      "at": "2026-11-03T18:34:33.875Z",
+      "endpoint": "quota",
+      "error_type": "SyntaxError"
+    },
+    {
+      "at": "2026-11-03T18:34:34.133Z",
+      "endpoint": "quota",
+      "error_type": "SyntaxError"
+    }
+  ],
+  "stop_reason": "Quota metadata endpoint persistently returned HTTP 429; inference stopped at 32 of 120 scheduled requests.",
+  "metadata_rate_limit_reads": [
+    {
+      "at": "2026-11-03T18:36:03.674Z",
+      "status": 429
+    },
+    {
+      "at": "2026-11-03T18:37:17.750Z",
+      "status": 429
+    }
+  ],
+  "result": {
+    "complete": false,
+    "trials": 32,
+    "attempts": 32
+  },
+  "finished_at_utc": "2026-11-03T18:37:31.101Z"
+}

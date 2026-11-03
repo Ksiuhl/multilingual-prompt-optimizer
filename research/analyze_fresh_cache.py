@@ -89,6 +89,32 @@ def analyze(directory, out):
     assert report["grader_sha256"] == protocol["files"]["grader-source.py"]
     assert report["protocol"] == protocol
     profile = report["profiles"][0]
+    amendment = None
+    resumption_gap_seconds = None
+    if (directory / "resume-amendment.json").exists():
+        amendment = read(directory, "resume-amendment.json")
+        assert (
+            hashlib.sha256(raw(directory, "protocol.json")).hexdigest()
+            == amendment["original_protocol_sha256"]
+        )
+        prefix_bytes = gzip.decompress((directory / "resume-prefix-results.json.gz").read_bytes())
+        assert hashlib.sha256(prefix_bytes).hexdigest() == amendment["prefix_results_sha256"]
+        prefix = json.loads(prefix_bytes)["profiles"][0]
+        n = amendment["prefix_requests"]
+        assert n == 32 and amendment["remaining_requests"] == 88
+        assert profile["trials"][:n] == prefix["trials"]
+        assert (
+            profile["request_attempts"][: len(prefix["request_attempts"])]
+            == prefix["request_attempts"]
+        )
+        if len(profile["request_attempts"]) > len(prefix["request_attempts"]):
+            before = prefix["request_attempts"][-1]
+            after = profile["request_attempts"][len(prefix["request_attempts"])]
+            resumption_gap_seconds = (
+                datetime.fromisoformat(after["started_at_utc"])
+                - datetime.fromisoformat(before["started_at_utc"])
+            ).total_seconds() - before["elapsed_ms"] / 1000
+            assert resumption_gap_seconds >= 0
     assert profile["label"] == protocol["model_label"]
     assert [(t["case_id"], t["arm"], t["repetition"]) for t in profile["trials"]] == [
         (r["case_id"], r["arm"], r["repetition"]) for r in requests[: len(profile["trials"])]
@@ -101,7 +127,7 @@ def analyze(directory, out):
             assert type(r["quota"]) is int and r["quota"] >= 0
             bills[r["request_id"]] = r
     seen, used_indices, used_ids, rows, attempt_rows = set(), set(), set(), [], []
-    for trial in profile["trials"]:
+    for trial_index, trial in enumerate(profile["trials"]):
         key = trial["case_id"], trial["arm"], trial["repetition"]
         assert key in by_key and key not in seen
         seen.add(key)
@@ -157,6 +183,7 @@ def analyze(directory, out):
         rows.append(
             {
                 "case_id": key[0],
+                "execution_phase": "resumed" if amendment and trial_index >= 32 else "initial",
                 "arm": key[1],
                 "repetition": key[2],
                 "block": req["block"],
@@ -293,6 +320,35 @@ def analyze(directory, out):
             )
     summary = {
         "scope": protocol["type"],
+        "operational_amendment": amendment,
+        "prefix_preserved": True if amendment else None,
+        "resumption_gap_seconds": resumption_gap_seconds,
+        "execution_phases": {
+            phase: {
+                arm: {
+                    "attempted": sum(
+                        r["execution_phase"] == phase and r["arm"] == arm for r in rows
+                    ),
+                    "correct": sum(
+                        r["validation"]["passed"]
+                        for r in rows
+                        if r["execution_phase"] == phase and r["arm"] == arm
+                    ),
+                    "known_matched_quota": sum(
+                        r["charged_quota"]
+                        for r in rows
+                        if r["execution_phase"] == phase and r["arm"] == arm
+                    ),
+                    "charge_coverage_complete": all(
+                        r["charge_coverage_complete"]
+                        for r in rows
+                        if r["execution_phase"] == phase and r["arm"] == arm
+                    ),
+                }
+                for arm in arms
+            }
+            for phase in (["initial", "resumed"] if amendment else ["initial"])
+        },
         "execution_complete": bool(report["complete"]),
         "arms": arms,
         "new_distinct_inputs": 20,
@@ -356,6 +412,11 @@ def analyze(directory, out):
     }
     manifest["summary_sha256"] = hashlib.sha256((out / "summary.json").read_bytes()).hexdigest()
     manifest["generator_sha256"] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    if amendment:
+        for name in ["resume-amendment.json", "resume-prefix-results.json.gz"]:
+            manifest[name] = hashlib.sha256((directory / name).read_bytes()).hexdigest()
+        for path in sorted(directory.glob("partial-*.json")):
+            manifest[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
     manifest["generated_files"] = {
         name: hashlib.sha256((out / name).read_bytes()).hexdigest()
         for name in [
@@ -424,6 +485,16 @@ def plot(summary, out):
             )
     for x in [20.5, 40.5]:
         axes[0].axvline(x, color="#bbb", linestyle="--", linewidth=0.8)
+    if summary["operational_amendment"]:
+        axes[0].axvline(16.5, color="#b96824", linestyle=":", linewidth=1.2)
+        axes[0].text(
+            17.5,
+            0.96,
+            "resumed",
+            transform=axes[0].get_xaxis_transform(),
+            color="#b96824",
+            fontsize=8,
+        )
     axes[0].set(
         title="Observed cache counts (missing = gaps)",
         xlabel="Serial paired block; 20 blocks per repetition",
@@ -462,7 +533,9 @@ def plot(summary, out):
     prefix = "" if summary["execution_complete"] else f"PARTIAL: {observed}/120 requests. "
     fig.suptitle(prefix + "Fresh-input quota/cache follow-up", weight="bold")
     fig.supxlabel(
-        "No cache reset or free warm-up; first repetition is not called cold. Full planned order is balanced; a stopped prefix may not be.\nUnsent requests are not graded. Observational gateway metadata; no causal cache claim or change to prior admission.",
+        "No cache reset or free warm-up; first repetition is not called cold. Full planned order is balanced; a stopped prefix may not be.\nResumed after a long gap with fewer meter polls; cache/load may change. No causal cache claim or change to prior admission."
+        if summary["operational_amendment"]
+        else "No cache reset or free warm-up; first repetition is not called cold. Full planned order is balanced; a stopped prefix may not be.\nUnsent requests are not graded. Observational gateway metadata; no causal cache claim or change to prior admission.",
         fontsize=8,
     )
     for ext in ["png", "svg", "pdf"]:

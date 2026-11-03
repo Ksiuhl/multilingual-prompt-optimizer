@@ -1,0 +1,11 @@
+{
+  "started_at_utc": "2026-11-03T18:29:15.928Z",
+  "ended_at_utc": "2026-11-03T18:37:31.102Z",
+  "http_status": 429,
+  "counter_delta_quota": null,
+  "last_verified_prefix_delta_quota": 7430,
+  "last_verified_prefix_trials": 30,
+  "stable_since_last_pair": null,
+  "unit": "gateway quota units",
+  "limitation": "Final key counter unavailable after persistent metadata rate limiting. Request-ID matched charges can be described but cannot yet be independently reconciled with the counter."
+}

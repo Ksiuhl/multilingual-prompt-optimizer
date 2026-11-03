@@ -1,18 +1,25 @@
 {
   "protocol.json": "614e32f97b90a15174a59f84d62bd1b00ff623fdfd030e47cf9024cb8bd3e9ae",
-  "results.json": "3c1a6176cf9f7d6a8db62eaaff330aa4f4680883ef317ccc48e8ffac628a2abf",
-  "billing-matched.json": "15e6d655f004680a36e50b6b742b62d56492ed26b2e79c0252993a6610e06d7b",
-  "quota-interval.json": "c6d1f43a060e32476ba904b9fce62be41c6f5cefdb0d313633d257ae23e0971a",
-  "quota-checkpoints.json": "c406396a58853bc56fc5906f7023398892fbc42bbe7edfb82c1cd3fcac613db9",
-  "execution.json": "ddb5cc1f590b6fdcf16ea4a5c5659d33d4c9a2c29fd173f2955fb402dfb8c544",
+  "results.json": "a36954ba5180e070c0e2931681db1f5cd4aad2d2a99498c689b06d42fa65a17e",
+  "billing-matched.json": "fe0a0d7e2d58281bd12d6f438561b82255c87c0458f8c2001681d9f16c7803d3",
+  "quota-interval.json": "d3febdc55f3f2bf22617cee57b4700596f0178a8adbb17a15640429d258218b0",
+  "quota-checkpoints.json": "ea254cecf6e66faf078246be805c444046e12e8d4a0da48a9ab5ba36b737e0a3",
+  "execution.json": "2d0825d252a10e10626b9ebe3f88a73b23c120100b0ce35c5eadae7ba4f75dc6",
   "analysis-plan.json": "1826e3f1e1a1c8ccf1798f83235851e70c0f2ddddc5312c4d1563f2210f48595",
-  "summary_sha256": "97cbecc6e5e5e4b0606119db1091eb3e471de8314586b7eb5aef4ee280c3b7c8",
-  "generator_sha256": "30a592f22e8891a376368d3e408eb348499b48de92d2a806a7d2fd1ab50ebc1d",
+  "summary_sha256": "32e1c2e572040a528e8e24ee003599b39ca6f4b138ca986068e25220c2330c67",
+  "generator_sha256": "785a95b62ed1214fa162cdc209e906215f785149ea073ca344787bbe283d44d8",
+  "resume-amendment.json": "8af4f16642f9757afb7e0dd70fb600be6f89ff57aecb7eb4f7cd41135d6e5c64",
+  "resume-prefix-results.json.gz": "b2ae6a841c0b2a7d4218d70774848600eadced7025f0285dda9049898c13cc42",
+  "partial-billing-matched.json": "15e6d655f004680a36e50b6b742b62d56492ed26b2e79c0252993a6610e06d7b",
+  "partial-execution.json": "ddb5cc1f590b6fdcf16ea4a5c5659d33d4c9a2c29fd173f2955fb402dfb8c544",
+  "partial-quota-checkpoints.json": "c406396a58853bc56fc5906f7023398892fbc42bbe7edfb82c1cd3fcac613db9",
+  "partial-quota-interval.json": "c6d1f43a060e32476ba904b9fce62be41c6f5cefdb0d313633d257ae23e0971a",
+  "partial-summary.json": "97cbecc6e5e5e4b0606119db1091eb3e471de8314586b7eb5aef4ee280c3b7c8",
   "generated_files": {
-    "trials.json": "c30d1bcdda19b581c371b979776279b8d14ab293837dbdb322358f7be66aeb93",
-    "attempts.json": "d2882c9127d98c3fba0f98cce12220a59294a14da1d386b579e07dbda2bbe701",
-    "comparison.png": "0be92ea0103db43851ed134e48fb73c1ce2243d3557bbd863fe484624b1aad10",
-    "comparison.svg": "64bd71f67bb2d8658c4f19f02a842dc47fb41eb1ad1b4b87a3aaecb9a6baa532",
-    "comparison.pdf": "cb92c5869d5336ec4a5212b042aa932cef9f3111de641de08f4e297e467ccbd5"
+    "trials.json": "edce4673c8b7618986c2206a4f0a26fa9b900fe2c653489f63cc4635cf2c843a",
+    "attempts.json": "1fabb91b237dff09d59d47b54a6af087a9ea9b0cdf1abb7e350dc04a1021d1d8",
+    "comparison.png": "f13ee7d1685f1a371abbe1f0a3a8f24d52f582054165fb862af24728652a07cc",
+    "comparison.svg": "1190da14d9b87a9f1f2200d45582235e0cc1b4d555e2df5e2cfc302d26162f09",
+    "comparison.pdf": "6b8adae4e26b10a667381dc03adf9e46f065f8ee8ec8567aaba5221274b9c988"
   }
 }

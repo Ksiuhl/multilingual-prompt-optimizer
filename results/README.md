@@ -5,16 +5,19 @@ not money or official-provider prices. Frozen machine records retain their
 original gateway-supplied currency labels and legacy conversion fields solely
 for reproducibility; those fields are not used as financial results.
 
-## Fresh-input paid follow-up: partial
+## Fresh-input paid follow-up: completed after resumption
 
-`fresh-cache-v060/` preserves the prospectively frozen 20-input, three-repetition,
-120-request plan, 32 saved responses, metadata interruptions and partial matched
-ledger. Both arms passed 16/16 exact checks on 16 new inputs, with no retries.
-Persistent quota-metadata HTTP 429 stopped inference; 88 requests were unsent.
-Only 23/32 consumption records were saved and the final counter was unavailable;
-net savings are unresolved. Missing charges are unknown, not zero. See
-[the report](../docs/fresh-cache-followup.md), `fresh-cache-v060-summary.json`
-and `figures/v060-fresh-cache-*`. Previous evidence and admission remain unchanged.
+`fresh-cache-v060/` preserves the frozen 20-input, three-repetition, 120-request
+plan and all resulting requests/attempts. The remaining 88 requests were sent
+after user-authorized resumption; the first 32 are verified unchanged against
+`resume-prefix-results.json.gz`. `resume-amendment.json` records less frequent
+meter polling and the long pause; `partial-*.json` preserves the stopped-run
+snapshots. Exact passes were 60/60 original and 60/60 compressed.
+Compressed charges were 5.90% lower,
+with all attempts reconciled to 29,819 gateway quota units.
+See [the completed report](../docs/fresh-cache-followup.md),
+`fresh-cache-v060-summary.json` and `figures/v060-fresh-cache-*`.
+No older findings, admission gate or default behavior changed.
 
 ## Small cache/retry follow-up
 

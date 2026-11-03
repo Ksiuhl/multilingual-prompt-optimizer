@@ -6,12 +6,13 @@
 python research/analyze_fresh_cache.py results/fresh-cache-v060 --out results/local/fresh-cache-v060
 ```
 
-This verifies the frozen 120-request plan and its observed 32-request prefix,
-20 distinct planned inputs (16 observed), disjointness from earlier corpora,
-all exact answers, known charges and missing ledger coverage. No model or billing
-calls are made. Read the [partial-result report](../docs/fresh-cache-followup.md)
-before interpreting the graph. Unsent requests are not graded; unmatched charges
-are not zero, and no net saving is claimed.
+This verifies all 120 frozen request identities/order, 20 new distinct inputs,
+disjointness from prior corpora, exact answers and attributable charges. It
+checks that the first 32 responses are unchanged against their saved prefix,
+and records the declared meter-polling amendment and long resumption gap.
+No model or billing calls are made. Read the [completed report](../docs/fresh-cache-followup.md)
+for coverage, reconciliation and cache/timing limits. Earlier evidence and
+admission decisions are unchanged.
 
 ## Small cache/retry follow-up (offline)
 

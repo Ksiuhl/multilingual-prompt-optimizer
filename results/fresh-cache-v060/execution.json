@@ -105,6 +105,54 @@
       "observed_at_utc": "2026-11-03T18:34:01.697Z",
       "http_status": 200,
       "counter_delta_quota": 7430
+    },
+    {
+      "after_planned_pair": 16,
+      "recorded_trials": 32,
+      "observed_at_utc": "2026-11-03T18:48:32.319Z",
+      "http_status": 200,
+      "counter_delta_quota": 7958,
+      "phase": "resume_precheck"
+    },
+    {
+      "after_planned_pair": 26,
+      "recorded_trials": 52,
+      "observed_at_utc": "2026-11-03T18:51:33.229Z",
+      "http_status": 200,
+      "counter_delta_quota": 12932,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 36,
+      "recorded_trials": 72,
+      "observed_at_utc": "2026-11-03T18:53:06.965Z",
+      "http_status": 200,
+      "counter_delta_quota": 17865,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 46,
+      "recorded_trials": 92,
+      "observed_at_utc": "2026-11-03T18:55:33.015Z",
+      "http_status": 200,
+      "counter_delta_quota": 22801,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 56,
+      "recorded_trials": 112,
+      "observed_at_utc": "2026-11-03T18:57:57.054Z",
+      "http_status": 200,
+      "counter_delta_quota": 27765,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 60,
+      "recorded_trials": 120,
+      "observed_at_utc": "2026-11-03T18:58:32.033Z",
+      "http_status": 200,
+      "counter_delta_quota": 29819,
+      "phase": "resumed_run"
     }
   ],
   "billing_polls": [
@@ -112,9 +160,34 @@
       "observed_at_utc": "2026-11-03T18:32:16.265Z",
       "http_status": 200,
       "matched_records": 23
+    },
+    {
+      "observed_at_utc": "2026-11-03T18:51:33.760Z",
+      "http_status": 200,
+      "matched_records": 52
+    },
+    {
+      "observed_at_utc": "2026-11-03T18:53:07.470Z",
+      "http_status": 200,
+      "matched_records": 72
+    },
+    {
+      "observed_at_utc": "2026-11-03T18:55:33.502Z",
+      "http_status": 200,
+      "matched_records": 92
+    },
+    {
+      "observed_at_utc": "2026-11-03T18:57:57.511Z",
+      "http_status": 200,
+      "matched_records": 112
+    },
+    {
+      "observed_at_utc": "2026-11-03T18:58:32.510Z",
+      "http_status": 200,
+      "matched_records": 120
     }
   ],
-  "error": "Unexpected end of JSON input",
+  "error": null,
   "interruptions": [
     {
       "after_trials": 20,
@@ -140,7 +213,7 @@
       "error_type": "SyntaxError"
     }
   ],
-  "stop_reason": "Quota metadata endpoint persistently returned HTTP 429; inference stopped at 32 of 120 scheduled requests.",
+  "stop_reason": null,
   "metadata_rate_limit_reads": [
     {
       "at": "2026-11-03T18:36:03.674Z",
@@ -152,9 +225,17 @@
     }
   ],
   "result": {
-    "complete": false,
-    "trials": 32,
-    "attempts": 32
+    "complete": true,
+    "trials": 120,
+    "attempts": 120
   },
-  "finished_at_utc": "2026-11-03T18:37:31.101Z"
+  "finished_at_utc": "2026-11-03T18:58:32.511Z",
+  "history": [
+    {
+      "event": "User-authorized resumption",
+      "at": "2026-11-03T18:48:32.319Z",
+      "prior_stop": "Quota metadata endpoint persistently returned HTTP 429; inference stopped at 32 of 120 scheduled requests.",
+      "at_requests": 32
+    }
+  ]
 }

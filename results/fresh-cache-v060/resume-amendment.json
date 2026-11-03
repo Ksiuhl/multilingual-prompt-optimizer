@@ -1,0 +1,14 @@
+{
+  "amended_at_utc": "2026-11-03T18:48:32.319Z",
+  "authorization": "User requested completion of the remaining unsent requests after seeing the partial report.",
+  "scope": "Operational resumption only. Frozen candidate instructions, dataset, expected answers, grader, request order, retry rule and model configuration unchanged.",
+  "prefix_requests": 32,
+  "remaining_requests": 88,
+  "prefix_results_sha256": "3c1a6176cf9f7d6a8db62eaaff330aa4f4680883ef317ccc48e8ffac628a2abf",
+  "original_protocol_sha256": "614e32f97b90a15174a59f84d62bd1b00ff623fdfd030e47cf9024cb8bd3e9ae",
+  "quota_checkpoint_change": "Original protocol checked every pair. Remaining schedule checks after each 10 pairs (20 requests), after a final shorter batch, and before resumption. Fewer metadata polls reduce rate-limit pressure. This is a declared operational amendment, not the exact original execution protocol.",
+  "soft_stop_quota_units": 75000,
+  "soft_stop_scope": "Whole 120-request study, original private baseline retained. Not a guaranteed ceiling; more requests can occur between meter checks.",
+  "cache_limitation": "Long gap after first 32 requests can change cache state, load and latency. No warm/cold, order or causal cache inference.",
+  "selection_limitation": "Partial answers were already graded and published. Continuation was requested by user, not a new independently blinded study. No answer-based adaptation or reruns."
+}

@@ -1,348 +1,394 @@
 {
   "scope": "Prospectively frozen fresh-input repeated quota/cache study; one fixed JSON projection schema and manually authored candidate, not an external benchmark.",
-  "execution_complete": false,
+  "operational_amendment": {
+    "amended_at_utc": "2026-11-03T18:48:32.319Z",
+    "authorization": "User requested completion of the remaining unsent requests after seeing the partial report.",
+    "scope": "Operational resumption only. Frozen candidate instructions, dataset, expected answers, grader, request order, retry rule and model configuration unchanged.",
+    "prefix_requests": 32,
+    "remaining_requests": 88,
+    "prefix_results_sha256": "3c1a6176cf9f7d6a8db62eaaff330aa4f4680883ef317ccc48e8ffac628a2abf",
+    "original_protocol_sha256": "614e32f97b90a15174a59f84d62bd1b00ff623fdfd030e47cf9024cb8bd3e9ae",
+    "quota_checkpoint_change": "Original protocol checked every pair. Remaining schedule checks after each 10 pairs (20 requests), after a final shorter batch, and before resumption. Fewer metadata polls reduce rate-limit pressure. This is a declared operational amendment, not the exact original execution protocol.",
+    "soft_stop_quota_units": 75000,
+    "soft_stop_scope": "Whole 120-request study, original private baseline retained. Not a guaranteed ceiling; more requests can occur between meter checks.",
+    "cache_limitation": "Long gap after first 32 requests can change cache state, load and latency. No warm/cold, order or causal cache inference.",
+    "selection_limitation": "Partial answers were already graded and published. Continuation was requested by user, not a new independently blinded study. No answer-based adaptation or reruns."
+  },
+  "prefix_preserved": true,
+  "resumption_gap_seconds": 859.3513816999998,
+  "execution_phases": {
+    "initial": {
+      "original": {
+        "attempted": 16,
+        "correct": 16,
+        "known_matched_quota": 4090,
+        "charge_coverage_complete": true
+      },
+      "compressed": {
+        "attempted": 16,
+        "correct": 16,
+        "known_matched_quota": 3868,
+        "charge_coverage_complete": true
+      }
+    },
+    "resumed": {
+      "original": {
+        "attempted": 44,
+        "correct": 44,
+        "known_matched_quota": 11273,
+        "charge_coverage_complete": true
+      },
+      "compressed": {
+        "attempted": 44,
+        "correct": 44,
+        "known_matched_quota": 10588,
+        "charge_coverage_complete": true
+      }
+    }
+  },
+  "execution_complete": true,
   "arms": {
     "original": {
       "planned": 60,
-      "attempted": 16,
-      "completed": 16,
-      "correct": 16,
-      "http_attempts": 16,
-      "charged_quota": 2861,
-      "final_consumption_records_present": 11,
-      "median_request_ms_including_retries": 4821.163549999706,
+      "attempted": 60,
+      "completed": 60,
+      "correct": 60,
+      "http_attempts": 60,
+      "charged_quota": 15363,
+      "final_consumption_records_present": 60,
+      "median_request_ms_including_retries": 2819.0744500001892,
       "quality_errors": 0,
       "incomplete": 0,
-      "input_tokens": 75614,
-      "output_tokens": 540,
+      "input_tokens": 283473,
+      "output_tokens": 2131,
       "cache_categories": {
-        "reported_positive": 16,
+        "reported_positive": 60,
         "reported_zero": 0,
         "unknown": 0
       }
     },
     "compressed": {
       "planned": 60,
-      "attempted": 16,
-      "completed": 16,
-      "correct": 16,
-      "http_attempts": 16,
-      "charged_quota": 2846,
-      "final_consumption_records_present": 12,
-      "median_request_ms_including_retries": 3766.124950000085,
+      "attempted": 60,
+      "completed": 60,
+      "correct": 60,
+      "http_attempts": 60,
+      "charged_quota": 14456,
+      "final_consumption_records_present": 60,
+      "median_request_ms_including_retries": 2599.1963499998674,
       "quality_errors": 0,
       "incomplete": 0,
-      "input_tokens": 74590,
-      "output_tokens": 501,
+      "input_tokens": 279633,
+      "output_tokens": 2108,
       "cache_categories": {
-        "reported_positive": 16,
+        "reported_positive": 60,
         "reported_zero": 0,
         "unknown": 0
       }
     }
   },
   "new_distinct_inputs": 20,
-  "observed_distinct_inputs": 16,
+  "observed_distinct_inputs": 20,
   "planned_requests": 120,
-  "unattempted_requests": 88,
+  "unattempted_requests": 0,
   "first_arm_groups": {
     "original": {
-      "blocks": 7,
-      "fully_matched_blocks": 6,
-      "compressed_minus_original_quota": -156
+      "blocks": 30,
+      "fully_matched_blocks": 30,
+      "compressed_minus_original_quota": -634
     },
     "compressed": {
-      "blocks": 9,
-      "fully_matched_blocks": 5,
-      "compressed_minus_original_quota": -83
+      "blocks": 30,
+      "fully_matched_blocks": 30,
+      "compressed_minus_original_quota": -273
     }
   },
   "case_repeats": [
     {
       "case_id": "fresh-7100",
       "arm": "original",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7100",
       "arm": "compressed",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7101",
       "arm": "original",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7101",
       "arm": "compressed",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7102",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7102",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7103",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7103",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7104",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7104",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7105",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7105",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7106",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7106",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7107",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7107",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7108",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7108",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7109",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7109",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7110",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7110",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7111",
       "arm": "original",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7111",
       "arm": "compressed",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7112",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7112",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7113",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7113",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7114",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7114",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7115",
       "arm": "original",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7115",
       "arm": "compressed",
-      "observed": 0,
-      "correct": 0,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7116",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7116",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7117",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7117",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7118",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7118",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7119",
       "arm": "original",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     },
     {
       "case_id": "fresh-7119",
       "arm": "compressed",
-      "observed": 1,
-      "correct": 1,
+      "observed": 3,
+      "correct": 3,
       "unstable": false
     }
   ],
-  "paired_blocks_costlier_with_compression": 1,
-  "same_reported_cache_pairs": 14,
-  "quota_comparison_complete": false,
-  "attempt_charge_coverage_complete": false,
+  "paired_blocks_costlier_with_compression": 13,
+  "same_reported_cache_pairs": 47,
+  "quota_comparison_complete": true,
+  "attempt_charge_coverage_complete": true,
   "charge_interpretation": "Matched charges only; unmatched attempts are unknown, not free. Full comparison requires complete coverage and counter reconciliation.",
   "execution_notes": {
     "running": false,
@@ -451,6 +497,54 @@
         "observed_at_utc": "2026-11-03T18:34:01.697Z",
         "http_status": 200,
         "counter_delta_quota": 7430
+      },
+      {
+        "after_planned_pair": 16,
+        "recorded_trials": 32,
+        "observed_at_utc": "2026-11-03T18:48:32.319Z",
+        "http_status": 200,
+        "counter_delta_quota": 7958,
+        "phase": "resume_precheck"
+      },
+      {
+        "after_planned_pair": 26,
+        "recorded_trials": 52,
+        "observed_at_utc": "2026-11-03T18:51:33.229Z",
+        "http_status": 200,
+        "counter_delta_quota": 12932,
+        "phase": "resumed_run"
+      },
+      {
+        "after_planned_pair": 36,
+        "recorded_trials": 72,
+        "observed_at_utc": "2026-11-03T18:53:06.965Z",
+        "http_status": 200,
+        "counter_delta_quota": 17865,
+        "phase": "resumed_run"
+      },
+      {
+        "after_planned_pair": 46,
+        "recorded_trials": 92,
+        "observed_at_utc": "2026-11-03T18:55:33.015Z",
+        "http_status": 200,
+        "counter_delta_quota": 22801,
+        "phase": "resumed_run"
+      },
+      {
+        "after_planned_pair": 56,
+        "recorded_trials": 112,
+        "observed_at_utc": "2026-11-03T18:57:57.054Z",
+        "http_status": 200,
+        "counter_delta_quota": 27765,
+        "phase": "resumed_run"
+      },
+      {
+        "after_planned_pair": 60,
+        "recorded_trials": 120,
+        "observed_at_utc": "2026-11-03T18:58:32.033Z",
+        "http_status": 200,
+        "counter_delta_quota": 29819,
+        "phase": "resumed_run"
       }
     ],
     "billing_polls": [
@@ -458,9 +552,34 @@
         "observed_at_utc": "2026-11-03T18:32:16.265Z",
         "http_status": 200,
         "matched_records": 23
+      },
+      {
+        "observed_at_utc": "2026-11-03T18:51:33.760Z",
+        "http_status": 200,
+        "matched_records": 52
+      },
+      {
+        "observed_at_utc": "2026-11-03T18:53:07.470Z",
+        "http_status": 200,
+        "matched_records": 72
+      },
+      {
+        "observed_at_utc": "2026-11-03T18:55:33.502Z",
+        "http_status": 200,
+        "matched_records": 92
+      },
+      {
+        "observed_at_utc": "2026-11-03T18:57:57.511Z",
+        "http_status": 200,
+        "matched_records": 112
+      },
+      {
+        "observed_at_utc": "2026-11-03T18:58:32.510Z",
+        "http_status": 200,
+        "matched_records": 120
       }
     ],
-    "error": "Unexpected end of JSON input",
+    "error": null,
     "interruptions": [
       {
         "after_trials": 20,
@@ -486,7 +605,7 @@
         "error_type": "SyntaxError"
       }
     ],
-    "stop_reason": "Quota metadata endpoint persistently returned HTTP 429; inference stopped at 32 of 120 scheduled requests.",
+    "stop_reason": null,
     "metadata_rate_limit_reads": [
       {
         "at": "2026-11-03T18:36:03.674Z",
@@ -498,59 +617,67 @@
       }
     ],
     "result": {
-      "complete": false,
-      "trials": 32,
-      "attempts": 32
+      "complete": true,
+      "trials": 120,
+      "attempts": 120
     },
-    "finished_at_utc": "2026-11-03T18:37:31.101Z"
+    "finished_at_utc": "2026-11-03T18:58:32.511Z",
+    "history": [
+      {
+        "event": "User-authorized resumption",
+        "at": "2026-11-03T18:48:32.319Z",
+        "prior_stop": "Quota metadata endpoint persistently returned HTTP 429; inference stopped at 32 of 120 scheduled requests.",
+        "at_requests": 32
+      }
+    ]
   },
   "repetitions": {
     "1": {
       "original": {
         "planned": 20,
-        "attempted": 16,
-        "correct": 16,
-        "completed": 16,
-        "charged_quota": 2861
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 5156
       },
       "compressed": {
         "planned": 20,
-        "attempted": 16,
-        "correct": 16,
-        "completed": 16,
-        "charged_quota": 2846
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 4874
       }
     },
     "2": {
       "original": {
         "planned": 20,
-        "attempted": 0,
-        "correct": 0,
-        "completed": 0,
-        "charged_quota": 0
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 5139
       },
       "compressed": {
         "planned": 20,
-        "attempted": 0,
-        "correct": 0,
-        "completed": 0,
-        "charged_quota": 0
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 4780
       }
     },
     "3": {
       "original": {
         "planned": 20,
-        "attempted": 0,
-        "correct": 0,
-        "completed": 0,
-        "charged_quota": 0
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 5068
       },
       "compressed": {
         "planned": 20,
-        "attempted": 0,
-        "correct": 0,
-        "completed": 0,
-        "charged_quota": 0
+        "attempted": 20,
+        "correct": 20,
+        "completed": 20,
+        "charged_quota": 4802
       }
     }
   },
@@ -692,9 +819,9 @@
       "case_id": "fresh-7105",
       "repetition": 1,
       "first_arm": "compressed",
-      "original_quota": 0,
+      "original_quota": 243,
       "compressed_quota": 224,
-      "difference": null,
+      "difference": -19,
       "original_cached": 4224,
       "compressed_cached": 4224,
       "cache_counts_equal": true
@@ -704,9 +831,9 @@
       "case_id": "fresh-7103",
       "repetition": 1,
       "first_arm": "compressed",
-      "original_quota": 0,
-      "compressed_quota": 0,
-      "difference": null,
+      "original_quota": 295,
+      "compressed_quota": 265,
+      "difference": -30,
       "original_cached": 4224,
       "compressed_cached": 4224,
       "cache_counts_equal": true
@@ -716,9 +843,9 @@
       "case_id": "fresh-7108",
       "repetition": 1,
       "first_arm": "compressed",
-      "original_quota": 0,
-      "compressed_quota": 0,
-      "difference": null,
+      "original_quota": 261,
+      "compressed_quota": 242,
+      "difference": -19,
       "original_cached": 4224,
       "compressed_cached": 4224,
       "cache_counts_equal": true
@@ -728,9 +855,9 @@
       "case_id": "fresh-7114",
       "repetition": 1,
       "first_arm": "original",
-      "original_quota": 0,
-      "compressed_quota": 0,
-      "difference": null,
+      "original_quota": 180,
+      "compressed_quota": 237,
+      "difference": 57,
       "original_cached": 4608,
       "compressed_cached": 4224,
       "cache_counts_equal": false
@@ -740,22 +867,550 @@
       "case_id": "fresh-7113",
       "repetition": 1,
       "first_arm": "compressed",
-      "original_quota": 0,
-      "compressed_quota": 0,
-      "difference": null,
+      "original_quota": 250,
+      "compressed_quota": 278,
+      "difference": 28,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 17,
+      "case_id": "fresh-7100",
+      "repetition": 1,
+      "first_arm": "original",
+      "original_quota": 260,
+      "compressed_quota": 240,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 18,
+      "case_id": "fresh-7115",
+      "repetition": 1,
+      "first_arm": "original",
+      "original_quota": 303,
+      "compressed_quota": 208,
+      "difference": -95,
+      "original_cached": 4224,
+      "compressed_cached": 4480,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 19,
+      "case_id": "fresh-7101",
+      "repetition": 1,
+      "first_arm": "original",
+      "original_quota": 252,
+      "compressed_quota": 279,
+      "difference": 27,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 20,
+      "case_id": "fresh-7111",
+      "repetition": 1,
+      "first_arm": "compressed",
+      "original_quota": 251,
+      "compressed_quota": 279,
+      "difference": 28,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 21,
+      "case_id": "fresh-7110",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 260,
+      "compressed_quota": 240,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 22,
+      "case_id": "fresh-7109",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 258,
+      "compressed_quota": 239,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 23,
+      "case_id": "fresh-7108",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 261,
+      "compressed_quota": 242,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 24,
+      "case_id": "fresh-7114",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 184,
+      "compressed_quota": 270,
+      "difference": 86,
+      "original_cached": 4608,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 25,
+      "case_id": "fresh-7116",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 258,
+      "compressed_quota": 239,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 26,
+      "case_id": "fresh-7111",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 251,
+      "compressed_quota": 200,
+      "difference": -51,
+      "original_cached": 4224,
+      "compressed_cached": 4480,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 27,
+      "case_id": "fresh-7102",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 254,
+      "compressed_quota": 234,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 28,
+      "case_id": "fresh-7107",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 216,
+      "compressed_quota": 234,
+      "difference": 18,
+      "original_cached": 4352,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 29,
+      "case_id": "fresh-7113",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 250,
+      "compressed_quota": 263,
+      "difference": 13,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 30,
+      "case_id": "fresh-7103",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 286,
+      "compressed_quota": 229,
+      "difference": -57,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 31,
+      "case_id": "fresh-7119",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 257,
+      "compressed_quota": 237,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 32,
+      "case_id": "fresh-7118",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 258,
+      "compressed_quota": 239,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 33,
+      "case_id": "fresh-7100",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 260,
+      "compressed_quota": 240,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 34,
+      "case_id": "fresh-7117",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 260,
+      "compressed_quota": 241,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 35,
+      "case_id": "fresh-7106",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 256,
+      "compressed_quota": 255,
+      "difference": -1,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 36,
+      "case_id": "fresh-7101",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 252,
+      "compressed_quota": 212,
+      "difference": -40,
+      "original_cached": 4224,
+      "compressed_cached": 4480,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 37,
+      "case_id": "fresh-7105",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 279,
+      "compressed_quota": 224,
+      "difference": -55,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 38,
+      "case_id": "fresh-7115",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 294,
+      "compressed_quota": 278,
+      "difference": -16,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 39,
+      "case_id": "fresh-7112",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 294,
+      "compressed_quota": 233,
+      "difference": -61,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 40,
+      "case_id": "fresh-7104",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 251,
+      "compressed_quota": 231,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 41,
+      "case_id": "fresh-7117",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 150,
+      "compressed_quota": 241,
+      "difference": 91,
+      "original_cached": 4608,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 42,
+      "case_id": "fresh-7106",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 298,
+      "compressed_quota": 270,
+      "difference": -28,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 43,
+      "case_id": "fresh-7109",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 258,
+      "compressed_quota": 239,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 44,
+      "case_id": "fresh-7107",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 144,
+      "compressed_quota": 234,
+      "difference": 90,
+      "original_cached": 4608,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 45,
+      "case_id": "fresh-7112",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 218,
+      "compressed_quota": 233,
+      "difference": 15,
+      "original_cached": 4480,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 46,
+      "case_id": "fresh-7101",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 282,
+      "compressed_quota": 285,
+      "difference": 3,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 47,
+      "case_id": "fresh-7103",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 286,
+      "compressed_quota": 229,
+      "difference": -57,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 48,
+      "case_id": "fresh-7115",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 293,
+      "compressed_quota": 214,
+      "difference": -79,
+      "original_cached": 4224,
+      "compressed_cached": 4480,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 49,
+      "case_id": "fresh-7100",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 260,
+      "compressed_quota": 240,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 50,
+      "case_id": "fresh-7105",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 202,
+      "compressed_quota": 255,
+      "difference": 53,
+      "original_cached": 4480,
+      "compressed_cached": 4224,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 51,
+      "case_id": "fresh-7118",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 288,
+      "compressed_quota": 239,
+      "difference": -49,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 52,
+      "case_id": "fresh-7111",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 270,
+      "compressed_quota": 200,
+      "difference": -70,
+      "original_cached": 4224,
+      "compressed_cached": 4480,
+      "cache_counts_equal": false
+    },
+    {
+      "block": 53,
+      "case_id": "fresh-7108",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 261,
+      "compressed_quota": 242,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 54,
+      "case_id": "fresh-7110",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 260,
+      "compressed_quota": 240,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 55,
+      "case_id": "fresh-7102",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 254,
+      "compressed_quota": 234,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 56,
+      "case_id": "fresh-7116",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 258,
+      "compressed_quota": 239,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 57,
+      "case_id": "fresh-7104",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 251,
+      "compressed_quota": 231,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 58,
+      "case_id": "fresh-7114",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 289,
+      "compressed_quota": 270,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 59,
+      "case_id": "fresh-7119",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 257,
+      "compressed_quota": 237,
+      "difference": -20,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 60,
+      "case_id": "fresh-7113",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 289,
+      "compressed_quota": 230,
+      "difference": -59,
       "original_cached": 4224,
       "compressed_cached": 4224,
       "cache_counts_equal": true
     }
   ],
-  "counter_reconciles": null,
-  "total_matched_quota": 5707,
-  "total_quota": null,
+  "counter_reconciles": true,
+  "total_matched_quota": 29819,
+  "total_quota": 29819,
   "display_unit": "gateway quota units",
-  "compressed_charge_reduction": null,
+  "compressed_charge_reduction": 0.05903794831738596,
   "failed_attempts": [],
-  "final_consumption_records_present": 23,
-  "attempts_without_consumption_record": 9,
+  "final_consumption_records_present": 120,
+  "attempts_without_consumption_record": 0,
   "stop_guard": [
     {
       "after_planned_pair": 1,
@@ -861,6 +1516,54 @@
       "observed_at_utc": "2026-11-03T18:34:01.697Z",
       "http_status": 200,
       "counter_delta_quota": 7430
+    },
+    {
+      "after_planned_pair": 16,
+      "recorded_trials": 32,
+      "observed_at_utc": "2026-11-03T18:48:32.319Z",
+      "http_status": 200,
+      "counter_delta_quota": 7958,
+      "phase": "resume_precheck"
+    },
+    {
+      "after_planned_pair": 26,
+      "recorded_trials": 52,
+      "observed_at_utc": "2026-11-03T18:51:33.229Z",
+      "http_status": 200,
+      "counter_delta_quota": 12932,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 36,
+      "recorded_trials": 72,
+      "observed_at_utc": "2026-11-03T18:53:06.965Z",
+      "http_status": 200,
+      "counter_delta_quota": 17865,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 46,
+      "recorded_trials": 92,
+      "observed_at_utc": "2026-11-03T18:55:33.015Z",
+      "http_status": 200,
+      "counter_delta_quota": 22801,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 56,
+      "recorded_trials": 112,
+      "observed_at_utc": "2026-11-03T18:57:57.054Z",
+      "http_status": 200,
+      "counter_delta_quota": 27765,
+      "phase": "resumed_run"
+    },
+    {
+      "after_planned_pair": 60,
+      "recorded_trials": 120,
+      "observed_at_utc": "2026-11-03T18:58:32.033Z",
+      "http_status": 200,
+      "counter_delta_quota": 29819,
+      "phase": "resumed_run"
     }
   ],
   "limitations": [
