@@ -1,5 +1,17 @@
 # Reproduce the development studies
 
+## Output-contract regression (offline)
+
+```bash
+python research/analyze_output_contract.py
+```
+
+This verifies append-only prompt changes and regrades the 72 follow-up responses
+using the original frozen rubric. It writes summaries and figures under
+`results/local/output-contract-v060/` without any API calls. The six inputs were
+selected from earlier format failures; this is targeted regression evidence, not
+an independent accuracy benchmark. See [the protocol](../docs/output-contract-regression.md).
+
 ## v0.6 gateway study (offline)
 
 After installing the package and `.[plots]`, run:

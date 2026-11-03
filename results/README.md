@@ -1,5 +1,15 @@
 # Checked-in local results
 
+## Explicit output-contract regression (0.6.0a2)
+
+`output-contract-v060-*` retains the fixed protocol, append-only prompts, raw
+receipts and summaries for 72 follow-up answers. All passed the unchanged strict
+checks, including the outer `answer` wrapper. Six known problem inputs were reused
+twice per arm/model; these are not 72 independent questions. Earlier scores above
+remain unchanged. Contract text adds input overhead and is counted. See
+[the regression protocol](../docs/output-contract-regression.md) and the
+`figures/v060-output-contract-comparison.*` graphs.
+
 ## Recorded gateway transfer study (0.6.0a1)
 
 `gateway-v060-summary.json` contains primary strict scores and separately labelled

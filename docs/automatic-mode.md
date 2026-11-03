@@ -59,6 +59,11 @@ Ollama; the source payload is preserved and excluded from generation/judging
 requests. Keep documents and code in `payload`. A custom local Ollama installation
 must itself be configured to use local inference.
 
+For answer-wrapped JSON objects, put `json_object_contract(("field_a", "field_b"))`
+in `Request.output_instruction`. The optimizer retains and counts that constraint
+for every candidate. It remains fallible prompt guidance: validate actual returned
+objects, and do not silently add a missing wrapper after receiving an answer.
+
 ## Meaning and accuracy limits
 
 The judge checks requirements, negation, quantities, entities, formatting, scope and

@@ -64,7 +64,38 @@ graphs offline after installing `.[plots]`:
 python research/analyze_gateway_study.py
 ```
 
-This preview is version `0.6.0a1`; version 0.5 remains the published baseline while
+### Explicit JSON output contracts
+
+Keep output formatting in the immutable `output_instruction` section:
+
+```python
+from multilingual_prompt_optimizer import Request, json_object_contract, optimize
+
+request = Request(
+    instruction="Summarize the rollout: launch facts, progress, and next review.",
+    payload="Your source note goes here.",
+    output_instruction=json_object_contract(("launch", "progress", "next")),
+)
+result = optimize(request)
+```
+
+The helper explicitly requires the outer `answer` object and nested result keys.
+Its text is retained and counted in every complete candidate prompt. It does not
+enforce a native provider schema or repair returned answers. CLI example:
+
+```bash
+mpo optimize --input examples/summary-contract.json
+```
+
+A separate targeted regression on the six known problematic summaries retested
+all three prompt versions twice on both gateway labels. **All 72 responses passed
+the unchanged strict checks**, with no missing wrappers. These are selected known
+cases, not a new held-out benchmark. The original study scores above remain
+unchanged. The contract adds input overhead (about 124 tokens/request on the
+Gemini-labelled regression); no net-cost saving is claimed.
+See [the regression protocol and graph](docs/output-contract-regression.md).
+
+This preview is version `0.6.0a2`; version 0.5 remains the published baseline while
 the development change is reviewed. Package and repository names are retained for
 continuity with the original multilingual research question.
 

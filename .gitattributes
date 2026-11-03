@@ -3,3 +3,6 @@
 data/gateway-v060* -text
 results/gateway-v060* -text
 results/figures/v060-gateway-* -text
+data/output-contract-v060* -text
+results/output-contract-v060* -text
+results/figures/v060-output-contract-* -text

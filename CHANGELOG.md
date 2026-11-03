@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0a2 — immutable output-contract regression fix
+
+- Added `json_object_contract(fields)` for explicit answer-wrapped JSON guidance in immutable `Request.output_instruction`.
+- All complete prompt counts include the extra contract; no response repair or native schema enforcement is implied.
+- Added a CLI-ready summary example and four contract/validation regression tests.
+- Retested six known summary failure inputs, all three arms, twice on both gateway labels: 72/72 strict passes, no missing wrappers.
+- Kept original study scores unchanged; recorded the targeted selection, identical English/mixed prompts, and additional input overhead.
+- Added frozen requests, raw receipts, unchanged-rubric offline analysis and PNG/SVG/PDF figures.
+
 ## 0.6.0a1 — English-first development preview
 
 - Default rule search now uses English-only lite rewriting; aggressive rules also disable translation.

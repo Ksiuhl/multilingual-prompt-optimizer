@@ -1,5 +1,10 @@
 # Dataset provenance
 
+`output-contract-v060-cases.json` contains six previously failed summary inputs
+selected from the gateway study for a targeted output-contract regression. It is
+not a new held-out benchmark. Two repeats per arm/model reuse these same cases;
+the original rubric and task facts are unchanged.
+
 `gateway-v060.json` freezes 50 assistant-authored synthetic development inputs:
 ten templates, five inputs each, balanced across extraction, filtering,
 arithmetic, constrained summaries and bounded Python repair. It is not an external

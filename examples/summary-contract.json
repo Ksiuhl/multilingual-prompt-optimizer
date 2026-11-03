@@ -1,0 +1,5 @@
+{
+  "instruction": "Summarize the current pilot in three English sentences: launch contains the project, date and user count; progress contains completed onboarding and open bugs; next contains the review date. Keep supplied digits and dates unchanged.",
+  "payload": "Project Nova launched on 2027-04-06 with 148 users. 129 completed onboarding and 3 bugs remain open. The next review is 2027-04-13.",
+  "output_instruction": "Return exactly one JSON object. Its ONLY top-level key must be \"answer\". The value of \"answer\" must be an object with exactly these keys: [\"launch\", \"progress\", \"next\"]. Put those fields INSIDE \"answer\", never at the top level. Use the actual task results and requested value types. The following is a shape example only; replace every placeholder: {\"answer\": {\"launch\": \"<task result>\", \"progress\": \"<task result>\", \"next\": \"<task result>\"}}. No extra keys, Markdown fences, or text outside the JSON. Respond in English."
+}
