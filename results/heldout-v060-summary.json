@@ -1,0 +1,650 @@
+{
+  "execution_complete": true,
+  "complete": false,
+  "inputs": 50,
+  "templates": 10,
+  "identical_english_mixed_pairs": 50,
+  "candidate_generation_api_calls": 0,
+  "translation_api_tokens": 0,
+  "local_candidate_search_ms_total": {
+    "concise_english": 422.01559990644455,
+    "mixed": 163.24510029517114
+  },
+  "actual_invoiced_usd": null,
+  "pricing_snapshot": {
+    "url": "https://gpt-api.cc/api/pricing",
+    "observed_at_utc": "2026-11-03T15:49:51.377Z",
+    "http_status": 200,
+    "pricing_version": "a42d372ccf0b5dd13ecf71203521f9d2",
+    "source_response_sha256": "3f0aceb8b39255c3bd6498666fc096e492e3aaf52214f4b9dd276a8c3727885a",
+    "models": [
+      {
+        "model_name": "gpt-6.1-sol",
+        "vendor_id": 4,
+        "quota_type": 0,
+        "model_ratio": 37.5,
+        "model_price": 0,
+        "owner_by": "",
+        "completion_ratio": 2,
+        "enable_groups": [
+          "OpenAI-Pro 普通分组 可cyber",
+          "OpenAI-Pro 高速分组 禁止cyber",
+          "svip",
+          "vip",
+          "default",
+          "OpenAI-Plus 分组",
+          "OpenAI-Pro 不降智分组 禁止cyber"
+        ],
+        "supported_endpoint_types": [
+          "openai"
+        ],
+        "billing_mode": "tiered_expr",
+        "billing_expr": "len <= 272000 ? tier(\"0_272k\", p * 2 + cr * 0.1 + cc * 2.5 + c * 10) : tier(\"272k_plus\", p * 4 + cr * 0.2 + cc * 5 + c * 15)"
+      },
+      {
+        "model_name": "gemini-4-argon",
+        "vendor_id": 9,
+        "quota_type": 0,
+        "model_ratio": 37.5,
+        "model_price": 0,
+        "owner_by": "",
+        "completion_ratio": 4,
+        "enable_groups": [
+          "default",
+          "Gemini Ultra"
+        ],
+        "supported_endpoint_types": [
+          "openai"
+        ],
+        "billing_mode": "tiered_expr",
+        "billing_expr": "tier(\"standard\", p * 2 + cr * 0.1 + ai * 2 + c * 10)"
+      }
+    ],
+    "public_group_ratios": {
+      "Anthropic-Cursor反代": 0.8,
+      "Anthropic-Kiro反代": 0.35,
+      "Anthropic-Max满血（不限客户端）": 1.5,
+      "Anthropic-Max满血（仅限客户端/CLI）": 1.5,
+      "DeepSeek 专用": 3.5,
+      "GLM 专用": 5,
+      "Gemini Ultra": 0.5,
+      "OpenAI Image": 1,
+      "OpenAI-Plus 分组": 0.25,
+      "OpenAI-Pro 不降智分组 禁止cyber": 0.3,
+      "OpenAI-Pro 普通分组 可cyber": 0.45,
+      "OpenAI-Pro 高速分组 禁止cyber": 0.6,
+      "OpenAI-Team K12 灵车": 0.14,
+      "SWE": 0.1,
+      "default": 1,
+      "video": 0.1,
+      "vip": 1,
+      "xAI-Grok": 0.2
+    },
+    "active_key_group": null,
+    "billing_expression_reference": "https://github.com/QuantumNous/new-api/blob/main/pkg/billingexpr/expr.md",
+    "interpretation": "Public expression coefficients are USD per million tokens in upstream New API. Deployment behavior, active key group, discounts, settlement and failed-attempt charges are not verified. Any computation must be labelled a scenario, not an invoice."
+  },
+  "cost_scenario_assumptions": [
+    "Apply the recorded public expression only when it matches an explicitly supported formula; do not execute arbitrary expressions.",
+    "Group multiplier 1, no discounts or surcharges; active key group and settlement are unverified.",
+    "Use reported cached_tokens or zero when absent; unreported cache writes/audio are assumed zero. All requests contain text only.",
+    "Missing-usage attempts are excluded and may have incurred charges. Manual authoring labor is unknown.",
+    "A price scenario is not an actual bill or a demonstrated net cost reduction."
+  ],
+  "scope": "Prospectively frozen assistant-authored synthetic generalization check; not an external or independently curated benchmark.",
+  "limitations": [
+    "Fifty new inputs across ten new templates, five cases per shared template; limited independence.",
+    "Exact structured tasks only; no free-form summaries or code generation in this check.",
+    "Candidate clauses and oracle author are the same assistant; translation equivalence has no independent human review.",
+    "Single response per case/arm/model; identical-prompt pairs can differ through sampling.",
+    "Gateway labels and usage are unverified; active billing group, discounts and invoices are unavailable, so actual dollar cost is unknown. Public pricing was discovered after freezing the protocol.",
+    "Local prompt counts include all content but exclude hidden provider wrappers. Provider-reported input/output tokens retained separately.",
+    "Latency is client wall time with concurrent requests, not intrinsic model latency.",
+    "Manual candidate authoring is not a validated automatic translator; its labor cost is unknown."
+  ],
+  "profiles": [
+    {
+      "model_label": "gpt-6.1-sol",
+      "complete": true,
+      "attempts": 156,
+      "attempts_without_usage": 7,
+      "observed_attempt_usage": {
+        "prompt_tokens": 691157,
+        "completion_tokens": 7176,
+        "total_tokens": 698333
+      },
+      "arms": {
+        "original": {
+          "correct": 47,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 49,
+          "transport_failures": 1,
+          "usage_present": 49,
+          "provider_usage": {
+            "prompt_tokens": 228191,
+            "completion_tokens": 2189,
+            "total_tokens": 230380
+          },
+          "local_content_tokens": 13578,
+          "median_latency_ms": 3383.794600000023,
+          "median_request_latency_ms": 3383.794600000023,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 4,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 4,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 4,
+              "planned": 5
+            }
+          }
+        },
+        "concise_english": {
+          "correct": 47,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 50,
+          "transport_failures": 0,
+          "usage_present": 50,
+          "provider_usage": {
+            "prompt_tokens": 231483,
+            "completion_tokens": 2407,
+            "total_tokens": 233890
+          },
+          "local_content_tokens": 12183,
+          "median_latency_ms": 7998.90214999998,
+          "median_request_latency_ms": 7998.90214999998,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 4,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 3,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 5,
+              "planned": 5
+            }
+          },
+          "local_input_reduction": 0.10273972602739723,
+          "reported_input_reduction": -0.014426511124452812,
+          "reported_total_reduction": -0.015235697543189541,
+          "common_case_input_reduction": 0.005964301834866403,
+          "common_case_total_reduction": 0.005421477558815835
+        },
+        "mixed": {
+          "correct": 50,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 50,
+          "transport_failures": 0,
+          "usage_present": 50,
+          "provider_usage": {
+            "prompt_tokens": 231483,
+            "completion_tokens": 2580,
+            "total_tokens": 234063
+          },
+          "local_content_tokens": 12183,
+          "median_latency_ms": 10877.113750000048,
+          "median_request_latency_ms": 10877.113750000048,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 5,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 5,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 5,
+              "planned": 5
+            }
+          },
+          "local_input_reduction": 0.10273972602739723,
+          "reported_input_reduction": -0.014426511124452812,
+          "reported_total_reduction": -0.015986630783922262,
+          "common_case_input_reduction": 0.005964301834866403,
+          "common_case_total_reduction": 0.00472697282750234
+        }
+      },
+      "paired": {
+        "concise_english": {
+          "original_only_correct": 2,
+          "optimized_only_correct": 2
+        },
+        "mixed": {
+          "original_only_correct": 0,
+          "optimized_only_correct": 3
+        }
+      },
+      "failures": [
+        {
+          "case_id": "new-utc-01",
+          "arm": "original",
+          "passed": false,
+          "reason": "incomplete_request"
+        },
+        {
+          "case_id": "new-stock-02",
+          "arm": "original",
+          "passed": false,
+          "reason": "answer_or_format_mismatch"
+        },
+        {
+          "case_id": "new-latest-03",
+          "arm": "original",
+          "passed": false,
+          "reason": "answer_or_format_mismatch"
+        },
+        {
+          "case_id": "new-stock-05",
+          "arm": "concise_english",
+          "passed": false,
+          "reason": "answer_or_format_mismatch"
+        },
+        {
+          "case_id": "new-stock-02",
+          "arm": "concise_english",
+          "passed": false,
+          "reason": "answer_or_format_mismatch"
+        },
+        {
+          "case_id": "new-latest-04",
+          "arm": "concise_english",
+          "passed": false,
+          "reason": "answer_or_format_mismatch"
+        }
+      ],
+      "common_case_usage": {
+        "n": 49,
+        "arms": {
+          "original": {
+            "prompt_tokens": 228191,
+            "completion_tokens": 2189,
+            "total_tokens": 230380
+          },
+          "concise_english": {
+            "prompt_tokens": 226830,
+            "completion_tokens": 2301,
+            "total_tokens": 229131
+          },
+          "mixed": {
+            "prompt_tokens": 226830,
+            "completion_tokens": 2461,
+            "total_tokens": 229291
+          }
+        }
+      },
+      "common_case_median_request_ms": {
+        "original": 3383.794600000023,
+        "concise_english": 8035.957999999984,
+        "mixed": 10958.083300000057
+      },
+      "cost_scenario": {
+        "common_inputs": 49,
+        "group_multiplier": 1,
+        "common_usd": {
+          "original": 0.08234240000000001,
+          "concise_english": 0.0804972,
+          "mixed": 0.0835564
+        },
+        "common_reduction": {
+          "concise_english": 0.022408868335146992,
+          "mixed": -0.014743315715840088
+        },
+        "observed_attempt_usd": 0.2512068,
+        "attempts_without_cost_estimate": 7
+      },
+      "identical_prompt_diagnostic": {
+        "pairs": 50,
+        "different_pass_status": 3,
+        "different_reported_input_tokens": 0
+      }
+    },
+    {
+      "model_label": "gemini-4-argon",
+      "complete": true,
+      "attempts": 150,
+      "attempts_without_usage": 0,
+      "observed_attempt_usage": {
+        "prompt_tokens": 96498,
+        "completion_tokens": 22505,
+        "total_tokens": 119003
+      },
+      "arms": {
+        "original": {
+          "correct": 50,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 50,
+          "transport_failures": 0,
+          "usage_present": 50,
+          "provider_usage": {
+            "prompt_tokens": 33096,
+            "completion_tokens": 8816,
+            "total_tokens": 41912
+          },
+          "local_content_tokens": 13578,
+          "median_latency_ms": 6576.241000000024,
+          "median_request_latency_ms": 6576.241000000024,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 5,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 5,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 5,
+              "planned": 5
+            }
+          }
+        },
+        "concise_english": {
+          "correct": 50,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 50,
+          "transport_failures": 0,
+          "usage_present": 50,
+          "provider_usage": {
+            "prompt_tokens": 31701,
+            "completion_tokens": 7331,
+            "total_tokens": 39032
+          },
+          "local_content_tokens": 12183,
+          "median_latency_ms": 6449.098399999983,
+          "median_request_latency_ms": 6449.098399999983,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 5,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 5,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 5,
+              "planned": 5
+            }
+          },
+          "local_input_reduction": 0.10273972602739723,
+          "reported_input_reduction": 0.042150108774474226,
+          "reported_total_reduction": 0.06871540370299678,
+          "common_case_input_reduction": 0.042150108774474226,
+          "common_case_total_reduction": 0.06871540370299678
+        },
+        "mixed": {
+          "correct": 50,
+          "planned": 50,
+          "attempted": 50,
+          "completed": 50,
+          "transport_failures": 0,
+          "usage_present": 50,
+          "provider_usage": {
+            "prompt_tokens": 31701,
+            "completion_tokens": 6358,
+            "total_tokens": 38059
+          },
+          "local_content_tokens": 12183,
+          "median_latency_ms": 6083.763500000001,
+          "median_request_latency_ms": 6083.763500000001,
+          "templates": {
+            "dependencies": {
+              "correct": 5,
+              "planned": 5
+            },
+            "latest": {
+              "correct": 5,
+              "planned": 5
+            },
+            "literal": {
+              "correct": 5,
+              "planned": 5
+            },
+            "overlap": {
+              "correct": 5,
+              "planned": 5
+            },
+            "phone": {
+              "correct": 5,
+              "planned": 5
+            },
+            "ranking": {
+              "correct": 5,
+              "planned": 5
+            },
+            "refund": {
+              "correct": 5,
+              "planned": 5
+            },
+            "stock": {
+              "correct": 5,
+              "planned": 5
+            },
+            "unique": {
+              "correct": 5,
+              "planned": 5
+            },
+            "utc": {
+              "correct": 5,
+              "planned": 5
+            }
+          },
+          "local_input_reduction": 0.10273972602739723,
+          "reported_input_reduction": 0.042150108774474226,
+          "reported_total_reduction": 0.09193071196793279,
+          "common_case_input_reduction": 0.042150108774474226,
+          "common_case_total_reduction": 0.09193071196793279
+        }
+      },
+      "paired": {
+        "concise_english": {
+          "original_only_correct": 0,
+          "optimized_only_correct": 0
+        },
+        "mixed": {
+          "original_only_correct": 0,
+          "optimized_only_correct": 0
+        }
+      },
+      "failures": [],
+      "common_case_usage": {
+        "n": 50,
+        "arms": {
+          "original": {
+            "prompt_tokens": 33096,
+            "completion_tokens": 8816,
+            "total_tokens": 41912
+          },
+          "concise_english": {
+            "prompt_tokens": 31701,
+            "completion_tokens": 7331,
+            "total_tokens": 39032
+          },
+          "mixed": {
+            "prompt_tokens": 31701,
+            "completion_tokens": 6358,
+            "total_tokens": 38059
+          }
+        }
+      },
+      "common_case_median_request_ms": {
+        "original": 6576.241000000024,
+        "concise_english": 6449.098399999983,
+        "mixed": 6083.763500000001
+      },
+      "cost_scenario": {
+        "common_inputs": 50,
+        "group_multiplier": 1,
+        "common_usd": {
+          "original": 0.154352,
+          "concise_english": 0.136712,
+          "mixed": 0.126982
+        },
+        "common_reduction": {
+          "concise_english": 0.11428423344044769,
+          "mixed": 0.1773219653778375
+        },
+        "observed_attempt_usd": 0.418046,
+        "attempts_without_cost_estimate": 0
+      },
+      "identical_prompt_diagnostic": {
+        "pairs": 50,
+        "different_pass_status": 0,
+        "different_reported_input_tokens": 0
+      }
+    }
+  ]
+}

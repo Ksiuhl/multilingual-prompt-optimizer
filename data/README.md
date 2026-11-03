@@ -1,5 +1,10 @@
 # Dataset provenance
 
+The prospectively frozen 50-input v0.6 corpus, manually authored EN/ZH/JA
+candidate clauses, expected answers and exact requests are bundled under
+`results/heldout-v060/`. They use ten new structured-task templates and preserve
+the earlier corpora. See [the methods and limitations](../docs/heldout-study.md).
+
 `output-contract-v060-cases.json` contains six previously failed summary inputs
 selected from the gateway study for a targeted output-contract regression. It is
 not a new held-out benchmark. Two repeats per arm/model reuse these same cases;

@@ -1,5 +1,32 @@
 # Reproduce the development studies
 
+## Frozen new-input check (offline)
+
+```bash
+python research/analyze_heldout_v060.py results/heldout-v060 --out results/local/heldout-v060
+```
+
+This verifies the frozen dataset, candidate preparation, requests and grader,
+then regrades the raw answers and generates comparison figures without API
+calls. The study contains 50 newly authored inputs across ten new structured
+task templates. EN/ZH/JA candidate clauses were written before target calls;
+local `o200k_base` search chose identical English/mixed-policy prompts for all
+50 inputs. This is a synthetic candidate-search check, with a proxy tokenizer,
+rather than a test of automatic translation or authenticated provider models.
+
+For a **new, separately recorded API execution**, set `GATEWAY_GPT_KEY` and
+`GATEWAY_GEMINI_KEY` for the third-party `https://gpt-api.cc` service, then run:
+
+```bash
+node research/run_heldout_v060.mjs results/heldout-v060 results/local/new-heldout-run
+```
+
+This sends 150 frozen requests per route, with two concurrent requests per
+route and up to two attempts per request for transport/server errors. The
+published run is preserved. Keys stay in environment variables; no credentials
+are needed for the offline analysis. Rates, availability and model identities
+are properties of that gateway and are not verified by this repository.
+
 ## Output-contract regression (offline)
 
 ```bash

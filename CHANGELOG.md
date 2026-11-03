@@ -2,6 +2,8 @@
 
 ## 0.6.0a2 — immutable output-contract regression fix
 
+- Added a prospectively frozen 50-new-input structured-task check: 299 responses from 300 planned trials; interrupted requests and five completed-answer content failures retained separately.
+- Recorded unchanged English/mixed prompt pairs, local and reported full-prompt usage, retry-inclusive latency, public-price scenarios, and reproducible PNG/SVG/PDF graphs. Actual billing and accuracy-preservation criteria remain unresolved.
 - Added `json_object_contract(fields)` for explicit answer-wrapped JSON guidance in immutable `Request.output_instruction`.
 - All complete prompt counts include the extra contract; no response repair or native schema enforcement is implied.
 - Added a CLI-ready summary example and four contract/validation regression tests.

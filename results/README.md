@@ -1,11 +1,27 @@
 # Checked-in local results
 
+## Frozen new-input candidate-search check (0.6.0a2)
+
+`heldout-v060/` contains the exact frozen inputs, candidate search receipts,
+requests, grader, runner, execution recovery notes, public-price snapshot and
+306 API-attempt receipts. The 300 planned trials produced 299 completed answers.
+Five completed GPT-labelled answers had content errors; one original request was
+interrupted. No scores or prompts were repaired after target outputs.
+
+`heldout-v060-summary.json` separates planned-trial scores, completed-answer
+scores, transport failures, common-input usage, retry-inclusive latency and
+explicit price scenarios. Actual billed cost is unknown. The full-prompt local
+reduction is 10.27%; English and mixed policy sent identical prompts on all
+50 inputs. Their differing answer scores are not a language treatment effect.
+See [the report](../docs/heldout-study.md) and
+`figures/v060-heldout-comparison.*`. Earlier studies remain unchanged.
+
 ## Explicit output-contract regression (0.6.0a2)
 
 `output-contract-v060-*` retains the fixed protocol, append-only prompts, raw
 receipts and summaries for 72 follow-up answers. All passed the unchanged strict
 checks, including the outer `answer` wrapper. Six known problem inputs were reused
-twice per arm/model; these are not 72 independent questions. Earlier scores above
+twice per arm/model; these are not 72 independent questions. Earlier study scores
 remain unchanged. Contract text adds input overhead and is counted. See
 [the regression protocol](../docs/output-contract-regression.md) and the
 `figures/v060-output-contract-comparison.*` graphs.

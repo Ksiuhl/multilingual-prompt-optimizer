@@ -30,6 +30,31 @@ The `aggressive` rule mode now also keeps translation disabled; add the explicit
 `translate` rule mode or the CLI experimental flag when translation is intended.
 Changing defaults does not prove concise rewrites preserve all requirements.
 
+### New 50-input structured-task check
+
+We prospectively froze 50 new inputs across ten new templates and ran all three
+arms on the same two gateway labels. There were 299 completed responses from
+300 planned trials; one original GPT-labelled request was interrupted.
+
+| Gateway label (unverified) | Original strict passes | Concise English | Mixed policy |
+|---|---:|---:|---:|
+| gpt-6.1-sol | 47/50 planned (47/49 completed) | 47/50 | 50/50 |
+| gemini-4-argon | 50/50 | 50/50 | 50/50 |
+
+Local `o200k_base` full-prompt counts fell **10.27%** with concise English,
+including source data and the JSON contract. All 50 mixed-policy prompts were
+identical to their English counterparts: **zero additional input savings**.
+Their differing GPT-labelled scores therefore reflect variability on identical
+prompts. Five completed GPT-labelled answers had content errors despite valid
+JSON wrappers. Accuracy preservation needs more evidence.
+
+Candidate clauses were manually authored; automatic translation was not tested.
+Public gateway pricing supports labelled scenarios, while actual charges,
+active billing groups and failed-request costs remain unverified. The merge
+criteria of preserved accuracy and lower actual total cost remain unresolved.
+See [methods, failures, usage, price scenarios and graphs](docs/heldout-study.md).
+Original study scores below remain unchanged.
+
 ### Recorded 50-input transfer study
 
 We froze 50 synthetic inputs across ten task templates and ran 150 requests each
