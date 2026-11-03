@@ -1,5 +1,18 @@
 # Checked-in local results
 
+## Recorded gateway transfer study (0.6.0a1)
+
+`gateway-v060-summary.json` contains primary strict scores and separately labelled
+diagnostics. The gzip raw and preparation files retain successful, failed and
+discarded attempts without credentials. `gateway-v060-requests.json` retains the
+exact frozen prompt strings. Graphs are in `figures/v060-gateway-comparison.*`.
+
+Two gateway labels completed 150 answers each; Grok returned 403 and has no score.
+Mixing added only five Gemini-labelled input-token savings beyond concise English.
+Most mixed-policy templates are entirely English; GPT-labelled input accounting
+varied on six identical prompt pairs. Actual billed cost and model identities are
+unverified. [Protocol, uncertainty and offline reproduction](../docs/gateway-study.md).
+
 ## Template reuse (0.5.0)
 
 `template-reuse-v050.json` records four longer templates with two calibration and

@@ -1,1 +1,5 @@
 * text=auto eol=lf
+# Preserve byte-level hashes of the frozen study evidence on every platform.
+data/gateway-v060* -text
+results/gateway-v060* -text
+results/figures/v060-gateway-* -text

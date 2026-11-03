@@ -7,7 +7,7 @@ from .template_cache import TemplateCache, cache_context
 from .tokenizers import Counter, JsonTokenizerCounter, TiktokenCounter
 from .validation import AnswerCheck, execute_checked, validate_answer
 
-__version__ = "0.5.0"
+__version__ = "0.6.0a1"
 __all__ = [
     "Candidate",
     "Counter",

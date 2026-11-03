@@ -1,7 +1,8 @@
 # Multilingual Prompt Optimizer
 
-A local Python research tool that selects shorter prompt representations while
-keeping source text and code separate from editable instructions.
+A local Python research tool for concise-English prompt optimization, with
+multilingual mixing available as an explicit experiment. Source text and code
+stay separate from editable instructions.
 
 It counts every **complete candidate prompt**, rejects candidates that grow or lose
 protected numeric/literal strings, and keeps the original as a fallback. It builds
@@ -13,6 +14,59 @@ alternatives without inference. The new `auto` command generates translations an
 reformulations using a local Ollama model, then runs a separate semantic judging
 pass. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
+
+## v0.6 preview: English first, multilingual experimental
+
+The default `optimize` rule set now uses English-only rewriting. `auto` requests
+English alternatives only. Keep multilingual search explicit:
+
+```bash
+mpo optimize --input examples/summary.json --experimental-multilingual
+mpo auto --input examples/automatic.json --model qwen3:4b --languages en,zh,ja
+```
+
+Caller-supplied candidates and phrase alternatives are still searched as supplied.
+The `aggressive` rule mode now also keeps translation disabled; add the explicit
+`translate` rule mode or the CLI experimental flag when translation is intended.
+Changing defaults does not prove concise rewrites preserve all requirements.
+
+### Recorded 50-input transfer study
+
+We froze 50 synthetic inputs across ten task templates and ran 150 requests each
+through two **unverified gateway model labels**. This reused Gemini-selected
+prompts rather than optimizing separately for each target tokenizer.
+
+| Gateway label | Original | Concise English | Mixed policy |
+| --- | ---: | ---: | ---: |
+| `gpt-6.1-sol` | 50/50 | 44/50 | 46/50 |
+| `gemini-4-argon` | 50/50 | 50/50 | 50/50 |
+
+Scores include strict output-format checks. All GPT-labelled failures omitted the
+outer `answer` wrapper; their required facts pass a separate diagnostic when that
+wrapper is added. Primary scores remain unchanged. Grok returned 403 routes paused
+and has no accuracy score.
+
+**Concise English provided almost all measured input reduction.** The
+Gemini-labelled endpoint reported 7.7% fewer input tokens with concise English;
+mixed policy saved just five additional tokens across 50 inputs (about 0.02%).
+Forty-five English/mixed pairs had byte-identical prompts, so their answer
+differences cannot be attributed to language mixing. The GPT-labelled endpoint
+reported different input counts on six identical pairs, limiting token conclusions.
+Actual gateway prices and invoiced cost are unknown. This does not demonstrate
+general accuracy, a multilingual advantage, or net optimizer cost savings.
+
+![Recorded gateway task and token comparisons](results/figures/v060-gateway-comparison.png)
+
+Read [the study and limitations](docs/gateway-study.md). Recompute its checks and
+graphs offline after installing `.[plots]`:
+
+```bash
+python research/analyze_gateway_study.py
+```
+
+This preview is version `0.6.0a1`; version 0.5 remains the published baseline while
+the development change is reviewed. Package and repository names are retained for
+continuity with the original multilingual research question.
 
 ## v0.5: reusable instruction cache
 
@@ -168,7 +222,8 @@ mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3
 ```
 
 Edit the example's `instruction` and `payload` to try your own text. No prewritten
-`phrase_options` are required. Default languages are English, Chinese and Japanese.
+`phrase_options` are required. The default generation language is English.
+Use `--languages en,zh,ja` or `--experimental-multilingual` for multilingual trials.
 The tool generates aligned clauses, searches up to 256 combinations, then asks a
 model to judge the shortest structurally acceptable complete instructions. It
 selects the first approved candidate, or keeps the original if none is approved.

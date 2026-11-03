@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.6.0a1 — English-first development preview
+
+- Default rule search now uses English-only lite rewriting; aggressive rules also disable translation.
+- Default automatic generation requests English only; one-language generation is supported.
+- Translation rules and multilingual auto generation require an explicit CLI flag, language list, or API configuration.
+- Added a frozen 50-input, ten-template transfer study: 300 completed answers across two unverified gateway model labels.
+- Retained strict JSON-wrapper failures, identical-prompt variability, inconsistent gateway input accounting, and unavailable Grok routing.
+- Added frozen data, original rubric, raw/preparation receipts, offline analysis, and PNG/SVG/PDF figures.
+- Findings favor concise English on these inputs; multilingual mixing has not shown a meaningful incremental or net-cost benefit.
+- This is a prerelease on a development branch; v0.5 remains the baseline pending review.
+
 ## 0.5.0 — reusable template cache and reuse projections
 
 - Added atomic instruction-only caching with identity checks, corruption detection and original fallback.

@@ -14,8 +14,8 @@ MODES = {
     },
     "aggressive": {
         "mode": "aggressive",
-        "translate": True,
-        "domains": ["ai", "backend", "data", "devops", "web"],
+        "translate": False,
+        "domains": [],
     },
 }
 _LOCK = RLock()

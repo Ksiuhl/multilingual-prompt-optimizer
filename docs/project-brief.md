@@ -11,6 +11,15 @@ and reducing total processing cost after generation and validation overhead.
 Phase 2, planned for master's research, extends the same question to communication
 between LLMs or agents, and potentially learned shared protocols.
 
+## Current evidence and practical direction (v0.6 preview)
+
+The default implementation now focuses on concise English. Multilingual mixing
+remains an explicit experimental branch of the original research question.
+The 50-input gateway study found almost no additional input saving from mixing
+after a strong English baseline. It also exposed strict output-wrapper failures
+and gateway usage-accounting uncertainty. See [the recorded study](gateway-study.md).
+These results do not establish general correctness or net cost savings.
+
 ## Research questions
 
 - Does mixing languages improve on concise English and the best single language?

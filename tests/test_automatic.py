@@ -157,7 +157,7 @@ class AutomaticTests(unittest.TestCase):
     def test_invalid_budgets_rejected_before_call(self):
         for kwargs in (
             {"verification_budget": 0},
-            {"max_combinations": 1},
+            {"max_combinations": 1, "languages": ("en", "zh")},
             {"max_clauses": 9},
             {"languages": ("en", "xx")},
         ):

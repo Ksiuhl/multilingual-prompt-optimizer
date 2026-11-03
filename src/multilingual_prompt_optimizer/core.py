@@ -27,7 +27,7 @@ def optimize(
     request: Request | Mapping[str, Any],
     *,
     counter: Counter | None = None,
-    rule_modes: tuple[str, ...] = ("lite", "translate"),
+    rule_modes: tuple[str, ...] = ("lite",),
     max_combinations: int = 256,
 ) -> OptimizationResult:
     """Choose the smallest candidate passing structural checks, including original.

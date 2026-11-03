@@ -1,0 +1,403 @@
+{
+  "complete": false,
+  "identity_verification": "Unverified third-party gateway model labels; not direct provider access. Model-list owned_by metadata was openai even for Grok/Gemini. No claim of independently authenticated model identity.",
+  "profiles": [
+    {
+      "model_label": "grok-4.7",
+      "connection": 1,
+      "complete": false,
+      "stopped": true,
+      "completed_answers": 0,
+      "planned_requests": 150,
+      "fully_paired_inputs": 0,
+      "arms": {
+        "original": {
+          "planned_inputs": 50,
+          "successful_responses": 0,
+          "rubric_passes": 0,
+          "fully_paired_passes": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": null,
+          "by_category": {
+            "extraction": {
+              "responses": 0,
+              "passed": 0
+            },
+            "filtering": {
+              "responses": 0,
+              "passed": 0
+            },
+            "arithmetic": {
+              "responses": 0,
+              "passed": 0
+            },
+            "summary": {
+              "responses": 0,
+              "passed": 0
+            },
+            "code": {
+              "responses": 0,
+              "passed": 0
+            }
+          }
+        },
+        "concise_english": {
+          "planned_inputs": 50,
+          "successful_responses": 0,
+          "rubric_passes": 0,
+          "fully_paired_passes": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": null,
+          "by_category": {
+            "extraction": {
+              "responses": 0,
+              "passed": 0
+            },
+            "filtering": {
+              "responses": 0,
+              "passed": 0
+            },
+            "arithmetic": {
+              "responses": 0,
+              "passed": 0
+            },
+            "summary": {
+              "responses": 0,
+              "passed": 0
+            },
+            "code": {
+              "responses": 0,
+              "passed": 0
+            }
+          }
+        },
+        "mixed": {
+          "planned_inputs": 50,
+          "successful_responses": 0,
+          "rubric_passes": 0,
+          "fully_paired_passes": 0,
+          "input_tokens": null,
+          "output_tokens": null,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": null,
+          "by_category": {
+            "extraction": {
+              "responses": 0,
+              "passed": 0
+            },
+            "filtering": {
+              "responses": 0,
+              "passed": 0
+            },
+            "arithmetic": {
+              "responses": 0,
+              "passed": 0
+            },
+            "summary": {
+              "responses": 0,
+              "passed": 0
+            },
+            "code": {
+              "responses": 0,
+              "passed": 0
+            }
+          }
+        }
+      },
+      "stop_reason": "Unavailable/unsupported request after bounded attempts; remaining model requests retained but not sent.",
+      "last_http_status": 403,
+      "returned_model_labels": [],
+      "identical_english_mixed_inputs": 0,
+      "different_answers_on_identical_prompts": 0,
+      "different_pass_fail_on_identical_prompts": 0,
+      "same_prompt_input_usage_differences": {},
+      "same_prompt_pairs_with_different_reported_input_tokens": 0,
+      "diagnostic_only_summary_wrapper_omissions": {
+        "original": 0,
+        "concise_english": 0,
+        "mixed": 0
+      },
+      "diagnostic_note": "Primary scores unchanged. This diagnostic only checks whether failed summaries pass the frozen rubric after adding a missing outer answer wrapper; it is not a new independent accuracy test."
+    },
+    {
+      "model_label": "gpt-6.1-sol",
+      "connection": 2,
+      "complete": true,
+      "stopped": false,
+      "completed_answers": 150,
+      "planned_requests": 150,
+      "fully_paired_inputs": 50,
+      "arms": {
+        "original": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 50,
+          "fully_paired_passes": 50,
+          "input_tokens": 228710,
+          "output_tokens": 1978,
+          "reported_cached_input_tokens": 208000,
+          "mean_latency_ms": 9145.219307999992,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 10
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        },
+        "concise_english": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 44,
+          "fully_paired_passes": 44,
+          "input_tokens": 226349,
+          "output_tokens": 2032,
+          "reported_cached_input_tokens": 208512,
+          "mean_latency_ms": 8628.086817999989,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 4
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        },
+        "mixed": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 46,
+          "fully_paired_passes": 46,
+          "input_tokens": 226841,
+          "output_tokens": 2094,
+          "reported_cached_input_tokens": 209280,
+          "mean_latency_ms": 10792.841153999965,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 6
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        }
+      },
+      "stop_reason": null,
+      "last_http_status": 200,
+      "returned_model_labels": [
+        "gpt-6.1-sol"
+      ],
+      "identical_english_mixed_inputs": 45,
+      "different_answers_on_identical_prompts": 8,
+      "different_pass_fail_on_identical_prompts": 2,
+      "same_prompt_input_usage_differences": {
+        "-164": 2,
+        "0": 39,
+        "164": 4
+      },
+      "same_prompt_pairs_with_different_reported_input_tokens": 6,
+      "diagnostic_only_summary_wrapper_omissions": {
+        "original": 0,
+        "concise_english": 6,
+        "mixed": 4
+      },
+      "diagnostic_note": "Primary scores unchanged. This diagnostic only checks whether failed summaries pass the frozen rubric after adding a missing outer answer wrapper; it is not a new independent accuracy test.",
+      "usage_caveat": "Byte-identical user prompts produced different reported input-token counts. Hidden gateway context/routing/usage accounting is unobserved; raw input differences cannot be isolated as prompt-content savings."
+    },
+    {
+      "model_label": "gemini-4-argon",
+      "connection": 3,
+      "complete": true,
+      "stopped": false,
+      "completed_answers": 150,
+      "planned_requests": 150,
+      "fully_paired_inputs": 50,
+      "arms": {
+        "original": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 50,
+          "fully_paired_passes": 50,
+          "input_tokens": 33173,
+          "output_tokens": 6084,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": 8025.738153999991,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 10
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        },
+        "concise_english": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 50,
+          "fully_paired_passes": 50,
+          "input_tokens": 30618,
+          "output_tokens": 6179,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": 7581.643324000009,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 10
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        },
+        "mixed": {
+          "planned_inputs": 50,
+          "successful_responses": 50,
+          "rubric_passes": 50,
+          "fully_paired_passes": 50,
+          "input_tokens": 30613,
+          "output_tokens": 5519,
+          "reported_cached_input_tokens": 0,
+          "mean_latency_ms": 7692.831915999988,
+          "by_category": {
+            "extraction": {
+              "responses": 10,
+              "passed": 10
+            },
+            "filtering": {
+              "responses": 10,
+              "passed": 10
+            },
+            "arithmetic": {
+              "responses": 10,
+              "passed": 10
+            },
+            "summary": {
+              "responses": 10,
+              "passed": 10
+            },
+            "code": {
+              "responses": 10,
+              "passed": 10
+            }
+          }
+        }
+      },
+      "stop_reason": null,
+      "last_http_status": 200,
+      "returned_model_labels": [
+        "gemini-4-argon"
+      ],
+      "identical_english_mixed_inputs": 45,
+      "different_answers_on_identical_prompts": 10,
+      "different_pass_fail_on_identical_prompts": 0,
+      "same_prompt_input_usage_differences": {
+        "0": 45
+      },
+      "same_prompt_pairs_with_different_reported_input_tokens": 0,
+      "diagnostic_only_summary_wrapper_omissions": {
+        "original": 0,
+        "concise_english": 0,
+        "mixed": 0
+      },
+      "diagnostic_note": "Primary scores unchanged. This diagnostic only checks whether failed summaries pass the frozen rubric after adding a missing outer answer wrapper; it is not a new independent accuracy test."
+    }
+  ],
+  "actual_invoiced_usd": null,
+  "cost_note": "Gateway prices and invoices unavailable. Token usage does not establish dollar savings. Unknown usage from failed/timed-out requests remains unknown. Preparation cost is not amortized or charged to a particular model arm.",
+  "limitations": [
+    "The same prepared strings are transferred unchanged; they are not reoptimized for GPT/Grok tokenizers.",
+    "Nine of ten prepared mixed-policy templates equal concise English verbatim. Only the delivery template contains a Chinese phrase.",
+    "Fifty synthetic inputs across ten shared templates, five inputs per template; not an external benchmark.",
+    "One call per case/arm/model, not a repeated reliability study.",
+    "Summary checks cover required facts/format, not full semantic quality.",
+    "Provider-reported token usage is retained; billing rates, balance and invoices are unknown. Dollar cost is not established.",
+    "No completed answers are merged with direct Gemini studies."
+  ],
+  "available_models_complete": true,
+  "preparation_overhead": {
+    "known_model_request_attempts": 37,
+    "known_attempts_without_usage": 3,
+    "reported_input_tokens": 11401,
+    "reported_output_tokens": 8713,
+    "reported_thinking_tokens": 0,
+    "known_template_preparation_wall_ms": 95911.13020000055,
+    "token_counter_requests": 464,
+    "summed_counter_request_latency_ms": 76633.39380001344,
+    "scope_note": "Includes discarded English-copy draft, malformed JSON preparation, retained preparation failures, and the final candidate pool. Counter-latency sum is not wall time because some reads ran concurrently. A kernel-reset in-flight preparation has unknown completion/usage, so overhead is a recorded lower bound. Gemini 3.6 reselection used the existing pool. This is shared preparation, not separate per-gateway-model optimization."
+  }
+}

@@ -242,7 +242,7 @@ def auto_optimize(
     generator: JsonModel,
     verifier: JsonModel | None = None,
     counter=None,
-    languages=("en", "zh", "ja"),
+    languages=("en",),
     max_clauses=5,
     max_combinations=256,
     verification_budget=8,
@@ -252,8 +252,8 @@ def auto_optimize(
     A positive judge decision is evidence, not proof of equivalent meaning.
     No target-task inference or monetary-cost measurement is performed.
     """
-    if not 2 <= len(languages) <= 4 or len(set(languages)) != len(languages):
-        raise ValueError("choose 2 to 4 distinct languages")
+    if not 1 <= len(languages) <= 4 or len(set(languages)) != len(languages):
+        raise ValueError("choose 1 to 4 distinct languages")
     if any(lang not in {"en", "zh", "ja", "es", "fr", "de", "ko"} for lang in languages):
         raise ValueError("unsupported language code")
     for name, value in (
@@ -279,6 +279,8 @@ def auto_optimize(
     fallback = optimize(original_only, counter=counter, rule_modes=())
     report = {
         "status": "original_retained",
+        "policy": "concise_english" if tuple(languages) == ("en",) else "experimental_multilingual",
+        "languages": list(languages),
         "generator_model": generator.model,
         "verifier_model": verifier.model,
         "different_model_names": generator.model != verifier.model,

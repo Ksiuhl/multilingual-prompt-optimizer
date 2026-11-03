@@ -1,5 +1,20 @@
 # Roadmap
 
+## v0.6 practical direction
+
+- Use concise English as the default candidate-generation and rule-search policy.
+- Keep multilingual mixing opt-in and experimental; compare it with a strong English baseline.
+- Treat required output structure as part of task accuracy, including the outer JSON transport wrapper.
+- Record complete preparation, verification, target response, retry and fallback costs when measurable.
+- Keep unverified gateway results separate from direct-provider evidence; unknown prices remain unknown.
+- Repeat on independently curated inputs and model-specific tokenizers before claiming general benefit.
+
+The 50-input gateway study completed 300 answers across two model labels. It found
+almost no incremental input saving from mixing beyond concise English, and some
+strict wrapper failures in compressed GPT-labelled responses. The separate direct
+Gemini 3.6 study remains incomplete at 14/150 successful requests because of a
+daily free-tier quota. See [the recorded study](gateway-study.md).
+
 ## Working in version 0.1
 
 - Local rule rewriting using an attributed upstream dependency.

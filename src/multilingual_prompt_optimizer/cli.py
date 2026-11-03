@@ -53,11 +53,18 @@ def _parser() -> argparse.ArgumentParser:
         cmd.add_argument(
             "--aggressive", action="store_true", help="Also generate aggressive rule candidates"
         )
+        cmd.add_argument(
+            "--experimental-multilingual",
+            action="store_true",
+            help="Opt into experimental translation rules and multilingual auto generation",
+        )
         if name == "auto":
             cmd.add_argument("--model", required=True, help="Installed local Ollama model")
             cmd.add_argument("--verifier-model", help="Optional separate local judge model")
             cmd.add_argument("--ollama-url", default="http://127.0.0.1:11434")
-            cmd.add_argument("--languages", default="en,zh,ja")
+            cmd.add_argument(
+                "--languages", help="Explicit language codes; defaults to English only"
+            )
             cmd.add_argument("--verification-budget", type=int, default=8)
             cmd.add_argument("--timeout", type=float, default=120)
         if name == "optimize":
@@ -87,7 +94,11 @@ def main(argv: list[str] | None = None) -> int:
             _write({"passed": check.passed, "reason": check.reason}, args.output)
             return 0 if check.passed else 1
         counter = _counter(args)
-        modes = ("lite", "translate", "aggressive") if args.aggressive else ("lite", "translate")
+        modes = ("lite",)
+        if args.experimental_multilingual:
+            modes += ("translate",)
+        if args.aggressive:
+            modes += ("aggressive",)
         raw = _read(args.input)
         if args.command == "auto":
             from .automatic import OllamaModel, auto_optimize
@@ -103,7 +114,12 @@ def main(argv: list[str] | None = None) -> int:
                 generator=generator,
                 verifier=verifier,
                 counter=counter,
-                languages=tuple(s.strip() for s in args.languages.split(",")),
+                languages=tuple(
+                    s.strip()
+                    for s in (
+                        args.languages or ("en,zh,ja" if args.experimental_multilingual else "en")
+                    ).split(",")
+                ),
                 verification_budget=args.verification_budget,
                 max_combinations=args.max_combinations,
             )

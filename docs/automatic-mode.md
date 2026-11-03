@@ -1,4 +1,4 @@
-# Automatic multilingual mode
+# Automatic English rewriting and experimental multilingual mode
 
 The new module `automatic.py` provides `OllamaModel` and `auto_optimize`. It adds
 candidate generation and judging to the existing tokenizer search. It requires a
@@ -45,10 +45,12 @@ The documented configuration uses 4B generation and 8B review, selected on the
 supplied, the library/CLI still uses the generating model for review; no extra model
 is silently downloaded or required.
 
-The default languages are `en,zh,ja`; supported codes also include `es,fr,de,ko`.
+The v0.6 default is `en` only. Use `--experimental-multilingual` for `en,zh,ja`,
+or pass `--languages` explicitly. Supported codes also include `es,fr,de,ko`.
 Use `--languages en,zh,es`, `--verification-budget 4`, `--timeout 120`, or
 `--ollama-url http://127.0.0.1:11434` to adjust configuration. At most four languages,
-eight clauses and 32 judging calls are allowed. The default search budget remains
+eight clauses and 32 judging calls are allowed; one language is supported for
+English-only rewriting. The default search budget remains
 256 combinations. Search is exhaustive within the generated pool, not across all
 possible translations of a language.
 

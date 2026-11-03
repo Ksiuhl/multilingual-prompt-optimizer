@@ -1,5 +1,21 @@
 # Reproduce the development studies
 
+## v0.6 gateway study (offline)
+
+After installing the package and `.[plots]`, run:
+
+```bash
+python research/analyze_gateway_study.py
+```
+
+No credentials or model calls are needed. The script verifies the exact frozen
+rubric and prompt hashes, rechecks all 300 completed answers, and writes scores,
+usage, latency, diagnostics and figures to `results/local/gateway-v060/`.
+The gateway labels are not independently authenticated. Grok has no accuracy
+score because its route was paused. See [the full protocol](../docs/gateway-study.md).
+
+Earlier studies below retain their recorded versions and explicit language modes.
+
 For the longer-template reuse study:
 
 ```bash
