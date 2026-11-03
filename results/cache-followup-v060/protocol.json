@@ -1,0 +1,142 @@
+{
+  "type": "Prospectively frozen small diagnostic cache/retry follow-up; selected known cases, not an independent accuracy benchmark.",
+  "freeze_utc": "2026-11-03T18:08:43.661936+00:00",
+  "selected_cases": [
+    "development-108",
+    "development-109",
+    "holdout-911",
+    "holdout-supplement-0"
+  ],
+  "selection": "Prior exceptional cache-accounting case, a prior timeout case, an ordinary higher-output holdout case, and a Unicode/numeric-string supplement case. Selected for diagnostics, not a population sample.",
+  "requests": 24,
+  "repetitions": 3,
+  "paired_blocks": [
+    {
+      "repetition": 1,
+      "case_id": "holdout-supplement-0",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 1,
+      "case_id": "holdout-911",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 1,
+      "case_id": "development-109",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "repetition": 1,
+      "case_id": "development-108",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "repetition": 2,
+      "case_id": "holdout-911",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 2,
+      "case_id": "holdout-supplement-0",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 2,
+      "case_id": "development-109",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "repetition": 2,
+      "case_id": "development-108",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "repetition": 3,
+      "case_id": "development-109",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "repetition": 3,
+      "case_id": "development-108",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 3,
+      "case_id": "holdout-911",
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "repetition": 3,
+      "case_id": "holdout-supplement-0",
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    }
+  ],
+  "ordering": "Serial paired blocks. Six original-first and six compressed-first blocks, randomized before execution. Same exact prompt bytes in each repetition.",
+  "model_label": "gpt-6.1-sol",
+  "concurrency_per_model": 1,
+  "max_attempts": 2,
+  "timeout_ms": 60000,
+  "max_output_tokens": 4096,
+  "temperature": "provider default",
+  "reasoning": "provider default",
+  "stream": true,
+  "cache_control": "No cache reset, cache busting, manual warmup or verified warm/cold treatment. Earlier requests may affect all repetitions; first repetition is not called cold. Cache metadata is observational and missing values stay unknown.",
+  "cost_scope": "All attempts, retries and first repetitions included. No paid preparation calls. Matching request IDs plus key-counter reconciliation. Credits are not an invoice; account metadata excluded.",
+  "stop_guard": {
+    "threshold_displayed_usd": 0.05,
+    "quota_units": 25000,
+    "scope": "Agent-selected soft stop checked after each completed pair; not a guaranteed ceiling. Authentication/quota failures stop the route; no alternate keys."
+  },
+  "candidate_policy": "Reuse frozen strings; no instruction changes, output repair, candidate selection or answer-based retesting.",
+  "source_pr_commit": "c340c1a77c4ba7c40c265569242adf4898e38c22",
+  "files": {
+    "dataset.json": "53bd4b2ea4234ddf978c0bdf8f62382300dbfa8b7460e12876e1d81280ac0a55",
+    "requests.json": "0f250f0310eec7031299a169fe19d73f6ce9ca962f3d3853c8075018bbea8b82",
+    "grader-source.py": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592",
+    "runner.mjs": "210bb5b15bc76c87e48a4a211043139486b1c505c29dc489dd3601a7882c43f0"
+  },
+  "limitations": [
+    "Four selected known inputs; 12 paired observations are not 12 independent tasks.",
+    "Cache state is inferred from gateway-reported metadata, not directly controlled or authenticated.",
+    "One gateway model label, not a verified upstream provider model.",
+    "Small observational follow-up cannot establish that compression causes cache changes or timeouts.",
+    "Original-only default and earlier cost rejection remain unchanged."
+  ]
+}

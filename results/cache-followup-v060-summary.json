@@ -1,0 +1,341 @@
+{
+  "scope": "Prospectively frozen small diagnostic cache/retry follow-up; selected known cases, not an independent accuracy benchmark.",
+  "execution_complete": true,
+  "arms": {
+    "original": {
+      "planned": 12,
+      "attempted": 12,
+      "completed": 12,
+      "correct": 12,
+      "http_attempts": 12,
+      "charged_quota": 2989,
+      "median_request_ms_including_retries": 2172.1092499997467,
+      "cache_categories": {
+        "reported_positive": 12,
+        "reported_zero": 0,
+        "unknown": 0
+      },
+      "displayed_usd": 0.005978
+    },
+    "compressed": {
+      "planned": 12,
+      "attempted": 12,
+      "completed": 12,
+      "correct": 12,
+      "http_attempts": 12,
+      "charged_quota": 2808,
+      "median_request_ms_including_retries": 3534.428349999711,
+      "cache_categories": {
+        "reported_positive": 12,
+        "reported_zero": 0,
+        "unknown": 0
+      },
+      "displayed_usd": 0.005616
+    }
+  },
+  "repetitions": {
+    "1": {
+      "original": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 1005
+      },
+      "compressed": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 902
+      }
+    },
+    "2": {
+      "original": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 978
+      },
+      "compressed": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 956
+      }
+    },
+    "3": {
+      "original": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 1006
+      },
+      "compressed": {
+        "correct": 4,
+        "completed": 4,
+        "charged_quota": 950
+      }
+    }
+  },
+  "paired_blocks": [
+    {
+      "block": 1,
+      "case_id": "holdout-supplement-0",
+      "repetition": 1,
+      "first_arm": "compressed",
+      "original_quota": 243,
+      "compressed_quota": 224,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 2,
+      "case_id": "holdout-911",
+      "repetition": 1,
+      "first_arm": "compressed",
+      "original_quota": 240,
+      "compressed_quota": 221,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 3,
+      "case_id": "development-109",
+      "repetition": 1,
+      "first_arm": "original",
+      "original_quota": 251,
+      "compressed_quota": 232,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 4,
+      "case_id": "development-108",
+      "repetition": 1,
+      "first_arm": "original",
+      "original_quota": 271,
+      "compressed_quota": 225,
+      "difference": -46,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 5,
+      "case_id": "holdout-911",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 240,
+      "compressed_quota": 257,
+      "difference": 17,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 6,
+      "case_id": "holdout-supplement-0",
+      "repetition": 2,
+      "first_arm": "compressed",
+      "original_quota": 243,
+      "compressed_quota": 242,
+      "difference": -1,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 7,
+      "case_id": "development-109",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 251,
+      "compressed_quota": 232,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 8,
+      "case_id": "development-108",
+      "repetition": 2,
+      "first_arm": "original",
+      "original_quota": 244,
+      "compressed_quota": 225,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 9,
+      "case_id": "development-109",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 251,
+      "compressed_quota": 256,
+      "difference": 5,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 10,
+      "case_id": "development-108",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 272,
+      "compressed_quota": 225,
+      "difference": -47,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 11,
+      "case_id": "holdout-911",
+      "repetition": 3,
+      "first_arm": "compressed",
+      "original_quota": 240,
+      "compressed_quota": 221,
+      "difference": -19,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    },
+    {
+      "block": 12,
+      "case_id": "holdout-supplement-0",
+      "repetition": 3,
+      "first_arm": "original",
+      "original_quota": 243,
+      "compressed_quota": 248,
+      "difference": 5,
+      "original_cached": 4224,
+      "compressed_cached": 4224,
+      "cache_counts_equal": true
+    }
+  ],
+  "counter_reconciles": true,
+  "total_quota": 5797,
+  "total_displayed_usd": 0.011594,
+  "quota_per_unit": 500000,
+  "compressed_charge_reduction": 0.060555369688859106,
+  "failed_attempts": [],
+  "final_consumption_records_present": 24,
+  "attempts_without_consumption_record": 0,
+  "stop_guard": {
+    "start_utc": "2026-11-03T18:09:09.439Z",
+    "units": {
+      "quota_per_unit": 500000,
+      "display_unit": "USD"
+    },
+    "checks": [
+      {
+        "after_planned_pair": 1,
+        "recorded_trials": 2,
+        "observed_at_utc": "2026-11-03T18:09:20.197Z",
+        "http_status": 200,
+        "counter_delta_quota": 467,
+        "displayed_usd": 0.000934
+      },
+      {
+        "after_planned_pair": 2,
+        "recorded_trials": 4,
+        "observed_at_utc": "2026-11-03T18:09:24.456Z",
+        "http_status": 200,
+        "counter_delta_quota": 928,
+        "displayed_usd": 0.001856
+      },
+      {
+        "after_planned_pair": 3,
+        "recorded_trials": 6,
+        "observed_at_utc": "2026-11-03T18:09:28.574Z",
+        "http_status": 200,
+        "counter_delta_quota": 1411,
+        "displayed_usd": 0.002822
+      },
+      {
+        "after_planned_pair": 4,
+        "recorded_trials": 8,
+        "observed_at_utc": "2026-11-03T18:09:56.268Z",
+        "http_status": 200,
+        "counter_delta_quota": 1907,
+        "displayed_usd": 0.003814
+      },
+      {
+        "after_planned_pair": 5,
+        "recorded_trials": 10,
+        "observed_at_utc": "2026-11-03T18:10:00.876Z",
+        "http_status": 200,
+        "counter_delta_quota": 2404,
+        "displayed_usd": 0.004808
+      },
+      {
+        "after_planned_pair": 6,
+        "recorded_trials": 12,
+        "observed_at_utc": "2026-11-03T18:10:25.177Z",
+        "http_status": 200,
+        "counter_delta_quota": 2889,
+        "displayed_usd": 0.005778
+      },
+      {
+        "after_planned_pair": 7,
+        "recorded_trials": 14,
+        "observed_at_utc": "2026-11-03T18:10:50.058Z",
+        "http_status": 200,
+        "counter_delta_quota": 3372,
+        "displayed_usd": 0.006744
+      },
+      {
+        "after_planned_pair": 8,
+        "recorded_trials": 16,
+        "observed_at_utc": "2026-11-03T18:11:00.379Z",
+        "http_status": 200,
+        "counter_delta_quota": 3841,
+        "displayed_usd": 0.007682
+      },
+      {
+        "after_planned_pair": 9,
+        "recorded_trials": 18,
+        "observed_at_utc": "2026-11-03T18:11:11.726Z",
+        "http_status": 200,
+        "counter_delta_quota": 4348,
+        "displayed_usd": 0.008696
+      },
+      {
+        "after_planned_pair": 10,
+        "recorded_trials": 20,
+        "observed_at_utc": "2026-11-03T18:11:21.975Z",
+        "http_status": 200,
+        "counter_delta_quota": 4845,
+        "displayed_usd": 0.00969
+      },
+      {
+        "after_planned_pair": 11,
+        "recorded_trials": 22,
+        "observed_at_utc": "2026-11-03T18:11:28.808Z",
+        "http_status": 200,
+        "counter_delta_quota": 5306,
+        "displayed_usd": 0.010612
+      },
+      {
+        "after_planned_pair": 12,
+        "recorded_trials": 24,
+        "observed_at_utc": "2026-11-03T18:11:39.427Z",
+        "http_status": 200,
+        "counter_delta_quota": 5797,
+        "displayed_usd": 0.011594
+      }
+    ]
+  },
+  "limitations": [
+    "Four selected known inputs; 12 paired observations are not 12 independent tasks.",
+    "Cache state is inferred from gateway-reported metadata, not directly controlled or authenticated.",
+    "One gateway model label, not a verified upstream provider model.",
+    "Small observational follow-up cannot establish that compression causes cache changes or timeouts.",
+    "Original-only default and earlier cost rejection remain unchanged."
+  ],
+  "prior_admission_changed": false
+}

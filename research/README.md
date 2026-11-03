@@ -1,5 +1,16 @@
 # Reproduce the development studies
 
+## Small cache/retry follow-up (offline)
+
+```bash
+python research/analyze_cache_followup.py results/cache-followup-v060 --out results/local/cache-followup-v060
+```
+
+This verifies the frozen 24-request serial order, exact earlier prompts, raw
+answer checks and all matched charges. It makes no model/billing calls. Cache
+state was observed, not reset or controlled. The earlier extraction bundle is
+required for identity checks. [Result and limits](../docs/cache-followup.md).
+
 ## Extraction cost audit (offline)
 
 ```bash

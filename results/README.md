@@ -1,5 +1,16 @@
 # Checked-in local results
 
+## Small cache/retry follow-up
+
+`cache-followup-v060/` freezes four known cases, three repeats per arm, balanced
+serial request order, all receipts, paired spend checks and matching charges.
+All 24 responses passed; every response reported 4,224 cached input tokens, with
+no retries. Compressed charges were 6.06% lower. Total matched debit was 5,797
+quota units ($0.011594 displayed gateway credits). This selected-case diagnostic
+does not replace the prior cost failure or admit a template. See
+[the report](../docs/cache-followup.md), `cache-followup-v060-summary.json` and
+`figures/v060-cache-followup-*`.
+
 ## Offline extraction cost audit
 
 `extraction-cost-audit-{summary,attempts,billing-fit}.json` retains the descriptive

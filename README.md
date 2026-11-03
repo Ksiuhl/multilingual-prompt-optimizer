@@ -35,6 +35,13 @@ pair lacking cache metadata, and +395 from five charged timeouts. A fitted
 cache-discount scenario explains the charges; actual cache state is unconfirmed.
 The full result and admission rejection remain unchanged.
 
+The separate [small cache/retry follow-up](docs/cache-followup.md) repeated four
+known prompt pairs three times in balanced serial order: 24/24 correct answers,
+equal positive cache counts, no retries, and 6.06% lower compressed gateway
+credit charges. It cost $0.011594 in displayed credits. This is diagnostic
+evidence on reused inputs; it does not replace the failed experiment, satisfy
+fresh holdout admission, or change the original-only default.
+
 **Release hold:** a separate five-repeat follow-up on four known content-failure
 cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
 charges reconciled with the gateway counter: English cost **0.88% less** in
