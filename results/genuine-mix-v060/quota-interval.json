@@ -1,0 +1,11 @@
+{
+  "started_at_utc": "2026-11-03T19:14:34.984Z",
+  "ended_at_utc": "2026-11-03T19:31:07.561Z",
+  "http_status": 200,
+  "counter_delta_quota": 31045,
+  "stable_later_read": true,
+  "unit": "gateway quota units",
+  "scope": "Whole genuine-mixing pilot; all first repetitions and retries included.",
+  "later_counter_delta_quota": 31045,
+  "later_check_at_utc": "2026-11-03T19:32:13.721Z"
+}

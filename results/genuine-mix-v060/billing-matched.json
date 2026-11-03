@@ -1,0 +1,1107 @@
+{
+  "records": [
+    {
+      "request_id": "202611031919349577690188268d9d6jBBocR7z",
+      "type": 2,
+      "quota": 274,
+      "prompt_tokens": 4591,
+      "completion_tokens": 67,
+      "created_at": 1793733591,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031919323606411818268d9d6vuJYOrNL",
+      "type": 2,
+      "quota": 194,
+      "prompt_tokens": 4566,
+      "completion_tokens": 19,
+      "created_at": 1793733574,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031919247963717618268d9d6gAm9baQW",
+      "type": 2,
+      "quota": 193,
+      "prompt_tokens": 4561,
+      "completion_tokens": 19,
+      "created_at": 1793733572,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031919221222958148268d9d6nKFtZkG5",
+      "type": 2,
+      "quota": 305,
+      "prompt_tokens": 4573,
+      "completion_tokens": 91,
+      "created_at": 1793733564,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031918581472477788268d9d6YUvGsJBs",
+      "type": 2,
+      "quota": 326,
+      "prompt_tokens": 4570,
+      "completion_tokens": 106,
+      "created_at": 1793733561,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031918438889502638268d9d6JointjNd",
+      "type": 2,
+      "quota": 329,
+      "prompt_tokens": 4601,
+      "completion_tokens": 102,
+      "created_at": 1793733537,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031918417473747108268d9d6b5R6wUL5",
+      "type": 2,
+      "quota": 254,
+      "prompt_tokens": 4635,
+      "completion_tokens": 45,
+      "created_at": 1793733523,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031918392279748358268d9d6rqLEaSJg",
+      "type": 2,
+      "quota": 251,
+      "prompt_tokens": 4630,
+      "completion_tokens": 44,
+      "created_at": 1793733521,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031918361851006328268d9d6IQCSluzU",
+      "type": 2,
+      "quota": 257,
+      "prompt_tokens": 4663,
+      "completion_tokens": 41,
+      "created_at": 1793733518,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917503585908558268d9d6oSzwe4TA",
+      "type": 2,
+      "quota": 274,
+      "prompt_tokens": 4591,
+      "completion_tokens": 67,
+      "created_at": 1793733515,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917483358087098268d9d6NJFpzVaU",
+      "type": 2,
+      "quota": 194,
+      "prompt_tokens": 4566,
+      "completion_tokens": 19,
+      "created_at": 1793733470,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917462628171508268d9d62XpQmcuL",
+      "type": 2,
+      "quota": 193,
+      "prompt_tokens": 4561,
+      "completion_tokens": 19,
+      "created_at": 1793733468,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917346548228138268d9d6f7H88seR",
+      "type": 2,
+      "quota": 251,
+      "prompt_tokens": 4635,
+      "completion_tokens": 43,
+      "created_at": 1793733465,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917322365546968268d9d6NZLPbEjw",
+      "type": 2,
+      "quota": 248,
+      "prompt_tokens": 4630,
+      "completion_tokens": 42,
+      "created_at": 1793733454,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917302695422878268d9d6c1QR3662",
+      "type": 2,
+      "quota": 215,
+      "prompt_tokens": 4663,
+      "completion_tokens": 13,
+      "created_at": 1793733451,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917275548252808268d9d6oYzuGHng",
+      "type": 2,
+      "quota": 275,
+      "prompt_tokens": 4641,
+      "completion_tokens": 58,
+      "created_at": 1793733449,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917038518264868268d9d6JR3mWy7e",
+      "type": 2,
+      "quota": 289,
+      "prompt_tokens": 4667,
+      "completion_tokens": 62,
+      "created_at": 1793733447,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031917008291838288268d9d6cXYBeWFP",
+      "type": 2,
+      "quota": 279,
+      "prompt_tokens": 4642,
+      "completion_tokens": 60,
+      "created_at": 1793733423,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031916339380818038268d9d6sV3bNvnf",
+      "type": 2,
+      "quota": 186,
+      "prompt_tokens": 4651,
+      "completion_tokens": 45,
+      "created_at": 1793733420,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031916050603661968268d9d6km94dQUm",
+      "type": 2,
+      "quota": 224,
+      "prompt_tokens": 4629,
+      "completion_tokens": 75,
+      "created_at": 1793733393,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031916026101734828268d9d6jkwnTu81",
+      "type": 2,
+      "quota": 216,
+      "prompt_tokens": 4632,
+      "completion_tokens": 20,
+      "created_at": 1793733364,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915533944985038268d9d6i9OtJskt",
+      "type": 2,
+      "quota": 296,
+      "prompt_tokens": 4699,
+      "completion_tokens": 60,
+      "created_at": 1793733362,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915513227859688268d9d6jFVumoHf",
+      "type": 2,
+      "quota": 225,
+      "prompt_tokens": 4673,
+      "completion_tokens": 18,
+      "created_at": 1793733353,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915418409270578268d9d6UFY2SjCn",
+      "type": 2,
+      "quota": 293,
+      "prompt_tokens": 4673,
+      "completion_tokens": 63,
+      "created_at": 1793733351,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915387597081568268d9d6AbijZhae",
+      "type": 2,
+      "quota": 209,
+      "prompt_tokens": 4641,
+      "completion_tokens": 14,
+      "created_at": 1793733341,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915365902433778268d9d6dHvGp2we",
+      "type": 2,
+      "quota": 273,
+      "prompt_tokens": 4668,
+      "completion_tokens": 51,
+      "created_at": 1793733338,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031915008567251938268d9d6Q0TntVdd",
+      "type": 2,
+      "quota": 136,
+      "prompt_tokens": 4640,
+      "completion_tokens": 14,
+      "created_at": 1793733336,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031914580249854178268d9d6tM2XEJpJ",
+      "type": 2,
+      "quota": 291,
+      "prompt_tokens": 4633,
+      "completion_tokens": 70,
+      "created_at": 1793733300,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031914554553039618268d9d65N35iWtx",
+      "type": 2,
+      "quota": 303,
+      "prompt_tokens": 4614,
+      "completion_tokens": 82,
+      "created_at": 1793733297,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031914521209390398268d9d6GVkBA7KJ",
+      "type": 2,
+      "quota": 212,
+      "prompt_tokens": 4611,
+      "completion_tokens": 22,
+      "created_at": 1793733295,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923033590307068268d9d64VAHqLy7",
+      "type": 2,
+      "quota": 334,
+      "prompt_tokens": 4601,
+      "completion_tokens": 105,
+      "created_at": 1793733785,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923000999291868268d9d65DxnMolU",
+      "type": 2,
+      "quota": 320,
+      "prompt_tokens": 4570,
+      "completion_tokens": 102,
+      "created_at": 1793733783,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922561937206338268d9d6RlYF2cKO",
+      "type": 2,
+      "quota": 299,
+      "prompt_tokens": 4573,
+      "completion_tokens": 87,
+      "created_at": 1793733779,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922540860583898268d9d6le1PZ2xG",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4578,
+      "completion_tokens": 24,
+      "created_at": 1793733775,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922514344850098268d9d6aYV0KNKj",
+      "type": 2,
+      "quota": 205,
+      "prompt_tokens": 4577,
+      "completion_tokens": 24,
+      "created_at": 1793733773,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922493604353818268d9d6R7pWF5J6",
+      "type": 2,
+      "quota": 213,
+      "prompt_tokens": 4604,
+      "completion_tokens": 24,
+      "created_at": 1793733771,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922448786668938268d9d6OiRrUhqW",
+      "type": 2,
+      "quota": 321,
+      "prompt_tokens": 4629,
+      "completion_tokens": 91,
+      "created_at": 1793733769,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922420692844438268d9d6XS7t8GiF",
+      "type": 2,
+      "quota": 331,
+      "prompt_tokens": 4630,
+      "completion_tokens": 97,
+      "created_at": 1793733764,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922318207843578268d9d6G1aOIRJ1",
+      "type": 2,
+      "quota": 348,
+      "prompt_tokens": 4663,
+      "completion_tokens": 102,
+      "created_at": 1793733761,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922091767906938268d9d6FDYfZoGQ",
+      "type": 2,
+      "quota": 219,
+      "prompt_tokens": 4641,
+      "completion_tokens": 69,
+      "created_at": 1793733751,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922073875843428268d9d6qgc7egcS",
+      "type": 2,
+      "quota": 222,
+      "prompt_tokens": 4642,
+      "completion_tokens": 22,
+      "created_at": 1793733728,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031922047378295718268d9d6WSDxyVb1",
+      "type": 2,
+      "quota": 229,
+      "prompt_tokens": 4667,
+      "completion_tokens": 22,
+      "created_at": 1793733727,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921564160221028268d9d6m1jRIDjR",
+      "type": 2,
+      "quota": 275,
+      "prompt_tokens": 4673,
+      "completion_tokens": 51,
+      "created_at": 1793733724,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921474426527888268d9d6sREVI4VH",
+      "type": 2,
+      "quota": 281,
+      "prompt_tokens": 4673,
+      "completion_tokens": 55,
+      "created_at": 1793733716,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921402399090638268d9d6MmifAqTm",
+      "type": 2,
+      "quota": 227,
+      "prompt_tokens": 4699,
+      "completion_tokens": 14,
+      "created_at": 1793733707,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921381517227218268d9d6bfau1wkM",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4578,
+      "completion_tokens": 24,
+      "created_at": 1793733699,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921357938225988268d9d6qQRNr4H5",
+      "type": 2,
+      "quota": 213,
+      "prompt_tokens": 4604,
+      "completion_tokens": 24,
+      "created_at": 1793733697,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921324038424808268d9d6AHYkhOWE",
+      "type": 2,
+      "quota": 205,
+      "prompt_tokens": 4577,
+      "completion_tokens": 24,
+      "created_at": 1793733695,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921295758560108268d9d6LjsHve6b",
+      "type": 2,
+      "quota": 274,
+      "prompt_tokens": 4641,
+      "completion_tokens": 57,
+      "created_at": 1793733692,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921253278150428268d9d6Sf2gWKTg",
+      "type": 2,
+      "quota": 224,
+      "prompt_tokens": 4668,
+      "completion_tokens": 18,
+      "created_at": 1793733689,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031921114348576538268d9d6SKD0FF9m",
+      "type": 2,
+      "quota": 281,
+      "prompt_tokens": 4640,
+      "completion_tokens": 62,
+      "created_at": 1793733685,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920329317951878268d9d6knK0HPa0",
+      "type": 2,
+      "quota": 293,
+      "prompt_tokens": 4629,
+      "completion_tokens": 72,
+      "created_at": 1793733671,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920306557508308268d9d6NkqNdT0l",
+      "type": 2,
+      "quota": 221,
+      "prompt_tokens": 4651,
+      "completion_tokens": 20,
+      "created_at": 1793733632,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920281911183028268d9d6kxcKZxS3",
+      "type": 2,
+      "quota": 267,
+      "prompt_tokens": 4632,
+      "completion_tokens": 54,
+      "created_at": 1793733630,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920254474730228268d9d6dLVpLuo5",
+      "type": 2,
+      "quota": 313,
+      "prompt_tokens": 4611,
+      "completion_tokens": 89,
+      "created_at": 1793733627,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920216546932008268d9d6cyeWR5uJ",
+      "type": 2,
+      "quota": 321,
+      "prompt_tokens": 4633,
+      "completion_tokens": 90,
+      "created_at": 1793733625,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920192386857798268d9d6WvXkIhU4",
+      "type": 2,
+      "quota": 294,
+      "prompt_tokens": 4614,
+      "completion_tokens": 76,
+      "created_at": 1793733621,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920150071524408268d9d65KzCZOgW",
+      "type": 2,
+      "quota": 329,
+      "prompt_tokens": 4629,
+      "completion_tokens": 96,
+      "created_at": 1793733618,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031920117857179408268d9d6k9LB6Ewo",
+      "type": 2,
+      "quota": 343,
+      "prompt_tokens": 4630,
+      "completion_tokens": 105,
+      "created_at": 1793733614,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031919529570056458268d9d6FuouxiBE",
+      "type": 2,
+      "quota": 342,
+      "prompt_tokens": 4663,
+      "completion_tokens": 98,
+      "created_at": 1793733611,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928277517332328268d9d6xrNIsF2u",
+      "type": 2,
+      "quota": 289,
+      "prompt_tokens": 4632,
+      "completion_tokens": 69,
+      "created_at": 1793734110,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928255631300448268d9d6BVK85HRe",
+      "type": 2,
+      "quota": 221,
+      "prompt_tokens": 4651,
+      "completion_tokens": 20,
+      "created_at": 1793734107,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928132855891128268d9d6ZcaWRZgt",
+      "type": 2,
+      "quota": 299,
+      "prompt_tokens": 4629,
+      "completion_tokens": 76,
+      "created_at": 1793734105,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928002227901158268d9d62CbtIOMD",
+      "type": 2,
+      "quota": 344,
+      "prompt_tokens": 4601,
+      "completion_tokens": 112,
+      "created_at": 1793734092,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927398445866268268d9d6rbgxrOIg",
+      "type": 2,
+      "quota": 340,
+      "prompt_tokens": 4570,
+      "completion_tokens": 115,
+      "created_at": 1793734079,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927351768415498268d9d6ez1sDpmj",
+      "type": 2,
+      "quota": 353,
+      "prompt_tokens": 4573,
+      "completion_tokens": 123,
+      "created_at": 1793734059,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927331213871378268d9d6Fw03qBSm",
+      "type": 2,
+      "quota": 205,
+      "prompt_tokens": 4577,
+      "completion_tokens": 24,
+      "created_at": 1793734054,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927313540379388268d9d6mKdxXA5T",
+      "type": 2,
+      "quota": 213,
+      "prompt_tokens": 4604,
+      "completion_tokens": 24,
+      "created_at": 1793734052,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927295874916628268d9d6yWUkfpkJ",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4578,
+      "completion_tokens": 24,
+      "created_at": 1793734051,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927270304237138268d9d6a0iXFNIn",
+      "type": 2,
+      "quota": 293,
+      "prompt_tokens": 4614,
+      "completion_tokens": 75,
+      "created_at": 1793734049,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927239940849118268d9d6egCWgiwm",
+      "type": 2,
+      "quota": 303,
+      "prompt_tokens": 4633,
+      "completion_tokens": 78,
+      "created_at": 1793734046,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927208091950948268d9d6i2QQXgK6",
+      "type": 2,
+      "quota": 311,
+      "prompt_tokens": 4611,
+      "completion_tokens": 88,
+      "created_at": 1793734043,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031927182003046528268d9d6Hwkka5L9",
+      "type": 2,
+      "quota": 216,
+      "prompt_tokens": 4632,
+      "completion_tokens": 20,
+      "created_at": 1793734040,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031926532752591438268d9d6nMVaWReh",
+      "type": 2,
+      "quota": 232,
+      "prompt_tokens": 4629,
+      "completion_tokens": 80,
+      "created_at": 1793734037,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031926429538686368268d9d6Dp2dtsp9",
+      "type": 2,
+      "quota": 298,
+      "prompt_tokens": 4651,
+      "completion_tokens": 71,
+      "created_at": 1793734012,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031926408428564858268d9d65iN5jR7o",
+      "type": 2,
+      "quota": 266,
+      "prompt_tokens": 4663,
+      "completion_tokens": 47,
+      "created_at": 1793734002,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031926378945593848268d9d6aGXOzeby",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4630,
+      "completion_tokens": 14,
+      "created_at": 1793734000,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031926361251875568268d9d6aaedhvob",
+      "type": 2,
+      "quota": 208,
+      "prompt_tokens": 4635,
+      "completion_tokens": 14,
+      "created_at": 1793733997,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031925460132152738268d9d6xpIc7K6V",
+      "type": 2,
+      "quota": 200,
+      "prompt_tokens": 4699,
+      "completion_tokens": 45,
+      "created_at": 1793733995,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031925088662157168268d9d6b1JlhZ7n",
+      "type": 2,
+      "quota": 152,
+      "prompt_tokens": 4673,
+      "completion_tokens": 18,
+      "created_at": 1793733945,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924563517830268268d9d6M48IIrjv",
+      "type": 2,
+      "quota": 285,
+      "prompt_tokens": 4673,
+      "completion_tokens": 58,
+      "created_at": 1793733907,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924474263239368268d9d6iuRmqCWV",
+      "type": 2,
+      "quota": 283,
+      "prompt_tokens": 4640,
+      "completion_tokens": 63,
+      "created_at": 1793733896,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924450093653128268d9d6kuJaZsoF",
+      "type": 2,
+      "quota": 282,
+      "prompt_tokens": 4668,
+      "completion_tokens": 57,
+      "created_at": 1793733887,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924414132666258268d9d6XbHjAJH4",
+      "type": 2,
+      "quota": 203,
+      "prompt_tokens": 4641,
+      "completion_tokens": 10,
+      "created_at": 1793733884,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924329115334668268d9d6MEWZkt2O",
+      "type": 2,
+      "quota": 263,
+      "prompt_tokens": 4663,
+      "completion_tokens": 45,
+      "created_at": 1793733881,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031924288154680368268d9d6Tv6K2X0x",
+      "type": 2,
+      "quota": 227,
+      "prompt_tokens": 4630,
+      "completion_tokens": 28,
+      "created_at": 1793733872,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923391798290548268d9d6zLTvkD13",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4635,
+      "completion_tokens": 13,
+      "created_at": 1793733868,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923357510378678268d9d6gJZfUqF6",
+      "type": 2,
+      "quota": 220,
+      "prompt_tokens": 4561,
+      "completion_tokens": 37,
+      "created_at": 1793733818,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923334108225908268d9d6VtX6j34I",
+      "type": 2,
+      "quota": 194,
+      "prompt_tokens": 4566,
+      "completion_tokens": 19,
+      "created_at": 1793733815,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031923070891323508268d9d6ZwJMxUeN",
+      "type": 2,
+      "quota": 165,
+      "prompt_tokens": 4591,
+      "completion_tokens": 19,
+      "created_at": 1793733813,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930566872054938268d9d6AnRMBIM2",
+      "type": 2,
+      "quota": 347,
+      "prompt_tokens": 4663,
+      "completion_tokens": 101,
+      "created_at": 1793734265,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930541493136718268d9d6UO61bg0F",
+      "type": 2,
+      "quota": 323,
+      "prompt_tokens": 4630,
+      "completion_tokens": 92,
+      "created_at": 1793734256,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930517351647028268d9d6lQiotvTK",
+      "type": 2,
+      "quota": 315,
+      "prompt_tokens": 4629,
+      "completion_tokens": 87,
+      "created_at": 1793734253,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930473700159988268d9d6jg9CDjK4",
+      "type": 2,
+      "quota": 222,
+      "prompt_tokens": 4642,
+      "completion_tokens": 22,
+      "created_at": 1793734251,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930383407989808268d9d6oDUWGaUf",
+      "type": 2,
+      "quota": 289,
+      "prompt_tokens": 4667,
+      "completion_tokens": 62,
+      "created_at": 1793734247,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930363589016688268d9d6VhV6PX0C",
+      "type": 2,
+      "quota": 277,
+      "prompt_tokens": 4641,
+      "completion_tokens": 59,
+      "created_at": 1793734238,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930342668347058268d9d6URPOUthi",
+      "type": 2,
+      "quota": 229,
+      "prompt_tokens": 4667,
+      "completion_tokens": 22,
+      "created_at": 1793734236,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930311632380688268d9d6SJYPVNe2",
+      "type": 2,
+      "quota": 277,
+      "prompt_tokens": 4642,
+      "completion_tokens": 59,
+      "created_at": 1793734233,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930233670634128268d9d62ZZvhB0g",
+      "type": 2,
+      "quota": 221,
+      "prompt_tokens": 4641,
+      "completion_tokens": 22,
+      "created_at": 1793734230,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930140624757418268d9d60rTOnVxR",
+      "type": 2,
+      "quota": 297,
+      "prompt_tokens": 4673,
+      "completion_tokens": 66,
+      "created_at": 1793734223,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930105505020238268d9d6MP05JLyS",
+      "type": 2,
+      "quota": 225,
+      "prompt_tokens": 4673,
+      "completion_tokens": 18,
+      "created_at": 1793734213,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031930025463474968268d9d6WuOTpFDV",
+      "type": 2,
+      "quota": 285,
+      "prompt_tokens": 4699,
+      "completion_tokens": 53,
+      "created_at": 1793734210,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929549608344158268d9d6AyWnoarL",
+      "type": 2,
+      "quota": 274,
+      "prompt_tokens": 4640,
+      "completion_tokens": 57,
+      "created_at": 1793734202,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929529155349108268d9d6XtyMLdtQ",
+      "type": 2,
+      "quota": 218,
+      "prompt_tokens": 4668,
+      "completion_tokens": 14,
+      "created_at": 1793734194,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929498975185368268d9d6Jp1SgMoY",
+      "type": 2,
+      "quota": 209,
+      "prompt_tokens": 4641,
+      "completion_tokens": 14,
+      "created_at": 1793734192,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929362897521548268d9d6qUDsXBmA",
+      "type": 2,
+      "quota": 348,
+      "prompt_tokens": 4663,
+      "completion_tokens": 102,
+      "created_at": 1793734189,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929329752639708268d9d6SE8DCu8H",
+      "type": 2,
+      "quota": 334,
+      "prompt_tokens": 4630,
+      "completion_tokens": 99,
+      "created_at": 1793734175,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929283415697858268d9d6DYCFTrSP",
+      "type": 2,
+      "quota": 342,
+      "prompt_tokens": 4629,
+      "completion_tokens": 105,
+      "created_at": 1793734172,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929257485051818268d9d6n8mokzlZ",
+      "type": 2,
+      "quota": 294,
+      "prompt_tokens": 4573,
+      "completion_tokens": 84,
+      "created_at": 1793734168,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929237579316338268d9d6bpxSCvyS",
+      "type": 2,
+      "quota": 197,
+      "prompt_tokens": 4570,
+      "completion_tokens": 20,
+      "created_at": 1793734165,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929214683821048268d9d6VR82a9ms",
+      "type": 2,
+      "quota": 268,
+      "prompt_tokens": 4601,
+      "completion_tokens": 61,
+      "created_at": 1793734163,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929197336392358268d9d6GTJGYiVX",
+      "type": 2,
+      "quota": 206,
+      "prompt_tokens": 4611,
+      "completion_tokens": 18,
+      "created_at": 1793734161,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929171480434618268d9d6lYZrOJu6",
+      "type": 2,
+      "quota": 299,
+      "prompt_tokens": 4614,
+      "completion_tokens": 79,
+      "created_at": 1793734159,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929146443274358268d9d6P2Nn38Sx",
+      "type": 2,
+      "quota": 323,
+      "prompt_tokens": 4633,
+      "completion_tokens": 91,
+      "created_at": 1793734156,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929127331007368268d9d66eFHjeeW",
+      "type": 2,
+      "quota": 213,
+      "prompt_tokens": 4604,
+      "completion_tokens": 24,
+      "created_at": 1793734154,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929107627960058268d9d61TvUuX3A",
+      "type": 2,
+      "quota": 205,
+      "prompt_tokens": 4577,
+      "completion_tokens": 24,
+      "created_at": 1793734152,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031929084460330228268d9d6w1jIhovh",
+      "type": 2,
+      "quota": 236,
+      "prompt_tokens": 4578,
+      "completion_tokens": 44,
+      "created_at": 1793734150,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928407473563938268d9d6ENXtjqwb",
+      "type": 2,
+      "quota": 272,
+      "prompt_tokens": 4561,
+      "completion_tokens": 72,
+      "created_at": 1793734148,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928386317689458268d9d6ul98dJt1",
+      "type": 2,
+      "quota": 194,
+      "prompt_tokens": 4566,
+      "completion_tokens": 19,
+      "created_at": 1793734120,
+      "model_name": "gpt-6.1-sol"
+    },
+    {
+      "request_id": "202611031928311811052928268d9d6TkrfhfWT",
+      "type": 2,
+      "quota": 202,
+      "prompt_tokens": 4591,
+      "completion_tokens": 19,
+      "created_at": 1793734118,
+      "model_name": "gpt-6.1-sol"
+    }
+  ],
+  "polls": [
+    {
+      "at_utc": "2026-11-03T19:19:53.942Z",
+      "http_status": 200,
+      "matched_records": 30
+    },
+    {
+      "at_utc": "2026-11-03T19:23:08.077Z",
+      "http_status": 200,
+      "matched_records": 60
+    },
+    {
+      "at_utc": "2026-11-03T19:28:32.173Z",
+      "http_status": 200,
+      "matched_records": 90
+    },
+    {
+      "at_utc": "2026-11-03T19:31:08.043Z",
+      "http_status": 200,
+      "matched_records": 120
+    }
+  ],
+  "privacy": "Only current-study request-ID matched fields retained."
+}

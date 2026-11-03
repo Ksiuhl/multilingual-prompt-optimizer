@@ -5,6 +5,19 @@ not money or official-provider prices. Frozen machine records retain their
 original gateway-supplied currency labels and legacy conversion fields solely
 for reproducibility; those fields are not used as financial results.
 
+## Genuine mixing pilot
+
+`genuine-mix-v060/` freezes 20 canonically distinct new payloads, ten known task
+families, all aligned language alternatives, exact full prompts and grading
+oracles. Three arms repeat twice (120 planned requests); every mixed candidate
+contains English and Chinese natural-language clauses, and differs from English.
+Exact passes: 40/40 original, 38/40 English, 38/40 mixed.
+Mixed quota was 0.39% higher than English,
+Frozen receipts, metadata checks and incomplete/incorrect attempts are retained.
+See [methods and result](../docs/genuine-mix-pilot.md), `genuine-mix-v060-summary.json`
+and `figures/v060-genuine-mix-*`. The pilot is not independent bilingual review,
+a state-of-the-art English-compressor comparison or an admission-policy change.
+
 ## Fresh-input paid follow-up: completed after resumption
 
 `fresh-cache-v060/` preserves the frozen 20-input, three-repetition, 120-request

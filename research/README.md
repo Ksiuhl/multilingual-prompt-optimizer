@@ -1,5 +1,18 @@
 # Reproduce the development studies
 
+## Genuine mixing pilot (offline)
+
+```bash
+python research/analyze_genuine_mix.py results/genuine-mix-v060 --out results/local/genuine-mix-v060
+```
+
+Verifies genuine natural-language mixing, frozen composed prompts, exact answer
+checks, fresh-payload disjointness, repeat discordances, attempt coverage and
+request-ID matched quota. No model or billing calls. The earlier frozen bundles
+are required for disjointness checks. [Methods, limits and result](../docs/genuine-mix-pilot.md).
+`genuine_mix_v060.py` prepares this synthetic fixture design; it refuses to
+overwrite an already frozen directory. It does not call models or publish data.
+
 ## Fresh-input paid follow-up (offline)
 
 ```bash

@@ -46,6 +46,17 @@ credit charges. It used 5,797 gateway quota units. This is diagnostic
 evidence on reused inputs; it does not replace the failed experiment, satisfy
 fresh holdout admission, or change the original-only default.
 
+The [genuine mixing pilot](docs/genuine-mix-pilot.md) compares original,
+concise English and genuinely English/Chinese mixed instructions on 20 new
+payloads across ten known task families, repeated twice. Exact passes were
+**40/40 original, 38/40 English and 38/40 mixed**.
+Mixed quota was 0.39% higher than English,
+All 20 mixed candidates differ from English; Japanese was considered but not
+selected. This small, manually authored pilot does not establish a general
+language-mixing advantage. The English baseline uses concise aligned clauses;
+PromptMin left every selected English instruction unchanged. Defaults and
+earlier studies remain unchanged.
+
 The [fresh-input paid follow-up](docs/fresh-cache-followup.md) completed **120/120
 planned requests** on 20 new inputs, three repetitions per arm, after resuming
 the stopped 32-request prefix. Exact passes were **60/60 original and 60/60 compressed**;

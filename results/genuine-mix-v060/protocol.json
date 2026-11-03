@@ -1,0 +1,410 @@
+{
+  "type": "Frozen genuine multilingual pilot; assistant-authored synthetic cases, not an independent benchmark.",
+  "freeze_utc": "2026-11-03T19:14:07.315105+00:00",
+  "source_pr_commit": "fd60e812654845037023b5277ec680fd308b065b",
+  "model_label": "gpt-6.1-sol",
+  "cases": 20,
+  "task_families": 10,
+  "repetitions": 2,
+  "requests": 120,
+  "arms": [
+    "original",
+    "concise_english",
+    "genuine_mixed"
+  ],
+  "blocks": [
+    {
+      "case_id": "genuine-overlap-2",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-stock-1",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-latest-2",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-dependencies-1",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-ranking-2",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-refund-1",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-unique-1",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-refund-2",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-literal-2",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-unique-2",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-utc-2",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-overlap-1",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-dependencies-2",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-stock-2",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-phone-1",
+      "repetition": 1,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-latest-1",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-ranking-1",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-utc-1",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-phone-2",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-literal-1",
+      "repetition": 1,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-unique-1",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-refund-1",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-stock-2",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-latest-1",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-refund-2",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-dependencies-1",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-overlap-1",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-phone-1",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-literal-2",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-dependencies-2",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-unique-2",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-phone-2",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "concise_english",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-overlap-2",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "genuine_mixed",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-literal-1",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-utc-2",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-stock-1",
+      "repetition": 2,
+      "arms": [
+        "genuine_mixed",
+        "original",
+        "concise_english"
+      ]
+    },
+    {
+      "case_id": "genuine-latest-2",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "concise_english",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-ranking-1",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "genuine-ranking-2",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "original",
+        "genuine_mixed"
+      ]
+    },
+    {
+      "case_id": "genuine-utc-1",
+      "repetition": 2,
+      "arms": [
+        "concise_english",
+        "genuine_mixed",
+        "original"
+      ]
+    }
+  ],
+  "concurrency_per_model": 1,
+  "max_attempts": 2,
+  "timeout_ms": 60000,
+  "max_output_tokens": 4096,
+  "temperature": "provider default",
+  "reasoning": "provider default",
+  "stream": true,
+  "soft_quota_stop": 50000,
+  "quota_check_every_requests": 30,
+  "quota_scope": "Entire pilot, checked before inference and between 30-request batches; not a guaranteed ceiling. Pause if metadata unavailable; no alternate key.",
+  "candidate_generation_api_calls": 0,
+  "translation_api_calls": 0,
+  "human_authoring_cost": "not measured",
+  "selection": "Full-prompt o200k_base counts; English uses aligned concise clauses and conservative PromptMin lite. Genuine mixed requires English plus Chinese or Japanese natural-language clauses, even if longer. No answer-based selection.",
+  "cache": "Observed only: no reset, cache busting or free warm-up; every repetition/retry counts.",
+  "analysis": "Frozen exact-JSON grader; accuracy per arm/template/repetition; paired discordances and within-identical-prompt repeat instability; all request-ID charges, cache metadata and retry-inclusive latency. No pooled significance test: cases share task families and repetitions.",
+  "limitations": [
+    "Same ten task families as the earlier study; new payload values and boundary combinations, not unseen task types.",
+    "Two cases per family and two repetitions are a small pilot, not broad reliability evidence.",
+    "Concise English baseline is hand-authored plus conservative PromptMin, not a claim of best available compression.",
+    "Clauses and oracles share an assistant author; no independent bilingual review.",
+    "Forced genuine mixing is a research intervention, not the default optimizer policy.",
+    "No monolingual translated control: cannot separate language choice/translation wording from code switching.",
+    "Gateway label/cache/quota accounting unverified; local tokenizer is a proxy. No official prices or monetary displays.",
+    "No model judging or answer repair. All incomplete and incorrect responses retained. No automatic admission/default change."
+  ],
+  "files": {
+    "dataset.json": "e412cdd4e70607f81a83838ed428b15b3cc9fcc9f38e2cd4185be0018b258535",
+    "preparation.json": "344c80df5d07189d3e4063d88c1766d2ee0a5e73d02d4a57f8902bac996a2367",
+    "requests.json": "eb8c35a3077c09f5d9c12a0107a9dc369c543e59a86cbe2a0ce989f5ccc1dba1",
+    "grader-source.py": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592",
+    "runner.mjs": "210bb5b15bc76c87e48a4a211043139486b1c505c29dc489dd3601a7882c43f0"
+  }
+}
