@@ -1,0 +1,1517 @@
+[
+  {
+    "id": "language-control-stock-1",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "C5509763",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 3
+      },
+      {
+        "id": "929568F0",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 3
+      },
+      {
+        "id": "8F5D187F",
+        "active": true,
+        "on_hand": 6,
+        "reserved": 3,
+        "reorder_limit": 3
+      },
+      {
+        "id": "03647ED7",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 3
+      },
+      {
+        "id": "27592B59",
+        "active": true,
+        "on_hand": 5,
+        "reserved": 3,
+        "reorder_limit": 3
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "C5509763",
+          "27592B59"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 174,
+      "chinese": 184,
+      "mixed": 177
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-1",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 20,
+        "end": 26
+      },
+      "events": [
+        {
+          "id": "EA33EBB2",
+          "start": 19,
+          "end": 27
+        },
+        {
+          "id": "FC19E9DB",
+          "start": 26,
+          "end": 29
+        },
+        {
+          "id": "513A6C94",
+          "start": 16,
+          "end": 20
+        },
+        {
+          "id": "5166853F",
+          "start": 21,
+          "end": 25
+        },
+        {
+          "id": "6966C66E",
+          "start": 17,
+          "end": 21
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "EA33EBB2",
+          "5166853F",
+          "6966C66E"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 137,
+      "chinese": 152,
+      "mixed": 148
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-1",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "166D7E25",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "166D7E25",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "4A986932",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "4A986932",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "13FF85A1",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "13FF85A1",
+          "4A986932"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 184,
+      "chinese": 189,
+      "mixed": 187
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-2",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "B6EA6703",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 4
+      },
+      {
+        "id": "12813380",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 4
+      },
+      {
+        "id": "176A5C3A",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 4
+      },
+      {
+        "id": "0CE93358",
+        "active": true,
+        "on_hand": 6,
+        "reserved": 3,
+        "reorder_limit": 4
+      },
+      {
+        "id": "F1C5672D",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 4
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "12813380",
+          "0CE93358"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 186,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-2",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 27,
+        "end": 33
+      },
+      "events": [
+        {
+          "id": "2329060A",
+          "start": 23,
+          "end": 27
+        },
+        {
+          "id": "85748666",
+          "start": 24,
+          "end": 28
+        },
+        {
+          "id": "302F10C2",
+          "start": 26,
+          "end": 34
+        },
+        {
+          "id": "DD515887",
+          "start": 33,
+          "end": 36
+        },
+        {
+          "id": "33224437",
+          "start": 28,
+          "end": 32
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "85748666",
+          "302F10C2",
+          "33224437"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 131,
+      "chinese": 146,
+      "mixed": 142
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-2",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "FAB864EE",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "FAB864EE",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "2DF7DF1A",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "AA10A721",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "AA10A721",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "2DF7DF1A"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 181,
+      "chinese": 186,
+      "mixed": 184
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-3",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "6A053751",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 5
+      },
+      {
+        "id": "0637CB6A",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 5
+      },
+      {
+        "id": "8BFAF8B6",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 5
+      },
+      {
+        "id": "A122AD59",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 5
+      },
+      {
+        "id": "6FBCDA9B",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 5
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "6A053751",
+          "0637CB6A"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 178,
+      "chinese": 188,
+      "mixed": 181
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-3",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 34,
+        "end": 40
+      },
+      "events": [
+        {
+          "id": "BC68D732",
+          "start": 33,
+          "end": 41
+        },
+        {
+          "id": "F9D4DDA2",
+          "start": 40,
+          "end": 43
+        },
+        {
+          "id": "737C6429",
+          "start": 35,
+          "end": 39
+        },
+        {
+          "id": "21FB244C",
+          "start": 31,
+          "end": 35
+        },
+        {
+          "id": "87CEB161",
+          "start": 30,
+          "end": 34
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "BC68D732",
+          "737C6429",
+          "21FB244C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 136,
+      "chinese": 151,
+      "mixed": 147
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-3",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "FF8E74FD",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "FF8E74FD",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "3D9BB486",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "B9471E69",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "B9471E69",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "3D9BB486",
+          "FF8E74FD"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 186,
+      "chinese": 191,
+      "mixed": 189
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-4",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "7661282D",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 6
+      },
+      {
+        "id": "26D07C2D",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 6
+      },
+      {
+        "id": "D2C49DA2",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 6
+      },
+      {
+        "id": "FB4CB347",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 6
+      },
+      {
+        "id": "4F0006AB",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 6
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "26D07C2D",
+          "D2C49DA2"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 177,
+      "chinese": 187,
+      "mixed": 180
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-4",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 41,
+        "end": 47
+      },
+      "events": [
+        {
+          "id": "6FACAB98",
+          "start": 47,
+          "end": 50
+        },
+        {
+          "id": "6A3A4AAD",
+          "start": 37,
+          "end": 41
+        },
+        {
+          "id": "8580DE39",
+          "start": 38,
+          "end": 42
+        },
+        {
+          "id": "95A843C4",
+          "start": 40,
+          "end": 48
+        },
+        {
+          "id": "737F66EE",
+          "start": 42,
+          "end": 46
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "8580DE39",
+          "95A843C4",
+          "737F66EE"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 136,
+      "chinese": 151,
+      "mixed": 147
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-4",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "46BFABC9",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "46BFABC9",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "1DD4960F",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "1DD4960F",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "F909854B",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "F909854B"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 183,
+      "chinese": 188,
+      "mixed": 186
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-5",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "ABB21B26",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 7
+      },
+      {
+        "id": "0278DDDE",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 7
+      },
+      {
+        "id": "DE405FFC",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 7
+      },
+      {
+        "id": "A82B8A87",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 7
+      },
+      {
+        "id": "9C2421FA",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 7
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "ABB21B26",
+          "DE405FFC"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 174,
+      "chinese": 184,
+      "mixed": 177
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-5",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 48,
+        "end": 54
+      },
+      "events": [
+        {
+          "id": "A598AF52",
+          "start": 47,
+          "end": 55
+        },
+        {
+          "id": "72CC3ACA",
+          "start": 44,
+          "end": 48
+        },
+        {
+          "id": "90547954",
+          "start": 54,
+          "end": 57
+        },
+        {
+          "id": "5F281F0B",
+          "start": 49,
+          "end": 53
+        },
+        {
+          "id": "350F089C",
+          "start": 45,
+          "end": 49
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "A598AF52",
+          "5F281F0B",
+          "350F089C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 134,
+      "chinese": 149,
+      "mixed": 145
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-5",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "427614C0",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "427614C0",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "0F0E238A",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "7892A0A2",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "7892A0A2",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "0F0E238A",
+          "427614C0"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 187,
+      "chinese": 192,
+      "mixed": 190
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-6",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "036185A8",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 8
+      },
+      {
+        "id": "FDF94EEE",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 8
+      },
+      {
+        "id": "D27CB201",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 8
+      },
+      {
+        "id": "28568C58",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 8
+      },
+      {
+        "id": "2165E951",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 8
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "036185A8",
+          "FDF94EEE"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 172,
+      "chinese": 182,
+      "mixed": 175
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-6",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 55,
+        "end": 61
+      },
+      "events": [
+        {
+          "id": "A836F7A0",
+          "start": 54,
+          "end": 62
+        },
+        {
+          "id": "FD508109",
+          "start": 56,
+          "end": 60
+        },
+        {
+          "id": "C5B2BA71",
+          "start": 52,
+          "end": 56
+        },
+        {
+          "id": "AC9E2A51",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "id": "E5B713F6",
+          "start": 61,
+          "end": 64
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "A836F7A0",
+          "FD508109",
+          "C5B2BA71"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 140,
+      "chinese": 155,
+      "mixed": 151
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-6",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "4B14B095",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "4B14B095",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "E516B7DA",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "D85CADB8",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "D85CADB8",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "E516B7DA"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 186,
+      "chinese": 191,
+      "mixed": 189
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-7",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "DCB42A56",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 9
+      },
+      {
+        "id": "9C844FCD",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 9
+      },
+      {
+        "id": "F5FE208E",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 9
+      },
+      {
+        "id": "57BF84C1",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 9
+      },
+      {
+        "id": "C09F153E",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 9
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "F5FE208E",
+          "C09F153E"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 177,
+      "chinese": 187,
+      "mixed": 180
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-7",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 62,
+        "end": 68
+      },
+      "events": [
+        {
+          "id": "E6B56631",
+          "start": 68,
+          "end": 71
+        },
+        {
+          "id": "6E9FB0DB",
+          "start": 59,
+          "end": 63
+        },
+        {
+          "id": "5B21CA80",
+          "start": 63,
+          "end": 67
+        },
+        {
+          "id": "2EA1C5D3",
+          "start": 58,
+          "end": 62
+        },
+        {
+          "id": "59308E70",
+          "start": 61,
+          "end": 69
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "6E9FB0DB",
+          "5B21CA80",
+          "59308E70"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 140,
+      "chinese": 155,
+      "mixed": 151
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-7",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "03F2CF19",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "03F2CF19",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "6D4CE762",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "6D4CE762",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "61602972",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "61602972",
+          "6D4CE762"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 184,
+      "chinese": 189,
+      "mixed": 187
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-8",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "78B16CCB",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 10
+      },
+      {
+        "id": "7DC08F68",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 10
+      },
+      {
+        "id": "C1DBD8C8",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 10
+      },
+      {
+        "id": "2221F8C8",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 10
+      },
+      {
+        "id": "F35E65D9",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 10
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "7DC08F68",
+          "C1DBD8C8"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 181,
+      "chinese": 191,
+      "mixed": 184
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-8",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 69,
+        "end": 75
+      },
+      "events": [
+        {
+          "id": "09D22FB3",
+          "start": 66,
+          "end": 70
+        },
+        {
+          "id": "040A2A50",
+          "start": 65,
+          "end": 69
+        },
+        {
+          "id": "55157299",
+          "start": 70,
+          "end": 74
+        },
+        {
+          "id": "017E4B3B",
+          "start": 68,
+          "end": 76
+        },
+        {
+          "id": "FA110575",
+          "start": 75,
+          "end": 78
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "09D22FB3",
+          "55157299",
+          "017E4B3B"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 135,
+      "chinese": 150,
+      "mixed": 146
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-8",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "F35A0365",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "F35A0365",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "0DD278E8",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "9C7BC8F6",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "9C7BC8F6",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "0DD278E8"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 190,
+      "chinese": 195,
+      "mixed": 193
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-9",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "92B503CC",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "9B0B7C8D",
+        "active": true,
+        "on_hand": 15,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "E09D94AA",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 11
+      },
+      {
+        "id": "CA16A471",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "56BC8ADE",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 11
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "92B503CC",
+          "E09D94AA"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 177,
+      "chinese": 187,
+      "mixed": 180
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-9",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 76,
+        "end": 82
+      },
+      "events": [
+        {
+          "id": "3E457F3E",
+          "start": 77,
+          "end": 81
+        },
+        {
+          "id": "73769F0E",
+          "start": 73,
+          "end": 77
+        },
+        {
+          "id": "1F20597F",
+          "start": 75,
+          "end": 83
+        },
+        {
+          "id": "1BFDB9E1",
+          "start": 82,
+          "end": 85
+        },
+        {
+          "id": "BBABA245",
+          "start": 72,
+          "end": 76
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "3E457F3E",
+          "73769F0E",
+          "1F20597F"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 138,
+      "chinese": 153,
+      "mixed": 149
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-9",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "504DAB13",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "504DAB13",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "3F580FE7",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "2E4BD72A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "2E4BD72A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "3F580FE7",
+          "504DAB13"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 186,
+      "chinese": 191,
+      "mixed": 189
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-10",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "4D0DE1FC",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 12
+      },
+      {
+        "id": "B4D892F9",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 12
+      },
+      {
+        "id": "9704FDD3",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 12
+      },
+      {
+        "id": "E765532F",
+        "active": true,
+        "on_hand": 15,
+        "reserved": 3,
+        "reorder_limit": 12
+      },
+      {
+        "id": "2A4098BF",
+        "active": true,
+        "on_hand": 16,
+        "reserved": 3,
+        "reorder_limit": 12
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "4D0DE1FC",
+          "9704FDD3"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 178,
+      "chinese": 188,
+      "mixed": 181
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-10",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 83,
+        "end": 89
+      },
+      "events": [
+        {
+          "id": "FF04D85E",
+          "start": 84,
+          "end": 88
+        },
+        {
+          "id": "389E7EA3",
+          "start": 82,
+          "end": 90
+        },
+        {
+          "id": "82F71FA5",
+          "start": 89,
+          "end": 92
+        },
+        {
+          "id": "1C32AA61",
+          "start": 80,
+          "end": 84
+        },
+        {
+          "id": "E23EA001",
+          "start": 79,
+          "end": 83
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "FF04D85E",
+          "389E7EA3",
+          "1C32AA61"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 137,
+      "chinese": 152,
+      "mixed": 148
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-10",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "00FB5F93",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "00FB5F93",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "79B5E8CE",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "79B5E8CE",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "7F81B177",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "7F81B177"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 188,
+      "chinese": 193,
+      "mixed": 191
+    },
+    "local_length_matched_10pct": true
+  }
+]

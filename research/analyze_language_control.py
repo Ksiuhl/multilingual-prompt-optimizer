@@ -1,10 +1,12 @@
 """Audit and summarize the frozen language-control gateway experiment offline."""
 
 import argparse
+import gzip
 import hashlib
 import json
 import random
 import statistics
+from datetime import datetime
 from pathlib import Path
 
 from strict_two_stage import oracle
@@ -32,13 +34,17 @@ def exact_answer(text, expected):
     return json.dumps(parsed, ensure_ascii=False, sort_keys=True) == json.dumps(expected, ensure_ascii=False, sort_keys=True)
 
 
+def raw(path):
+    return path.read_bytes() if path.exists() else gzip.decompress(path.with_name(path.name + ".gz").read_bytes())
+
+
 def read(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(raw(path))
 
 
 def verify_files(directory, mapping):
     for name, expected in mapping.items():
-        assert hashlib.sha256((directory / name).read_bytes()).hexdigest() == expected, name
+        assert hashlib.sha256(raw(directory / name)).hexdigest() == expected, name
 
 
 def difference_interval(rows, reference, case_ids, seed):
@@ -64,9 +70,10 @@ def analyze(directory):
     verify_files(directory, freeze["files"])
     execution = read(directory / "execution.json")
     amendment = read(directory / "execution-amendment.json")
-    assert execution["amendment_sha256"] == hashlib.sha256((directory / "execution-amendment.json").read_bytes()).hexdigest()
+    assert execution["amendment_sha256"] == hashlib.sha256(raw(directory / "execution-amendment.json")).hexdigest()
+    assert amendment["implementation_sha256"] == hashlib.sha256(raw(directory / "runner.mjs")).hexdigest()
     if execution.get("execution_recovery_sha256"):
-        assert execution["execution_recovery_sha256"] == hashlib.sha256((directory / "execution-recovery.json").read_bytes()).hexdigest()
+        assert execution["execution_recovery_sha256"] == hashlib.sha256(raw(directory / "execution-recovery.json")).hexdigest()
     assert execution["complete"], "Do not inspect interim accuracy or report a partial schedule as complete"
     cases = {c["id"]: c for c in read(directory / "cases.json")}
     assert len(cases) == 30
@@ -133,12 +140,31 @@ def analyze(directory):
                "prior_setup_quota": (amendment.get("prior_setup") or {}).get("known_quota", 0),
                "local_length_matched_cases": sum(c["local_length_matched_10pct"] for c in cases.values()),
                "errors": [r for r in rows if not r["correct"]]}
+    summary["recorded_run_wall_seconds"] = (
+        datetime.fromisoformat(execution["ended_at_utc"].replace("Z", "+00:00"))
+        - datetime.fromisoformat(execution["started_at_utc"].replace("Z", "+00:00"))
+    ).total_seconds()
     assert summary["run_quota"] == summary["quota_counter_delta"], "Log charges and interval counter do not reconcile"
     summary["whole_followup_known_quota"] = summary["run_quota"] + summary["prior_setup_quota"]
+    summary["whole_followup_counter_reconciles"] = False
+    if (directory / "whole-followup-quota.json").exists():
+        whole = read(directory / "whole-followup-quota.json")
+        initial_execution = read(directory.parent / "language-control-followup/execution.json")
+        initial_counter = next(p["delta_quota"] for p in initial_execution["checkpoints"][0]["per_connection"] if p["connection"] == 2)
+        assert initial_counter == summary["prior_setup_quota"]
+        assert whole["counter_total_delta"] == summary["whole_followup_known_quota"]
+        assert whole["gpt_counter_minus_initial_review"] == summary["run_quota"]
+        assert whole["failed_gemini_interval_delta"] == 0 and whole["failed_grok_interval_delta"] == 0
+        summary["whole_followup_counter_reconciles"] = True
     summary["review_quota"] = sum(records[a["request_id"]]["quota"] for a in attempts if a["phase"] == "review")
     for profile in amendment["models"]:
         model_rows = [r for r in rows if r["connection"] == profile["connection"]]
         result = {"gateway_label": profile["label"], "returned_labels": sorted({attempts[r["attempt_index"]].get("model_returned", "unknown") for r in model_rows}), "arms": {}, "contrasts": []}
+        result["per_case_repeats"] = [
+            {"case": case_id, "family": cases[case_id]["family"],
+             "correct_out_of_three": {arm: sum(r["correct"] for r in model_rows if r["case"] == case_id and r["arm"] == arm) for arm in ARMS}}
+            for case_id in sorted(cases)
+        ]
         for arm in ARMS:
             selected = [r for r in model_rows if r["arm"] == arm]
             result["arms"][arm] = {"correct": sum(r["correct"] for r in selected), "trials": len(selected),
@@ -147,6 +173,9 @@ def analyze(directory):
                 "reported_output_tokens": sum((r["usage"] or {}).get("completion_tokens", 0) for r in selected),
                 "reported_cached_tokens": sum(((r["usage"] or {}).get("prompt_tokens_details") or {}).get("cached_tokens", 0) for r in selected),
                 "median_latency_ms": statistics.median(r["elapsed_ms"] for r in selected),
+                "case_repeatability": {"all_three_correct": sum(c["correct_out_of_three"][arm] == 3 for c in result["per_case_repeats"]),
+                                       "variable_one_or_two_correct": sum(c["correct_out_of_three"][arm] in (1, 2) for c in result["per_case_repeats"]),
+                                       "all_three_wrong": sum(c["correct_out_of_three"][arm] == 0 for c in result["per_case_repeats"])},
                 "by_family": {f: {"correct": sum(r["correct"] for r in selected if r["family"] == f), "trials": sum(r["family"] == f for r in selected)} for f in FAMILIES}}
         for subset in ("all", "local_length_matched"):
             selected_cases = [c["id"] for c in cases.values() if subset == "all" or c["local_length_matched_10pct"]]
@@ -161,31 +190,62 @@ def write_report(directory, summary):
              f"Completed **{summary['target_trials']} target answers** on **30 fresh opaque-ID inputs**, with three arms and three repeats. "
              + ("Two gateway labels completed." if summary["two_model_study_complete"] else "**Only one gateway label was available; the planned second-model comparison remains incomplete.**"), "",
              "The supplied Gemini connection returned HTTP 400 during semantic review; the Grok connection returned HTTP 403 `routes_paused`. Neither produced benchmark answers. Those failures and the first successful GPT review are preserved in the setup evidence.", "",
+             "The initial preparation used some descriptive IDs. It produced zero target answers and was replaced by opaque IDs before benchmark inference. Its files are retained as setup history, not as scored inputs. A later single bounded review probe of the listed Gemini low variant also returned HTTP 400.", "",
              "| Arm | Exact correct | Target-only quota | Median request seconds |", "|---|---:|---:|---:|"]
     for model in summary["models"].values():
         for arm, metrics in model["arms"].items():
             lines.append(f"| {model['gateway_label']} / {arm} | {metrics['correct']}/{metrics['trials']} | {metrics['target_quota']:,} | {metrics['median_latency_ms']/1000:.2f} |")
+        english, chinese, mixed = (model["arms"][a] for a in ARMS)
+        intervals_cover_zero = all(c["bootstrap_95pct"][0] <= 0 <= c["bootstrap_95pct"][1] for c in model["contrasts"] if c["subset"] == "all")
+        interval_text = ("Both all-case paired intervals below include zero. This does not establish a mixing-specific accuracy advantage. "
+                         if intervals_cover_zero else "The paired intervals below are exploratory and conditional on this small, selected task set; they do not establish a general mixing advantage. ")
+        lines += ["", f"Mixed had {mixed['correct']-english['correct']:+d} exact passes versus English and {mixed['correct']-chinese['correct']:+d} versus Chinese-only. "
+                  + interval_text
+                  +
+                  f"Mixed also used **{mixed['reported_input_tokens']-english['reported_input_tokens']:+,} reported input tokens** versus English, "
+                  f"with a **{(mixed['target_quota']/english['target_quota']-1)*100:+.2f}% target-only quota difference** in this run. "
+                  "Neither quantity establishes end-to-end production cost; output usage and cache behavior remain uncontrolled."]
         lines += ["", "| Family | English correct | Chinese-only correct | Mixed correct |", "|---|---:|---:|---:|"]
         for family in FAMILIES:
             values = [model["arms"][arm]["by_family"][family] for arm in ARMS]
             lines.append("| " + family + " | " + " | ".join(f"{v['correct']}/{v['trials']}" for v in values) + " |")
+        lines += ["", "Descriptive repeatability (case counts, not an extra independent sample or a chance test):", "",
+                  "| Arm | All 3 correct | 1–2 correct | All 3 wrong |", "|---|---:|---:|---:|"]
+        for arm in ARMS:
+            counts = model["arms"][arm]["case_repeatability"]
+            lines.append(f"| {arm} | {counts['all_three_correct']} | {counts['variable_one_or_two_correct']} | {counts['all_three_wrong']} |")
+        examples = []
+        for suffix in ("overlap-5", "stock-4"):
+            case = next(c for c in model["per_case_repeats"] if c["case"] == "language-control-"+suffix)
+            examples.append("`"+suffix+"`: "+", ".join(f"{arm} {case['correct_out_of_three'][arm]}/3" for arm in ARMS))
+        lines += ["", "Selected posthoc examples: "+"; ".join(examples)+". These selected examples do not prove a population effect or rule out chance; "
+                  f"all case/arm repeat counts and all {len(summary['errors'])} wrong responses are preserved in the summary. The table also contains variable outcomes on repeated identical prompts."]
         lines += ["", "| Subset | Paired contrast | Difference (percentage points) | Exploratory cluster-bootstrap 95% interval |", "|---|---|---:|---:|"]
         for c in model["contrasts"]:
             lo, hi = c["bootstrap_95pct"]
             lines.append(f"| {c['subset']} ({c['cases']} cases) | Mixed minus {c['mixed_minus']} | {c['difference']*100:.2f} | [{lo*100:.2f}, {hi*100:.2f}] |")
     lines += ["", f"All run attempts cost **{summary['run_quota']:,} gateway quota units**, including **{summary['review_quota']:,}** for the run's semantic review. "
-              f"Earlier setup attempts add **{summary['prior_setup_quota']:,}**, for **{summary['whole_followup_known_quota']:,}** known units in the whole follow-up. "
-              "All attempt IDs were matched to consumption records; the completed run's sum reconciles to its interval usage counter. These are not official-provider prices.", "",
+              f"Earlier setup attempts add **{summary['prior_setup_quota']:,}** from their isolated interval counter, for **{summary['whole_followup_known_quota']:,}** known units in the whole follow-up. "
+              "Every attempt in the completed GPT run was matched to consumption records; the run's sum reconciles to its interval usage counter. "
+              f"Whole-follow-up setup/target counter reconciliation: **{summary['whole_followup_counter_reconciles']}**. These are not official-provider prices.", "",
+              f"Recorded run wall time was **{summary['recorded_run_wall_seconds']/60:.1f} minutes**, including serial requests, metadata backoff and orchestration. "
+              "This is distinct from per-request latency and excludes earlier setup attempts and engineering/manual authoring time.", "",
               "## Interpretation limits", "",
               "This study tests accuracy controls, not automatic compression admission or end-to-end optimizer savings. No production defaults changed. "
               "Mixed means a Chinese rule clause followed by an English clause, not word-by-word search. "
               "Translations were author-written and received an automated review from the same gateway label used to answer; no independent bilingual human certified them. "
               "The local o200k_base length subset includes 20 cases, not a model-native tokenizer match. All 30 cases remain the primary analysis. "
+              "That subset contains stock and latest-state inputs only; all overlap inputs fall outside the tolerance, so its task-family composition also changes. "
               "The three families were chosen after earlier failures. Repeats are clustered within inputs and the bootstrap resamples cases within family; "
               "only three templates and limited structural diversity remain, so intervals do not measure uncertainty across arbitrary tasks or models. "
               "A zero-width interval or perfect score on a narrow subset would not establish a zero population effect. "
               "Cache behavior, provider-default sampling/reasoning, hidden gateway wrappers and load are uncontrolled. "
               "Target-only quota differences exclude authoring labor and any future optimizer preparation. No answer was repaired or rerun based on correctness.", "",
+              "Chinese-only describes the natural-language task instructions. Required field names, the common English system/JSON transport instructions and SOURCE are unchanged across all arms. "
+              "This common transport wrapper differs from the earlier pilot, so accuracy percentages cannot be compared directly across those studies. "
+              "No word-level search or automatic token-selection policy was deployed in this control study.", "",
+              "These structured tasks also have deterministic implementations: the oracle can solve them without model calls. "
+              "This is a prompt-following stress test, not evidence that these workloads require an LLM.", "",
               "The gateway's metadata endpoints returned HTTP 429 after 15 target trials, with Retry-After 1200 seconds. "
               "The run paused without grading answers, honored the cooldown, and resumed the unmodified remaining schedule only after quota/log verification. "
               "The recovery amendment reduced metadata polling to at most once per 90 further requests, with the same soft quota caps. "
@@ -215,7 +275,9 @@ def plots(directory, summary):
         axes[1].plot([lo, hi], [i, i], color="#5470C6", linewidth=3)
         axes[1].scatter(value, i, color="#ED974B", zorder=3)
     axes[1].axvline(0, color="gray", linestyle="--")
-    axes[1].set(yticks=range(len(contrasts)), yticklabels=[f"Mixed − {c['mixed_minus']}\n{c['subset']} ({c['cases']} inputs)" for c in contrasts], xlabel="Accuracy difference (percentage points)", title="Exploratory 95% case-cluster intervals")
+    extent = max(5, max(abs(bound)*100 for c in contrasts for bound in c["bootstrap_95pct"]) * 1.15)
+    axes[1].set_xlim(-extent, extent)
+    axes[1].set(yticks=range(len(contrasts)), yticklabels=[f"Mixed − {c['mixed_minus']}\n{'local length subset' if c['subset'] == 'local_length_matched' else 'all cases'} ({c['cases']} inputs)" for c in contrasts], xlabel="Accuracy difference (percentage points)", title="Exploratory 95% case-cluster intervals")
     fig.suptitle(f"{model['gateway_label']} — unverified gateway label; one-model portion")
     fig.supxlabel("30 inputs × 3 arms × 3 repeats. Local length subset is a proxy; no independent second model.", fontsize=9)
     for ext in ("png", "svg", "pdf"):

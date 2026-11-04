@@ -1,0 +1,26 @@
+{
+  "status": "prepared_not_run",
+  "hypothesis": "Does mixed language improve accuracy beyond concise English and Chinese-only controls?",
+  "design": {
+    "cases": 30,
+    "families": 3,
+    "arms": 3,
+    "repeats": 3,
+    "models_required": 2,
+    "target_calls_planned": 540
+  },
+  "model_requirement": "Two directly authenticated provider endpoints, with exact returned model/version recorded. No unverified gateway identity claims.",
+  "length_control": "Local o200k_base text counts are descriptive proxies, not model billing counts. Predefine <=10% within-case maximum/minimum for matched analysis; recheck with each target tokenizer before calls. Never pad prompts or select using answers. Report all cases plus the frozen matched subset; report if empty.",
+  "primary": "Per-model, paired case-clustered accuracy difference mixed minus English. Aggregate the three repeats within each case; bootstrap cases within family (10000 resamples, fixed seed 60408), report 95% intervals. Do not treat 90 repeats as 90 independent inputs.",
+  "secondary": "Mixed minus Chinese; per-family errors; actual input/output/cache usage, retries, latency and gateway quota if applicable. Multiple contrasts are exploratory, not confirmatory discovery claims.",
+  "execution": "Same frozen requests for both models; independently shuffle per-model order with recorded seed. Same model-specific generation config across arms. Maximum two attempts only for transport or transient HTTP errors; preserve every attempt. Never retry a wrong answer. Freeze tokenizer counts, matched subset, model IDs/config and quota cap before calling.",
+  "preflight_required": [
+    "credentials for two verified provider connections",
+    "model-native token counts and frozen matched subsets",
+    "independent bilingual review of all three templates",
+    "recorded per-provider spending/quota caps"
+  ],
+  "semantic_review": "Prepared translations are author-written, not independently certified. SOURCE, field names and output contract must stay identical across arms. Review before inference, not after seeing answers.",
+  "limits": "Posthoc targeted follow-up on three previously problematic families, not a general benchmark. Latest-state fixtures have limited structural diversity. Results cannot establish a broad language advantage or optimizer savings.",
+  "cost": "No inference calls made by this preparation. Track translation/review preparation separately if future API calls are used. Never substitute official prices for gateway quota."
+}

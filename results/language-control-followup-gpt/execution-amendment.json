@@ -1,0 +1,64 @@
+{
+  "prepared_at_utc": "2026-11-04T00:08:14.156Z",
+  "original_files": {
+    "cases.json": "010c8a7867ef6104f3fea67ec57a2a0738412a6e18ecb10f0b566149451cc91b",
+    "protocol.json": "7c48ab16e69e2403e2e427d2db2f5197246b43be7a71552b4e52fc3597faf8f2",
+    "requests-one-model.json": "4e365140b5bd7b00bf924863e014e58f7b75390f13c71ad7de962bab3474fe53"
+  },
+  "status": "exploratory_gateway_adaptation_frozen_before_inference",
+  "authority": "User supplied and authorized third-party gateway connections after direct credentials were unavailable.",
+  "models": [
+    {
+      "connection": 2,
+      "label": "gpt-6.1-sol"
+    }
+  ],
+  "prior_setup": {
+    "directories": [
+      "../language-control-followup",
+      "../language-control-followup-v2"
+    ],
+    "target_trials": 0,
+    "attempts": 3,
+    "known_quota": 447,
+    "reason": "Gemini HTTP 400; Grok HTTP 403 routes_paused. Only GPT available; running half of two-model study. Opaque-ID fixtures frozen before all target calls."
+  },
+  "identity": "Unverified third-party gateway labels, not independently authenticated provider models. Model-list owned_by metadata says openai even for Grok/Gemini.",
+  "changes": [
+    "Direct provider verification unavailable: exploratory gateway study only.",
+    "Model-native tokenizers unavailable: retain all cases as primary and the frozen local o200k_base <=10% subset as secondary, not as model-native length matching.",
+    "Independent human bilingual review unavailable: obtain one automated review per available gateway label before target inference, disclose reviewer/target model reuse. No claim of independent semantic certification."
+  ],
+  "generation": {
+    "max_tokens": 4096,
+    "stream": true,
+    "temperature": "gateway default",
+    "reasoning": "gateway default",
+    "concurrency_per_connection": 1,
+    "timeout_ms": 60000,
+    "max_attempts": 2
+  },
+  "stopping": {
+    "soft_total_quota": 150000,
+    "soft_per_connection_quota": 75000,
+    "check_every_trials_per_connection": 5,
+    "policy": "Stop on metadata failure, cap, nontransient error, or repeated transient error. Soft caps can overshoot by the in-flight batch. No answer-dependent stopping."
+  },
+  "arms": [
+    "english",
+    "chinese",
+    "mixed"
+  ],
+  "cases": 30,
+  "repeats": 3,
+  "target_calls": 270,
+  "review_calls": 1,
+  "full_study_models_required": 2,
+  "model_coverage_complete": false,
+  "implementation_sha256": "f5ab980b994192bf017a813d6df67bd2e9bcd0452076cf7d70cdecc318bf0922",
+  "notes": [
+    "Same common system instruction is prepended to all user prompts. Local counts omit this shared prefix and transport framing.",
+    "No cache reset, no answer repairs, no retries for wrong/invalid JSON answers, all attempts retained.",
+    "Stock and overlap vary numeric values and order; latest-state cases reuse timestamps and vary identifiers/tie state/group order. Narrow template-level generalization only."
+  ]
+}

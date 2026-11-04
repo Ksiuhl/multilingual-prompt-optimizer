@@ -29,3 +29,6 @@ results/figures/v060-genuine-mix-* -text
 results/strict-two-stage-v060* -text
 results/strict-two-stage-v060/** -text
 results/figures/v060-strict-two-stage-* -text
+results/language-control-followup* -text
+results/language-control-followup*/** -text
+results/figures/v060-language-control-* -text

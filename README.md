@@ -20,6 +20,10 @@ searches supplied/rule alternatives and `auto` uses local Ollama generation and
 judging. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
 
+## Three-language accuracy controls (research follow-up)
+
+The [language-control follow-up](docs/language-control-followup.md) tested 30 fresh opaque-ID inputs with English, Chinese-only and Chinese/English instructions, each repeated three times. On one unverified gateway label: **english 71/90, chinese 78/90, mixed 77/90**. The planned second model was unavailable; this is not a completed cross-model result. A metadata-rate-limit pause and every setup attempt are retained. This evaluates accuracy controls, not automatic token-policy admission or end-to-end optimizer savings. Existing defaults and earlier scores remain unchanged.
+
 ## v0.6.0a5 preview: strict English freeze before translation
 
 `freeze_english`, `translation_job` and `rank_translations` separate a caller-chosen

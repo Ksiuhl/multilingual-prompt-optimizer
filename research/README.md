@@ -224,3 +224,11 @@ Do not rerun until a pass and discard the failure. Repeat paired trials under a
 declared protocol for a useful quality estimate.
 
 See `docs/reviewer-study.md` for the checked-in results and interpretation.
+
+## Three-language accuracy controls (offline)
+
+```bash
+python research/analyze_language_control.py --input results/language-control-followup-gpt --out results/local/language-control-followup
+```
+
+Audits input/recovery hashes, source consistency, prior review approval, exact JSON answers, case-cluster contrasts and request-level quota reconciliation. Reads raw or gzip evidence without inference or billing calls. The single-model portion is complete; the planned two-model comparison is not. [Methods and limitations](../docs/language-control-followup.md).

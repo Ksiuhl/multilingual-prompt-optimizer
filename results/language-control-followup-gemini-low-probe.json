@@ -1,0 +1,11 @@
+{
+  "purpose": "Bounded semantic-review probe of another model label listed by connection 3; no target answers.",
+  "model_requested": "gemini-4-argon-low",
+  "started_at_utc": "2026-11-04T00:14:42.535Z",
+  "prompt": "Review these English, Chinese-only and mixed task instructions for semantic equivalence, including field names, comparisons, tie rules, output order and no missing conditions. Do not solve any data. Return ONLY JSON {\"families\":[{\"family\":\"stock\",\"equivalent\":true,\"reason\":\"...\"},{\"family\":\"overlap\",\"equivalent\":true,\"reason\":\"...\"},{\"family\":\"latest\",\"equivalent\":true,\"reason\":\"...\"}]}. Mark false for a real ambiguity or meaning change.\n{\"stock\":{\"english\":\"Available stock = on_hand minus reserved. Put ids with active true and available stock < reorder_limit in ids, in input order.\",\"chinese\":\"可用库存 = on_hand 减去 reserved。 将 active 为 true 且可用库存 < reorder_limit 的记录的 id 按输入顺序放入 ids。\",\"mixed\":\"可用库存 = on_hand 减去 reserved。 Put ids with active true and available stock < reorder_limit in ids, in input order.\"},\"overlap\":{\"english\":\"Find events overlapping query; intervals include start and exclude end. Endpoint touching is not overlap. Return matching event id values in input order in ids.\",\"chinese\":\"找出与 query 重叠的事件；区间包含 start，不包含 end。仅端点接触不算重叠。 将匹配事件的 id 按输入顺序放入 ids。\",\"mixed\":\"找出与 query 重叠的事件；区间包含 start，不包含 end。仅端点接触不算重叠。 Return matching event id values in input order in ids.\"},\"latest\":{\"english\":\"Per device, use greatest UTC ts; ties use the later input record. Return device names whose latest state is online, sorted ascending in devices.\",\"chinese\":\"每个 device 使用最大的 UTC ts；时间相同时使用输入中靠后的记录。 将最新 state 为 online 的设备名称升序排列，放入 devices。\",\"mixed\":\"每个 device 使用最大的 UTC ts；时间相同时使用输入中靠后的记录。 Return device names whose latest state is online, sorted ascending in devices.\"}}",
+  "prompt_sha256": "82fd65d2fa74e8b3615add952f000817a156e4f95073c49aebe96a229dcf623c",
+  "status": 400,
+  "request_id": "202611040014426989039528268d9d6nH54qP5d",
+  "raw_body": "{\"error\":{\"message\":\"Upstream request failed\",\"type\":\"invalid_request_error\",\"param\":\"\",\"code\":null}}",
+  "ended_at_utc": "2026-11-04T00:14:43.857Z"
+}

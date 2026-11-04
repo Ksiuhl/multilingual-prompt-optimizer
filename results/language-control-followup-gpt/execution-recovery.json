@@ -1,0 +1,8 @@
+{
+  "recorded_at_utc": "2026-11-04T00:14:01.033Z",
+  "resume_not_before_utc": "2026-11-04T00:33:00.000Z",
+  "reason": "Quota metadata returned HTTP 429 with Retry-After: 1200. Honor cooldown; preserve all 15 target trials. No accuracy has been inspected.",
+  "change": "After successful quota/log verification, continue remaining frozen requests in batches of at most 90 before each metadata checkpoint, rather than 5. This reduces metadata request pressure. Original 75000 per-connection and 150000 total soft caps remain; up to 90 in-flight sequential target requests can exceed a soft cap before the next check.",
+  "remaining_target_calls": 255,
+  "answer_based_changes": false
+}
