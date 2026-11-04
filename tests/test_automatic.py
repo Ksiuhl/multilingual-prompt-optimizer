@@ -78,6 +78,7 @@ class AutomaticTests(unittest.TestCase):
             counter=Characters(),
             languages=("en", "zh"),
             **kwargs,
+            allow_compression=True,
         )
 
     def test_approved_shortest_candidate_keeps_payload_and_output(self):
@@ -157,13 +158,15 @@ class AutomaticTests(unittest.TestCase):
     def test_invalid_budgets_rejected_before_call(self):
         for kwargs in (
             {"verification_budget": 0},
-            {"max_combinations": 1},
+            {"max_combinations": 1, "languages": ("en", "zh")},
             {"max_clauses": 9},
             {"languages": ("en", "xx")},
         ):
             model = FakeModel([])
             with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
-                auto_optimize(Request("Summarize."), generator=model, **kwargs)
+                auto_optimize(
+                    Request("Summarize."), generator=model, **kwargs, allow_compression=True
+                )
             self.assertEqual(model.calls, [])
 
     def test_endpoints_and_cloud_models_are_rejected(self):
@@ -222,7 +225,16 @@ class AutomaticTests(unittest.TestCase):
             with patch.object(OllamaModel, "generate", side_effect=RuntimeError("offline")):
                 with redirect_stderr(StringIO()):
                     code = main(
-                        ["auto", "--input", str(source), "--output", str(dest), "--model", "local"]
+                        [
+                            "auto",
+                            "--enable-compression",
+                            "--input",
+                            str(source),
+                            "--output",
+                            str(dest),
+                            "--model",
+                            "local",
+                        ]
                     )
             self.assertEqual(code, 2)
             result = json.loads(dest.read_text(encoding="utf-8"))

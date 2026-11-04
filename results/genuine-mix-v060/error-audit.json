@@ -1,0 +1,96 @@
+{
+  "scope": "Post-grading manual inspection; no answer/fixture/grader changes and no extra model calls.",
+  "errors": [
+    {
+      "case_id": "genuine-overlap-2",
+      "arm": "concise_english",
+      "repetition": 1,
+      "expected": {
+        "answer": {
+          "ids": [
+            "GM8-W",
+            "GM8-I"
+          ]
+        }
+      },
+      "actual": {
+        "answer": {
+          "ids": [
+            "GM8-W",
+            "GM8-L",
+            "GM8-I"
+          ]
+        }
+      },
+      "observed_rule_violation": "Included GM8-L, whose end=40 equals query start=40; the half-open intervals only touch and must not overlap.",
+      "other_identical_prompt_repetition_passed": true
+    },
+    {
+      "case_id": "genuine-stock-2",
+      "arm": "genuine_mixed",
+      "repetition": 2,
+      "expected": {
+        "answer": {
+          "ids": [
+            "GM8-A",
+            "GM8-C"
+          ]
+        }
+      },
+      "actual": {
+        "answer": {
+          "ids": []
+        }
+      },
+      "observed_rule_violation": "Returned no IDs; GM8-A has available=-3 < 1 and GM8-C has available=9 < 10, and both are active.",
+      "other_identical_prompt_repetition_passed": true
+    },
+    {
+      "case_id": "genuine-latest-1",
+      "arm": "genuine_mixed",
+      "repetition": 2,
+      "expected": {
+        "answer": {
+          "devices": [
+            "GM7-A"
+          ]
+        }
+      },
+      "actual": {
+        "answer": {
+          "devices": [
+            "GM7-A",
+            "GM7-Z"
+          ]
+        }
+      },
+      "observed_rule_violation": "Included GM7-Z; its later equal-timestamp record is offline, so it must be excluded.",
+      "other_identical_prompt_repetition_passed": true
+    },
+    {
+      "case_id": "genuine-ranking-1",
+      "arm": "concise_english",
+      "repetition": 2,
+      "expected": {
+        "answer": {
+          "ids": [
+            "GM7-B",
+            "GM7-A",
+            "GM7-Z"
+          ]
+        }
+      },
+      "actual": {
+        "answer": {
+          "ids": [
+            "GM7-A",
+            "GM7-B",
+            "GM7-Z"
+          ]
+        }
+      },
+      "observed_rule_violation": "Placed GM7-A before GM7-B; tied scores require penalty ascending, so B with penalty=1 precedes A with penalty=2.",
+      "other_identical_prompt_repetition_passed": true
+    }
+  ]
+}

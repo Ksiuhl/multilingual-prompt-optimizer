@@ -1,0 +1,12 @@
+{
+  "observed_at_utc": "2026-11-04T00:58:01.495Z",
+  "scope": "All setup, review and target model endpoint calls in this language-control follow-up; original GPT/Gemini counter baselines precede the first review. Grok interval covers its only failed request; no later Grok model calls.",
+  "counter_total_delta": 68162,
+  "gpt_counter_minus_initial_review": 67715,
+  "initial_successful_gpt_review_quota": 447,
+  "failed_gemini_interval_delta": 0,
+  "failed_grok_interval_delta": 0,
+  "run_counter_delta": 67715,
+  "stable_later_gpt_read": true,
+  "model_endpoint_attempts": 275
+}

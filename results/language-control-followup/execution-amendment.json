@@ -1,0 +1,55 @@
+{
+  "prepared_at_utc": "2026-11-04T00:06:37.075Z",
+  "original_files": {
+    "cases.json": "c03bef19f7341d029817b51ae0c80aff2e7227c0afc80f1b0c9fe46f55ca66cc",
+    "protocol.json": "7c48ab16e69e2403e2e427d2db2f5197246b43be7a71552b4e52fc3597faf8f2",
+    "requests-one-model.json": "e0cfaf9fe24ecff1bc6cd561af21ccf27d94667aad64881ed2846c86a3a4ee1b"
+  },
+  "status": "exploratory_gateway_adaptation_frozen_before_inference",
+  "authority": "User supplied and authorized third-party gateway connections after direct credentials were unavailable.",
+  "models": [
+    {
+      "connection": 2,
+      "label": "gpt-6.1-sol"
+    },
+    {
+      "connection": 3,
+      "label": "gemini-4-argon"
+    }
+  ],
+  "identity": "Unverified third-party gateway labels, not independently authenticated provider models. Model-list owned_by metadata says openai even for Gemini.",
+  "changes": [
+    "Direct provider verification unavailable: exploratory gateway study only.",
+    "Model-native tokenizers unavailable: retain all cases as primary and the frozen local o200k_base <=10% subset as secondary, not as model-native length matching.",
+    "Independent human bilingual review unavailable: obtain two separate automated gateway reviews before target inference, disclose reviewer/target model reuse. No claim of independent semantic certification."
+  ],
+  "generation": {
+    "max_tokens": 4096,
+    "stream": true,
+    "temperature": "gateway default",
+    "reasoning": "gateway default",
+    "concurrency_per_connection": 1,
+    "timeout_ms": 60000,
+    "max_attempts": 2
+  },
+  "stopping": {
+    "soft_total_quota": 150000,
+    "soft_per_connection_quota": 75000,
+    "check_every_trials_per_connection": 5,
+    "policy": "Stop on metadata failure, cap, nontransient error, or repeated transient error. Soft caps can overshoot by the in-flight batch. No answer-dependent stopping."
+  },
+  "arms": [
+    "english",
+    "chinese",
+    "mixed"
+  ],
+  "cases": 30,
+  "repeats": 3,
+  "target_calls": 540,
+  "review_calls": 2,
+  "notes": [
+    "Same common system instruction is prepended to all user prompts. Local counts omit this shared prefix and transport framing.",
+    "No cache reset, no answer repairs, no retries for wrong/invalid JSON answers, all attempts retained.",
+    "Stock and overlap vary numeric values and order; latest-state cases reuse timestamps and vary identifiers/tie state/group order. Narrow template-level generalization only."
+  ]
+}

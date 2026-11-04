@@ -1,5 +1,138 @@
 # Checked-in local results
 
+Current reports and graphs display gateway quota units and percentage changes,
+not money or official-provider prices. Frozen machine records retain their
+original gateway-supplied currency labels and legacy conversion fields solely
+for reproducibility; those fields are not used as financial results.
+
+## Strict frozen-English second stage
+
+`strict-two-stage-v060/` preserves ten frozen English templates, twenty fresh
+boundary fixtures, translation-only jobs, real translation/review outputs,
+chronological freezes and all repeated answer calls. The actual token policy
+selected genuine mixing for 0/20 cases. English scored
+55/60; forced genuine diagnostics scored 57/60.
+Minimal prep-inclusive policy quota was 31.81% higher than frozen English.
+The policy outcome is derived from the matching measured arm, not a third
+independent execution. All calls remain in whole-experiment accounting; diagnostic
+reviews/targets are separated from necessary deployment overhead. Earlier
+extraction sensitivity is a post-hoc saved-data check, not new inference.
+See [the report](../docs/strict-two-stage-pilot.md) and `figures/v060-strict-two-stage-*`.
+
+## Genuine mixing pilot
+
+`genuine-mix-v060/` freezes 20 canonically distinct new payloads, ten known task
+families, all aligned language alternatives, exact full prompts and grading
+oracles. Three arms repeat twice (120 planned requests); every mixed candidate
+contains English and Chinese natural-language clauses, and differs from English.
+Exact passes: 40/40 original, 38/40 English, 38/40 mixed.
+Mixed quota was 0.39% higher than English,
+Frozen receipts, metadata checks and incomplete/incorrect attempts are retained.
+See [methods and result](../docs/genuine-mix-pilot.md), `genuine-mix-v060-summary.json`
+and `figures/v060-genuine-mix-*`. The pilot is not independent bilingual review,
+a state-of-the-art English-compressor comparison or an admission-policy change.
+
+## Fresh-input paid follow-up: completed after resumption
+
+`fresh-cache-v060/` preserves the frozen 20-input, three-repetition, 120-request
+plan and all resulting requests/attempts. The remaining 88 requests were sent
+after user-authorized resumption; the first 32 are verified unchanged against
+`resume-prefix-results.json.gz`. `resume-amendment.json` records less frequent
+meter polling and the long pause; `partial-*.json` preserves the stopped-run
+snapshots. Exact passes were 60/60 original and 60/60 compressed.
+Compressed charges were 5.90% lower,
+with all attempts reconciled to 29,819 gateway quota units.
+See [the completed report](../docs/fresh-cache-followup.md),
+`fresh-cache-v060-summary.json` and `figures/v060-fresh-cache-*`.
+No older findings, admission gate or default behavior changed.
+
+## Small cache/retry follow-up
+
+`cache-followup-v060/` freezes four known cases, three repeats per arm, balanced
+serial request order, all receipts, paired spend checks and matching charges.
+All 24 responses passed; every response reported 4,224 cached input tokens, with
+no retries. Compressed charges were 6.06% lower. Total matched debit was 5,797
+quota units. This selected-case diagnostic
+does not replace the prior cost failure or admit a template. See
+[the report](../docs/cache-followup.md), `cache-followup-v060-summary.json` and
+`figures/v060-cache-followup-*`.
+
+## Offline extraction cost audit
+
+`extraction-cost-audit-{summary,attempts,billing-fit}.json` retains the descriptive
+audit of all 69 saved attempts. The exact observed cost gap decomposes to
+-629 units on the other 31 successful pairs, +1,185 on the exceptional pair, and
++395 on five timeouts. No observations are removed from the primary result and
+the template remains rejected. The cache explanation is inferred, not verified
+upstream cache state. See [the report](../docs/extraction-cost-audit.md) and
+`figures/v060-extraction-cost-audit-*` graphs and provenance.
+
+## Scoped extraction admission (0.6.0a4)
+
+`validated-extraction-v060/` retains the frozen 60-trial primary corpus and a
+separately frozen four-trial supplement correcting distinct holdout coverage.
+All original observations remain included: 10 distinct development payloads and
+20 distinct holdout payloads across 64 trials. Every completed answer passed.
+The candidate was rejected because development costs rose. Matching charged
+quota reconciled to 16,787 units.
+The evidence artifact remains rejected; no template was enabled by these results.
+See [the audit and graph](../docs/validated-extraction.md).
+
+## Selected-failure reliability follow-up (0.6.0a2)
+
+`reliability-v060/` freezes four known content-failure cases, exact original and
+English prompts, five repetitions per arm, the unchanged grader, and all 40 raw
+responses. It also retains sanitized request-matched charge logs and a usage
+counter delta. No account balances, lifetime totals, names or unrelated logs are
+included. All 40 responses completed with no retries.
+
+The follow-up passed 15/20 original versus 11/20 English checks. Six unchanged
+prompt groups varied in correctness. English's matched gateway quota consumption
+was 0.88% lower; the combined debit was 9,520 quota units. This is selected-case diagnosis,
+not a new independent accuracy benchmark. Keep the default-policy proposal
+unmerged. See [the report](../docs/reliability-followup.md),
+`reliability-v060-summary.json` and `figures/v060-reliability-comparison.*`.
+Earlier study scores remain unchanged.
+
+## Frozen new-input candidate-search check (0.6.0a2)
+
+`heldout-v060/` contains the exact frozen inputs, candidate search receipts,
+requests, grader, runner, execution recovery notes, public-price snapshot and
+306 API-attempt receipts. The 300 planned trials produced 299 completed answers.
+Five completed GPT-labelled answers had content errors; one original request was
+interrupted. No scores or prompts were repaired after target outputs.
+
+`heldout-v060-summary.json` separates planned-trial scores, completed-answer
+scores, transport failures, common-input usage, retry-inclusive latency and
+explicit price scenarios. Actual billed cost is unknown. The full-prompt local
+reduction is 10.27%; English and mixed policy sent identical prompts on all
+50 inputs. Their differing answer scores are not a language treatment effect.
+See [the report](../docs/heldout-study.md) and
+`figures/v060-heldout-comparison.*`. Earlier studies remain unchanged.
+
+## Explicit output-contract regression (0.6.0a2)
+
+`output-contract-v060-*` retains the fixed protocol, append-only prompts, raw
+receipts and summaries for 72 follow-up answers. All passed the unchanged strict
+checks, including the outer `answer` wrapper. Six known problem inputs were reused
+twice per arm/model; these are not 72 independent questions. Earlier study scores
+remain unchanged. Contract text adds input overhead and is counted. See
+[the regression protocol](../docs/output-contract-regression.md) and the
+`figures/v060-output-contract-comparison.*` graphs.
+
+## Recorded gateway transfer study (0.6.0a1)
+
+`gateway-v060-summary.json` contains primary strict scores and separately labelled
+diagnostics. The gzip raw and preparation files retain successful, failed and
+discarded attempts without credentials. `gateway-v060-requests.json` retains the
+exact frozen prompt strings. Graphs are in `figures/v060-gateway-comparison.*`.
+
+Two gateway labels completed 150 answers each; Grok returned 403 and has no score.
+Mixing added only five Gemini-labelled input-token savings beyond concise English.
+Most mixed-policy templates are entirely English; GPT-labelled input accounting
+varied on six identical prompt pairs. Actual billed cost and model identities are
+unverified. [Protocol, uncertainty and offline reproduction](../docs/gateway-study.md).
+
 ## Template reuse (0.5.0)
 
 `template-reuse-v050.json` records four longer templates with two calibration and

@@ -1,0 +1,10 @@
+{
+  "protocol.json": "7b7650b8f4c0125131f0d407159b498edb5d89c97bed209be9ca292473b6bae6",
+  "results.json": "f01281cc16a5200d5ada9349cbc354a102092fa73b1a1d7434dffbd962a4e4f0",
+  "billing-matched.json": "6ba26283d1a81977e3171e30bd093f02452aff5b99e7ae61575e2f51a323c276",
+  "billing-combined-interval.json": "122a5a917320308ad75f17a4da13207f3a5517875172377c7a3598d795577b84",
+  "supplement_results_sha256": "ad51cdac66b923e55114591fcde1ef3307ed03ac8af93f52ffe0a0dc429df7f7",
+  "summary_sha256": "f6fdaff3d4b758a7feb0f7819aa58986d369be78d93761758631a626fc017bf4",
+  "evidence_sha256": "a825dda2e2004c3c9b0bb490c13206244927e4f31a3c7f1ea6cdac1aac97ffdf",
+  "analyzer_sha256": "709fa6cf1b933dbe24a3b4fc5b02c6a31662481f91ab80727e3a6c1ae9a19123"
+}

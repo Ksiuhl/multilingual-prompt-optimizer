@@ -48,13 +48,13 @@ class OptimizerTests(unittest.TestCase):
         req = Request(
             "Please fix this Python function.", payload=code, output_instruction="Code only."
         )
-        result = optimize(req)
+        result = optimize(req, allow_compression=True)
         for candidate in result.candidates:
             self.assertIn("\n\n" + code + "\n\nCode only.", candidate.prompt)
 
     def test_final_token_growth_falls_back(self):
         original = "Please summarize the update below in exactly three bullet points. Keep the dates and numbers unchanged, and do not add information."
-        result = optimize(Request(original))
+        result = optimize(Request(original), allow_compression=True)
         self.assertLessEqual(result.selected_tokens, result.original_tokens)
         self.assertTrue(
             any("full_prompt_token_increase" in c.rejection_reasons for c in result.candidates)
@@ -66,41 +66,41 @@ class OptimizerTests(unittest.TestCase):
             payload="data",
             candidates=(Candidate("short", "Do task."),),
         )
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertEqual(result.selected_label, "supplied:short")
         self.assertEqual(result.selected_tokens, len("Do task.\n\ndata\n\nRespond in English."))
 
     def test_larger_candidate_rejected(self):
         req = Request("Go.", candidates=(Candidate("long", "Please do a much longer thing."),))
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertEqual(result.selected_label, "original")
         self.assertFalse(result.candidates[1].accepted)
 
     def test_tie_keeps_original(self):
         req = Request("Go.", candidates=(Candidate("equal", "Do."),))
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertEqual(result.selected_label, "original")
 
     def test_missing_number_rejected(self):
         req = Request("Return 3 items.", candidates=(Candidate("wrong", "Return 2."),))
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertIn("instruction_number_changed", result.candidates[1].rejection_reasons)
 
     def test_number_in_payload_does_not_mask_removed_instruction_number(self):
         req = Request(
             "Return 3 items.", payload="3", candidates=(Candidate("wrong", "Return items."),)
         )
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertFalse(result.candidates[1].accepted)
 
     def test_repeated_numbers_preserved(self):
         req = Request("Use 3 rows and 3 columns.", candidates=(Candidate("lost", "Use 3 cells."),))
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertFalse(result.candidates[1].accepted)
 
     def test_exact_literal_is_not_removed(self):
         req = Request("Return exactly this string: please", protected_literals=("please",))
-        result = optimize(req)
+        result = optimize(req, allow_compression=True)
         self.assertIn("please", result.prompt)
         self.assertTrue(
             any(
@@ -110,7 +110,7 @@ class OptimizerTests(unittest.TestCase):
 
     def test_literal_only_in_payload_stays_unchanged(self):
         req = Request("Please copy the text.", payload="TOKEN", protected_literals=("TOKEN",))
-        result = optimize(req)
+        result = optimize(req, allow_compression=True)
         self.assertIn("\n\nTOKEN\n\n", result.prompt)
 
     def test_full_phrase_combinations_including_monolingual_are_considered(self):
@@ -122,7 +122,7 @@ class OptimizerTests(unittest.TestCase):
                 {"en": "B", "zh": "乙乙乙"},
             ),
         )
-        result = optimize(req, counter=CharacterCounter(), rule_modes=())
+        result = optimize(req, counter=CharacterCounter(), rule_modes=(), allow_compression=True)
         self.assertEqual(result.prompt, "甲 B")
         self.assertEqual(sum(c.source == "phrase_search" for c in result.candidates), 4)
 
@@ -131,10 +131,10 @@ class OptimizerTests(unittest.TestCase):
             "Long original.", phrase_options=tuple({"en": "a", "zh": "b"} for _ in range(10))
         )
         with self.assertRaisesRegex(ValueError, "1024 combinations"):
-            optimize(req, max_combinations=256)
+            optimize(req, max_combinations=256, allow_compression=True)
 
     def test_semantics_not_claimed_verified(self):
-        result = optimize(Request("Summarize."), rule_modes=())
+        result = optimize(Request("Summarize."), rule_modes=(), allow_compression=True)
         self.assertFalse(result.semantic_equivalence_verified)
 
     def test_special_token_like_text_is_plain_content(self):
@@ -152,7 +152,7 @@ class OptimizerTests(unittest.TestCase):
 
         def task(index):
             counter = AlwaysOne() if index % 2 else CharacterCounter()
-            result = optimize(req, counter=counter)
+            result = optimize(req, counter=counter, allow_compression=True)
             return all(c.tokens == counter.count(c.prompt) for c in result.candidates)
 
         with ThreadPoolExecutor(max_workers=4) as pool:
@@ -166,7 +166,7 @@ class OptimizerTests(unittest.TestCase):
                 return -1
 
         with self.assertRaisesRegex(ValueError, "nonnegative"):
-            optimize(Request("Go."), counter=Invalid(), rule_modes=())
+            optimize(Request("Go."), counter=Invalid(), rule_modes=(), allow_compression=True)
 
     def test_request_rejects_unknown_fields(self):
         with self.assertRaisesRegex(ValueError, "unknown request fields"):
@@ -194,7 +194,17 @@ class OptimizerTests(unittest.TestCase):
             output = Path(folder) / "result.json"
             request.write_text(json.dumps({"instruction": "Please summarize."}), encoding="utf-8")
             self.assertEqual(
-                main(["optimize", "--input", str(request), "--output", str(output)]), 0
+                main(
+                    [
+                        "optimize",
+                        "--enable-compression",
+                        "--input",
+                        str(request),
+                        "--output",
+                        str(output),
+                    ]
+                ),
+                0,
             )
             result = json.loads(output.read_text(encoding="utf-8"))
             self.assertLessEqual(result["selected_tokens"], result["original_tokens"])
@@ -205,7 +215,16 @@ class OptimizerTests(unittest.TestCase):
             request.write_text('{"instruction":"Go.","output_instruction":""}', encoding="utf-8")
             stream = StringIO()
             with redirect_stdout(stream):
-                status = main(["optimize", "--input", str(request), "--no-rules", "--text"])
+                status = main(
+                    [
+                        "optimize",
+                        "--enable-compression",
+                        "--input",
+                        str(request),
+                        "--no-rules",
+                        "--text",
+                    ]
+                )
             self.assertEqual(status, 0)
             self.assertEqual(stream.getvalue(), "Go.\n")
 
@@ -215,7 +234,17 @@ class OptimizerTests(unittest.TestCase):
             source.write_text('{"instruction":false}', encoding="utf-8")
             with redirect_stderr(StringIO()):
                 self.assertEqual(
-                    main(["optimize", "--input", str(source), "--output", str(output)]), 2
+                    main(
+                        [
+                            "optimize",
+                            "--enable-compression",
+                            "--input",
+                            str(source),
+                            "--output",
+                            str(output),
+                        ]
+                    ),
+                    2,
                 )
             self.assertFalse(output.exists())
 
@@ -227,7 +256,17 @@ class OptimizerTests(unittest.TestCase):
                 encoding="utf-8",
             )
             self.assertEqual(
-                main(["benchmark", "--input", str(source), "--output", str(output)]), 0
+                main(
+                    [
+                        "benchmark",
+                        "--enable-compression",
+                        "--input",
+                        str(source),
+                        "--output",
+                        str(output),
+                    ]
+                ),
+                0,
             )
             results = json.loads(output.read_text(encoding="utf-8"))
             for method in ["automatic_rules", "supplied_search", "hybrid"]:

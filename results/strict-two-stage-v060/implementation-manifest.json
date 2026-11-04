@@ -1,0 +1,10 @@
+{
+  "version": "0.6.0a5",
+  "recorded_at_utc": "2026-11-03T19:59:27.968578+00:00",
+  "scope": "Implementation snapshot recorded during the initial target batch, not code preregistration. English/review/target input freezes have separate pre-call timestamps.",
+  "files": {
+    "src/multilingual_prompt_optimizer/two_stage.py": "701baf106c7d71e299295682475f9600ad7dafa0b527908d2cc3335ab5761c4c",
+    "src/multilingual_prompt_optimizer/semantic.py": "a8f9876f8a945c6f56d622108cbea9375b60deb3c9a9cadc36c6e4f3715fc57b",
+    "research/strict_two_stage.py": "2ecbbaee9c4d270f9c1ee53ecb373f3992235a5f1c2bc04c0dc827504998c2bf"
+  }
+}

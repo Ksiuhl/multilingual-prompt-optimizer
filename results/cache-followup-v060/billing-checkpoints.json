@@ -1,0 +1,105 @@
+{
+  "start_utc": "2026-11-03T18:09:09.439Z",
+  "units": {
+    "quota_per_unit": 500000,
+    "display_unit": "USD"
+  },
+  "checks": [
+    {
+      "after_planned_pair": 1,
+      "recorded_trials": 2,
+      "observed_at_utc": "2026-11-03T18:09:20.197Z",
+      "http_status": 200,
+      "counter_delta_quota": 467,
+      "displayed_usd": 0.000934
+    },
+    {
+      "after_planned_pair": 2,
+      "recorded_trials": 4,
+      "observed_at_utc": "2026-11-03T18:09:24.456Z",
+      "http_status": 200,
+      "counter_delta_quota": 928,
+      "displayed_usd": 0.001856
+    },
+    {
+      "after_planned_pair": 3,
+      "recorded_trials": 6,
+      "observed_at_utc": "2026-11-03T18:09:28.574Z",
+      "http_status": 200,
+      "counter_delta_quota": 1411,
+      "displayed_usd": 0.002822
+    },
+    {
+      "after_planned_pair": 4,
+      "recorded_trials": 8,
+      "observed_at_utc": "2026-11-03T18:09:56.268Z",
+      "http_status": 200,
+      "counter_delta_quota": 1907,
+      "displayed_usd": 0.003814
+    },
+    {
+      "after_planned_pair": 5,
+      "recorded_trials": 10,
+      "observed_at_utc": "2026-11-03T18:10:00.876Z",
+      "http_status": 200,
+      "counter_delta_quota": 2404,
+      "displayed_usd": 0.004808
+    },
+    {
+      "after_planned_pair": 6,
+      "recorded_trials": 12,
+      "observed_at_utc": "2026-11-03T18:10:25.177Z",
+      "http_status": 200,
+      "counter_delta_quota": 2889,
+      "displayed_usd": 0.005778
+    },
+    {
+      "after_planned_pair": 7,
+      "recorded_trials": 14,
+      "observed_at_utc": "2026-11-03T18:10:50.058Z",
+      "http_status": 200,
+      "counter_delta_quota": 3372,
+      "displayed_usd": 0.006744
+    },
+    {
+      "after_planned_pair": 8,
+      "recorded_trials": 16,
+      "observed_at_utc": "2026-11-03T18:11:00.379Z",
+      "http_status": 200,
+      "counter_delta_quota": 3841,
+      "displayed_usd": 0.007682
+    },
+    {
+      "after_planned_pair": 9,
+      "recorded_trials": 18,
+      "observed_at_utc": "2026-11-03T18:11:11.726Z",
+      "http_status": 200,
+      "counter_delta_quota": 4348,
+      "displayed_usd": 0.008696
+    },
+    {
+      "after_planned_pair": 10,
+      "recorded_trials": 20,
+      "observed_at_utc": "2026-11-03T18:11:21.975Z",
+      "http_status": 200,
+      "counter_delta_quota": 4845,
+      "displayed_usd": 0.00969
+    },
+    {
+      "after_planned_pair": 11,
+      "recorded_trials": 22,
+      "observed_at_utc": "2026-11-03T18:11:28.808Z",
+      "http_status": 200,
+      "counter_delta_quota": 5306,
+      "displayed_usd": 0.010612
+    },
+    {
+      "after_planned_pair": 12,
+      "recorded_trials": 24,
+      "observed_at_utc": "2026-11-03T18:11:39.427Z",
+      "http_status": 200,
+      "counter_delta_quota": 5797,
+      "displayed_usd": 0.011594
+    }
+  ]
+}

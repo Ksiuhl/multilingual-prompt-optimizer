@@ -1,18 +1,233 @@
 # Multilingual Prompt Optimizer
 
-A local Python research tool that selects shorter prompt representations while
-keeping source text and code separate from editable instructions.
+## Research closeout — 4 November 2026
 
-It counts every **complete candidate prompt**, rejects candidates that grow or lose
+**The current investigation is concluded.** Recorded experiments did not establish reliable incremental cost savings or an accuracy advantage specific to mixing languages after concise English. The project is an experimental benchmark and research prototype. The [final conclusion](docs/final-conclusion.md) explains the evidence, limitations and recommendation; it does not claim that every possible multilingual prompt is ineffective.
+
+The latest controls scored **71/90 English, 78/90 Chinese-only and 77/90 mixed** on one unverified gateway label. Mixed used more reported input tokens and 5.25% more target-only quota than English. The second-model replication and clearer-English control were not completed and are explicitly deferred. No additional paid experiment is scheduled. Compression remains opt-in, with originals preserved by default.
+
+Cost displays use **gateway quota units and percentage changes**. They are not
+official-provider prices or actual-money estimates. Frozen receipts retain the
+gateway's original metadata for reproducibility.
+
+A local Python research tool that preserves original prompts by default.
+Concise-English compression and multilingual mixing are explicit experiments. Source text and code
+stay separate from editable instructions.
+
+When compression is enabled it counts every **complete candidate prompt**, rejects candidates that grow or lose
 protected numeric/literal strings, and keeps the original as a fallback. It builds
 on [PromptMin](https://github.com/DelvyG/promptmin) for automatic English/Spanish rule
 rewriting and supports user-supplied multilingual phrase alternatives.
 
-**Status:** working research prototype. The `optimize` command selects supplied/rule
-alternatives without inference. The new `auto` command generates translations and
-reformulations using a local Ollama model, then runs a separate semantic judging
-pass. Neither structural checks nor model judgments prove equivalent meaning,
+**Status:** working research prototype. Without an explicit opt-in, `optimize`,
+`auto`, benchmarks and cached templates retain the original composed prompt.
+`auto` makes no generation or judging calls in this mode. With opt-in, `optimize`
+searches supplied/rule alternatives and `auto` uses local Ollama generation and
+judging. Neither structural checks nor model judgments prove equivalent meaning,
 answer accuracy, or lower total cost.
+
+## Three-language accuracy controls (research follow-up)
+
+The [language-control follow-up](docs/language-control-followup.md) tested 30 fresh opaque-ID inputs with English, Chinese-only and Chinese/English instructions, each repeated three times. On one unverified gateway label: **english 71/90, chinese 78/90, mixed 77/90**. The planned second model was unavailable; this is not a completed cross-model result. A metadata-rate-limit pause and every setup attempt are retained. This evaluates accuracy controls, not automatic token-policy admission or end-to-end optimizer savings. Existing defaults and earlier scores remain unchanged.
+
+## v0.6.0a5 preview: strict English freeze before translation
+
+`freeze_english`, `translation_job` and `rank_translations` separate a caller-chosen
+concise-English baseline from translation-only search. The translator receives
+only exact English segments, their hash and target language names. It cannot
+rewrite English or see source data. Full-prompt ranking preserves the English
+fallback; ranking/model opinions are not semantic guarantees or task admission.
+This preview exposes the strict stage through the separate API and study workflow;
+the existing `mpo auto` command keeps its previous opt-in behavior.
+
+The [strict two-stage pilot](docs/strict-two-stage-pilot.md) fixed English before
+ten real translation calls and ten diagnostic reviews, then tested twenty fresh
+payloads three times. Exact passes were **55/60 English and
+57/60 genuine diagnostic**. Actual policy selected mixed
+for **0/20 cases**, retaining English otherwise.
+Minimal prep-inclusive policy quota was 31.81% higher than frozen English.
+Policy outcomes reuse the observed chosen representation; they are not an
+independent third arm. All preparation/diagnostic charges and accounting scenarios
+are preserved. Original-only defaults and earlier results remain unchanged.
+
+## v0.6.0a4 preview: original first, compression opt-in
+
+**New scoped mode:** `JsonExtractionTemplate` requires paired, disjoint
+development/holdout evidence, exact answers and lower reconciled charges before
+selecting a shorter prompt. Runtime answer checking and original fallback remain
+mandatory through its `execute` method. General defaults remain original-only.
+
+The first template passed every extraction check in 64 trials on 30 distinct
+payloads, including an audited four-call uniqueness supplement. It was still
+**rejected by the cost gate**: development charges increased, and total charges
+were about 12% higher. No profitable template is claimed. This projection is also
+computable without an LLM. [Mode, evidence, audit and graph](docs/validated-extraction.md).
+
+The [offline cost audit](docs/extraction-cost-audit.md) locates the 951-unit
+increase: -629 across the other 31 successful pairs, +1,185 from one successful
+pair lacking cache metadata, and +395 from five charged timeouts. A fitted
+cache-discount scenario explains the charges; actual cache state is unconfirmed.
+The full result and admission rejection remain unchanged.
+
+The separate [small cache/retry follow-up](docs/cache-followup.md) repeated four
+known prompt pairs three times in balanced serial order: 24/24 correct answers,
+equal positive cache counts, no retries, and 6.06% lower compressed gateway
+credit charges. It used 5,797 gateway quota units. This is diagnostic
+evidence on reused inputs; it does not replace the failed experiment, satisfy
+fresh holdout admission, or change the original-only default.
+
+The [genuine mixing pilot](docs/genuine-mix-pilot.md) compares original,
+concise English and genuinely English/Chinese mixed instructions on 20 new
+payloads across ten known task families, repeated twice. Exact passes were
+**40/40 original, 38/40 English and 38/40 mixed**.
+Mixed quota was 0.39% higher than English,
+All 20 mixed candidates differ from English; Japanese was considered but not
+selected. This small, manually authored pilot does not establish a general
+language-mixing advantage. The English baseline uses concise aligned clauses;
+PromptMin left every selected English instruction unchanged. Defaults and
+earlier studies remain unchanged.
+
+The [fresh-input paid follow-up](docs/fresh-cache-followup.md) completed **120/120
+planned requests** on 20 new inputs, three repetitions per arm, after resuming
+the stopped 32-request prefix. Exact passes were **60/60 original and 60/60 compressed**;
+reported input usage fell 1.35%.
+Compressed charges were 5.90% lower,
+with all attempts reconciled to 29,819 gateway quota units.
+The continuation retained every earlier response and changed only meter polling
+frequency. The long pause can affect cache/load; this is a single-schema
+observational study and does not change admission or original-only defaults.
+
+**Release hold:** a separate five-repeat follow-up on four known content-failure
+cases passed **15/20 original vs 11/20 concise-English** checks. Matching request
+charges reconciled with the gateway counter: English cost **0.88% less** in
+gateway quota units. That result rejected the earlier a2 proposal to enable
+English rewriting by default. The a3 implementation now preserves originals;
+this preview remains unmerged pending review. Enable rewrites only with
+task-specific validation. [Results, charge audit and graph](docs/reliability-followup.md).
+These selected-case follow-up scores are separate from the earlier studies.
+
+The new policy preserves the original even when shorter supplied alternatives,
+phrase options or calibrated cached rewrites exist. The ordinary default performs
+counting only:
+
+```bash
+mpo optimize --input examples/summary.json
+mpo auto --input examples/automatic.json
+```
+
+Explicit experiments require `--enable-compression`. English is the initial
+language; multilingual generation additionally needs a language list or flag:
+
+```bash
+mpo optimize --enable-compression --input examples/summary.json
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b --languages en,zh,ja
+```
+
+Python callers must pass `allow_compression=True` to `optimize`, `auto_optimize`
+or `TemplateCache.apply`. Rule/language options, a model name, supplied candidates,
+and previous cache admission do not implicitly enable compression. The result
+reports `compression_enabled`; the disabled automatic status is
+`compression_disabled`. Opting in does not certify task accuracy. See
+[the migration and validation policy](docs/original-policy.md).
+
+All studies below tested earlier experimental policies; their scores are not
+claims about the a3 original-only default. The a3 change has local regression
+coverage and makes no new inference-accuracy claim.
+
+### New 50-input structured-task check
+
+We prospectively froze 50 new inputs across ten new templates and ran all three
+arms on the same two gateway labels. There were 299 completed responses from
+300 planned trials; one original GPT-labelled request was interrupted.
+
+| Gateway label (unverified) | Original strict passes | Concise English | Mixed policy |
+|---|---:|---:|---:|
+| gpt-6.1-sol | 47/50 planned (47/49 completed) | 47/50 | 50/50 |
+| gemini-4-argon | 50/50 | 50/50 | 50/50 |
+
+Local `o200k_base` full-prompt counts fell **10.27%** with concise English,
+including source data and the JSON contract. All 50 mixed-policy prompts were
+identical to their English counterparts: **zero additional input savings**.
+Their differing GPT-labelled scores therefore reflect variability on identical
+prompts. Five completed GPT-labelled answers had content errors despite valid
+JSON wrappers. Accuracy preservation needs more evidence.
+
+Candidate clauses were manually authored; automatic translation was not tested.
+Public gateway pricing supports labelled scenarios, while actual charges,
+active billing groups and failed-request costs remain unverified. The merge
+criteria of preserved accuracy and lower actual total cost remain unresolved.
+See [methods, failures, usage, price scenarios and graphs](docs/heldout-study.md).
+Original study scores below remain unchanged.
+
+### Recorded 50-input transfer study
+
+We froze 50 synthetic inputs across ten task templates and ran 150 requests each
+through two **unverified gateway model labels**. This reused Gemini-selected
+prompts rather than optimizing separately for each target tokenizer.
+
+| Gateway label | Original | Concise English | Mixed policy |
+| --- | ---: | ---: | ---: |
+| `gpt-6.1-sol` | 50/50 | 44/50 | 46/50 |
+| `gemini-4-argon` | 50/50 | 50/50 | 50/50 |
+
+Scores include strict output-format checks. All GPT-labelled failures omitted the
+outer `answer` wrapper; their required facts pass a separate diagnostic when that
+wrapper is added. Primary scores remain unchanged. Grok returned 403 routes paused
+and has no accuracy score.
+
+**Concise English provided almost all measured input reduction.** The
+Gemini-labelled endpoint reported 7.7% fewer input tokens with concise English;
+mixed policy saved just five additional tokens across 50 inputs (about 0.02%).
+Forty-five English/mixed pairs had byte-identical prompts, so their answer
+differences cannot be attributed to language mixing. The GPT-labelled endpoint
+reported different input counts on six identical pairs, limiting token conclusions.
+Actual gateway prices and invoiced cost are unknown. This does not demonstrate
+general accuracy, a multilingual advantage, or net optimizer cost savings.
+
+![Recorded gateway task and token comparisons](results/figures/v060-gateway-comparison.png)
+
+Read [the study and limitations](docs/gateway-study.md). Recompute its checks and
+graphs offline after installing `.[plots]`:
+
+```bash
+python research/analyze_gateway_study.py
+```
+
+### Explicit JSON output contracts
+
+Keep output formatting in the immutable `output_instruction` section:
+
+```python
+from multilingual_prompt_optimizer import Request, json_object_contract, optimize
+
+request = Request(
+    instruction="Summarize the rollout: launch facts, progress, and next review.",
+    payload="Your source note goes here.",
+    output_instruction=json_object_contract(("launch", "progress", "next")),
+)
+result = optimize(request)
+```
+
+The helper explicitly requires the outer `answer` object and nested result keys.
+Its text is retained and counted in every complete candidate prompt. It does not
+enforce a native provider schema or repair returned answers. CLI example:
+
+```bash
+mpo optimize --enable-compression --input examples/summary-contract.json
+```
+
+A separate targeted regression on the six known problematic summaries retested
+all three prompt versions twice on both gateway labels. **All 72 responses passed
+the unchanged strict checks**, with no missing wrappers. These are selected known
+cases, not a new held-out benchmark. The original study scores above remain
+unchanged. The contract adds input overhead (about 124 tokens/request on the
+Gemini-labelled regression); no net-cost saving is claimed.
+See [the regression protocol and graph](docs/output-contract-regression.md).
+
+This preview is version `0.6.0a4`; version 0.5 remains the published baseline while
+the development change is reviewed. Package and repository names are retained for
+continuity with the original multilingual research question.
 
 ## v0.5: reusable instruction cache
 
@@ -95,8 +310,8 @@ Install and run:
 
 ```bash
 python -m pip install -e .
-mpo optimize --input examples/summary.json --output results/local/summary.json
-mpo optimize --input examples/summary.json --text
+mpo optimize --enable-compression --input examples/summary.json --output results/local/summary.json
+mpo optimize --enable-compression --input examples/summary.json --text
 ```
 
 The first use of a `tiktoken` encoding may download its public vocabulary. Prompt
@@ -164,11 +379,12 @@ multilingual generator and reviewer once (approximately 2.5 GB and 5.2 GB):
 ```bash
 ollama pull qwen3:4b
 ollama pull qwen3:8b
-mpo auto --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
+mpo auto --enable-compression --input examples/automatic.json --model qwen3:4b --verifier-model qwen3:8b --output results/local/auto.json
 ```
 
 Edit the example's `instruction` and `payload` to try your own text. No prewritten
-`phrase_options` are required. Default languages are English, Chinese and Japanese.
+`phrase_options` are required. When enabled, the initial generation language is English.
+Use `--languages en,zh,ja` or `--experimental-multilingual` for multilingual trials.
 The tool generates aligned clauses, searches up to 256 combinations, then asks a
 model to judge the shortest structurally acceptable complete instructions. It
 selects the first approved candidate, or keeps the original if none is approved.
@@ -207,7 +423,8 @@ result = optimize(
         instruction="Please list exactly 3 risks from the text.",
         payload="Supplier delay; incomplete testing; budget overrun.",
         candidates=(Candidate("concise", "List exactly 3 risks from the text."),),
-    )
+    ),
+    allow_compression=True,  # Explicit experimental search; validate task outputs.
 )
 
 print(result.prompt)
@@ -215,7 +432,7 @@ print(result.saved_tokens)
 print(result.to_dict())
 ```
 
-Equal-token alternatives keep the original. Results include every candidate, its
+Equal-token alternatives keep the original. With compression enabled, results include every searched candidate, its
 count, acceptance decision, rejection reasons, and selection label.
 
 ## Other tokenizers
@@ -225,7 +442,7 @@ publisher:
 
 ```bash
 python -m pip install -e ".[hf]"
-mpo optimize --input examples/summary.json --tokenizer-json path/to/tokenizer.json
+mpo optimize --enable-compression --input examples/summary.json --tokenizer-json path/to/tokenizer.json
 ```
 
 This reads the local tokenizer file and records its SHA256 fingerprint. It does not
@@ -235,8 +452,8 @@ provider's chat template, hidden system prompts, reasoning tokens, or billable u
 ## Reproduce the local benchmark
 
 ```bash
-mpo benchmark --input data/development.json --output results/local/development.json
-mpo benchmark --input data/spanish-coverage.json --output results/local/spanish.json
+mpo benchmark --enable-compression --input data/development.json --output results/local/development.json
+mpo benchmark --enable-compression --input data/spanish-coverage.json --output results/local/spanish.json
 ```
 
 The runner compares automatic rules, supplied alternatives, and their combined pool,

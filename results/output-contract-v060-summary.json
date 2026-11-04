@@ -1,0 +1,124 @@
+{
+  "complete": true,
+  "unique_inputs": 6,
+  "repetitions": 2,
+  "requests_per_model": 36,
+  "scope": "Targeted regression on six previously failed summary inputs, not an independent benchmark.",
+  "profiles": [
+    {
+      "model_label": "gpt-6.1-sol",
+      "arms": {
+        "original": {
+          "before_correct": 6,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 27953,
+          "input_tokens_after": 57738,
+          "output_tokens_before": 555,
+          "output_tokens_after": 841,
+          "mean_latency_ms_after": 4570.116058333544
+        },
+        "concise_english": {
+          "before_correct": 0,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 27855,
+          "input_tokens_after": 57214,
+          "output_tokens_before": 372,
+          "output_tokens_after": 990,
+          "mean_latency_ms_after": 4734.802241666631
+        },
+        "mixed": {
+          "before_correct": 2,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 27855,
+          "input_tokens_after": 57214,
+          "output_tokens_before": 301,
+          "output_tokens_after": 934,
+          "mean_latency_ms_after": 5765.970158333347
+        }
+      }
+    },
+    {
+      "model_label": "gemini-4-argon",
+      "arms": {
+        "original": {
+          "before_correct": 6,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 4147,
+          "input_tokens_after": 9778,
+          "output_tokens_before": 1460,
+          "output_tokens_after": 792,
+          "mean_latency_ms_after": 6083.912333333322
+        },
+        "concise_english": {
+          "before_correct": 6,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 3885,
+          "input_tokens_after": 9254,
+          "output_tokens_before": 1777,
+          "output_tokens_after": 851,
+          "mean_latency_ms_after": 6002.805533333216
+        },
+        "mixed": {
+          "before_correct": 6,
+          "before_n": 6,
+          "after_correct": 12,
+          "after_n": 12,
+          "correct_by_repeat": [
+            6,
+            6
+          ],
+          "missing_wrapper_after": 0,
+          "input_tokens_before": 3885,
+          "input_tokens_after": 9254,
+          "output_tokens_before": 1774,
+          "output_tokens_after": 767,
+          "mean_latency_ms_after": 6325.209491666562
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Selected on known failures, so this is a regression check only.",
+    "Two repetitions on the same six inputs are not twelve independent questions.",
+    "Prompt and output token counts include the extra contract; no claim of free formatting reliability.",
+    "Third-party gateway labels, usage accounting and billing remain unverified.",
+    "Prior strict scores and original raw answers remain unchanged.",
+    "All concise-English/mixed-policy pairs in this regression have identical prompts."
+  ],
+  "actual_invoiced_usd": null
+}

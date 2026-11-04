@@ -1,0 +1,68 @@
+{
+  "saved_at_utc": "2026-11-04T00:46:18.984Z",
+  "scope": "Model-list responses captured during initial setup before semantic review and target inference; saved later without additional network calls.",
+  "connections": [
+    {
+      "connection": 1,
+      "status": 200,
+      "models": [
+        {
+          "id": "grok-4.6",
+          "owned_by": "openai"
+        },
+        {
+          "id": "grok-4.7",
+          "owned_by": "openai"
+        }
+      ]
+    },
+    {
+      "connection": 2,
+      "status": 200,
+      "models": [
+        {
+          "id": "codex-auto-review",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gpt-6-astra",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gpt-6-sol",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "owned_by": "openai"
+        }
+      ]
+    },
+    {
+      "connection": 3,
+      "status": 200,
+      "models": [
+        {
+          "id": "gemini-4-argon",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gemini-4-argon-high",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gemini-4-argon-low",
+          "owned_by": "openai"
+        },
+        {
+          "id": "gemini-4-argon-medium",
+          "owned_by": "openai"
+        }
+      ]
+    }
+  ]
+}

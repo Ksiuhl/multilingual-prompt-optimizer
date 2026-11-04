@@ -96,7 +96,7 @@ def main():
     wall = time.perf_counter()
     for case in corpus["items"]:
         request = Request.from_dict(case["request"])
-        baseline = optimize(request, counter=counter, rule_modes=())
+        baseline = optimize(request, counter=counter, rule_modes=(), allow_compression=True)
         gs = len(generator.calls)
         gen_start = time.perf_counter()
         error = None
@@ -123,6 +123,7 @@ def main():
                         replace(request, phrase_options=selected_options),
                         counter=counter,
                         rule_modes=(),
+                        allow_compression=True,
                     )
                     chosen, judgments = _review_candidates(request, pool, reviewer, 8)
                 except (RuntimeError, ValueError) as exc:

@@ -1,0 +1,18 @@
+{
+  "endpoint": "https://gpt-api.cc/api/usage/token/",
+  "before_http_status": 200,
+  "after_http_status": 200,
+  "start_utc": "2026-11-03T16:07:30.534Z",
+  "end_utc": "2026-11-03T16:10:11.147Z",
+  "used_quota_delta": 9520,
+  "quota_per_unit": 500000,
+  "display_unit": "USD",
+  "displayed_usd_delta": 0.01904,
+  "attribution": "Key-specific interval counter; may include other clients using the same key. Not an invoice. Per-request matching is checked separately.",
+  "post_run_check": {
+    "observed_at_utc": "2026-11-03T16:10:34.191Z",
+    "http_status": 200,
+    "used_quota_delta": 9520,
+    "stable_since_initial_after_read": true
+  }
+}

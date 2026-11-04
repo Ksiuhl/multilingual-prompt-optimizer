@@ -1,5 +1,157 @@
 # Reproduce the development studies
 
+The current investigation is concluded. Read the [final conclusion](../docs/final-conclusion.md)
+for the evidence and limits. Commands below reproduce recorded analyses; the presence
+of an inference runner does not indicate a scheduled paid experiment. Further controls
+and second-model replication are deferred, not claimed complete.
+
+## Strict frozen-English second stage (offline)
+
+```bash
+python research/analyze_strict_two_stage.py results/strict-two-stage-v060 --out results/local/strict-two-stage-v060
+```
+
+Audits chronological English/review/target freezes, English-only translation
+inputs, candidate provenance, source immutability, exact answers and all
+preparation/target charge records. Distinguishes actual experiment debit from
+minimal and conservative reusable-policy accounting. Cached tokenizer data and
+earlier bundles are needed for fully offline recount/disjointness checks.
+No model or billing calls. [Methods, result and earlier extraction sensitivity](../docs/strict-two-stage-pilot.md).
+
+## Genuine mixing pilot (offline)
+
+```bash
+python research/analyze_genuine_mix.py results/genuine-mix-v060 --out results/local/genuine-mix-v060
+```
+
+Verifies genuine natural-language mixing, frozen composed prompts, exact answer
+checks, fresh-payload disjointness, repeat discordances, attempt coverage and
+request-ID matched quota. No model or billing calls. The earlier frozen bundles
+are required for disjointness checks. [Methods, limits and result](../docs/genuine-mix-pilot.md).
+`genuine_mix_v060.py` prepares this synthetic fixture design; it refuses to
+overwrite an already frozen directory. It does not call models or publish data.
+
+## Fresh-input paid follow-up (offline)
+
+```bash
+python research/analyze_fresh_cache.py results/fresh-cache-v060 --out results/local/fresh-cache-v060
+```
+
+This verifies all 120 frozen request identities/order, 20 new distinct inputs,
+disjointness from prior corpora, exact answers and attributable charges. It
+checks that the first 32 responses are unchanged against their saved prefix,
+and records the declared meter-polling amendment and long resumption gap.
+No model or billing calls are made. Read the [completed report](../docs/fresh-cache-followup.md)
+for coverage, reconciliation and cache/timing limits. Earlier evidence and
+admission decisions are unchanged.
+
+## Small cache/retry follow-up (offline)
+
+```bash
+python research/analyze_cache_followup.py results/cache-followup-v060 --out results/local/cache-followup-v060
+```
+
+This verifies the frozen 24-request serial order, exact earlier prompts, raw
+answer checks and all matched charges. It makes no model/billing calls. Cache
+state was observed, not reset or controlled. The earlier extraction bundle is
+required for identity checks. [Result and limits](../docs/cache-followup.md).
+
+## Extraction cost audit (offline)
+
+```bash
+python research/audit_extraction_costs.py results/validated-extraction-v060 --out results/local/extraction-cost-audit
+```
+
+This audits all saved attempts, matched charges, cache metadata and local token
+counts. It makes no inference or billing calls. The cached tiktoken encoding is
+needed for a fully offline run. The 951-unit cost increase is unchanged; subset
+and billing-fit calculations are descriptive diagnostics. [Findings](../docs/extraction-cost-audit.md).
+
+## Scoped extraction admission (offline)
+
+```bash
+python research/analyze_validated_extraction.py results/validated-extraction-v060 --out results/local/validated-extraction-v060
+```
+
+This independently regrades the frozen primary run and separately frozen
+uniqueness supplement, audits matching charges, counts distinct coverage, and
+regenerates the admission evidence and graph. It makes no API calls. All answers
+passed; the candidate was cost-rejected. [Methods and limits](../docs/validated-extraction.md).
+
+The a3 application preserves originals by default. Research benchmark harnesses
+explicitly enable compression for their experiments. Add `--enable-compression`
+to `run_checked_case.py` or `run_cached_template.py` when testing rewrites. Offline
+analyses below use frozen answers and graders, so the new policy does not alter
+their scores. [Policy and migration](../docs/original-policy.md).
+
+## Selected-failure reliability and charge audit (offline)
+
+```bash
+python research/analyze_reliability_v060.py results/reliability-v060 --out results/local/reliability-v060
+```
+
+This regrades 40 responses from five repeats of both arms on four selected known
+failure cases. It checks identity with the earlier frozen prompts and cases,
+then matches sanitized consumption-log records to response request IDs and
+reconciles their sum with the key's interval quota debit. Neither credentials
+nor network calls are needed. The earlier `results/heldout-v060/` bundle must
+remain present. [Results and release decision](../docs/reliability-followup.md).
+
+## Frozen new-input check (offline)
+
+```bash
+python research/analyze_heldout_v060.py results/heldout-v060 --out results/local/heldout-v060
+```
+
+This verifies the frozen dataset, candidate preparation, requests and grader,
+then regrades the raw answers and generates comparison figures without API
+calls. The study contains 50 newly authored inputs across ten new structured
+task templates. EN/ZH/JA candidate clauses were written before target calls;
+local `o200k_base` search chose identical English/mixed-policy prompts for all
+50 inputs. This is a synthetic candidate-search check, with a proxy tokenizer,
+rather than a test of automatic translation or authenticated provider models.
+
+For a **new, separately recorded API execution**, set `GATEWAY_GPT_KEY` and
+`GATEWAY_GEMINI_KEY` for the third-party `https://gpt-api.cc` service, then run:
+
+```bash
+node research/run_heldout_v060.mjs results/heldout-v060 results/local/new-heldout-run
+```
+
+This sends 150 frozen requests per route, with two concurrent requests per
+route and up to two attempts per request for transport/server errors. The
+published run is preserved. Keys stay in environment variables; no credentials
+are needed for the offline analysis. Rates, availability and model identities
+are properties of that gateway and are not verified by this repository.
+
+## Output-contract regression (offline)
+
+```bash
+python research/analyze_output_contract.py
+```
+
+This verifies append-only prompt changes and regrades the 72 follow-up responses
+using the original frozen rubric. It writes summaries and figures under
+`results/local/output-contract-v060/` without any API calls. The six inputs were
+selected from earlier format failures; this is targeted regression evidence, not
+an independent accuracy benchmark. See [the protocol](../docs/output-contract-regression.md).
+
+## v0.6 gateway study (offline)
+
+After installing the package and `.[plots]`, run:
+
+```bash
+python research/analyze_gateway_study.py
+```
+
+No credentials or model calls are needed. The script verifies the exact frozen
+rubric and prompt hashes, rechecks all 300 completed answers, and writes scores,
+usage, latency, diagnostics and figures to `results/local/gateway-v060/`.
+The gateway labels are not independently authenticated. Grok has no accuracy
+score because its route was paused. See [the full protocol](../docs/gateway-study.md).
+
+Earlier studies below retain their recorded versions and explicit language modes.
+
 For the longer-template reuse study:
 
 ```bash
@@ -77,3 +229,11 @@ Do not rerun until a pass and discard the failure. Repeat paired trials under a
 declared protocol for a useful quality estimate.
 
 See `docs/reviewer-study.md` for the checked-in results and interpretation.
+
+## Three-language accuracy controls (offline)
+
+```bash
+python research/analyze_language_control.py --input results/language-control-followup-gpt --out results/local/language-control-followup
+```
+
+Audits input/recovery hashes, source consistency, prior review approval, exact JSON answers, case-cluster contrasts and request-level quota reconciliation. Reads raw or gzip evidence without inference or billing calls. The single-model portion is complete; the planned two-model comparison is not. [Methods and limitations](../docs/language-control-followup.md).

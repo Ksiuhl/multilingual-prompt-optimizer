@@ -1,0 +1,669 @@
+{
+  "execution_complete": true,
+  "cases": 20,
+  "families": 10,
+  "repetitions": 3,
+  "phases": {
+    "translation": {
+      "planned": 10,
+      "recorded": 10,
+      "execution_complete": true,
+      "http_attempts": 10,
+      "known_quota": 4742,
+      "model_request_ms": 109043.49199999869
+    },
+    "review": {
+      "planned": 10,
+      "recorded": 10,
+      "execution_complete": true,
+      "http_attempts": 10,
+      "known_quota": 3770,
+      "model_request_ms": 86222.2890000008
+    },
+    "target": {
+      "planned": 120,
+      "recorded": 120,
+      "execution_complete": true,
+      "http_attempts": 120,
+      "known_quota": 29738,
+      "model_request_ms": 1148914.4789000042
+    }
+  },
+  "arms": {
+    "concise_english": {
+      "attempted": 60,
+      "completed": 60,
+      "correct": 55,
+      "known_quota": 14906,
+      "http_attempts": 60,
+      "median_request_ms": 4031.3322499990463,
+      "input_tokens": 276318,
+      "output_tokens": 2998
+    },
+    "genuine_diagnostic": {
+      "attempted": 60,
+      "completed": 60,
+      "correct": 57,
+      "known_quota": 14832,
+      "http_attempts": 60,
+      "median_request_ms": 7939.54929999914,
+      "input_tokens": 276612,
+      "output_tokens": 2767
+    }
+  },
+  "actual_experiment_quota": 38250,
+  "counter_reconciles": true,
+  "cost_complete": true,
+  "policy_mixed_cases": 0,
+  "approved_diagnostic_cases": 20,
+  "policy_observations": 60,
+  "policy_correct": 55,
+  "policy_target_quota": 14906,
+  "minimal_policy_preparation_quota": 4742,
+  "all_preparation_quota": 8512,
+  "minimal_policy_total_quota": 19648,
+  "conservative_all_prep_policy_quota": 23418,
+  "baseline_target_quota": 14906,
+  "all_prep_forced_genuine_quota": 23344,
+  "all_prep_forced_genuine_vs_baseline_change": 0.5660807728431505,
+  "case_arm_results": {
+    "strict-stock-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 0
+      }
+    },
+    "strict-overlap-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-latest-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-refund-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-unique-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-dependencies-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-phone-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-literal-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-utc-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-ranking-1": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-stock-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 2
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-overlap-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 1
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-latest-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 1
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-refund-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-unique-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-dependencies-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-phone-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-literal-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-utc-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    },
+    "strict-ranking-2": {
+      "concise_english": {
+        "attempted": 3,
+        "correct": 3
+      },
+      "genuine_diagnostic": {
+        "attempted": 3,
+        "correct": 3
+      }
+    }
+  },
+  "diagnostic_token_deltas": {
+    "strict-stock-1": 3,
+    "strict-overlap-1": 6,
+    "strict-latest-1": 2,
+    "strict-refund-1": 6,
+    "strict-unique-1": 8,
+    "strict-dependencies-1": 5,
+    "strict-phone-1": 4,
+    "strict-literal-1": 5,
+    "strict-utc-1": 4,
+    "strict-ranking-1": 6,
+    "strict-stock-2": 3,
+    "strict-overlap-2": 6,
+    "strict-latest-2": 2,
+    "strict-refund-2": 6,
+    "strict-unique-2": 8,
+    "strict-dependencies-2": 5,
+    "strict-phone-2": 4,
+    "strict-literal-2": 5,
+    "strict-utc-2": 4,
+    "strict-ranking-2": 6
+  },
+  "minimal_policy_vs_baseline_change": 0.318126928753522,
+  "diagnostic_target_vs_english_change": -0.004964443848114897,
+  "mixed_only_passes": 5,
+  "english_only_passes": 3,
+  "paired_comparisons": [
+    {
+      "case_id": "strict-stock-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": false
+    },
+    {
+      "case_id": "strict-stock-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": false
+    },
+    {
+      "case_id": "strict-stock-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": false
+    },
+    {
+      "case_id": "strict-overlap-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-overlap-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-overlap-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-1",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-1",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-1",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-stock-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-stock-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-stock-2",
+      "repetition": 3,
+      "english_pass": false,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-overlap-2",
+      "repetition": 1,
+      "english_pass": false,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-overlap-2",
+      "repetition": 2,
+      "english_pass": false,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-overlap-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-2",
+      "repetition": 2,
+      "english_pass": false,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-latest-2",
+      "repetition": 3,
+      "english_pass": false,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-refund-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-unique-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-dependencies-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-phone-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-literal-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-utc-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-2",
+      "repetition": 1,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-2",
+      "repetition": 2,
+      "english_pass": true,
+      "mixed_pass": true
+    },
+    {
+      "case_id": "strict-ranking-2",
+      "repetition": 3,
+      "english_pass": true,
+      "mixed_pass": true
+    }
+  ],
+  "failed_attempts": [],
+  "unknown_attempt_charges": 0,
+  "limitations": [
+    "One unverified gateway label, ten known task families, twenty synthetic fresh payloads, three repeated trials; no general claim.",
+    "Same model label translates, reviews and answers; model review is fallible/correlated, not independent bilingual certification.",
+    "Manual English baseline and task/oracle authorship are not state-of-the-art English-compressor or external-benchmark comparisons.",
+    "Cache, server load and default sampling are observed, not controlled. Local tokenizer proxy is not authenticated upstream.",
+    "No monolingual translated control. No default-policy/admission change."
+  ],
+  "prior_admission_changed": false
+}

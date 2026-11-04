@@ -1,0 +1,27 @@
+{
+  "scope": "Post-hoc descriptive sensitivity audit; no formal chance probability, causal cache claim or new inference.",
+  "source": "fresh-cache-v060",
+  "per_request_reported_input_token_reduction": [
+    64
+  ],
+  "correct_both_arms": "60/60 each; no accuracy advantage was measured",
+  "case_clusters_with_lower_compressed_quota": 17,
+  "case_clusters_with_higher_compressed_quota": 3,
+  "same_reported_cache_and_output_length_pairs": 30,
+  "matched_pair_quota_differences": [
+    -20,
+    -19
+  ],
+  "leave_one_case_out_reduction_range": [
+    0.04954052373384921,
+    0.07008837525492861
+  ],
+  "per_repetition_reduction": {
+    "1": 0.05469356089992239,
+    "2": 0.06985794901731857,
+    "3": 0.0524861878453039
+  },
+  "same_reported_cache_difference_sum": -1000,
+  "unequal_reported_cache_difference_sum": 93,
+  "interpretation": "Deterministic token reduction and cost consistency are stronger than one lucky response. The exact 5.90% is conditional on this easy single-schema, cached gateway run; no mixed-language or general reliability benefit follows."
+}

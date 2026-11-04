@@ -239,21 +239,40 @@ def _generate_phrase_options(request, generator, languages, clause_limit, max_co
 def auto_optimize(
     request: Request,
     *,
-    generator: JsonModel,
+    generator: JsonModel | None = None,
+    allow_compression: bool = False,
     verifier: JsonModel | None = None,
     counter=None,
-    languages=("en", "zh", "ja"),
+    languages=("en",),
     max_clauses=5,
     max_combinations=256,
     verification_budget=8,
 ):
-    """Generate, search, then judge shortest candidates; fall back on any model error.
+    """Retain the original without model calls unless compression is explicitly enabled.
 
     A positive judge decision is evidence, not proof of equivalent meaning.
     No target-task inference or monetary-cost measurement is performed.
     """
-    if not 2 <= len(languages) <= 4 or len(set(languages)) != len(languages):
-        raise ValueError("choose 2 to 4 distinct languages")
+    if type(allow_compression) is not bool:
+        raise ValueError("allow_compression must be a Boolean")
+    if not allow_compression:
+        retained = optimize(request, counter=counter, allow_compression=False, rule_modes=())
+        return replace(
+            retained,
+            automation={
+                "status": "compression_disabled",
+                "policy": "original_only",
+                "model_calls": [],
+                "generated_phrase_options": [],
+                "judgments": [],
+                "task_accuracy_measured": False,
+                "total_cost_measured": False,
+            },
+        )
+    if generator is None:
+        raise ValueError("generator is required when compression is enabled")
+    if not 1 <= len(languages) <= 4 or len(set(languages)) != len(languages):
+        raise ValueError("choose 1 to 4 distinct languages")
     if any(lang not in {"en", "zh", "ja", "es", "fr", "de", "ko"} for lang in languages):
         raise ValueError("unsupported language code")
     for name, value in (
@@ -276,9 +295,11 @@ def auto_optimize(
     start = time.perf_counter()
     call_start = {id(m): len(m.calls) for m in (generator, verifier)}
     original_only = replace(request, candidates=(), phrase_options=())
-    fallback = optimize(original_only, counter=counter, rule_modes=())
+    fallback = optimize(original_only, counter=counter, rule_modes=(), allow_compression=True)
     report = {
         "status": "original_retained",
+        "policy": "concise_english" if tuple(languages) == ("en",) else "experimental_multilingual",
+        "languages": list(languages),
         "generator_model": generator.model,
         "verifier_model": verifier.model,
         "different_model_names": generator.model != verifier.model,
@@ -297,6 +318,7 @@ def auto_optimize(
             replace(request, phrase_options=options),
             counter=counter,
             max_combinations=max_combinations,
+            allow_compression=True,
         )
         result, judgments = _review_candidates(request, pool, verifier, verification_budget)
         report["judgments"].extend(judgments)

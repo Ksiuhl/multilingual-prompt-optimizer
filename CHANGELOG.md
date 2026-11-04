@@ -1,5 +1,52 @@
 # Changelog
 
+## 0.6.0a5 — strict frozen-English second stage
+
+- Closed the current research investigation on 4 November 2026 with a consolidated conclusion: no established general incremental savings or mixing-specific accuracy advantage. Preserved raw results, graphs and original-only defaults; further controls and agent communication are deferred, with no paid testing scheduled.
+
+- Added a byte-checked English freeze and a translation-only job that excludes source data and the earlier original instruction.
+- Recombine immutable English segments with translated segments, count full prompts, preserve numeric/literal guards and retain English on ties or growth. Ranking does not certify semantic equivalence or release task answers.
+- Added boundary/provenance tests and a staged experiment that separates actual token-policy choices, forced diagnostics, translation/review overhead and target-answer accuracy. Original-only defaults and earlier evidence remain unchanged.
+
+## 0.6.0a4 — scoped extraction admission experiment
+
+- Added `JsonExtractionTemplate` and `validated-extract`: original fallback unless paired development/holdout accuracy, distinct coverage, target/tokenizer identity and matched cost gates pass.
+- Added exact runtime answer checking, original retry, and no release after failed validation. Opt-in and original-only defaults remain unchanged.
+- Recorded 64 correct responses, the prospectively audited uniqueness supplement, and reconciled gateway credit charges. Admission was rejected by development cost; no profitable template is claimed.
+- This deterministic projection is a controlled admission example and can be computed locally without an LLM. Earlier studies remain unchanged.
+
+## 0.6.0a3 — original first, compression opt-in
+
+- `optimize`, `auto_optimize`, and cached template application now retain the original unless `allow_compression=True` is supplied.
+- CLI optimization, automatic mode and benchmarks require `--enable-compression` to search shorter alternatives. Rewrite modifiers cannot implicitly enable it.
+- Disabled automatic mode needs no model/service and makes no generation or judging calls; disabled cache use does not load rewrites.
+- Results expose `compression_enabled`. Added default-path regression tests and retained existing search tests as explicit opt-in experiments.
+- Research harnesses and documentation now state their opt-in behavior. Earlier frozen evidence and scores are unchanged; no new accuracy benefit is claimed.
+
+## 0.6.0a2 — immutable output-contract regression fix
+
+- Added five exact-prompt repeats on four known content-failure cases: 15/20 original versus 11/20 concise English. Keep the default-policy proposal unmerged.
+- Matched all 40 gateway consumption records to response request IDs and reconciled 9,520 charged quota units with a stable key-counter delta ($0.01904 in gateway-displayed credits). English's charge reduction was 0.88%; no account balances or unrelated history are published.
+- Added a prospectively frozen 50-new-input structured-task check: 299 responses from 300 planned trials; interrupted requests and five completed-answer content failures retained separately.
+- Recorded unchanged English/mixed prompt pairs, local and reported full-prompt usage, retry-inclusive latency, public-price scenarios, and reproducible PNG/SVG/PDF graphs. Actual billing and accuracy-preservation criteria remain unresolved.
+- Added `json_object_contract(fields)` for explicit answer-wrapped JSON guidance in immutable `Request.output_instruction`.
+- All complete prompt counts include the extra contract; no response repair or native schema enforcement is implied.
+- Added a CLI-ready summary example and four contract/validation regression tests.
+- Retested six known summary failure inputs, all three arms, twice on both gateway labels: 72/72 strict passes, no missing wrappers.
+- Kept original study scores unchanged; recorded the targeted selection, identical English/mixed prompts, and additional input overhead.
+- Added frozen requests, raw receipts, unchanged-rubric offline analysis and PNG/SVG/PDF figures.
+
+## 0.6.0a1 — English-first development preview
+
+- Default rule search now uses English-only lite rewriting; aggressive rules also disable translation.
+- Default automatic generation requests English only; one-language generation is supported.
+- Translation rules and multilingual auto generation require an explicit CLI flag, language list, or API configuration.
+- Added a frozen 50-input, ten-template transfer study: 300 completed answers across two unverified gateway model labels.
+- Retained strict JSON-wrapper failures, identical-prompt variability, inconsistent gateway input accounting, and unavailable Grok routing.
+- Added frozen data, original rubric, raw/preparation receipts, offline analysis, and PNG/SVG/PDF figures.
+- Findings favor concise English on these inputs; multilingual mixing has not shown a meaningful incremental or net-cost benefit.
+- This is a prerelease on a development branch; v0.5 remains the baseline pending review.
+
 ## 0.5.0 — reusable template cache and reuse projections
 
 - Added atomic instruction-only caching with identity checks, corruption detection and original fallback.

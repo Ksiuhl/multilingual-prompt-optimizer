@@ -1,0 +1,50 @@
+{
+  "started_at_utc": "2026-11-04T00:07:14.764Z",
+  "complete": false,
+  "phase": "review",
+  "amendment_sha256": "f73c22da08eda9282c61d37255a4ab2513444e02b65d45d096f83a303e8f9bf8",
+  "reviews": [
+    {
+      "connection": 1,
+      "attempt_index": 0
+    }
+  ],
+  "trials": [],
+  "attempts": [
+    {
+      "phase": "review",
+      "connection": 1,
+      "model_requested": "grok-4.7",
+      "job_id": "all-templates-semantic-review",
+      "started_at_utc": "2026-11-04T00:07:14.780Z",
+      "prompt_sha256": "82fd65d2fa74e8b3615add952f000817a156e4f95073c49aebe96a229dcf623c",
+      "http_status": 403,
+      "complete": false,
+      "headers_ms": 597.8182000000088,
+      "request_id": "202611040007144522270618268d9d60AO5utwD",
+      "first_chunk_ms": 598.0705000000016,
+      "raw_body": "{\"error\":{\"message\":\"All routes for this API key are paused. Enable a route or use a different API key.\",\"type\":\"routes_paused\",\"param\":\"\",\"code\":\"routes_paused\"}}",
+      "elapsed_ms": 598.2150000000256
+    }
+  ],
+  "checkpoints": [
+    {
+      "at_utc": "2026-11-04T00:07:15.658Z",
+      "trials": 0,
+      "attempts": 1,
+      "per_connection": [
+        {
+          "connection": 1,
+          "delta_quota": 0
+        },
+        {
+          "connection": 2,
+          "delta_quota": 0
+        }
+      ],
+      "total_delta_quota": 0
+    }
+  ],
+  "stopped": true,
+  "stop_reason": "Semantic review did not approve all templates; preserve evidence, do not run targets"
+}

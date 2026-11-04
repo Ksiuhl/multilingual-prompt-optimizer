@@ -37,6 +37,21 @@ def _parser() -> argparse.ArgumentParser:
         prog="mpo", description="Local tokenizer-aware prompt optimization"
     )
     sub = parser.add_subparsers(dest="command", required=True)
+    validated = sub.add_parser(
+        "validated-extract",
+        help="Select a scoped JSON extraction template using paired evidence; no model calls",
+    )
+    validated.add_argument("--template", type=Path, required=True)
+    validated.add_argument("--input", type=Path, required=True, help="Source JSON object file")
+    validated.add_argument("--evidence", type=Path)
+    validated.add_argument(
+        "--target", required=True, help="Exact caller-declared model/config identity"
+    )
+    validated.add_argument("--enable-compression", action="store_true")
+    validated.add_argument("--output", type=Path)
+    enc = validated.add_mutually_exclusive_group()
+    enc.add_argument("--encoding", default="o200k_base")
+    enc.add_argument("--tokenizer-json", type=Path)
     validate = sub.add_parser("validate", help="Check a response against a configured task oracle")
     validate.add_argument("--case", type=Path, required=True)
     validate.add_argument("--id", help="Case ID when --case contains an items array")
@@ -51,13 +66,27 @@ def _parser() -> argparse.ArgumentParser:
         enc.add_argument("--tokenizer-json", type=Path, help="Local Hugging Face tokenizer.json")
         cmd.add_argument("--max-combinations", type=int, default=256)
         cmd.add_argument(
+            "--enable-compression",
+            action="store_true",
+            help="Opt into experimental candidate search; shorter prompts are not task-validated",
+        )
+        cmd.add_argument(
             "--aggressive", action="store_true", help="Also generate aggressive rule candidates"
         )
+        cmd.add_argument(
+            "--experimental-multilingual",
+            action="store_true",
+            help="Opt into experimental translation rules and multilingual auto generation",
+        )
         if name == "auto":
-            cmd.add_argument("--model", required=True, help="Installed local Ollama model")
+            cmd.add_argument(
+                "--model", help="Installed local Ollama model; required with --enable-compression"
+            )
             cmd.add_argument("--verifier-model", help="Optional separate local judge model")
             cmd.add_argument("--ollama-url", default="http://127.0.0.1:11434")
-            cmd.add_argument("--languages", default="en,zh,ja")
+            cmd.add_argument(
+                "--languages", help="Explicit language codes; defaults to English only"
+            )
             cmd.add_argument("--verification-budget", type=int, default=8)
             cmd.add_argument("--timeout", type=float, default=120)
         if name == "optimize":
@@ -74,6 +103,19 @@ def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     try:
+        if args.command == "validated-extract":
+            from .validated_templates import JsonExtractionTemplate
+
+            template = JsonExtractionTemplate.from_dict(_read(args.template))
+            selection = template.select(
+                args.input.read_text(encoding="utf-8"),
+                counter=_counter(args),
+                target=args.target,
+                evidence=_read(args.evidence) if args.evidence else None,
+                allow_compression=args.enable_compression,
+            )
+            _write(selection, args.output)
+            return 0
         if args.command == "validate":
             from .validation import validate_answer
 
@@ -87,23 +129,46 @@ def main(argv: list[str] | None = None) -> int:
             _write({"passed": check.passed, "reason": check.reason}, args.output)
             return 0 if check.passed else 1
         counter = _counter(args)
-        modes = ("lite", "translate", "aggressive") if args.aggressive else ("lite", "translate")
+        if not args.enable_compression and (
+            args.experimental_multilingual
+            or args.aggressive
+            or getattr(args, "languages", None)
+            or getattr(args, "no_rules", False)
+        ):
+            raise ValueError("rewrite options require --enable-compression")
+        modes = ("lite",)
+        if args.experimental_multilingual:
+            modes += ("translate",)
+        if args.aggressive:
+            modes += ("aggressive",)
         raw = _read(args.input)
         if args.command == "auto":
             from .automatic import OllamaModel, auto_optimize
 
-            generator = OllamaModel(args.model, args.ollama_url, args.timeout)
+            if args.enable_compression and not args.model:
+                raise ValueError("--model is required with --enable-compression for auto")
+            generator = (
+                OllamaModel(args.model, args.ollama_url, args.timeout)
+                if args.enable_compression
+                else None
+            )
             verifier = (
                 OllamaModel(args.verifier_model, args.ollama_url, args.timeout)
-                if args.verifier_model
+                if args.verifier_model and args.enable_compression
                 else generator
             )
             result = auto_optimize(
                 Request.from_dict(raw),
                 generator=generator,
+                allow_compression=args.enable_compression,
                 verifier=verifier,
                 counter=counter,
-                languages=tuple(s.strip() for s in args.languages.split(",")),
+                languages=tuple(
+                    s.strip()
+                    for s in (
+                        args.languages or ("en,zh,ja" if args.experimental_multilingual else "en")
+                    ).split(",")
+                ),
                 verification_budget=args.verification_budget,
                 max_combinations=args.max_combinations,
             )
@@ -117,6 +182,7 @@ def main(argv: list[str] | None = None) -> int:
                 counter=counter,
                 rule_modes=() if args.no_rules else modes,
                 max_combinations=args.max_combinations,
+                allow_compression=args.enable_compression,
             )
             _write(result.prompt if args.text else result.to_dict(), args.output, plain=args.text)
         else:
@@ -144,12 +210,21 @@ def main(argv: list[str] | None = None) -> int:
                     replace(req, candidates=(), phrase_options=()),
                     counter=counter,
                     rule_modes=modes,
+                    allow_compression=args.enable_compression,
                 )
                 supplied = optimize(
-                    req, counter=counter, rule_modes=(), max_combinations=args.max_combinations
+                    req,
+                    counter=counter,
+                    rule_modes=(),
+                    max_combinations=args.max_combinations,
+                    allow_compression=args.enable_compression,
                 )
                 hybrid = optimize(
-                    req, counter=counter, rule_modes=modes, max_combinations=args.max_combinations
+                    req,
+                    counter=counter,
+                    rule_modes=modes,
+                    max_combinations=args.max_combinations,
+                    allow_compression=args.enable_compression,
                 )
                 records.append(
                     {

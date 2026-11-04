@@ -1,0 +1,44 @@
+[
+  {
+    "phase": "translation",
+    "recorded_trials": 10,
+    "at_utc": "2026-11-03T19:55:50.026Z",
+    "status": 200,
+    "counter_delta_quota": 4742
+  },
+  {
+    "phase": "review",
+    "recorded_trials": 20,
+    "at_utc": "2026-11-03T19:58:06.253Z",
+    "status": 200,
+    "counter_delta_quota": 8512
+  },
+  {
+    "phase": "target",
+    "recorded_trials": 50,
+    "at_utc": "2026-11-03T20:03:16.467Z",
+    "status": 200,
+    "counter_delta_quota": 16047
+  },
+  {
+    "phase": "target",
+    "recorded_trials": 80,
+    "at_utc": "2026-11-03T20:09:08.333Z",
+    "status": 200,
+    "counter_delta_quota": 23763
+  },
+  {
+    "phase": "target",
+    "recorded_trials": 110,
+    "at_utc": "2026-11-03T20:13:20.830Z",
+    "status": 200,
+    "counter_delta_quota": 31199
+  },
+  {
+    "phase": "target",
+    "recorded_trials": 140,
+    "at_utc": "2026-11-03T20:18:01.511Z",
+    "status": 200,
+    "counter_delta_quota": 38250
+  }
+]

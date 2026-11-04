@@ -1,0 +1,6 @@
+{
+  "cases_checked": 20,
+  "expected_answer_checks": "all passed",
+  "oracle_source_sha256": "dbc69f67f27c16f7545ed6b2dc359187f6cacc9dd37e2e0672fa41641079b54b",
+  "independence": "Separate arithmetic/rule derivation, same assistant author; not external review."
+}

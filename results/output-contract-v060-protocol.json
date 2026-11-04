@@ -1,0 +1,34 @@
+{
+  "type": "Targeted regression on six previously failed summary inputs, not an independent benchmark.",
+  "affected_case_ids": [
+    "handover-01",
+    "handover-03",
+    "handover-04",
+    "handover-05",
+    "rollout-03",
+    "rollout-04"
+  ],
+  "arms": [
+    "original",
+    "concise_english",
+    "mixed"
+  ],
+  "repetitions": 2,
+  "requests_per_model": 36,
+  "model_labels": [
+    "gpt-6.1-sol",
+    "gemini-4-argon"
+  ],
+  "change": "Append the identical explicit answer-wrapper contract after the unchanged user_prompt, for every arm. No native schema enforcement or response repair.",
+  "source_results_sha256": "4b5d247e9e634ca940d6d2a4258c8053d10af97d4281691b1e3a6a767cc2dd16",
+  "requests_sha256": "5d3888163ff6be6d5c8f9b5e2830f043066441ecec259faa66b7d84df8f61157",
+  "contract_source_sha256": "410d3c3a21c0d36a29c3ebf29c0d9ab78a47c909011946f67860fd1acaac026e",
+  "grader_sha256": "5b991fe67b28c53bc2c5ecf4535064f7ba43f68249685c6a8629eac42f54cc6c",
+  "limitations": [
+    "Selected on known failures, so this is a regression check only.",
+    "Two repetitions on the same six inputs are not twelve independent questions.",
+    "Prompt and output token counts include the extra contract; no claim of free formatting reliability.",
+    "Third-party gateway labels, usage accounting and billing remain unverified.",
+    "Prior strict scores and original raw answers remain unchanged."
+  ]
+}

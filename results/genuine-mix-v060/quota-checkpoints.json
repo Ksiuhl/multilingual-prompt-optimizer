@@ -1,0 +1,26 @@
+[
+  {
+    "recorded_trials": 30,
+    "observed_at_utc": "2026-11-03T19:19:53.416Z",
+    "http_status": 200,
+    "counter_delta_quota": 7465
+  },
+  {
+    "recorded_trials": 60,
+    "observed_at_utc": "2026-11-03T19:23:07.557Z",
+    "http_status": 200,
+    "counter_delta_quota": 15621
+  },
+  {
+    "recorded_trials": 90,
+    "observed_at_utc": "2026-11-03T19:28:31.693Z",
+    "http_status": 200,
+    "counter_delta_quota": 23104
+  },
+  {
+    "recorded_trials": 120,
+    "observed_at_utc": "2026-11-03T19:31:07.561Z",
+    "http_status": 200,
+    "counter_delta_quota": 31045
+  }
+]

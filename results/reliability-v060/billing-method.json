@@ -1,0 +1,16 @@
+{
+  "endpoint": "https://gpt-api.cc/api/usage/token/",
+  "before_http_status": 200,
+  "before_observed_at_utc": "2026-11-03T16:07:30.534Z",
+  "unit_source": "https://gpt-api.cc/api/status",
+  "units": {
+    "custom_currency_exchange_rate": 1,
+    "custom_currency_symbol": "¤",
+    "display_in_currency": true,
+    "quota_display_type": "USD",
+    "quota_per_unit": 500000,
+    "usd_exchange_rate": 7
+  },
+  "reference": "https://github.com/QuantumNous/new-api/blob/main/controller/token.go",
+  "privacy": "Only study deltas and matching request charges will be published. Lifetime totals, names, balances and credentials are excluded."
+}

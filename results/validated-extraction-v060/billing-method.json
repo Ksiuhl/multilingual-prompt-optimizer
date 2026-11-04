@@ -1,0 +1,11 @@
+{
+  "counter_endpoint": "https://gpt-api.cc/api/usage/token/",
+  "logs_endpoint": "https://gpt-api.cc/api/log/token",
+  "units_endpoint": "https://gpt-api.cc/api/status",
+  "units": {
+    "quota_per_unit": 500000,
+    "display_unit": "USD"
+  },
+  "start_utc": "2026-11-03T16:33:03.590Z",
+  "privacy": "Only matching study charges and counter deltas are published."
+}

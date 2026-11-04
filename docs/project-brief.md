@@ -1,5 +1,9 @@
 # Project brief
 
+**Closeout, 4 November 2026:** the current investigation is concluded with no established
+general savings or mixing-specific accuracy advantage. See the [final conclusion](final-conclusion.md).
+This brief retains the original aim and design; uncompleted controls and Phase 2 are deferred.
+
 ## Aim
 
 Tokenizer-Aware Multilingual Prompt Compression studies whether equivalent
@@ -10,6 +14,16 @@ Phase 1 is a user-to-LLM optimizer. Its success requires preserving task quality
 and reducing total processing cost after generation and validation overhead.
 Phase 2, planned for master's research, extends the same question to communication
 between LLMs or agents, and potentially learned shared protocols.
+
+## Current evidence and practical direction (v0.6 preview)
+
+The default implementation preserves originals. Explicitly enabled compression uses
+English as its default candidate-generation language; multilingual mixing is experimental.
+The strict second-stage pilot selected mixed prompts for none of 20 inputs, and its
+minimal preparation-inclusive policy scenario used 31.81% more quota than frozen English.
+The later controls scored 71/90 English, 78/90 Chinese-only and 77/90 mixed on one
+unverified gateway label; no mixing-specific accuracy advantage was established.
+The [final conclusion](final-conclusion.md) links the complete evidence and unresolved controls.
 
 ## Research questions
 
@@ -26,10 +40,10 @@ automatic rule-based candidates and accepts authored translations or reformulati
 It searches bounded combinations and keeps the shortest structurally acceptable
 complete prompt. It preserves a separate source payload exactly.
 
-Version 0.2 adds automatic multilingual generation and a fallible model-based
-semantic judging pass using Ollama. Real-model quality evaluation, independent
-semantic validation, target-model response evaluation, latency measurement across
-services and API billing remain future work.
+Version 0.2 added automatic multilingual generation and a fallible model-based
+semantic judging pass using Ollama. Later studies recorded real responses, task-output
+checks, request latency and gateway quota evidence. Independent bilingual validation,
+broader authenticated-model replication and general end-to-end savings remain unestablished.
 Morse code is excluded from the current scope.
 
 ## Architecture

@@ -1,0 +1,1517 @@
+[
+  {
+    "id": "language-control-stock-1",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC0-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 3
+      },
+      {
+        "id": "LC0-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 3
+      },
+      {
+        "id": "LC0-equal",
+        "active": true,
+        "on_hand": 6,
+        "reserved": 3,
+        "reorder_limit": 3
+      },
+      {
+        "id": "LC0-above",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 3
+      },
+      {
+        "id": "LC0-below",
+        "active": true,
+        "on_hand": 5,
+        "reserved": 3,
+        "reorder_limit": 3
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC0-negative",
+          "LC0-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-1",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 20,
+        "end": 26
+      },
+      "events": [
+        {
+          "id": "LC0-cover",
+          "start": 19,
+          "end": 27
+        },
+        {
+          "id": "LC0-right-touch",
+          "start": 26,
+          "end": 29
+        },
+        {
+          "id": "LC0-left-touch",
+          "start": 16,
+          "end": 20
+        },
+        {
+          "id": "LC0-inside",
+          "start": 21,
+          "end": 25
+        },
+        {
+          "id": "LC0-left-overlap",
+          "start": 17,
+          "end": 21
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC0-cover",
+          "LC0-inside",
+          "LC0-left-overlap"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-1",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC0-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC0-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC0-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC0-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC0-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC0-B",
+          "LC0-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-2",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC1-above",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 4
+      },
+      {
+        "id": "LC1-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 4
+      },
+      {
+        "id": "LC1-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 4
+      },
+      {
+        "id": "LC1-below",
+        "active": true,
+        "on_hand": 6,
+        "reserved": 3,
+        "reorder_limit": 4
+      },
+      {
+        "id": "LC1-equal",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 4
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC1-negative",
+          "LC1-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-2",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 27,
+        "end": 33
+      },
+      "events": [
+        {
+          "id": "LC1-left-touch",
+          "start": 23,
+          "end": 27
+        },
+        {
+          "id": "LC1-left-overlap",
+          "start": 24,
+          "end": 28
+        },
+        {
+          "id": "LC1-cover",
+          "start": 26,
+          "end": 34
+        },
+        {
+          "id": "LC1-right-touch",
+          "start": 33,
+          "end": 36
+        },
+        {
+          "id": "LC1-inside",
+          "start": 28,
+          "end": 32
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC1-left-overlap",
+          "LC1-cover",
+          "LC1-inside"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-2",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC1-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC1-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC1-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC1-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC1-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC1-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-3",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC2-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 5
+      },
+      {
+        "id": "LC2-below",
+        "active": true,
+        "on_hand": 7,
+        "reserved": 3,
+        "reorder_limit": 5
+      },
+      {
+        "id": "LC2-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 5
+      },
+      {
+        "id": "LC2-above",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 5
+      },
+      {
+        "id": "LC2-equal",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 5
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC2-negative",
+          "LC2-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-3",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 34,
+        "end": 40
+      },
+      "events": [
+        {
+          "id": "LC2-cover",
+          "start": 33,
+          "end": 41
+        },
+        {
+          "id": "LC2-right-touch",
+          "start": 40,
+          "end": 43
+        },
+        {
+          "id": "LC2-inside",
+          "start": 35,
+          "end": 39
+        },
+        {
+          "id": "LC2-left-overlap",
+          "start": 31,
+          "end": 35
+        },
+        {
+          "id": "LC2-left-touch",
+          "start": 30,
+          "end": 34
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC2-cover",
+          "LC2-inside",
+          "LC2-left-overlap"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-3",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC2-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC2-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC2-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC2-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC2-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC2-B",
+          "LC2-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-4",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC3-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 6
+      },
+      {
+        "id": "LC3-below",
+        "active": true,
+        "on_hand": 8,
+        "reserved": 3,
+        "reorder_limit": 6
+      },
+      {
+        "id": "LC3-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 6
+      },
+      {
+        "id": "LC3-equal",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 6
+      },
+      {
+        "id": "LC3-above",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 6
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC3-below",
+          "LC3-negative"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-4",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 41,
+        "end": 47
+      },
+      "events": [
+        {
+          "id": "LC3-right-touch",
+          "start": 47,
+          "end": 50
+        },
+        {
+          "id": "LC3-left-touch",
+          "start": 37,
+          "end": 41
+        },
+        {
+          "id": "LC3-left-overlap",
+          "start": 38,
+          "end": 42
+        },
+        {
+          "id": "LC3-cover",
+          "start": 40,
+          "end": 48
+        },
+        {
+          "id": "LC3-inside",
+          "start": 42,
+          "end": 46
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC3-left-overlap",
+          "LC3-cover",
+          "LC3-inside"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-4",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC3-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC3-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC3-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC3-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC3-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC3-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-5",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC4-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 7
+      },
+      {
+        "id": "LC4-above",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 7
+      },
+      {
+        "id": "LC4-below",
+        "active": true,
+        "on_hand": 9,
+        "reserved": 3,
+        "reorder_limit": 7
+      },
+      {
+        "id": "LC4-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 7
+      },
+      {
+        "id": "LC4-equal",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 7
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC4-negative",
+          "LC4-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-5",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 48,
+        "end": 54
+      },
+      "events": [
+        {
+          "id": "LC4-cover",
+          "start": 47,
+          "end": 55
+        },
+        {
+          "id": "LC4-left-touch",
+          "start": 44,
+          "end": 48
+        },
+        {
+          "id": "LC4-right-touch",
+          "start": 54,
+          "end": 57
+        },
+        {
+          "id": "LC4-inside",
+          "start": 49,
+          "end": 53
+        },
+        {
+          "id": "LC4-left-overlap",
+          "start": 45,
+          "end": 49
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC4-cover",
+          "LC4-inside",
+          "LC4-left-overlap"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-5",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC4-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC4-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC4-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC4-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC4-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC4-B",
+          "LC4-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-6",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC5-below",
+        "active": true,
+        "on_hand": 10,
+        "reserved": 3,
+        "reorder_limit": 8
+      },
+      {
+        "id": "LC5-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 8
+      },
+      {
+        "id": "LC5-above",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 8
+      },
+      {
+        "id": "LC5-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 8
+      },
+      {
+        "id": "LC5-equal",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 8
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC5-below",
+          "LC5-negative"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-6",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 55,
+        "end": 61
+      },
+      "events": [
+        {
+          "id": "LC5-cover",
+          "start": 54,
+          "end": 62
+        },
+        {
+          "id": "LC5-inside",
+          "start": 56,
+          "end": 60
+        },
+        {
+          "id": "LC5-left-overlap",
+          "start": 52,
+          "end": 56
+        },
+        {
+          "id": "LC5-left-touch",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "id": "LC5-right-touch",
+          "start": 61,
+          "end": 64
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC5-cover",
+          "LC5-inside",
+          "LC5-left-overlap"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-6",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC5-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC5-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC5-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC5-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC5-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC5-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-7",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC6-above",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 9
+      },
+      {
+        "id": "LC6-equal",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 9
+      },
+      {
+        "id": "LC6-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 9
+      },
+      {
+        "id": "LC6-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 9
+      },
+      {
+        "id": "LC6-below",
+        "active": true,
+        "on_hand": 11,
+        "reserved": 3,
+        "reorder_limit": 9
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC6-negative",
+          "LC6-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-7",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 62,
+        "end": 68
+      },
+      "events": [
+        {
+          "id": "LC6-right-touch",
+          "start": 68,
+          "end": 71
+        },
+        {
+          "id": "LC6-left-overlap",
+          "start": 59,
+          "end": 63
+        },
+        {
+          "id": "LC6-inside",
+          "start": 63,
+          "end": 67
+        },
+        {
+          "id": "LC6-left-touch",
+          "start": 58,
+          "end": 62
+        },
+        {
+          "id": "LC6-cover",
+          "start": 61,
+          "end": 69
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC6-left-overlap",
+          "LC6-inside",
+          "LC6-cover"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-7",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC6-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC6-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC6-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC6-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC6-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC6-B",
+          "LC6-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-8",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC7-equal",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 10
+      },
+      {
+        "id": "LC7-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 10
+      },
+      {
+        "id": "LC7-below",
+        "active": true,
+        "on_hand": 12,
+        "reserved": 3,
+        "reorder_limit": 10
+      },
+      {
+        "id": "LC7-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 10
+      },
+      {
+        "id": "LC7-above",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 10
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC7-negative",
+          "LC7-below"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-8",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 69,
+        "end": 75
+      },
+      "events": [
+        {
+          "id": "LC7-left-overlap",
+          "start": 66,
+          "end": 70
+        },
+        {
+          "id": "LC7-left-touch",
+          "start": 65,
+          "end": 69
+        },
+        {
+          "id": "LC7-inside",
+          "start": 70,
+          "end": 74
+        },
+        {
+          "id": "LC7-cover",
+          "start": 68,
+          "end": 76
+        },
+        {
+          "id": "LC7-right-touch",
+          "start": 75,
+          "end": 78
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC7-left-overlap",
+          "LC7-inside",
+          "LC7-cover"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-8",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC7-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC7-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC7-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC7-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC7-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC7-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-9",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC8-below",
+        "active": true,
+        "on_hand": 13,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "LC8-above",
+        "active": true,
+        "on_hand": 15,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "LC8-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 11
+      },
+      {
+        "id": "LC8-equal",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 11
+      },
+      {
+        "id": "LC8-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 11
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC8-below",
+          "LC8-negative"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-9",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 76,
+        "end": 82
+      },
+      "events": [
+        {
+          "id": "LC8-inside",
+          "start": 77,
+          "end": 81
+        },
+        {
+          "id": "LC8-left-overlap",
+          "start": 73,
+          "end": 77
+        },
+        {
+          "id": "LC8-cover",
+          "start": 75,
+          "end": 83
+        },
+        {
+          "id": "LC8-right-touch",
+          "start": 82,
+          "end": 85
+        },
+        {
+          "id": "LC8-left-touch",
+          "start": 72,
+          "end": 76
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC8-inside",
+          "LC8-left-overlap",
+          "LC8-cover"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-9",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC8-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC8-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC8-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC8-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC8-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC8-B",
+          "LC8-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-stock-10",
+    "family": "stock",
+    "payload": [
+      {
+        "id": "LC9-below",
+        "active": true,
+        "on_hand": 14,
+        "reserved": 3,
+        "reorder_limit": 12
+      },
+      {
+        "id": "LC9-inactive",
+        "active": false,
+        "on_hand": 0,
+        "reserved": 2,
+        "reorder_limit": 12
+      },
+      {
+        "id": "LC9-negative",
+        "active": true,
+        "on_hand": 1,
+        "reserved": 4,
+        "reorder_limit": 12
+      },
+      {
+        "id": "LC9-equal",
+        "active": true,
+        "on_hand": 15,
+        "reserved": 3,
+        "reorder_limit": 12
+      },
+      {
+        "id": "LC9-above",
+        "active": true,
+        "on_hand": 16,
+        "reserved": 3,
+        "reorder_limit": 12
+      }
+    ],
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC9-below",
+          "LC9-negative"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 171,
+      "chinese": 181,
+      "mixed": 174
+    },
+    "local_length_matched_10pct": true
+  },
+  {
+    "id": "language-control-overlap-10",
+    "family": "overlap",
+    "payload": {
+      "query": {
+        "start": 83,
+        "end": 89
+      },
+      "events": [
+        {
+          "id": "LC9-inside",
+          "start": 84,
+          "end": 88
+        },
+        {
+          "id": "LC9-cover",
+          "start": 82,
+          "end": 90
+        },
+        {
+          "id": "LC9-right-touch",
+          "start": 89,
+          "end": 92
+        },
+        {
+          "id": "LC9-left-overlap",
+          "start": 80,
+          "end": 84
+        },
+        {
+          "id": "LC9-left-touch",
+          "start": 79,
+          "end": 83
+        }
+      ]
+    },
+    "expected": {
+      "answer": {
+        "ids": [
+          "LC9-inside",
+          "LC9-cover",
+          "LC9-left-overlap"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 133,
+      "chinese": 148,
+      "mixed": 144
+    },
+    "local_length_matched_10pct": false
+  },
+  {
+    "id": "language-control-latest-10",
+    "family": "latest",
+    "payload": [
+      {
+        "device": "LC9-A",
+        "ts": "2029-09-10T14:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC9-A",
+        "ts": "2029-09-10T13:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC9-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "online"
+      },
+      {
+        "device": "LC9-B",
+        "ts": "2029-09-10T12:00:00Z",
+        "state": "offline"
+      },
+      {
+        "device": "LC9-C",
+        "ts": "2029-09-10T11:00:00Z",
+        "state": "online"
+      }
+    ],
+    "expected": {
+      "answer": {
+        "devices": [
+          "LC9-C"
+        ]
+      }
+    },
+    "token_counts": {
+      "english": 176,
+      "chinese": 181,
+      "mixed": 179
+    },
+    "local_length_matched_10pct": true
+  }
+]

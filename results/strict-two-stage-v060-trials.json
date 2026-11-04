@@ -1,0 +1,2462 @@
+[
+  {
+    "phase": "translation",
+    "case_id": "stock",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 478,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 12494.602299999446,
+    "cached_tokens": 4224,
+    "input_tokens": 4702,
+    "output_tokens": 181
+  },
+  {
+    "phase": "translation",
+    "case_id": "overlap",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 634,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 25942.087900001556,
+    "cached_tokens": 4224,
+    "input_tokens": 4702,
+    "output_tokens": 285
+  },
+  {
+    "phase": "translation",
+    "case_id": "latest",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 375,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2550.3543999996036,
+    "cached_tokens": 4224,
+    "input_tokens": 4708,
+    "output_tokens": 111
+  },
+  {
+    "phase": "translation",
+    "case_id": "refund",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 359,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2874.674900000915,
+    "cached_tokens": 4224,
+    "input_tokens": 4701,
+    "output_tokens": 102
+  },
+  {
+    "phase": "translation",
+    "case_id": "unique",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 406,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 5477.352399999276,
+    "cached_tokens": 4224,
+    "input_tokens": 4702,
+    "output_tokens": 133
+  },
+  {
+    "phase": "translation",
+    "case_id": "dependencies",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 678,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 21177.123599998653,
+    "cached_tokens": 4224,
+    "input_tokens": 4704,
+    "output_tokens": 314
+  },
+  {
+    "phase": "translation",
+    "case_id": "phone",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 422,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 18743.70910000056,
+    "cached_tokens": 4224,
+    "input_tokens": 4705,
+    "output_tokens": 143
+  },
+  {
+    "phase": "translation",
+    "case_id": "literal",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 580,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 14042.72809999995,
+    "cached_tokens": 4224,
+    "input_tokens": 4707,
+    "output_tokens": 248
+  },
+  {
+    "phase": "translation",
+    "case_id": "utc",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 392,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2749.674499999732,
+    "cached_tokens": 4224,
+    "input_tokens": 4709,
+    "output_tokens": 122
+  },
+  {
+    "phase": "translation",
+    "case_id": "ranking",
+    "arm": "translation",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 418,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2991.1847999989986,
+    "cached_tokens": 4224,
+    "input_tokens": 4706,
+    "output_tokens": 140
+  },
+  {
+    "phase": "review",
+    "case_id": "review-1",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 327,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2968.016999999061,
+    "cached_tokens": 4224,
+    "input_tokens": 4763,
+    "output_tokens": 68
+  },
+  {
+    "phase": "review",
+    "case_id": "review-2",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 429,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 17292.054999999702,
+    "cached_tokens": 4224,
+    "input_tokens": 4773,
+    "output_tokens": 134
+  },
+  {
+    "phase": "review",
+    "case_id": "review-3",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 365,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2732.3069000001997,
+    "cached_tokens": 4224,
+    "input_tokens": 4769,
+    "output_tokens": 92
+  },
+  {
+    "phase": "review",
+    "case_id": "review-4",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 321,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 15111.871899999678,
+    "cached_tokens": 4224,
+    "input_tokens": 4762,
+    "output_tokens": 64
+  },
+  {
+    "phase": "review",
+    "case_id": "review-5",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 402,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3018.7462000008672,
+    "cached_tokens": 4224,
+    "input_tokens": 4773,
+    "output_tokens": 116
+  },
+  {
+    "phase": "review",
+    "case_id": "review-6",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 398,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3461.7094000000507,
+    "cached_tokens": 4224,
+    "input_tokens": 4770,
+    "output_tokens": 114
+  },
+  {
+    "phase": "review",
+    "case_id": "review-7",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 293,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3145.0056999996305,
+    "cached_tokens": 4224,
+    "input_tokens": 4771,
+    "output_tokens": 44
+  },
+  {
+    "phase": "review",
+    "case_id": "review-8",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 408,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 20795.08129999973,
+    "cached_tokens": 4224,
+    "input_tokens": 4772,
+    "output_tokens": 120
+  },
+  {
+    "phase": "review",
+    "case_id": "review-9",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 350,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3018.6069000009447,
+    "cached_tokens": 4224,
+    "input_tokens": 4788,
+    "output_tokens": 78
+  },
+  {
+    "phase": "review",
+    "case_id": "review-10",
+    "arm": "semantic_review",
+    "repetition": 1,
+    "complete": true,
+    "validation": null,
+    "known_quota": 477,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 14678.888700000942,
+    "cached_tokens": 4224,
+    "input_tokens": 4779,
+    "output_tokens": 165
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 181,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 26830.841099999845,
+    "cached_tokens": 4480,
+    "input_tokens": 4630,
+    "output_tokens": 46
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 206,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2332.351399999112,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 13
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 189,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2057.4802999999374,
+    "cached_tokens": 4224,
+    "input_tokens": 4557,
+    "output_tokens": 17
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 265,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 10308.22540000081,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 66
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 212,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11719.851299999282,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 210,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 12217.420099999756,
+    "cached_tokens": 4224,
+    "input_tokens": 4622,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 300,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2800.4016999993473,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 79
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 295,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3536.5319999996573,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 77
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 322,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 12013.832700001076,
+    "cached_tokens": 4224,
+    "input_tokens": 4632,
+    "output_tokens": 91
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 320,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2861.8638000003994,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 90
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 304,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3436.551100000739,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 82
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 212,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2365.423599999398,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 209,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 1848.675699999556,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 280,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 24291.75490000099,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 66
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 199,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8613.837700000033,
+    "cached_tokens": 4224,
+    "input_tokens": 4572,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2175.061400000006,
+    "cached_tokens": 4224,
+    "input_tokens": 4576,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 280,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9000.417300000787,
+    "cached_tokens": 4224,
+    "input_tokens": 4571,
+    "output_tokens": 75
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 283,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2532.743800001219,
+    "cached_tokens": 4224,
+    "input_tokens": 4566,
+    "output_tokens": 78
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 277,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 16270.655500000343,
+    "cached_tokens": 4224,
+    "input_tokens": 4557,
+    "output_tokens": 76
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 187,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 1950.7812000010163,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 198,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2586.9380000010133,
+    "cached_tokens": 4224,
+    "input_tokens": 4603,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 246,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 21972.61979999952,
+    "cached_tokens": 4224,
+    "input_tokens": 4608,
+    "output_tokens": 45
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 278,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8375.744099998847,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 58
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 205,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2354.1982999984175,
+    "cached_tokens": 4224,
+    "input_tokens": 4647,
+    "output_tokens": 10
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 430,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 38504.72330000065,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 176
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 194,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2167.32310000062,
+    "cached_tokens": 4224,
+    "input_tokens": 4570,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 252,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2375.6145999990404,
+    "cached_tokens": 4224,
+    "input_tokens": 4612,
+    "output_tokens": 48
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 247,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2587.2253000009805,
+    "cached_tokens": 4224,
+    "input_tokens": 4607,
+    "output_tokens": 46
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 243,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 23267.66009999998,
+    "cached_tokens": 4480,
+    "input_tokens": 4632,
+    "output_tokens": 87
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 311,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3731.1880999989808,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 84
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 270,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9977.860100001097,
+    "cached_tokens": 4224,
+    "input_tokens": 4647,
+    "output_tokens": 53
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 212,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2198.870600000024,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 216,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 7432.727700000629,
+    "cached_tokens": 4224,
+    "input_tokens": 4622,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 218,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 23412.10109999962,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 260,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 10697.400999998674,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 52
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 256,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 22018.188100000843,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 50
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 256,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8773.033299999312,
+    "cached_tokens": 4224,
+    "input_tokens": 4577,
+    "output_tokens": 58
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 243,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8449.599500000477,
+    "cached_tokens": 4224,
+    "input_tokens": 4573,
+    "output_tokens": 50
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 235,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2235.0801999997348,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 32
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "concise_english",
+    "repetition": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 230,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 4002.474399998784,
+    "cached_tokens": 4224,
+    "input_tokens": 4630,
+    "output_tokens": 30
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 260,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 54000.10840000026,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 50
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 143,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 22457.101700000465,
+    "cached_tokens": 4480,
+    "input_tokens": 4622,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 249,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 14709.75490000099,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 45
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 253,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 31005.849300000817,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 48
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 300,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3864.1743000000715,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 77
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 312,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8932.909700000659,
+    "cached_tokens": 4224,
+    "input_tokens": 4632,
+    "output_tokens": 84
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 302,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3368.6801999993622,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 82
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 309,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3207.792199999094,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 85
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 279,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 18527.814499998465,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 59
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 205,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2299.9488000012934,
+    "cached_tokens": 4224,
+    "input_tokens": 4647,
+    "output_tokens": 10
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2078.7603000011295,
+    "cached_tokens": 4224,
+    "input_tokens": 4576,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 199,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2255.7401000000536,
+    "cached_tokens": 4224,
+    "input_tokens": 4572,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 232,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2250.151399999857,
+    "cached_tokens": 4224,
+    "input_tokens": 4630,
+    "output_tokens": 31
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 233,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 4216.915500000119,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 31
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 194,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2475.369299998507,
+    "cached_tokens": 4224,
+    "input_tokens": 4570,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 572,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 48449.568800000474,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 271
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 329,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 10732.723999999464,
+    "cached_tokens": 4224,
+    "input_tokens": 4571,
+    "output_tokens": 108
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 242,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2792.4459999985993,
+    "cached_tokens": 4224,
+    "input_tokens": 4566,
+    "output_tokens": 51
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 255,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2624.844999998808,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 43
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 252,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11309.305900000036,
+    "cached_tokens": 4224,
+    "input_tokens": 4647,
+    "output_tokens": 41
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 312,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3775.619800001383,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 85
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 339,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 18028.297100000083,
+    "cached_tokens": 4224,
+    "input_tokens": 4632,
+    "output_tokens": 102
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 241,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 4060.1900999993086,
+    "cached_tokens": 4224,
+    "input_tokens": 4607,
+    "output_tokens": 42
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 207,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3565.444900000468,
+    "cached_tokens": 4224,
+    "input_tokens": 4612,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 234,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2297.34309999831,
+    "cached_tokens": 4224,
+    "input_tokens": 4603,
+    "output_tokens": 38
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9260.748999999836,
+    "cached_tokens": 4224,
+    "input_tokens": 4608,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2123.9652999993414,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 316,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 4498.405800001696,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 90
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 189,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 1959.599600000307,
+    "cached_tokens": 4224,
+    "input_tokens": 4557,
+    "output_tokens": 17
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 191,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8391.468700001016,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 17
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 248,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 23014.868199998513,
+    "cached_tokens": 4224,
+    "input_tokens": 4630,
+    "output_tokens": 42
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 235,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2242.934600001201,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 32
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 215,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2764.700300000608,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 271,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11054.908999999985,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 60
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 210,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 24342.16889999993,
+    "cached_tokens": 4224,
+    "input_tokens": 4622,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 212,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11451.148400001228,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 251,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 36522.96519999951,
+    "cached_tokens": 4224,
+    "input_tokens": 4573,
+    "output_tokens": 55
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 259,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9568.900799999014,
+    "cached_tokens": 4224,
+    "input_tokens": 4577,
+    "output_tokens": 60
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 230,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2270.717500001192,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 43
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "concise_english",
+    "repetition": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 227,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 14055.39949999936,
+    "cached_tokens": 4352,
+    "input_tokens": 4557,
+    "output_tokens": 67
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 303,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3268.6182000003755,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 79
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 319,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 22394.977399999276,
+    "cached_tokens": 4224,
+    "input_tokens": 4632,
+    "output_tokens": 89
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 256,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 5414.954000001773,
+    "cached_tokens": 4224,
+    "input_tokens": 4557,
+    "output_tokens": 62
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 223,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2407.2528000008315,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 38
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 207,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2399.574600001797,
+    "cached_tokens": 4224,
+    "input_tokens": 4612,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 247,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2741.2909000013024,
+    "cached_tokens": 4224,
+    "input_tokens": 4607,
+    "output_tokens": 46
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 294,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3279.974500000477,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 75
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 296,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3207.7430000007153,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 78
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 246,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8368.137799998745,
+    "cached_tokens": 4224,
+    "input_tokens": 4647,
+    "output_tokens": 37
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 258,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2706.3255999982357,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 45
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 254,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8810.38030000031,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 49
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 209,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2682.7350000012666,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 212,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11407.298000000417,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 210,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 16116.523399999365,
+    "cached_tokens": 4224,
+    "input_tokens": 4622,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 218,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11715.616799999028,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-ranking-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 216,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 7090.545599998906,
+    "cached_tokens": 4224,
+    "input_tokens": 4622,
+    "output_tokens": 22
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 233,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2241.486400000751,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 31
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 205,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 23238.137500001118,
+    "cached_tokens": 4224,
+    "input_tokens": 4630,
+    "output_tokens": 13
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 284,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9190.604399999604,
+    "cached_tokens": 4224,
+    "input_tokens": 4649,
+    "output_tokens": 62
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-latest-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 132,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2318.764800000936,
+    "cached_tokens": 4480,
+    "input_tokens": 4647,
+    "output_tokens": 10
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": false,
+      "reason": "answer_or_format_mismatch"
+    },
+    "known_quota": 208,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 18890.14360000007,
+    "cached_tokens": 4224,
+    "input_tokens": 4615,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-stock-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 254,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 22330.367500001565,
+    "cached_tokens": 4224,
+    "input_tokens": 4618,
+    "output_tokens": 48
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 199,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2956.3489999994636,
+    "cached_tokens": 4224,
+    "input_tokens": 4572,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2393.57840000093,
+    "cached_tokens": 4224,
+    "input_tokens": 4576,
+    "output_tokens": 21
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 194,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2471.9134999997914,
+    "cached_tokens": 4224,
+    "input_tokens": 4570,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 353,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 20714.072399999946,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 125
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 305,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 29819.503399999812,
+    "cached_tokens": 4224,
+    "input_tokens": 4571,
+    "output_tokens": 92
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-literal-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 278,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 3164.0171999987215,
+    "cached_tokens": 4224,
+    "input_tokens": 4566,
+    "output_tokens": 75
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 200,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 21623.300599999726,
+    "cached_tokens": 4224,
+    "input_tokens": 4608,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-dependencies-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 198,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 1727.9052000008523,
+    "cached_tokens": 4224,
+    "input_tokens": 4603,
+    "output_tokens": 14
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 303,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 4218.755799999461,
+    "cached_tokens": 4224,
+    "input_tokens": 4628,
+    "output_tokens": 79
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-utc-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 331,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 9380.993899999186,
+    "cached_tokens": 4224,
+    "input_tokens": 4632,
+    "output_tokens": 97
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 233,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2590.11439999938,
+    "cached_tokens": 4224,
+    "input_tokens": 4636,
+    "output_tokens": 31
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-refund-2",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 232,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2593.237199999392,
+    "cached_tokens": 4224,
+    "input_tokens": 4630,
+    "output_tokens": 31
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 191,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 11953.282999999821,
+    "cached_tokens": 4224,
+    "input_tokens": 4565,
+    "output_tokens": 17
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-unique-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 189,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2097.138000000268,
+    "cached_tokens": 4224,
+    "input_tokens": 4557,
+    "output_tokens": 17
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 312,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 7503.354499999434,
+    "cached_tokens": 4224,
+    "input_tokens": 4617,
+    "output_tokens": 87
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-overlap-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 206,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 2036.4222999997437,
+    "cached_tokens": 4224,
+    "input_tokens": 4611,
+    "output_tokens": 18
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "concise_english",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 240,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 7480.384600000456,
+    "cached_tokens": 4224,
+    "input_tokens": 4573,
+    "output_tokens": 48
+  },
+  {
+    "phase": "target",
+    "case_id": "strict-phone-1",
+    "arm": "genuine_diagnostic",
+    "repetition": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "known_quota": 252,
+    "charge_complete": true,
+    "attempts": 1,
+    "elapsed_ms_including_retries": 8873.674599999562,
+    "cached_tokens": 4224,
+    "input_tokens": 4577,
+    "output_tokens": 55
+  }
+]

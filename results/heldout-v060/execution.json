@@ -1,0 +1,9 @@
+{
+  "type": "Execution recovery before examining task scores",
+  "note": "One GPT-labelled request reached the execution-cell deadline during its second bounded attempt. Both attempts are retained and the request stays incomplete; it will not be resent. Remaining frozen requests continue, with two attempts maximum for transport/server errors. Authentication, quota and unsupported-route errors stop that route. Background execution avoids applying a 120-second limit to the entire study.",
+  "max_attempts_per_request": 2,
+  "concurrency_per_model": 2,
+  "request_timeout_ms": 60000,
+  "runner_sha256": "2f8845c91e4be67ded6b68ba5d6029d5244f5ebae969e34ded9c62e1f30d0d3a",
+  "recorded_at_utc": "2026-11-03T15:39:17.237Z"
+}

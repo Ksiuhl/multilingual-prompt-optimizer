@@ -32,7 +32,7 @@ class CacheTests(unittest.TestCase):
             c = TemplateCache(directory)
             context = self.context()
             c.save(context, "Summarize.", [True, True])
-            result = c.apply(context, "PRIVATE NEW INPUT", Characters())
+            result = c.apply(context, "PRIVATE NEW INPUT", Characters(), allow_compression=True)
             self.assertTrue(result["cache_hit"])
             self.assertIn("PRIVATE NEW INPUT", result["prompt"])
             self.assertNotIn("PRIVATE NEW INPUT", next(Path(directory).glob("*.json")).read_text())
@@ -40,7 +40,9 @@ class CacheTests(unittest.TestCase):
 
     def test_miss_returns_original_without_model_calls(self):
         with tempfile.TemporaryDirectory() as directory:
-            r = TemplateCache(directory).apply(self.context(), "new", Characters())
+            r = TemplateCache(directory).apply(
+                self.context(), "new", Characters(), allow_compression=True
+            )
             self.assertFalse(r["cache_hit"])
             self.assertEqual(r["saved_tokens"], 0)
 
@@ -52,7 +54,8 @@ class CacheTests(unittest.TestCase):
             self.assertFalse(item["admitted"])
             self.assertEqual(item["instruction"], context["instruction"])
             self.assertEqual(
-                c.apply(context, "new", Characters())["reason"], "calibration_rejected"
+                c.apply(context, "new", Characters(), allow_compression=True)["reason"],
+                "calibration_rejected",
             )
 
     def test_one_calibration_pass_is_insufficient(self):
@@ -99,7 +102,7 @@ class CacheTests(unittest.TestCase):
             c = TemplateCache(directory)
             context = self.context()
             c.save(context, "Short.", [True, True])
-            result = c.apply(context, "new payload", BoundaryCounter())
+            result = c.apply(context, "new payload", BoundaryCounter(), allow_compression=True)
             self.assertEqual(result["saved_tokens"], 0)
             self.assertEqual(result["reason"], "original_retained_after_recount")
 
@@ -116,12 +119,16 @@ class CacheTests(unittest.TestCase):
             )
             c = TemplateCache(directory)
             c.save(context, "Return items.", [True, True])
-            self.assertEqual(c.apply(context, "new", Characters())["saved_tokens"], 0)
+            self.assertEqual(
+                c.apply(context, "new", Characters(), allow_compression=True)["saved_tokens"], 0
+            )
 
     def test_mismatched_counter_is_not_silently_used(self):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(ValueError, "tokenizer"):
-                TemplateCache(directory).apply(self.context(tokenizer="other"), "new", Characters())
+                TemplateCache(directory).apply(
+                    self.context(tokenizer="other"), "new", Characters(), allow_compression=True
+                )
 
     def test_model_budgets_are_bounded(self):
         for options in ({"num_predict": True}, {"num_predict": 0}, {"context_length": 100}):

@@ -132,6 +132,7 @@ class OptimizationResult:
     prompt: str
     candidates: tuple[EvaluatedCandidate, ...]
     elapsed_ms: float
+    compression_enabled: bool = False
     library_versions: dict[str, str] = field(default_factory=_library_versions)
     semantic_equivalence_verified: bool = False
     automation: dict | None = None

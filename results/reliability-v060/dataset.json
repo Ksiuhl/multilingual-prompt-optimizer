@@ -1,0 +1,173 @@
+{
+  "cases": [
+    {
+      "id": "new-stock-02",
+      "template": "stock",
+      "kind": "exact_json",
+      "payload": [
+        {
+          "id": "N2-B",
+          "active": true,
+          "on_hand": 17,
+          "reserved": 5,
+          "reorder_limit": 12
+        },
+        {
+          "id": "N2-A",
+          "active": true,
+          "on_hand": 17,
+          "reserved": 8,
+          "reorder_limit": 12
+        },
+        {
+          "id": "N2-D",
+          "active": true,
+          "on_hand": 7,
+          "reserved": 6,
+          "reorder_limit": 4
+        },
+        {
+          "id": "N2-C",
+          "active": false,
+          "on_hand": 2,
+          "reserved": 1,
+          "reorder_limit": 9
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": [
+            "N2-A",
+            "N2-D"
+          ]
+        }
+      }
+    },
+    {
+      "id": "new-latest-03",
+      "template": "latest",
+      "kind": "exact_json",
+      "payload": [
+        {
+          "device": "N3-C",
+          "ts": "2027-02-03T10:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N3-B",
+          "ts": "2027-02-03T11:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N3-B",
+          "ts": "2027-02-03T08:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "N3-A",
+          "ts": "2027-02-03T09:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "N3-A",
+          "ts": "2027-02-03T12:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N3-C",
+          "ts": "2027-02-03T10:00:00Z",
+          "state": "online"
+        }
+      ],
+      "expected": {
+        "answer": {
+          "devices": [
+            "N3-C"
+          ]
+        }
+      }
+    },
+    {
+      "id": "new-latest-04",
+      "template": "latest",
+      "kind": "exact_json",
+      "payload": [
+        {
+          "device": "N4-A",
+          "ts": "2027-02-04T09:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "N4-B",
+          "ts": "2027-02-04T11:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N4-C",
+          "ts": "2027-02-04T10:00:00Z",
+          "state": "online"
+        },
+        {
+          "device": "N4-A",
+          "ts": "2027-02-04T12:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N4-C",
+          "ts": "2027-02-04T10:00:00Z",
+          "state": "offline"
+        },
+        {
+          "device": "N4-B",
+          "ts": "2027-02-04T08:00:00Z",
+          "state": "online"
+        }
+      ],
+      "expected": {
+        "answer": {
+          "devices": []
+        }
+      }
+    },
+    {
+      "id": "new-stock-05",
+      "template": "stock",
+      "kind": "exact_json",
+      "payload": [
+        {
+          "id": "N5-C",
+          "active": false,
+          "on_hand": 2,
+          "reserved": 1,
+          "reorder_limit": 9
+        },
+        {
+          "id": "N5-B",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 5,
+          "reorder_limit": 15
+        },
+        {
+          "id": "N5-A",
+          "active": true,
+          "on_hand": 20,
+          "reserved": 8,
+          "reorder_limit": 12
+        },
+        {
+          "id": "N5-D",
+          "active": true,
+          "on_hand": 10,
+          "reserved": 6,
+          "reorder_limit": 4
+        }
+      ],
+      "expected": {
+        "answer": {
+          "ids": []
+        }
+      }
+    }
+  ]
+}

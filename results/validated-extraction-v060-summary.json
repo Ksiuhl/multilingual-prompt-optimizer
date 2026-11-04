@@ -1,0 +1,64 @@
+{
+  "scores": {
+    "development": {
+      "original": {
+        "correct": 10,
+        "completed": 10,
+        "planned": 10
+      },
+      "compressed": {
+        "correct": 10,
+        "completed": 10,
+        "planned": 10
+      }
+    },
+    "holdout": {
+      "original": {
+        "correct": 22,
+        "completed": 22,
+        "planned": 22
+      },
+      "compressed": {
+        "correct": 22,
+        "completed": 22,
+        "planned": 22
+      }
+    }
+  },
+  "distinct_payloads": {
+    "development": 10,
+    "holdout": 20
+  },
+  "admission": {
+    "admitted": false,
+    "reason": "measured_cost_gate_failed_development",
+    "fingerprint": "cf9b1768c8669334c8f8080ea1877ccdb60d5829a9b747cfd2fc38593ccf0609"
+  },
+  "failures": [],
+  "quota_by_split_arm": {
+    "development": {
+      "original": 2504,
+      "compressed": 3505
+    },
+    "holdout": {
+      "original": 5414,
+      "compressed": 5364
+    }
+  },
+  "matched_ledger_quota": 16787,
+  "counter_delta_quota": 16787,
+  "counter_reconciles": true,
+  "quota_per_unit": 500000,
+  "display_unit": "USD",
+  "primary_planned": 60,
+  "supplement_planned": 4,
+  "note": "Pre-analysis uniqueness audit found holdout-903/913 and holdout-905/915 duplicate payloads. Original 60-trial data remain unchanged. Two new cases provide 20 distinct holdout payloads across 22 paired fixtures. No target answers were graded or used to select these replacements. All original and added calls count toward costs.",
+  "limitations": [
+    "30 distinct synthetic payloads share one fixed schema and transformation; not 30 independent task types.",
+    "One call per payload/arm does not establish repeated reliability.",
+    "Model label and gateway accounting are unverified. Charges are displayed credits, not an invoice.",
+    "This exact JSON projection is deterministically computable without an LLM; the study tests admission machinery, not a reason to use an LLM for projection.",
+    "Production compressed answers still require exact runtime validation and original fallback. Fallback charges can erase measured savings.",
+    "Original-only default remains unchanged. Experimental admission is specific to target/config, tokenizer and this template."
+  ]
+}

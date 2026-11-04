@@ -1,0 +1,10 @@
+{
+  "start_utc": "2026-11-03T16:33:03.590Z",
+  "end_utc": "2026-11-03T16:40:20.457Z",
+  "before_http_status": 200,
+  "after_http_status": 200,
+  "counter_delta_quota": 15871,
+  "quota_per_unit": 500000,
+  "display_unit": "USD",
+  "displayed_usd": 0.031742
+}

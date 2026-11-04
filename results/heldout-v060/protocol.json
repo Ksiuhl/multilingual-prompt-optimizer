@@ -1,0 +1,55 @@
+{
+  "type": "Prospectively frozen assistant-authored synthetic generalization check; not an external or independently curated benchmark.",
+  "unique_inputs": 50,
+  "templates": 10,
+  "requests_per_model": 150,
+  "repetitions": 1,
+  "arms": [
+    "original",
+    "concise_english",
+    "mixed"
+  ],
+  "model_labels": [
+    "gpt-6.1-sol",
+    "gemini-4-argon"
+  ],
+  "selection_tokenizer": "o200k_base, a local proxy; not verified as either gateway model's tokenizer",
+  "candidate_generation": "Hand-authored aligned EN/ZH/JA clauses plus PromptMin lite. No candidate-generation API requests. Same frozen selected prompts sent to both models.",
+  "generation_api_calls": 0,
+  "translation_api_tokens": 0,
+  "human_translation_cost_usd": null,
+  "contract": "Same field-specific json_object_contract in all arms; counted inside complete prompt. No native schema enforcement or answer repair.",
+  "grading": "Exact nested JSON values/keys/order in lists; JSON numbers compared numerically, booleans distinct. Reject duplicate keys, Markdown, extra fields, and changed Unicode/whitespace within strings.",
+  "freeze_utc": "2026-11-03T15:36:17.358290+00:00",
+  "source_pr_commit": "8a2d7f1fed6f2db94fc150376cb07f1d80af7841",
+  "files": {
+    "dataset.json": "d81e5010cc1076085ce9ab45a3cd4b1ed94a9c3b34f8e7cb5512d6e7db726d8d",
+    "preparation.json": "fab1e49d4cad4be2040e43b48b17e285ae3e5348cc154fedbf681cd3c7bcf610",
+    "requests.json": "4901e41da67b71aa48952d49268893eb4cebf4c0c14afcb689e7ca4d7850ec84"
+  },
+  "grader_source_sha256": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592",
+  "optimizer_source_sha256": {
+    "automatic.py": "697d0691e55f76193ed36b276ba4cbd7b8d4aea0fecb771868c553f1a2ce0386",
+    "cli.py": "e61e0a57e6fbad59433aeedfa763f504b419df4387486a54f8194c16427b9e9d",
+    "core.py": "09174984831c249321f9ee64f408f362a1ed7b5555af07495f5d2ce9bc54cbe0",
+    "models.py": "b02e7c16a8557440d9154397733e1ca4520baa7a1d0559ff30c6948116ecc705",
+    "output_contracts.py": "410d3c3a21c0d36a29c3ebf29c0d9ab78a47c909011946f67860fd1acaac026e",
+    "rules.py": "85a1548672dcf6f4f6ad8dac50a6e183696df1ecfc878550f1281b7b87ad79a5",
+    "semantic.py": "a8f9876f8a945c6f56d622108cbea9375b60deb3c9a9cadc36c6e4f3715fc57b",
+    "template_cache.py": "eb7287ffef0f543597a6570a6ecf9af78a0390c8cd693eb39c8a7c96430b35cc",
+    "tokenizers.py": "4d70114c502de5fc23b9cb1b6587943165a7f1a6587252144d15c7289c11230b",
+    "validation.py": "88eb2097e14d6d0d0513412bd466918221c6f117b010521d7b08d4d0d8b9ef7e",
+    "__init__.py": "8e196e88134810f55c43c69231327dd7de32a6c01c59f5ebc8e1302d5b44c68e",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+  },
+  "limitations": [
+    "Fifty new inputs across ten new templates, five cases per shared template; limited independence.",
+    "Exact structured tasks only; no free-form summaries or code generation in this check.",
+    "Candidate clauses and oracle author are the same assistant; translation equivalence has no independent human review.",
+    "Single response per case/arm/model; identical-prompt pairs can differ through sampling.",
+    "Gateway labels and usage are unverified; no billing rate or invoice is available, so dollar cost is unknown.",
+    "Local prompt counts include all content but exclude hidden provider wrappers. Provider-reported input/output tokens retained separately.",
+    "Latency is client wall time with concurrent requests, not intrinsic model latency.",
+    "Manual candidate authoring is not a validated automatic translator; its labor cost is unknown."
+  ]
+}

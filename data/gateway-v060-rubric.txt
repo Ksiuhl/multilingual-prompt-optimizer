@@ -1,0 +1,54 @@
+"""Frozen task rubric; summary facts/format, not full semantic adjudication."""
+import json
+import re
+from dataclasses import asdict
+from pathlib import Path
+from multilingual_prompt_optimizer import validate_answer
+from multilingual_prompt_optimizer.validation import expected_answer
+
+def grade(case,answer):
+    if case['kind']!='summary':
+        return asdict(validate_answer({'kind':case['kind'],'oracle':case['oracle'],'request':{'payload':json.dumps(case['payload'],ensure_ascii=False)}},answer))
+    if not isinstance(answer,dict) or set(answer)!={'answer'} or not isinstance(answer['answer'],dict):
+        return {'passed':False,'reason':'wrong_transport'}
+    groups=case['oracle']['groups']
+    if set(answer['answer'])!=set(groups):return {'passed':False,'reason':'wrong_summary_fields'}
+    for field,facts in groups.items():
+        text=answer['answer'][field]
+        if not isinstance(text,str) or not text.strip() or '\n' in text:return {'passed':False,'reason':'summary_value_not_sentence'}
+        if len(re.findall(r'[.!?](?:\s|$)',text))>1:return {'passed':False,'reason':'multiple_sentences'}
+        if not re.search(r'[A-Za-z]{2,}',text):return {'passed':False,'reason':'no_english_text'}
+        for fact in facts:
+            pattern=r'(?<!\d)'+re.escape(fact)+r'(?!\d)' if fact.isdigit() else re.escape(fact)
+            if not re.search(pattern,text):return {'passed':False,'reason':'missing_or_changed_fact:'+field}
+        numbers=set(re.findall(r'\d+',text))
+        allowed=set(re.findall(r'\d+',' '.join(facts)))
+        if not numbers<=allowed:return {'passed':False,'reason':'extra_or_changed_number:'+field}
+        if any(x in text for x in case['oracle'].get('forbidden',[])):return {'passed':False,'reason':'archived_fact'}
+    return {'passed':True,'reason':'required_summary_facts_and_format_match'}
+
+def self_check(dataset):
+    checked=0
+    for t in dataset['templates']:
+      for c in t['cases']:
+        if c['kind']=='summary':
+            obj={'answer':{field:'Recorded facts: '+' '.join(facts)+'.' for field,facts in c['oracle']['groups'].items()}}
+            assert grade(c,obj)['passed'],c['id']
+            bad=json.loads(json.dumps(obj));field=next(iter(bad['answer']));bad['answer'][field]='Incorrect.'
+            assert not grade(c,bad)['passed'],c['id']
+        elif c['kind']=='code':
+            source='def clamp(value, low, high):\n    return min(max(value, low), high)' if c['oracle']['function']=='clamp' else 'def safe_ratio(numerator, denominator):\n    return None if denominator == 0 else numerator / denominator'
+            assert grade(c,{'code':source})['passed'],c['id']
+            assert not grade(c,{'code':f'def {c["oracle"]["function"]}({", ".join(c["oracle"]["parameters"])}):\n    return 999'})['passed']
+        else:
+            wrapper={'kind':c['kind'],'oracle':c['oracle'],'request':{'payload':json.dumps(c['payload'])}}
+            value=expected_answer(wrapper)
+            value=json.loads(json.dumps(value,default=float))
+            assert grade(c,{'answer':value})['passed'],c['id']
+            assert not grade(c,{'answer':'INVALID'})['passed'],c['id']
+        checked+=1
+    return checked
+
+if __name__=='__main__':
+    d=json.loads(Path(__file__).with_name('dataset.json').read_text(encoding='utf-8'))
+    print(f'Frozen rubric self-check: {self_check(d)} positive and 50 negative fixtures passed.')

@@ -1,5 +1,23 @@
 # Dataset provenance
 
+The prospectively frozen 50-input v0.6 corpus, manually authored EN/ZH/JA
+candidate clauses, expected answers and exact requests are bundled under
+`results/heldout-v060/`. They use ten new structured-task templates and preserve
+the earlier corpora. See [the methods and limitations](../docs/heldout-study.md).
+
+`output-contract-v060-cases.json` contains six previously failed summary inputs
+selected from the gateway study for a targeted output-contract regression. It is
+not a new held-out benchmark. Two repeats per arm/model reuse these same cases;
+the original rubric and task facts are unchanged.
+
+`gateway-v060.json` freezes 50 assistant-authored synthetic development inputs:
+ten templates, five inputs each, balanced across extraction, filtering,
+arithmetic, constrained summaries and bounded Python repair. It is not an external
+held-out benchmark. `gateway-v060-rubric.txt` is the exact pre-evaluation Python
+rubric retained as a text artifact; its SHA-256 is checked before offline loading.
+The original inputs and primary rubric were not changed after answers were seen.
+See [the protocol and baseline/preparation revisions](../docs/gateway-study.md).
+
 `template-reuse-development.json` contains four longer assistant-authored development
 templates, each with two calibration inputs and ten fresh test inputs. Calibration
 and test membership was fixed before generation; test inputs were excluded from

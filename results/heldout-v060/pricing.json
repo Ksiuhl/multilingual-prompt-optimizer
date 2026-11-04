@@ -1,0 +1,73 @@
+{
+  "url": "https://gpt-api.cc/api/pricing",
+  "observed_at_utc": "2026-11-03T15:49:51.377Z",
+  "http_status": 200,
+  "pricing_version": "a42d372ccf0b5dd13ecf71203521f9d2",
+  "source_response_sha256": "3f0aceb8b39255c3bd6498666fc096e492e3aaf52214f4b9dd276a8c3727885a",
+  "models": [
+    {
+      "model_name": "gpt-6.1-sol",
+      "vendor_id": 4,
+      "quota_type": 0,
+      "model_ratio": 37.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 2,
+      "enable_groups": [
+        "OpenAI-Pro 普通分组 可cyber",
+        "OpenAI-Pro 高速分组 禁止cyber",
+        "svip",
+        "vip",
+        "default",
+        "OpenAI-Plus 分组",
+        "OpenAI-Pro 不降智分组 禁止cyber"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "billing_mode": "tiered_expr",
+      "billing_expr": "len <= 272000 ? tier(\"0_272k\", p * 2 + cr * 0.1 + cc * 2.5 + c * 10) : tier(\"272k_plus\", p * 4 + cr * 0.2 + cc * 5 + c * 15)"
+    },
+    {
+      "model_name": "gemini-4-argon",
+      "vendor_id": 9,
+      "quota_type": 0,
+      "model_ratio": 37.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "Gemini Ultra"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "billing_mode": "tiered_expr",
+      "billing_expr": "tier(\"standard\", p * 2 + cr * 0.1 + ai * 2 + c * 10)"
+    }
+  ],
+  "public_group_ratios": {
+    "Anthropic-Cursor反代": 0.8,
+    "Anthropic-Kiro反代": 0.35,
+    "Anthropic-Max满血（不限客户端）": 1.5,
+    "Anthropic-Max满血（仅限客户端/CLI）": 1.5,
+    "DeepSeek 专用": 3.5,
+    "GLM 专用": 5,
+    "Gemini Ultra": 0.5,
+    "OpenAI Image": 1,
+    "OpenAI-Plus 分组": 0.25,
+    "OpenAI-Pro 不降智分组 禁止cyber": 0.3,
+    "OpenAI-Pro 普通分组 可cyber": 0.45,
+    "OpenAI-Pro 高速分组 禁止cyber": 0.6,
+    "OpenAI-Team K12 灵车": 0.14,
+    "SWE": 0.1,
+    "default": 1,
+    "video": 0.1,
+    "vip": 1,
+    "xAI-Grok": 0.2
+  },
+  "active_key_group": null,
+  "billing_expression_reference": "https://github.com/QuantumNous/new-api/blob/main/pkg/billingexpr/expr.md",
+  "interpretation": "Public expression coefficients are USD per million tokens in upstream New API. Deployment behavior, active key group, discounts, settlement and failed-attempt charges are not verified. Any computation must be labelled a scenario, not an invoice."
+}

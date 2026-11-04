@@ -1,0 +1,482 @@
+[
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "compressed",
+    "repetition": 1,
+    "block": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 224,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4620,
+    "output_tokens": 28,
+    "successful_attempt_ms": 8438.455799998716,
+    "request_ms_including_retries": 8438.455799998716,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "original",
+    "repetition": 1,
+    "block": 1,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 243,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4684,
+    "output_tokens": 28,
+    "successful_attempt_ms": 1749.9645999986678,
+    "request_ms_including_retries": 1749.9645999986678,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "compressed",
+    "repetition": 1,
+    "block": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 221,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4634,
+    "output_tokens": 23,
+    "successful_attempt_ms": 1965.1995000001043,
+    "request_ms_including_retries": 1965.1995000001043,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "original",
+    "repetition": 1,
+    "block": 2,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 240,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4698,
+    "output_tokens": 23,
+    "successful_attempt_ms": 1996.939600000158,
+    "request_ms_including_retries": 1996.939600000158,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "original",
+    "repetition": 1,
+    "block": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 251,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4710,
+    "output_tokens": 28,
+    "successful_attempt_ms": 1839.4586999993771,
+    "request_ms_including_retries": 1839.4586999993771,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "compressed",
+    "repetition": 1,
+    "block": 3,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 232,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4646,
+    "output_tokens": 28,
+    "successful_attempt_ms": 1986.5799000002444,
+    "request_ms_including_retries": 1986.5799000002444,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "original",
+    "repetition": 1,
+    "block": 4,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 271,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4706,
+    "output_tokens": 42,
+    "successful_attempt_ms": 22831.136900000274,
+    "request_ms_including_retries": 22831.136900000274,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "compressed",
+    "repetition": 1,
+    "block": 4,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 225,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4642,
+    "output_tokens": 24,
+    "successful_attempt_ms": 4558.725299999118,
+    "request_ms_including_retries": 4558.725299999118,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "compressed",
+    "repetition": 2,
+    "block": 5,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 257,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4634,
+    "output_tokens": 47,
+    "successful_attempt_ms": 2268.6205000001937,
+    "request_ms_including_retries": 2268.6205000001937,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "original",
+    "repetition": 2,
+    "block": 5,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 240,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4698,
+    "output_tokens": 23,
+    "successful_attempt_ms": 2049.821200000122,
+    "request_ms_including_retries": 2049.821200000122,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "compressed",
+    "repetition": 2,
+    "block": 6,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 242,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4620,
+    "output_tokens": 40,
+    "successful_attempt_ms": 22031.857100000605,
+    "request_ms_including_retries": 22031.857100000605,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "original",
+    "repetition": 2,
+    "block": 6,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 243,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4684,
+    "output_tokens": 28,
+    "successful_attempt_ms": 1976.6172000002116,
+    "request_ms_including_retries": 1976.6172000002116,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "original",
+    "repetition": 2,
+    "block": 7,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 251,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4710,
+    "output_tokens": 28,
+    "successful_attempt_ms": 1943.629300000146,
+    "request_ms_including_retries": 1943.629300000146,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "compressed",
+    "repetition": 2,
+    "block": 7,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 232,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4646,
+    "output_tokens": 28,
+    "successful_attempt_ms": 22639.549699999392,
+    "request_ms_including_retries": 22639.549699999392,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "original",
+    "repetition": 2,
+    "block": 8,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 244,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4706,
+    "output_tokens": 24,
+    "successful_attempt_ms": 7857.352399999276,
+    "request_ms_including_retries": 7857.352399999276,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "compressed",
+    "repetition": 2,
+    "block": 8,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 225,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4642,
+    "output_tokens": 24,
+    "successful_attempt_ms": 2161.1651000007987,
+    "request_ms_including_retries": 2161.1651000007987,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "original",
+    "repetition": 3,
+    "block": 9,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 251,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4710,
+    "output_tokens": 28,
+    "successful_attempt_ms": 2788.4134999997914,
+    "request_ms_including_retries": 2788.4134999997914,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-109",
+    "arm": "compressed",
+    "repetition": 3,
+    "block": 9,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 256,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4646,
+    "output_tokens": 44,
+    "successful_attempt_ms": 8251.67650000006,
+    "request_ms_including_retries": 8251.67650000006,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "compressed",
+    "repetition": 3,
+    "block": 10,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 225,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4642,
+    "output_tokens": 24,
+    "successful_attempt_ms": 2510.131400000304,
+    "request_ms_including_retries": 2510.131400000304,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "development-108",
+    "arm": "original",
+    "repetition": 3,
+    "block": 10,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 272,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4706,
+    "output_tokens": 43,
+    "successful_attempt_ms": 7442.0171999987215,
+    "request_ms_including_retries": 7442.0171999987215,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "compressed",
+    "repetition": 3,
+    "block": 11,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 221,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4634,
+    "output_tokens": 23,
+    "successful_attempt_ms": 2134.2194999996573,
+    "request_ms_including_retries": 2134.2194999996573,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-911",
+    "arm": "original",
+    "repetition": 3,
+    "block": 11,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 240,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4698,
+    "output_tokens": 23,
+    "successful_attempt_ms": 4400.649600001052,
+    "request_ms_including_retries": 4400.649600001052,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "original",
+    "repetition": 3,
+    "block": 12,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 243,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4684,
+    "output_tokens": 28,
+    "successful_attempt_ms": 2294.397299999371,
+    "request_ms_including_retries": 2294.397299999371,
+    "final_consumption_record_present": true
+  },
+  {
+    "case_id": "holdout-supplement-0",
+    "arm": "compressed",
+    "repetition": 3,
+    "block": 12,
+    "complete": true,
+    "validation": {
+      "passed": true,
+      "reason": "exact_task_and_format_match"
+    },
+    "attempts": 1,
+    "charged_quota": 248,
+    "cached_tokens": 4224,
+    "cache_category": "reported_positive",
+    "input_tokens": 4620,
+    "output_tokens": 44,
+    "successful_attempt_ms": 7976.899900000542,
+    "request_ms_including_retries": 7976.899900000542,
+    "final_consumption_record_present": true
+  }
+]

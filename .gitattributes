@@ -1,1 +1,34 @@
 * text=auto eol=lf
+# Preserve byte-level hashes of the frozen study evidence on every platform.
+data/gateway-v060* -text
+results/gateway-v060* -text
+results/figures/v060-gateway-* -text
+data/output-contract-v060* -text
+results/output-contract-v060* -text
+results/figures/v060-output-contract-* -text
+results/heldout-v060/** -text
+results/heldout-v060-summary.json -text
+results/figures/v060-heldout-* -text
+results/reliability-v060* -text
+results/reliability-v060/** -text
+results/figures/v060-reliability-* -text
+results/validated-extraction-v060/** -text
+results/validated-extraction-v060-summary.json -text
+results/figures/v060-validated-extraction-* -text
+results/extraction-cost-audit* -text
+results/figures/v060-extraction-cost-audit-* -text
+results/cache-followup-v060* -text
+results/cache-followup-v060/** -text
+results/figures/v060-cache-followup-* -text
+results/fresh-cache-v060* -text
+results/fresh-cache-v060/** -text
+results/figures/v060-fresh-cache-* -text
+results/genuine-mix-v060* -text
+results/genuine-mix-v060/** -text
+results/figures/v060-genuine-mix-* -text
+results/strict-two-stage-v060* -text
+results/strict-two-stage-v060/** -text
+results/figures/v060-strict-two-stage-* -text
+results/language-control-followup* -text
+results/language-control-followup*/** -text
+results/figures/v060-language-control-* -text

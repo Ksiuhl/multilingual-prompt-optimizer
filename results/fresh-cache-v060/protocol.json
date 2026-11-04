@@ -1,0 +1,526 @@
+{
+  "type": "Prospectively frozen fresh-input repeated quota/cache study; one fixed JSON projection schema and manually authored candidate, not an external benchmark.",
+  "freeze_utc": "2026-11-03T18:28:43.587215+00:00",
+  "source_pr_commit": "4e96a9883a898a5075d21d00c0c8b8cb20cddcc3",
+  "model_label": "gpt-6.1-sol",
+  "template_fingerprint": "cf9b1768c8669334c8f8080ea1877ccdb60d5829a9b747cfd2fc38593ccf0609",
+  "new_distinct_inputs": 20,
+  "repetitions": 3,
+  "requests": 120,
+  "paired_blocks": [
+    {
+      "case_id": "fresh-7116",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7102",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7119",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7110",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7106",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7112",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7104",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7117",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7109",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7107",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7118",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7105",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7103",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7108",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7114",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7113",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7100",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7115",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7101",
+      "repetition": 1,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7111",
+      "repetition": 1,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7110",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7109",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7108",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7114",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7116",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7111",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7102",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7107",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7113",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7103",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7119",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7118",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7100",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7117",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7106",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7101",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7105",
+      "repetition": 2,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7115",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7112",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7104",
+      "repetition": 2,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7117",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7106",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7109",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7107",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7112",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7101",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7103",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7115",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7100",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7105",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7118",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7111",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7108",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7110",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7102",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7116",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7104",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7114",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    },
+    {
+      "case_id": "fresh-7119",
+      "repetition": 3,
+      "arms": [
+        "original",
+        "compressed"
+      ]
+    },
+    {
+      "case_id": "fresh-7113",
+      "repetition": 3,
+      "arms": [
+        "compressed",
+        "original"
+      ]
+    }
+  ],
+  "selection": "20 new payloads and expected answers, all canonically distinct and disjoint from all previous extraction/follow-up corpora. No new instruction candidates. Fixed before all inference.",
+  "ordering": "Serial paired blocks; 10 original-first and 10 compressed-first per repetition; order reverses per case in repetition 2 and is balanced anew in repetition 3.",
+  "concurrency_per_model": 1,
+  "max_attempts": 2,
+  "timeout_ms": 60000,
+  "max_output_tokens": 4096,
+  "temperature": "provider default",
+  "reasoning": "provider default",
+  "stream": true,
+  "cache_control": "No reset, cache busting or free warm-up. All first repetitions count. Cache state is observed, not a controlled warm/cold treatment.",
+  "cost_display": "Gateway quota units and relative changes only; no actual-money or official-provider pricing estimates.",
+  "stop_guard": {
+    "quota_units": 75000,
+    "scope": "Agent-selected soft stop checked between paired blocks, not a guaranteed ceiling. Stop route on authentication/quota errors; do not switch keys."
+  },
+  "generation_api_calls": 0,
+  "preparation_quota": 0,
+  "human_authoring_cost": "not measured",
+  "candidate_policy": "Exact existing template, immutable output contract and grader. No adaptation, answer repair, selective reruns or stopping based on quality.",
+  "files": {
+    "template.json": "50d1643245912beb3e27b128fbfc9f60e4685f4ae9f38efb09036fc7edcac0dc",
+    "dataset.json": "19301fc16d22f732402c1a6f06818a14d62dbb2c38000c1232716ab1ec84d9c9",
+    "requests.json": "268278a642891190a931de5117e5d0f748cbb6a9050cbb850d99840cc23bfa7a",
+    "grader-source.py": "e26dfad5084ba2a2972106979d17a3803b82399b8483e3de0c697fc920d9c592",
+    "runner.mjs": "210bb5b15bc76c87e48a4a211043139486b1c505c29dc489dd3601a7882c43f0"
+  },
+  "limitations": [
+    "20 fresh payloads share one JSON projection schema; three repetitions are not 60 independent task types.",
+    "Gateway model label, cache metadata and quota accounting are unverified provider claims.",
+    "Prior traffic may affect every repetition; first repetition is not called cold.",
+    "Sampling, server load, output length and cache effects are not independently isolated.",
+    "This projection is deterministic without an LLM; this study tests compression/accounting, not a practical need for inference.",
+    "Earlier results remain unchanged. This study does not automatically admit a template or alter original-only defaults."
+  ]
+}
