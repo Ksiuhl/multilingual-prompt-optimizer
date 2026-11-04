@@ -2,6 +2,8 @@
 
 ## 0.6.0a5 — strict frozen-English second stage
 
+- Closed the current research investigation on 4 November 2026 with a consolidated conclusion: no established general incremental savings or mixing-specific accuracy advantage. Preserved raw results, graphs and original-only defaults; further controls and agent communication are deferred, with no paid testing scheduled.
+
 - Added a byte-checked English freeze and a translation-only job that excludes source data and the earlier original instruction.
 - Recombine immutable English segments with translated segments, count full prompts, preserve numeric/literal guards and retain English on ties or growth. Ranking does not certify semantic equivalence or release task answers.
 - Added boundary/provenance tests and a staged experiment that separates actual token-policy choices, forced diagnostics, translation/review overhead and target-answer accuracy. Original-only defaults and earlier evidence remain unchanged.

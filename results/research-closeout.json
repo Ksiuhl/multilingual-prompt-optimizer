@@ -1,0 +1,27 @@
+{
+  "closed_on": "2026-11-04",
+  "timezone": "Asia/Hong_Kong",
+  "status": "current_investigation_closed",
+  "version": "0.6.0a5",
+  "decision": "Preserve experimental prototype and conclude current paid exploration; general incremental multilingual savings and mixing-specific accuracy advantage not established.",
+  "scope": "Negative cost findings and inconclusive accuracy findings within the tested scope; not a universal impossibility claim.",
+  "new_model_calls_for_closeout": 0,
+  "scheduled_paid_experiments": 0,
+  "default_policy": "original_only",
+  "new_template_admitted": false,
+  "second_model_replication_completed": false,
+  "clearer_english_control_completed": false,
+  "phase_two_implemented": false,
+  "deferred_not_required_for_closeout": [
+    "verified second-model replication",
+    "clearer-English and wording controls",
+    "independent bilingual review",
+    "agent communication and learned protocols"
+  ],
+  "evidence_sha256": {
+    "results/strict-two-stage-v060-summary.json": "3e8f0f46ff255425db88cbd8b54c0baa00fce8fb0d31d570c02d7e3f6076d2ae",
+    "results/language-control-followup-summary.json": "5e00656c1678ffbe42a19e0310f4ce9a1e215c6a8389e170a6c31484f429b0fa",
+    "results/fresh-cache-v060-summary.json": "32e1c2e572040a528e8e24ee003599b39ca6f4b138ca986068e25220c2330c67"
+  },
+  "report": "docs/final-conclusion.md"
+}

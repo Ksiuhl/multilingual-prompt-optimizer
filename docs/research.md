@@ -1,5 +1,10 @@
 # Research scope and evidence
 
+**Current status:** this investigation closed on 4 November 2026. The
+[final conclusion](final-conclusion.md) supersedes earlier planning recommendations,
+while preserving all historical results below. Reliable general savings and an
+accuracy advantage specific to mixing were not established. No new paid testing is scheduled.
+
 The later reviewer and automatic-generation development experiments are documented
 in [the reviewer study](reviewer-study.md). They extend the earlier manual and
 rule-based work below; they do not replace independent semantic/task evaluation.

@@ -1,5 +1,10 @@
 # Reproduce the development studies
 
+The current investigation is concluded. Read the [final conclusion](../docs/final-conclusion.md)
+for the evidence and limits. Commands below reproduce recorded analyses; the presence
+of an inference runner does not indicate a scheduled paid experiment. Further controls
+and second-model replication are deferred, not claimed complete.
+
 ## Strict frozen-English second stage (offline)
 
 ```bash

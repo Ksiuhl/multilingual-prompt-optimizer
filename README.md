@@ -1,5 +1,11 @@
 # Multilingual Prompt Optimizer
 
+## Research closeout — 4 November 2026
+
+**The current investigation is concluded.** Recorded experiments did not establish reliable incremental cost savings or an accuracy advantage specific to mixing languages after concise English. The project is an experimental benchmark and research prototype. The [final conclusion](docs/final-conclusion.md) explains the evidence, limitations and recommendation; it does not claim that every possible multilingual prompt is ineffective.
+
+The latest controls scored **71/90 English, 78/90 Chinese-only and 77/90 mixed** on one unverified gateway label. Mixed used more reported input tokens and 5.25% more target-only quota than English. The second-model replication and clearer-English control were not completed and are explicitly deferred. No additional paid experiment is scheduled. Compression remains opt-in, with originals preserved by default.
+
 Cost displays use **gateway quota units and percentage changes**. They are not
 official-provider prices or actual-money estimates. Frozen receipts retain the
 gateway's original metadata for reproducibility.
